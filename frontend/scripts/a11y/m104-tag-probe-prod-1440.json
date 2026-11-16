@@ -1,0 +1,104 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "width": 1440,
+  "generated_at": "2026-10-05T10:35:08-0400",
+  "checks": [
+    {
+      "check": "seed tenant (register/login/account/2 rows)",
+      "ok": true,
+      "detail": "{\"email\": \"m104-1791210891952@example.com\", \"password\": \"<redacted-password>\", \"register\": 200, \"login\": 200, \"account\": 201, \"rows\": [201, 201]}"
+    },
+    {
+      "check": "landed on /transactions",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "row +tag hit area >= 44px at this width",
+      "ok": true,
+      "detail": "rect={'x': 1049.046875, 'y': 526, 'w': 28, 'h': 28}"
+    },
+    {
+      "check": "popover fits the viewport",
+      "ok": true,
+      "detail": "{\"left\": 1035.046875, \"top\": 548, \"right\": 1307.046875, \"bottom\": 600, \"vw\": 1440, \"vh\": 900}"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 row quick-tag popover open",
+      "ok": true,
+      "detail": "{'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0} []"
+    },
+    {
+      "check": "quick-tag wrote exactly one PUT /transactions/{id}/tags",
+      "ok": true,
+      "detail": "['PUT https://fintrac.princessandmark.com/api/v1/transactions/3748/tags']"
+    },
+    {
+      "check": "chip lands without the editor opening",
+      "ok": true,
+      "detail": "popover closed, chip present, no dialog"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 editor modal with the tag picker open",
+      "ok": true,
+      "detail": "{'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 1} ['aria-allowed-role(minorx1) [\"[\\'.max-h-\\\\\\\\\\\\\\\\[calc\\\\\\\\\\\\\\\\(100vh-2rem\\\\\\\\\\\\\\\\)\\\\\\\\\\\\\\\\]\\']\"]']"
+    },
+    {
+      "check": "editor Escape #1 closes the picker list only",
+      "ok": true,
+      "detail": "focus=True, expanded true -> false, dialog=True"
+    },
+    {
+      "check": "editor Escape #2 closes the modal",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "filter shows both chips",
+      "ok": true,
+      "detail": "chips=2"
+    },
+    {
+      "check": "list query carries tag_ids twice (AND)",
+      "ok": true,
+      "detail": "['GET https://fintrac.princessandmark.com/api/v1/transactions?tag_ids=81&tag_ids=82&limit=50&offset=0']"
+    },
+    {
+      "check": "AND result keeps the row carrying both tags",
+      "ok": true,
+      "detail": "groceries kept, gas (one tag only) filtered out"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 tag management modal open",
+      "ok": true,
+      "detail": "{'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0} []"
+    },
+    {
+      "check": "manager dialog lists usage counts",
+      "ok": true,
+      "detail": "Manage tags |  | Rename a typo, fold duplicates into one tag, delete what nothing uses |  | \u00d7 | probe-extra | 1 transaction | Rename probe-extra | probe-shared | 1 transaction | Rename probe-shared | "
+    },
+    {
+      "check": "rename lands on the row chip",
+      "ok": true,
+      "detail": "probe-renamed visible after PATCH"
+    },
+    {
+      "check": "merge folds the selection into one survivor",
+      "ok": true,
+      "detail": "button='Merge 1 into probe-renamed'"
+    },
+    {
+      "check": "throwaway tenant deleted",
+      "ok": true,
+      "detail": "DELETE /users/me -> 204"
+    },
+    {
+      "check": "zero console/CSP errors",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "passed": 19,
+  "failed": 0
+}

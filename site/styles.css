@@ -1,0 +1,208 @@
+/* fin_tracker marketing site — midnight terminal, electric cyan accent.
+   Token discipline (docs/09, M89): every colour in this file is declared in
+   :root and consumed as var(--…). No literal hex/rgb() appears below the
+   token block — frontend/tests/siteTokens.test.ts fails the build if one does.
+   Contrast pairs for these tokens are documented right under :root and are
+   re-measured whenever a token moves (WCAG 2.1: 4.5:1 text, 3:1 non-text). */
+:root {
+  --bg: #070b12;
+  --surface: #0c1320;
+  --surface-raised: #111a2b;
+  --border: rgba(148, 197, 255, 0.12);          /* decorative hairline only */
+  --border-control: #5b6a85;                     /* control boundaries (3:1) */
+  --text: #e8eef7;
+  --muted: #93a1b8;
+  --accent: #22d3ee;
+  --accent-ink: #04161b;
+  --accent-soft: rgba(34, 211, 238, 0.45);       /* hover boundary */
+  --accent-glow: rgba(34, 211, 238, 0.12);       /* ambient hero wash */
+  --accent-glow-strong: rgba(34, 211, 238, 0.55);/* primary button halo */
+  --gain: #34d399;
+  --code-bg: #05080e;
+  --shadow-shot: rgba(0, 0, 0, 0.7);
+  --radius: 14px;
+
+  /* Contrast pairs (measured, sRGB relative luminance):
+       text         on bg          16.90      text        on surface      15.94
+       text         on raised      14.92      muted       on bg            7.54
+       muted        on surface      7.11      muted       on raised        6.66
+       accent       on bg          10.90      accent      on surface      10.29
+       accent       on raised       9.63      accent-ink  on accent       10.23
+       gain         on surface      9.67      gain        on bg           10.25
+       border-control on bg         3.61      border-control on surface    3.40
+       border-control on raised     3.19
+     --border (hairline) is decorative at 1.22–1.29 and never carries
+     meaning: cards, rows and separators are identified by fill, spacing and
+     typography. Control boundaries use --border-control instead. */
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 500px at 50% -10%, var(--accent-glow), transparent), var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--accent); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+header.nav {
+  max-width: 1080px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px 18px;
+  padding: 18px 20px;
+}
+.brand { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+.brand span { color: var(--accent); }
+nav.links { display: flex; flex-wrap: wrap; }
+nav.links a {
+  color: var(--muted); text-decoration: none; margin-right: 20px; font-size: 15px;
+  display: inline-block; padding: 6px 0;   /* ≥24px hit height (WCAG 2.5.8, ux spec §2) */
+}
+nav.links a:hover, nav.links a:focus-visible { color: var(--text); }
+*:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hero { text-align: center; padding: 64px 0 48px; }
+.hero .kicker {
+  display: inline-block; margin: 0 0 14px; color: var(--accent);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.hero h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 16px; }
+.hero h1 span { color: var(--accent); }
+.hero p { color: var(--muted); font-size: 18px; max-width: 660px; margin: 0 auto 28px; }
+.hero .hero-meta { font-size: 14.5px; margin: 20px auto 0; }
+.btn {
+  display: inline-block; background: var(--accent); color: var(--accent-ink);
+  font-weight: 700; padding: 12px 26px; border-radius: 999px; text-decoration: none;
+  box-shadow: 0 0 24px -6px var(--accent-glow-strong);
+}
+.btn.ghost {
+  background: transparent; color: var(--text);
+  /* margin-left:0 at base so the 375px stacked CTAs stay symmetric; the
+     768px media block below restores the row gap (ux spec §2). */
+  border: 1px solid var(--border-control); box-shadow: none; margin-left: 0;
+}
+.hero-shot { margin: 40px auto 0; max-width: 960px; }
+.hero-shot img, figure.shot img {
+  width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border);
+  box-shadow: 0 24px 60px -24px var(--shadow-shot);
+}
+/* Visually hidden, still announced (WCAG 1.3.1 — table captions). */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.grid { display: grid; gap: 16px; }
+.features { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); padding: 24px 0 8px; }
+.diffs { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); padding: 24px 0 8px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+}
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+section.block { padding: 44px 0; }
+section.block h1 { font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.03em; margin: 0 0 8px; line-height: 1.1; }
+section.block h2 { font-size: 26px; letter-spacing: -0.02em; margin: 0 0 6px; }
+section.block .sub { color: var(--muted); margin: 0 0 20px; }
+.guide-cards { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.guide-cards a.card, a.card.proof { color: var(--text); text-decoration: none; display: block; }
+.guide-cards a.card:hover, a.card.proof:hover, a.card.proof:focus-visible { border-color: var(--accent-soft); }
+.guide-cards .meta, a.card.proof .meta { color: var(--muted); font-size: 13px; margin-top: 8px; }
+a.card.proof { display: flex; flex-direction: column; gap: 4px; }
+a.card.proof .go { color: var(--accent); font-size: 13.5px; margin-top: auto; padding-top: 10px; }
+ol.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; counter-reset: step; }
+ol.steps li.card { counter-increment: step; }
+/* Every guide page titles its steps h2 under an h1 page title (M93 promoted
+   the original guides to the M89 shell); h3 is still accepted and still
+   gets the step counter. */
+ol.steps h2 { font-size: 16px; font-weight: 600; margin: 0 0 6px; }
+ol.steps h2::before, ol.steps h3::before {
+  content: counter(step) ". "; color: var(--muted); font-weight: 400;
+}
+ol.steps p { color: var(--muted); font-size: 15px; }
+figure.shot { margin: 16px 0 0; }
+figure.shot figcaption { color: var(--muted); font-size: 13px; margin-top: 6px; }
+.back { display: inline-block; margin: 22px 0 0; color: var(--muted); text-decoration: none; font-size: 14px; }
+.back:hover { color: var(--accent); }
+.selfhost {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px; margin: 12px 0 48px;
+}
+.selfhost code {
+  display: block; background: var(--code-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px; margin-top: 12px;
+  font-size: 14px; color: var(--gain); overflow-x: auto; white-space: pre;
+}
+footer { border-top: 1px solid var(--border); padding: 22px 0 40px; color: var(--muted); font-size: 13.5px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+/* Guide comparison tables (e.g. the YNAB migration gaps tables). */
+.table-card { margin-top: 20px; }
+.table-card h3 { margin-bottom: 4px; }
+/* Promoted step headings are h2 now (M93): section.block's 26px h2 must not
+   win inside a table card, where the card heading stays 17px. */
+section.block .table-card h2 { margin: 0 0 4px; font-size: 17px; letter-spacing: normal; }
+.table-wrap { overflow-x: auto; }
+table.gaps { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+table.gaps th, table.gaps td {
+  text-align: left;
+  vertical-align: top;
+  padding: 9px 14px 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+table.gaps th { color: var(--text); font-weight: 600; }
+table.gaps td { color: var(--muted); }
+table.gaps td:first-child { color: var(--text); }
+table.gaps tr:last-child td { border-bottom: 0; }
+
+/* ── First-visit story (M89) ─────────────────────────────────────────── */
+
+/* Honest "what we are not" list — the bullet is part of the design, so it is
+   drawn with a token, not a default marker. */
+ul.nots { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+ul.nots li {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: var(--radius); padding: 16px 18px;
+  color: var(--muted); font-size: 15px;
+}
+ul.nots li strong { color: var(--text); }
+.closer {
+  margin: 22px 0 0; padding: 18px 20px; background: var(--surface-raised);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: 16px; color: var(--text);
+}
+.closer strong { color: var(--accent); }
+
+/* The pricing/posture statement: promise vs. the thing that backs it. */
+.tldr {
+  background: var(--surface-raised); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px 20px; margin: 0 0 24px;
+}
+.tldr p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.tldr p:first-child { margin-top: 0; color: var(--text); }
+
+/* Changelog (site/changelog.html). */
+.rel { margin: 0 0 30px; }
+.rel h3 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+.rel .when { color: var(--muted); font-size: 13.5px; margin: 0 0 10px; }
+.badge {
+  display: inline-block; background: var(--surface-raised);
+  border: 1px solid var(--border-control); border-radius: 999px;
+  color: var(--accent); font-size: 12.5px; font-weight: 700;
+  padding: 1px 9px; margin-right: 8px; vertical-align: 1px;
+}
+ul.shipped { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+ul.shipped li { color: var(--muted); font-size: 15px; }
+ul.shipped li strong { color: var(--text); font-weight: 600; }
+
+/* ── Responsive (t_fe44260e, ux spec §2) — the stylesheet's ONLY breakpoint ──
+   styles.css had zero @media rules before this: below 768px the header wraps
+   (brand row + link rows) and the hero CTAs stack; at ≥768px the links take a
+   single row and the CTAs sit side by side. The auto-fit grids do the rest —
+   features 1/2/3 columns and diffs 1/2/4 columns at 375/768/1440 without any
+   query (arithmetic pinned in the spec). No page-level horizontal scroll at
+   any width: only .selfhost code and .table-wrap scroll, both tabindex="0". */
+@media (min-width: 768px) {
+  nav.links { flex-wrap: nowrap; }
+  .btn.ghost { margin-left: 10px; }
+}

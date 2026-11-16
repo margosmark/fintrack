@@ -1,0 +1,10 @@
+effective_date,effective_time,settlement_date,account_id,account_type,activity_type,activity_sub_type,description,direction,symbol,name,currency,quantity,unit_price,commission,net_cash_amount
+2026-01-19,00:00:00,,ws-anon,RESP,MoneyMovement,TRANSFER,Money transfer out of the account (executed at 2026-01-19),,,,CAD,-134.52,,,-134.52
+2026-02-02,00:00:00,,ws-anon,RESP,MoneyMovement,EFT,Deposit,,,,CAD,2400,,,2400
+2026-01-19,00:00:00,,ws-anon,RESP,SecurityTransfer,-,SYNE - Synthetic All-Equity Portfolio ETF: Tax-free transfer of 400.0000 shares into the account (executed at 2026-01-19),,SYNE,Synthetic All-Equity Portfolio ETF,CAD,400,,,21540
+2026-01-19,00:00:00,,ws-anon,RESP,SecurityTransfer,-,SYNF - Synthetic S&P 500 Hedged Index ETF: Tax-free transfer of 290.0000 shares into the account (executed at 2026-01-19),,SYNF,Synthetic S&P 500 Hedged Index ETF,CAD,290,,,20465.3
+2026-03-17,00:00:00,,ws-anon,RESP,Grant,CESG,Grant payment (executed at 2026-03-17),,,,CAD,450,,,450
+2026-02-02,00:00:00,,ws-anon,RESP,Dividend,-,"SYNF - Synthetic S&P 500 Hedged Index ETF: Cash dividend distribution, received on 2026-02-02, record date of 2026-01-27",,SYNF,Synthetic S&P 500 Hedged Index ETF,CAD,164.38,,,164.38
+2026-01-21,00:00:00,,ws-anon,RESP,AdministrativePayment,TRANSFER_FEE_REIMBURSEMENT,CAD credited (executed at 2026-01-21),,,,CAD,145.75,,,145.75
+2026-02-02,09:34:39,2026-02-03,ws-anon,RESP,Trade,BUY,"SYNE - Synthetic All-Equity Portfolio ETF: Bought 88.0000 shares at $55.63 per share (executed at 2026-02-02)",LONG,SYNE,Synthetic All-Equity Portfolio ETF,CAD,88,55.63,0,-4895.44
+2026-02-04,11:07:43,2026-02-05,ws-anon,RESP,Trade,SELL,"SYNF - Synthetic S&P 500 Hedged Index ETF: Sold 290.0000 shares at $70.57 per share (executed at 2026-02-04)",LONG,SYNF,Synthetic S&P 500 Hedged Index ETF,CAD,-290,70.57,0,20465.30

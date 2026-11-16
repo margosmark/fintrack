@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fin_tracker — Personal Finance Tracker</title>
+    <style>
+        :root {
+            --bg-dark: #0a0f0d;
+            --bg-card: #111916;
+            --bg-card-hover: #162019;
+            --accent: #00d47e;
+            --accent-dim: #00a562;
+            --accent-glow: rgba(0, 212, 126, 0.15);
+            --text: #e8ede9;
+            --text-muted: #7a8c82;
+            --text-dim: #4a5c52;
+            --border: #1e2e25;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --mono: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px) saturate(1.4);
+            background: rgba(10, 15, 13, 0.82);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo svg { width: 22px; height: 22px; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; max-width: 700px; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .badge .dot {
+            width: 6px; height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        h1 span { color: var(--accent); }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ─── BUTTONS ─── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.6rem;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .btn-primary:hover {
+            background: #00e88b;
+            box-shadow: 0 0 30px rgba(0, 212, 126, 0.25);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-dim);
+        }
+
+        /* ─── SECTIONS ─── */
+        section { padding: 6rem 2rem; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin-bottom: 3rem;
+        }
+
+        /* ─── FEATURES ─── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-card:hover {
+            border-color: var(--accent-dim);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+        .feature-card:hover::before { opacity: 1; }
+        .feature-icon {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            background: rgba(0, 212, 126, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.3rem;
+        }
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 650;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* ─── TECH STACK ─── */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .tech-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: border-color 0.2s;
+        }
+        .tech-card:hover { border-color: var(--accent-dim); }
+        .tech-dot {
+            width: 38px; height: 38px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .tech-dot.py { background: #306998; }
+        .tech-dot.db { background: #336791; }
+        .tech-dot.cli { background: #1a7f37; }
+        .tech-dot.api { background: #e34c26; }
+        .tech-card-text h4 { font-size: 0.95rem; font-weight: 600; }
+        .tech-card-text span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* ─── CODE BLOCK ─── */
+        .code-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .code-block {
+            background: #0c1210;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .code-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+        .code-header .dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+        }
+        .code-header .dot:nth-child(1) { background: #ff5f57; }
+        .code-header .dot:nth-child(2) { background: #febc2e; }
+        .code-header .dot:nth-child(3) { background: #28c840; }
+        .code-header span {
+            margin-left: auto;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            font-family: var(--mono);
+        }
+        pre {
+            padding: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            overflow-x: auto;
+            color: var(--text-muted);
+        }
+        pre .comment { color: var(--text-dim); }
+        pre .cmd { color: var(--accent); }
+        pre .string { color: #e3b341; }
+
+        .setup-steps { counter-reset: step; }
+        .setup-steps li {
+            list-style: none;
+            padding: 1rem 0 1rem 3rem;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+        .setup-steps li:last-child { border-bottom: none; }
+        .setup-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0; top: 1rem;
+            width: 28px; height: 28px;
+            background: rgba(0, 212, 126, 0.1);
+            color: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .setup-steps li strong { color: var(--text); font-size: 0.95rem; }
+        .setup-steps li p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 0.25rem;
+        }
+
+        /* ─── CTA ─── */
+        .cta {
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .cta p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        .cta .hero-actions { position: relative; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        footer p {
+            color: var(--text-dim);
+            font-size: 0.82rem;
+        }
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        footer a:hover { color: var(--accent); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .code-section { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .nav-links a:not(.btn) { display: none; }
+            section { padding: 4rem 1.25rem; }
+        }
+
+        /* ─── GRID BG ─── */
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(30, 46, 37, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(30, 46, 37, 0.3) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: -1;
+            mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black, transparent);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+                fin_tracker
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#stack">Stack</a>
+                <a href="#setup">Setup</a>
+                <a href="https://github.com/margosmark/fin_tracker" class="btn btn-secondary" style="padding: 0.5rem 1.1rem; font-size: 0.82rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="dot"></span>
+                Open Source — MIT Licensed
+            </div>
+            <h1>Take control of your <span>finances</span></h1>
+            <p>
+                A minimal, Python-powered personal finance tracker that lives on your machine. Track expenses, visualize spending patterns, and stay on budget — without giving your data to anyone.
+            </p>
+            <div class="hero-actions">
+                <a href="https://github.com/margosmark/fin_tracker" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Get Started
+                </a>
+                <a href="https://github.com/margosmark/fin_tracker" class="btn btn-secondary">
+                    View Source Code
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+        <div class="section-inner">
+            <div class="section-label">Features</div>
+            <h2 class="section-title">Everything you need, nothing you don't</h2>
+            <p class="section-desc">
+                Built for people who want to track their money without the overhead of a SaaS dashboard or bank integrations.
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Expense Tracking</h3>
+                    <p>Log transactions as you go. Categorize spending, tag recurring bills, and keep a clean record of where your money goes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Spending Insights</h3>
+                    <p>Generate reports by category, date range, or custom filters. Spot trends before they become problems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Local-First Privacy</h3>
+                    <p>Your data stays on your machine. No cloud sync, no third-party APIs, no one mining your spending habits.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Budget Management</h3>
+                    <p>Set monthly or weekly budgets per category. Get alerted when you're approaching limits so you can course-correct early.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast CLI Interface</h3>
+                    <p>Quick commands for quick entries. Add a transaction in seconds, pull up a report in one command.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Recurring Transactions</h3>
+                    <p>Automatically detect and handle recurring expenses — rent, subscriptions, utilities — so you never forget to log them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="stack">
+        <div class="section-inner">
+            <div class="section-label">Built With</div>
+            <h2 class="section-title">Lean stack, serious results</h2>
+            <p class="section-desc">
+                Written in Python with a focus on simplicity and reliability. No bloated frameworks — just clean, readable code.
+            </p>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-dot py">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.69l-.02.2-.05.15-.11.13-.15.1-.18.07-.21.04-.23.02H5.65l-.69.05c-.15.02-.3.05-.44.09l-.39.11-.35.14-.31.17-.28.2-.25.23-.23.25-.2.26-.18.28-.15.29-.13.3-.1.3-.08.29-.05.28-.03.25-.02.22V17.7l.02.22.04.24.07.26.1.27.14.28.17.28.22.27.26.27.3.25.35.23.39.2.44.17.48.13.53.1.57.06.62.03.67.01h5.16l.59-.03.53-.07.47-.11.41-.15.36-.19.31-.22.26-.25.22-.26.18-.28.15-.3.12-.3.09-.29.06-.28.04-.25.02-.22v-3.69l.02-.2.05-.15.11-.13.15-.1.18-.07.21-.04.23-.02H19.6l.69-.05.59-.14.5-.22.41-.27.33-.32.27-.35.2-.36.15-.37.1-.35.07-.32.04-.27.02-.21V5.19l-.02-.2-.05-.15-.11-.13-.15-.1-.18-.07-.21-.04-.23-.02h-3.12l-.59.03-.53.07-.47.11-.41.15-.36.19-.31.22-.26.25-.22.26-.18.28-.15.3-.12.3-.09.29-.06.28-.04.25-.02.22v-.69l.02-.55.05-.46.11-.39.16-.33.22-.28.28-.24.33-.2.38-.17.44-.14.49-.1.53-.07.58-.05.62-.02zm-1.65 4.3l.23.34.18.33.11.3.05.27.02.22-.02.22v3.77l-.05.46-.13.4-.21.34-.29.29-.34.24-.4.2-.45.16-.5.12-.55.09-.59.05-.63.03H9.86l-.68-.03c-.14-.02-.29-.05-.42-.1l-.39-.11-.35-.14-.31-.17-.28-.2-.25-.23-.23-.25-.2-.26-.18-.28-.15-.29-.13-.3-.1-.3-.08-.29-.05-.28-.03-.25V4.96l.02-.21.05-.17.1-.15.15-.12.19-.09.22-.06.25-.04.27-.02h3.72l.55.03.49.08.43.12.38.17.34.21.29.25.26.28.22.3.2.33.16.34.13.35.1.35.08.34.05.32.03.28z"/></svg>
+                    </div>
+                    <div class="tech-card-text">
+                        <h4>Python 3</h4>
+                        <span>Clean, readable codebase</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-dot db">🗄️</div>
+                    <div class="tech-card-text">
+                        <h4>SQLite</h4>
+                        <span>Zero-config local storage</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-dot cli">⌨️</div>
+                    <div class="tech-card-text">
+                        <h4>CLI Interface</h4>
+                        <span>Fast, keyboard-driven workflow</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-dot api">📦</div>
+                    <div class="tech-card-text">
+                        <h4>pip install</h4>
+                        <span>Standard Python packaging</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SETUP -->
+    <section id="setup">
+        <div class="section-inner">
+            <div class="section-label">Quick Start</div>
+            <h2 class="section-title">Up and running in 60 seconds</h2>
+            <p class="section-desc">
+                Clone, install, run. No Docker, no databases to set up, no API keys required.
+            </p>
+            <div class="code-section">
+                <div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                            <span>terminal</span>
+                        </div>
+                        <pre><span class="comment"># Clone the repository</span>
+<span class="cmd">git clone</span> <span class="string">https://github.com/margosmark/fin_tracker.git</span>
+<span class="cmd">cd</span> fin_tracker
+
+<span class="comment"># Install dependencies</span>
+<span class="cmd">pip install</span> -r requirements.txt
+
+<span class="comment"># Initialize your database</span>
+<span class="cmd">python</span> fin_tracker.py init
+
+<span class="comment"># Add your first transaction</span>
+<span class="cmd">python</span> fin_tracker.py add <span class="string">"Coffee" 4.50 --cat food</span>
+
+<span class="comment"># View your spending summary</span>
+<span class="cmd">python</span> fin_tracker.py report <span class="string">--month</span></pre>
+                    </div>
+                </div>
+                <div>
+                    <ol class="setup-steps">
+                        <li>
+                            <strong>Clone the repo</strong>
+                            <p>Grab the source from GitHub and cd into the project directory.</p>
+                        </li>
+                        <li>
+                            <strong>Install dependencies</strong>
+                            <p>One pip install command pulls in everything you need. No virtual environment tricks required.</p>
+                        </li>
+                        <li>
+                            <strong>Initialize your database</strong>
+                            <p>Sets up a local SQLite database in your project folder. Takes less than a second.</p>
+                        </li>
+                        <li>
+                            <strong>Start tracking</strong>
+                            <p>Add transactions, set budgets, and generate reports from the command line.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="section-inner">
+            <h2>Your money. <span style="color: var(--accent);">Your data.</span> Your rules.</h2>
+            <p>No subscriptions. No sign-ups. Just a tool that works.</p>
+            <div class="hero-actions">
+                <a href="https://github.com/margosmark/fin_tracker" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    Star on GitHub
+                </a>
+                <a href="https://github.com/margosmark/fin_tracker/issues" class="btn btn-secondary">
+                    Report an Issue
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built with Python &middot; <a href="https://github.com/margosmark/fin_tracker">fin_tracker</a> &middot; MIT License</p>
+    </footer>
+</body>
+</html>

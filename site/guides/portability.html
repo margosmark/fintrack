@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Export &amp; portability — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Export &amp; portability</h1>
+      <p class="sub">Exactly what you can take with you — the file list, the schema, and the no-lock-in promise.</p>
+      <ol class="steps">
+        <li class="card"><h2>One click, one ZIP</h2><p>Settings → Privacy → Export my data → Download ZIP gives you fin-tracker-export-&lt;date&gt;.zip: a manifest.json plus one CSV per table — accounts, transactions, categories, tags, rules, trades, budgets, goals, bills, debts, subscriptions, prices, fx rates and every other table the app keeps. The list is generated from the live schema, not a hand-written one, so a table added later appears in your next export without anyone remembering to update a list.</p>
+          <figure class="shot"><img src="../assets/portability.png" alt="Settings → Privacy &amp; data with Download ZIP, Download JSON and the OFX account picker" loading="lazy"></figure></li>
+        <li class="card"><h2>The file documents itself</h2><p>manifest.json is the schema of everything else in the archive: every file with its row count and exact column order, plus the export's version, timestamp, vault state, and the tables that were deliberately left out (with the reason). CSVs are UTF-8 with a single header row: an empty cell is null, booleans are true / false, dates are YYYY-MM-DD, and money is an exact decimal string — never a float that rounds your balances.</p></li>
+        <li class="card"><h2>No lock-in — the whole point</h2><p>Plain CSV and JSON in a plain ZIP. No proprietary container, no export key, no second account, nothing to unlock and nothing to re-import before you can read it. Open it in a spreadsheet, load it into SQLite, or hand it to another app. The panic this answers is the familiar one — “download your history or you will never have access again” — and the answer is not a reassurance, it is this button: your complete history in a format that outlives any one product, including this one.</p></li>
+        <li class="card"><h2>Round-trip into other tools with OFX</h2><p>Each account also exports as an OFX 1.02 statement (Settings → Privacy → Export my data → pick an account → Download OFX). OFX is the interchange format banks and finance tools already speak, and our own importer reads it: feeding the file straight back into fin_tracker imports 0 new rows, because deduplication recognizes every transaction already in your ledger.</p></li>
+        <li class="card"><h2>Schedule it, and watch the committed-only rule</h2><p>Scheduled export stores a ZIP in this browser — daily, weekly or monthly, keeping the last 1–20 archives — using the same schedule shape as the scheduled backup. It needs a tab open, like every client-side schedule, and the archives live only on this machine: clearing browser data removes them, so download the ones you want to keep. The ZIP contains what the app shows you — committed transactions and trades only; rows still sitting in a pending import are left out until you confirm them. The full machine snapshot (staged rows included) is the separate Download JSON button.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Export &amp; portability.</span></div></footer>
+</body>
+</html>

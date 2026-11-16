@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>fin_tracker</title>
+    <!-- Deploy identity (QA finding 2026-10-10): which commit this shell was
+         built from, readable from outside the box — the meta tag below is the
+         whole answer (grep the served / for build-commit and read its
+         content). Rewritten in dist/ by scripts/stamp-build.mjs; the token in
+         content is the contract and a missing token fails the image build.
+         Nothing else is stamped — no timestamp — so rebuilding a commit stays
+         byte-identical and the sw BUILD_ID stays a pure function of the shell. -->
+    <meta name="build-commit" content="__BUILD_COMMIT__" />
+    <!-- Installable PWA (M72, docs/09 §Installable PWA): the manifest, the
+         iOS install metadata and the status-bar colour. The theme-color value
+         is re-pinned to the active theme by the bootstrap below (and kept in
+         sync by ThemeProvider), so the standalone status bar matches the
+         theme instead of staying on the dark default. -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#090c12" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="fin_tracker" />
+    <script>
+      // Theme bootstrap — mirrors src/theme/ThemeProvider.tsx exactly:
+      // saved choice → prefers-color-scheme → dark. Runs before first paint
+      // so the CSS variable scope is already correct (no FOUC).
+      try {
+        var theme = localStorage.getItem("theme");
+        if (
+          theme === "light" ||
+          (theme !== "dark" &&
+            window.matchMedia("(prefers-color-scheme: light)").matches)
+        ) {
+          document.documentElement.classList.remove("dark");
+        }
+      } catch {}
+    </script>
+    <script>
+      // Status-bar theming (M72): `theme-color` tracks the active theme so a
+      // standalone/installed window paints a header in the same palette.
+      try {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+          meta.content = document.documentElement.classList.contains("dark")
+            ? "#090c12"
+            : "#f3f5f8";
+        }
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

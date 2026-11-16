@@ -1,0 +1,286 @@
+{
+  "summary": {
+    "before": {
+      "runs": 3,
+      "palette_opened": 0,
+      "palette_after_reload": 0,
+      "error_ui": 3,
+      "healed_by_reload": 0,
+      "failed": 0
+    },
+    "after": {
+      "runs": 3,
+      "palette_opened": 0,
+      "palette_after_reload": 3,
+      "error_ui": 1,
+      "healed_by_reload": 3,
+      "failed": 0
+    },
+    "after-new-shell": {
+      "runs": 3,
+      "palette_opened": 0,
+      "palette_after_reload": 3,
+      "error_ui": 2,
+      "healed_by_reload": 3,
+      "failed": 0
+    }
+  },
+  "records": [
+    {
+      "scenario": "before",
+      "run": 0,
+      "shell": "A2",
+      "deploy_to": "B2",
+      "caches_after_load": [
+        "fintrack-shell-v1"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "deployed_at": 1791436428.2131124,
+      "trigger": "clicked",
+      "palette": false,
+      "error": true,
+      "reloaded_entry": null,
+      "worker_probe": null,
+      "guard_value": null,
+      "caches_final": [
+        "fintrack-shell-v1"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "pathname": "/dashboard",
+      "console_errors": [
+        "error: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/CommandPalette-BsjooXzr.js",
+        "error: React Router caught the following error during render TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/CommandPalette-BsjooXzr.js Object"
+      ],
+      "screenshot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_0debdfa5/frontend/scripts/a11y/m114-before-0.png"
+    },
+    {
+      "scenario": "before",
+      "run": 1,
+      "shell": "A2",
+      "deploy_to": "B2",
+      "caches_after_load": [
+        "fintrack-shell-v1"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "deployed_at": 1791436435.9327652,
+      "trigger": "clicked",
+      "palette": false,
+      "error": true,
+      "reloaded_entry": null,
+      "worker_probe": null,
+      "guard_value": null,
+      "caches_final": [
+        "fintrack-shell-v1"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "pathname": "/dashboard",
+      "console_errors": [
+        "error: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/Dashboard-D4Lxmc5A.js",
+        "error: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/CommandPalette-BsjooXzr.js",
+        "error: React Router caught the following error during render TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/CommandPalette-BsjooXzr.js Object"
+      ],
+      "screenshot": null
+    },
+    {
+      "scenario": "before",
+      "run": 2,
+      "shell": "A2",
+      "deploy_to": "B2",
+      "caches_after_load": [
+        "fintrack-shell-v1"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "deployed_at": 1791436443.1075006,
+      "trigger": "clicked",
+      "palette": false,
+      "error": true,
+      "reloaded_entry": null,
+      "worker_probe": null,
+      "guard_value": null,
+      "caches_final": [
+        "fintrack-shell-v1"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "pathname": "/dashboard",
+      "console_errors": [
+        "error: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/CommandPalette-BsjooXzr.js",
+        "error: React Router caught the following error during render TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/CommandPalette-BsjooXzr.js Object"
+      ],
+      "screenshot": null
+    },
+    {
+      "scenario": "after",
+      "run": 0,
+      "shell": "A2",
+      "deploy_to": "B2",
+      "caches_after_load": [
+        "fintrack-shell-v1"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "deployed_at": 1791436450.4132495,
+      "caches_after_update": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "controllerchange": 1,
+      "worker_after_update": "fintrack-shell-v1-b121b3e9149c",
+      "trigger": "clicked",
+      "palette": false,
+      "error": true,
+      "reloaded_entry": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "palette_after_reload": true,
+      "error_after_reload": false,
+      "guard_value": "1791436456503",
+      "caches_final": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "pathname": "/dashboard",
+      "console_errors": [
+        "error: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/Dashboard-D4Lxmc5A.js"
+      ],
+      "screenshot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_0debdfa5/frontend/scripts/a11y/m114-after-0.png"
+    },
+    {
+      "scenario": "after",
+      "run": 1,
+      "shell": "A2",
+      "deploy_to": "B2",
+      "caches_after_load": [
+        "fintrack-shell-v1"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "deployed_at": 1791436465.1030722,
+      "caches_after_update": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "controllerchange": 1,
+      "worker_after_update": "fintrack-shell-v1-b121b3e9149c",
+      "trigger": "clicked",
+      "palette": false,
+      "error": false,
+      "reloaded_entry": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "palette_after_reload": true,
+      "error_after_reload": false,
+      "guard_value": "1791436469473",
+      "caches_final": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "pathname": "/dashboard",
+      "console_errors": [],
+      "screenshot": null
+    },
+    {
+      "scenario": "after",
+      "run": 2,
+      "shell": "A2",
+      "deploy_to": "B2",
+      "caches_after_load": [
+        "fintrack-shell-v1"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "deployed_at": 1791436582.3919277,
+      "caches_after_update": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "controllerchange": 1,
+      "worker_after_update": "fintrack-shell-v1-b121b3e9149c",
+      "trigger": "clicked",
+      "palette": false,
+      "error": false,
+      "reloaded_entry": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "palette_after_reload": true,
+      "error_after_reload": false,
+      "guard_value": "1791436583885",
+      "caches_final": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "pathname": "/dashboard",
+      "console_errors": [],
+      "screenshot": null
+    },
+    {
+      "scenario": "after-new-shell",
+      "run": 0,
+      "shell": "B2",
+      "deploy_to": "A2",
+      "caches_after_load": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "deployed_at": 1791436591.8643332,
+      "trigger": "clicked",
+      "palette": false,
+      "error": true,
+      "reloaded_entry": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "palette_after_reload": true,
+      "error_after_reload": false,
+      "guard_value": "1791436592019",
+      "caches_final": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "pathname": "/dashboard",
+      "console_errors": [
+        "error: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/Dashboard-vR-H5RYO.js"
+      ],
+      "screenshot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_0debdfa5/frontend/scripts/a11y/m114-after-new-shell-0.png"
+    },
+    {
+      "scenario": "after-new-shell",
+      "run": 1,
+      "shell": "B2",
+      "deploy_to": "A2",
+      "caches_after_load": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "deployed_at": 1791436600.2705755,
+      "trigger": "clicked",
+      "palette": false,
+      "error": true,
+      "reloaded_entry": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "palette_after_reload": true,
+      "error_after_reload": false,
+      "guard_value": "1791436600380",
+      "caches_final": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "pathname": "/dashboard",
+      "console_errors": [
+        "error: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4188/assets/Dashboard-vR-H5RYO.js"
+      ],
+      "screenshot": null
+    },
+    {
+      "scenario": "after-new-shell",
+      "run": 2,
+      "shell": "B2",
+      "deploy_to": "A2",
+      "caches_after_load": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_after_load": "http://127.0.0.1:4188/assets/index-CyiLHR8G.js",
+      "deployed_at": 1791436608.1850834,
+      "trigger": "clicked",
+      "palette": false,
+      "error": false,
+      "reloaded_entry": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "palette_after_reload": true,
+      "error_after_reload": false,
+      "guard_value": "1791436608321",
+      "caches_final": [
+        "fintrack-shell-v1-b121b3e9149c"
+      ],
+      "entry_final": "http://127.0.0.1:4188/assets/index-ClU-gcha.js",
+      "pathname": "/dashboard",
+      "console_errors": [],
+      "screenshot": null
+    }
+  ],
+  "dist_a": "/tmp/m114/A2",
+  "dist_b": "/tmp/m114/B2",
+  "base": "http://127.0.0.1:4188"
+}

@@ -1,0 +1,15 @@
+Statement,Header,Field Name,Field Value
+Statement,Data,Title,Activity Statement
+Account Information,Header,Field Name,Field Value
+Account Information,Data,Brokerage Account,U1234567
+Trades,Header,DataDiscriminator,Order Category,Account,Currency,Symbol,Date/Time,Quantity,T. Price,Proceeds,Buy/Sell,Comm/Fee,Code
+Trades,Data,Order,Trade,U1234567,CAD,SHOP,20260112;103000,10,150.00,-1500.00,Buy,-4.95,O
+Trades,Data,Order,Trade,U1234567,CAD,SHOP,20260210;143000,-4,160.00,640.00,Sell,-4.95,O
+Dividends,Header,Date,Amount,Type,Currency,Description,Code,Symbol
+Dividends,Data,20260131,12.50,Dividends,CAD,SHOP CASH DIVIDEND,FI123,SHOP
+Deposits & Withdrawals,Header,Settlement Date,Currency,Description,Amount,Type
+Deposits & Withdrawals,Data,20260105,CAD,Wire Transfer,10000.00,Deposit
+Fees,Header,Date,Amount,Type,Currency,Description,Code
+Fees,Data,20260131,6.50,Other Fees,CAD,Monthly Activity Fee,
+Withholding Tax,Header,Date,Amount,Type,Currency,Description,Code,Symbol
+Withholding Tax,Data,20260131,-1.88,Withholding Tax,CAD,SHOP CASH DIVIDEND,FI123,SHOP

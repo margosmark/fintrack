@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fin_tracker — self-hosted personal finance for Canada</title>
+  <meta name="description" content="Self-hosted personal finance for a Canadian user: import your bank and brokerage statements, track spending and investments, and get Canadian-tax-ready ACB capital-gains reports — your data stays on the server you run.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="nav">
+      <a class="brand" href="index.html">fin<span>_tracker</span>.</a>
+      <nav class="links" aria-label="Page sections">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#selfhost">Self-host</a>
+        <a href="changelog.html">What&rsquo;s new</a>
+        <a href="guides/getting-started.html">Guides</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+
+    <div class="hero">
+      <p class="kicker">Self-hosted &middot; Canadian &middot; local-first</p>
+      <h1>Know where your <span>money goes.</span></h1>
+      <p>fin_tracker is a self-hosted personal finance tracker for a Canadian user: import your bank and brokerage statements, track spending and investments, and get Canadian-tax-ready ACB / capital-gains reports &mdash; your data stays on the server you run.</p>
+      <a class="btn" href="https://fintrac.princessandmark.com/login">Explore the demo</a>
+      <a class="btn ghost" href="#selfhost">Run it yourself</a>
+      <p class="hero-meta">No card, no trial clock. <a href="changelog.html">See what shipped this wave &rarr;</a></p>
+      <figure class="hero-shot">
+        <img src="assets/dashboard.png" alt="fin_tracker dashboard with net-worth KPIs and spending insights" width="1600" height="1000" loading="lazy">
+      </figure>
+    </div>
+
+    <section class="block" id="why">
+      <h2>What it does</h2>
+      <p class="sub">Import, Canadian taxes, and an export you never have to ask for &mdash; each card links to the guide that proves it, not to a claim.</p>
+      <div class="grid diffs">
+        <a class="card proof" href="guides/import-guides.html">
+          <h3>Import is the hero, not the apology</h3>
+          <p>Bank and brokerage statements land in a staging batch with a dry-run preview: review, then commit. Re-imports are blocked, and duplicate rows are skipped with counts in the batch summary &mdash; never guessed.</p>
+          <p class="go">Proof: the import guides by bank &rarr;</p>
+        </a>
+        <a class="card proof" href="guides/taxes.html">
+          <h3>Canadian, properly</h3>
+          <p>ACB pools maintained in CAD per non-registered account, a Schedule-3-style capital-gains report per security, and a tax projection on CRA brackets &mdash; informational, with the disclaimer on the page.</p>
+          <p class="go">Proof: the tax guide &rarr;</p>
+        </a>
+        <a class="card proof" href="guides/portability.html">
+          <h3>Yours, on your machine</h3>
+          <p>One click exports everything as plain CSV and JSON &mdash; credential fields excluded &mdash; and nothing in the product phones home.</p>
+          <p class="go">Proof: export &amp; portability &rarr;</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="block" id="features">
+      <h2>Everything in one place</h2>
+      <p class="sub">Six things fin_tracker does for you every day.</p>
+      <div class="grid features">
+        <div class="card"><h3>Spending &amp; imports</h3><p>Rules, a learned payee map and an optional LLM suggestion queue file transactions as they land &mdash; with budgets, bill reminders and recurring-subscription detection on top.</p></div>
+        <div class="card"><h3>Investments</h3><p>Positions in CAD and USD listings, look-through exposure by sector, geography and asset class, dividend analytics and portfolio-vs-index benchmarks. Reports read your cache and never fetch.</p></div>
+        <div class="card"><h3>Canadian taxes</h3><p>Superficial-loss and return-of-capital handling, tax-loss harvesting alerts, and Bank of Canada FX on the trade date &mdash; cached, with a manual fallback when a rate is missing.</p></div>
+        <div class="card"><h3>Reporting</h3><p>Spending, cash flow, net worth, performance, dividends and capital gains &mdash; every report exports to CSV, and charts follow an accessibility contract.</p></div>
+        <div class="card"><h3>Private by design</h3><p>Privacy mode seals every outbound call &mdash; FX, prices, LLM, notifications &mdash; and TOTP two-factor plus passkeys guard the door.</p></div>
+        <div class="card"><h3>Local-first AI</h3><p>Categorization runs against your own Ollama or any OpenAI-compatible endpoint. Under privacy mode only loopback URLs are allowed &mdash; enforced at send time.</p></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>See it working</h2>
+      <p class="sub">Real screenshots from the one-click demo.</p>
+      <div class="grid features">
+        <figure class="shot card"><img src="assets/imports.png" alt="fin_tracker import preview showing staged bank-statement rows before commit" width="1600" height="1000" loading="lazy"><figcaption>Staged imports: preview the batch, then commit &mdash; duplicates are flagged before anything is written.</figcaption></figure>
+        <figure class="shot card"><img src="assets/taxes.png" alt="fin_tracker capital-gains report with per-security proceeds, ACB and gain or loss columns" width="1600" height="1000" loading="lazy"><figcaption>Capital gains per security: proceeds, ACB, gain or loss &mdash; informational, with the disclaimer stated.</figcaption></figure>
+        <figure class="shot card"><img src="assets/reports.png" alt="fin_tracker spending report with a category breakdown chart" width="1600" height="1000" loading="lazy"><figcaption>Reports read your committed data &mdash; and every one of them can export to CSV.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="block" id="privacy">
+      <h2>Privacy, without the asterisks</h2>
+      <div class="tldr">
+        <p>Your data stays in the Postgres you run. No aggregator sits in the middle, and no bank credential is ever stored &mdash; statements are files you choose to upload.</p>
+        <p>Privacy mode is a full egress gate: Bank of Canada FX, price lookups, LLM calls, notifications and sync are all sealed &mdash; and the outbound-HTTP inventory in the docs says nothing else leaves the machine.</p>
+        <p>One-click export and an encrypted backup work with all cloud features off. Honest status: client-side encryption is in progress &mdash; the server can still read your data.</p>
+        <p><a href="trust.html">Read how fin_tracker protects your data &rarr;</a></p>
+      </div>
+    </section>
+
+    <section class="block" id="android">
+      <h2>Android companion</h2>
+      <div class="tldr">
+        <p>A read-focused companion for your phone: sign in, glance at masked balances, and drill into accounts, holdings and transactions &mdash; every number traces to a server response, and the app makes no writes.</p>
+        <p>Editing, imports, trades and tax work stay on the web, and the home-screen widget is not built yet. Until the APK is published, phones get the same data through the installable web app.</p>
+        <p><a href="https://fintrac.princessandmark.com/login">Open the web app on your phone &rarr;</a></p>
+      </div>
+    </section>
+
+    <section class="block" id="selfhost">
+      <h2>Run it yourself</h2>
+      <p class="sub">One repository, Docker 24+ with the compose plugin, and your own server: the app and its database run on hardware you control. The repository is private for now &mdash; source is available on request.</p>
+      <div class="selfhost">
+        <strong>Start the full stack (app + database), from your copy of the source tree:</strong>
+        <code tabindex="0">cd fin_tracker
+cp .env.example .env    # set a real JWT_SECRET in .env
+docker compose up -d --build</code>
+        <strong>Serve only this site (separate host-friendly image):</strong>
+        <code tabindex="0">docker build -t fintrack-site ./site
+docker run -p 8090:8080 fintrack-site</code>
+      </div>
+    </section>
+
+    <section class="block" id="limits">
+      <h2>Honest limitations</h2>
+      <p class="sub">Every finance app you have tried has a footer full of asterisks. Here is ours, written out.</p>
+      <ul class="nots">
+        <li><strong>No scraping, no bill-pay.</strong> We never ask for your bank password and never sign in as you. Statements are files you choose to upload; bank sync exists only as an open-banking readiness seam, with no credential storage. And there is no bill payment &mdash; this is a tracker, not a bank.</li>
+        <li><strong>Not zero-knowledge.</strong> The same rows sit in plaintext columns and are served by the API. Client-side encryption is in progress &mdash; the server can still read your data, and the docs say exactly that.</li>
+        <li><strong>Tax help, not tax filing.</strong> Reports are informational and carry an explicit disclaimer; there is no CRA filing integration. Corporate actions are manual entries &mdash; an import containing an unknown split or merger is refused, not guessed.</li>
+        <li><strong>The Android companion is read-only.</strong> No creating or editing on the phone, and the home-screen widget is not built yet. Complex work stays on the responsive web.</li>
+        <li><strong>No pricing, because there is no billing.</strong> No payment processor, no plans, no metering &mdash; nothing to buy is a fact about the code, not a promotion.</li>
+        <li><strong>No trackers.</strong> No analytics SDK, no session recording, no third-party scripts, fonts or images &mdash; every request this site makes stays on this site, and its own test checks every page for a third-party load. This page ships one HTML document, one stylesheet and four screenshots of the product, and they stay because they are the proof.</li>
+      </ul>
+      <p class="closer"><strong>No card, no trial clock.</strong> The demo is one click away. <a class="btn" href="https://fintrac.princessandmark.com/login">Explore the demo</a></p>
+    </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>fin_tracker &mdash; self-hosted personal finance.</span>
+        <span><a href="changelog.html">What&rsquo;s new</a> &middot; <a href="trust.html">Trust &amp; privacy</a> &middot; <a href="guides/getting-started.html">Guides</a> &middot; <a href="https://fintrac.princessandmark.com/login">Demo</a></span>
+      </div>
+    </footer>
+</body>
+</html>

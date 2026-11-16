@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What shipped — fin_tracker</title>
+  <meta name="description" content="fin_tracker changelog: what changed in each wave, written as what it means when you open the app.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="nav">
+      <a class="brand" href="index.html">fin<span>_tracker</span>.</a>
+      <nav class="links" aria-label="Page sections">
+        <a href="index.html#why">Why fin_tracker</a>
+        <a href="index.html#honest">What we are not</a>
+        <a href="index.html#agents">Agents</a>
+        <a href="changelog.html" aria-current="page">What&rsquo;s new</a>
+        <a href="index.html#guides">Guides</a>
+        <a href="index.html#selfhost">Self-host</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+
+    <section class="block">
+      <h1>What shipped</h1>
+      <p class="sub">Newest first, in plain language: every milestone number is mapped to what changes when you open the app. No commit hashes — if it does not affect you, it does not belong on this page.</p>
+
+      <div class="tldr">
+        <p><strong>TL;DR.</strong> The product went from &ldquo;a tracker you can use&rdquo; to &ldquo;a tracker you can hand to your agent&rdquo; this month: an MCP surface with scoped tokens and per-call receipts, import paths for seven brokerages, one-click export, 2FA and passkeys, an installable phone app, and a security review that found seven things and had them fixed.</p>
+        <p>This wave is the last mile: the landing story, a guided first run inside the demo, and three walkthroughs that teach the product instead of describing it.</p>
+      </div>
+
+      <div class="table-card">
+        <div class="table-wrap">
+          <table class="gaps">
+            <caption class="sr-only">This wave: what shipped and what it means for you</caption>
+            <thead>
+              <tr><th scope="col">Milestone</th><th scope="col">What it means when you open the app</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="badge">M89</span>Launch story &amp; guided first run</td><td>Your first demo visit gets a four-stop tour (drawer &rarr; import &rarr; reports &rarr; help), Help gains three story-shaped walkthroughs — first import, first budget, &ldquo;your agent did this&rdquo; — and this changelog. Skip the tour and it stays skipped; a <strong>Take the tour</strong> button in Help brings it back.</td></tr>
+              <tr><td><span class="badge">M87</span>Own-the-edge security</td><td>Registering with an address that already exists answers exactly like a brand-new one, so nobody can probe who has an account here. Passkey sign-in counters hardened, and the API map, CORS and security headers tightened to run on a bare box.</td></tr>
+              <tr><td><span class="badge">M86</span>Release hygiene</td><td>A page that would load with two console errors fails the pull request instead of shipping; every smoke-test request now has a timeout, so a dead endpoint can never wedge a release.</td></tr>
+              <tr><td><span class="badge">M85</span>Supply-chain &amp; release gates</td><td>Every automated action is pinned to an immutable commit, pasted credentials in new code fail the build, a post-deploy smoke battery exercises the real origin on demand, and a red run on main is impossible to miss.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>The agent wave</h2>
+      <p class="when">Shipped October 1, 2026</p>
+      <div class="table-card">
+        <div class="table-wrap">
+          <table class="gaps">
+            <caption class="sr-only">The agent wave: what shipped and what it means for you</caption>
+            <thead>
+              <tr><th scope="col">Milestone</th><th scope="col">What it means when you open the app</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="badge">M80</span>MCP agent surface</td><td>Mint a scoped token in one call and point Claude, Cursor, or your own script at your ledger. A read-only token is read-only structurally — the write tools are removed from what it can even see — and every call lands in a receipt you can read and revoke.</td></tr>
+              <tr><td><span class="badge">M81</span>Demo tokens + doc truth-ups</td><td>The demo can mint read-only tokens like anything else, and five guides were corrected where they described behaviour the product had already changed.</td></tr>
+              <tr><td><span class="badge">M82</span>Brokerage imports &amp; mobile fixes</td><td>Seven broker activity exports are recognised — Questrade, Wealthsimple, IBKR, Fidelity, TD Direct Investing, RBC Direct Investing, NBDB — and seven mobile defects closed: tabs wrap instead of printing over each other, forms stack on small screens, touch targets stay at 44px, and Android font scaling stops pushing controls off-screen.</td></tr>
+              <tr><td><span class="badge">M79</span>Open-banking seam</td><td>A consent flow, a provider protocol, and the same staging your file imports use — so an accredited open-banking provider can plug in the day Canada&rsquo;s framework is real. Until then the honest path stays the honest path: files, no scraping.</td></tr>
+              <tr><td><span class="badge">M83</span>Security review</td><td>A full pass over the running stack. Seven findings, every one tracked — two of them became the fixes below.</td></tr>
+              <tr><td><span class="badge">M84</span>Cross-tenant credential leak</td><td>A shared HTTP client inside the agent server could carry one account&rsquo;s session cookie into another account&rsquo;s request. Closed at the client, the cookie, and the session layers, with a probe that fails if it ever reopens.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Import, phone, and your own data</h2>
+      <p class="when">Shipped September 30, 2026</p>
+      <div class="table-card">
+        <div class="table-wrap">
+          <table class="gaps">
+            <caption class="sr-only">Import, phone and own-your-data wave: what shipped and what it means for you</caption>
+            <thead>
+              <tr><th scope="col">Milestone</th><th scope="col">What it means when you open the app</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="badge">M71</span>The import bar</td><td>QIF joins OFX/QFX/CSV, a dry run survives you pressing Cancel, near-matches are flagged instead of silently merged, and there is a guide per Canadian bank telling you which export to pick and which date format will bite you.</td></tr>
+              <tr><td><span class="badge">M72</span>Installable phone app</td><td>Add it to your home screen and it opens like an app: a real navigation drawer, 44px touch targets, pull-to-refresh that actually refetches, and an offline shell that never pretends to have your numbers.</td></tr>
+              <tr><td><span class="badge">M74</span>Two-factor, passkeys, SSO</td><td>Turn on an authenticator app, register a passkey so you stop typing the password, or plug in your own OpenID provider. Recovery codes come with it.</td></tr>
+              <tr><td><span class="badge">M75</span>One-click export</td><td>Settings gives you a ZIP of plain CSV and JSON plus an OFX that round-trips back in, a scheduled export you can set and forget, and a published list of exactly what you get — the no-lock-in promise, with the file names on it.</td></tr>
+              <tr><td><span class="badge">M76</span>YNAB importer</td><td>Bring your budget across: see the entire mapping — accounts, category tree, targets, every row — before a single write, with refused rows listed by number and reason instead of dropped.</td></tr>
+              <tr><td><span class="badge">M77</span>Analytics depth</td><td>A Sankey of where the money actually went, and total return (TWR/MWR) so your performance number is not flattered by the contributions you made along the way.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Honest numbers, readable everywhere</h2>
+      <p class="when">Shipped September 29, 2026</p>
+      <div class="table-card">
+        <div class="table-wrap">
+          <table class="gaps">
+            <caption class="sr-only">Accessibility and honest-numbers wave: what shipped and what it means for you</caption>
+            <thead>
+              <tr><th scope="col">Milestone</th><th scope="col">What it means when you open the app</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="badge">M68</span>Findable, not lost</td><td>Calendar and Tax Projection get their own navigation rows, a link you were sent survives the login screen, a wrong URL gives you a branded way back instead of a stack trace, and internal jargon stopped leaking into what you read.</td></tr>
+              <tr><td><span class="badge">M67</span>Charts that survive colour vision</td><td>Every chart palette is checked under deuteranopia, protanopia and tritanopia, legend text is painted in a readable colour instead of the series colour, and money axes read $165K rather than a wall of digits.</td></tr>
+              <tr><td><span class="badge">M66</span>Focus you can see</td><td>Keyboard users get a full-strength focus ring on every control — the washed-out 40% rings measured below the accessibility threshold and are gone.</td></tr>
+              <tr><td><span class="badge">M65</span>The demo stops lying</td><td>A budget at 201.94% prints <strong>202% used</strong> instead of a clamped bar, projections compute in your browser so a read-only demo still answers, and a stale price says it is stale.</td></tr>
+              <tr><td><span class="badge">M64</span>Wide tables stay usable</td><td>Transactions and account ledgers scroll with a visible hint and a keyboard-operable scrollbar, with the four columns you act on first — so Edit is never parked off-screen.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <p class="meta"><a class="back" href="index.html">&larr; Back to the home page</a></p>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>fin_tracker — self-hosted personal finance.</span>
+        <span>Guides mirror the in-app Help center.</span>
+      </div>
+    </footer>
+</body>
+</html>

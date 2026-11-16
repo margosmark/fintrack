@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FinTracker · Android capability spike — UX mockups</title>
+<link rel="stylesheet" href="spike.css"></head>
+<body>
+<main class="wrap">
+
+<header class="head">
+  <div>
+    <h1>Android capability spike · interactive UX mockups</h1>
+    <p>Bounded spike deliverable (option 2): validate whether Android-native capabilities justify a
+      Kotlin/Compose client — <b>not</b> a full app build. Grounded in <code>docs/48-android-companion-ux.md</code>
+      and <code>docs/49-android-companion-recommendation.md</code>; visual direction from
+      <code>design/android-material/</code>. All names, balances, times and alerts in frames are illustrative.
+      No production write path exists in any frame — every screen is read-only.</p>
+  </div>
+  <div class="links">
+    <button class="mode" id="modeToggle" type="button">◐ Toggle dark</button>
+  </div>
+</header>
+
+<h2 style="margin-top:26px">Provenance states — the spec every screen must carry</h2>
+<p style="color:var(--muted);max-width:80ch">A number without provenance fails this deliverable. Each state below is a
+  visible marker (chip or banner) on every value-bearing screen. Freshness (server recency) and tenant mode
+  (demo read-only) are <b>orthogonal</b>: a demo screen can be fresh, stale or offline — it shows both markers.</p>
+
+<div class="legend">
+  <div class="card">
+    <span class="chip fresh">Fresh · server 10:42 AM</span>
+    <p>Server answered this session. The timestamp is the server's own response time, not the client clock.</p>
+    <div class="ex">Home · Total net worth $128,430.52 → chip <b>Fresh · server 10:42 AM</b></div>
+  </div>
+  <div class="card">
+    <span class="chip stale">Stale · last server update 10:42 AM · 2h 27m ago</span>
+    <p>Refresh attempted and failed (or data aged past threshold). Values remain visible but are never styled as
+      current; copy names the failure and the last successful time, and offers Retry.</p>
+    <div class="ex">Banner: “Couldn't update. Showing data from 10:42 AM.”</div>
+  </div>
+  <div class="card">
+    <span class="chip offline">Offline snapshot · saved Oct 26, 9:40 PM</span>
+    <p>Opt-in, read-only snapshot of a previous server response. Persistent banner + per-card chip; no refresh,
+      no quotes, no writes, no client math. Cleared on logout / identity change / policy expiry.</p>
+    <div class="ex">Banner: “Offline · snapshot saved Oct 26, 9:40 PM · read-only”</div>
+  </div>
+  <div class="card">
+    <span class="chip expired">Snapshot expired</span>
+    <p>Past the snapshot time-to-live, or snapshot absent. <b>Values are withheld</b> — labels and layout stay,
+      numbers do not render. Distinguished from zero, unavailable and hidden.</p>
+    <div class="ex">“Values are hidden because this snapshot is older than 24 h. Reconnect to view current values.”</div>
+  </div>
+  <div class="card">
+    <span class="chip demo">Demo · read-only</span>
+    <p>Tenant mode marker, persistent on every demo surface. Writes are refused by the server
+      (<code>demo_account_restricted</code>) — no frame implies a demo mutation can persist.</p>
+    <div class="ex">Banner: “Demo · read only — explore sample data. Changes are disabled.”</div>
+  </div>
+  <div class="card">
+    <span class="chip masked">Values hidden</span>
+    <p>Display mask state. Masked values never appear in app-switcher previews or OS notification surfaces,
+      regardless of in-app reveal state. Mask hides display only — not network or stored data.</p>
+    <div class="ex">Amounts render as <b>••••••••</b>; accessibility labels announce “value hidden”.</div>
+  </div>
+  <div class="card">
+    <span class="chip expired">This item is no longer available</span>
+    <p>Deep-link target deleted, expired or outside the tenant. Generic state + safe back — never another
+      record, never confirmation that a foreign-tenant ID exists.</p>
+    <div class="ex">Notification → deleted alert → this state, then Back → Alerts.</div>
+  </div>
+</div>
+
+<h2 style="margin-top:30px">The three flows the spike actually tests</h2>
+<div class="flows">
+  <div class="card flowcard">
+    <span class="tag">Capability 1 · 5</span>
+    <h3>Secure re-entry</h3>
+    <p style="font-size:14px;color:var(--muted)">Biometric / device-lock re-gate over a still-valid session, its
+      cancel and session-expiry fallbacks, masked default on re-entry, and app-switcher privacy.</p>
+    <a class="btn primary" href="flow-reentry.html">Open flow →</a>
+  </div>
+  <div class="card flowcard">
+    <span class="tag">Capability 2 · 4</span>
+    <h3>Notification handoff</h3>
+    <p style="font-size:14px;color:var(--muted)">Generic lock-screen copy → auth → revalidated deep link → truthful
+      read-only alert/holding review, plus stale-link, expired-session and permission-denied fallbacks.</p>
+    <a class="btn primary" href="flow-notification.html">Open flow →</a>
+  </div>
+  <div class="card flowcard">
+    <span class="tag">Capability 3 · 5</span>
+    <h3>Offline / stale snapshot</h3>
+    <p style="font-size:14px;color:var(--muted)">Fresh → stale → offline snapshot → expired → cleared-on-signout,
+      with the storage facts (what is stored, revocability) spelled out.</p>
+    <a class="btn primary" href="flow-offline.html">Open flow →</a>
+  </div>
+</div>
+
+<h2 style="margin-top:30px">Capability scorecard — what each mockup must prove to earn itself</h2>
+<div class="tablewrap">
+<table class="score">
+  <thead><tr><th>Candidate capability</th><th>Mockup coverage</th><th>Spike must demonstrate (pass condition)</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>1 · Biometric / device-lock re-entry</td>
+      <td><a href="flow-reentry.html">flow-reentry.html</a></td>
+      <td>Re-entry without server re-auth when the session is valid; cancel and expired-session both land on
+        sign-in with the intended destination preserved internally; masked default; zero values in recents preview;
+        users don't read the prompt as account recovery.</td>
+      <td><span class="tag">Concept — to validate</span></td>
+    </tr>
+    <tr>
+      <td>2 · Reliable local notifications</td>
+      <td><a href="flow-notification.html">flow-notification.html</a></td>
+      <td>An existing server alert event can drive a generic notification (no amount/merchant/security/account on
+        the OS surface), tap → auth → revalidated deep link reaches the intended record ≥95% of test deliveries,
+        and every unsupported state has an in-app fallback (docs/49).</td>
+      <td><span class="tag">Concept — alert-source audit owed</span></td>
+    </tr>
+    <tr>
+      <td>3 · Offline-safe read-only snapshot</td>
+      <td><a href="flow-offline.html">flow-offline.html</a></td>
+      <td>Snapshot is a verbatim server response (no client math), every frame carries its age, expiry withholds
+        values rather than showing them, logout/identity change clears it, and revocation is demonstrable. Omit the
+        feature entirely if private invalidation can't be proven (docs/49).</td>
+      <td><span class="tag">Concept — threat model owed</span></td>
+    </tr>
+    <tr>
+      <td>4 · Android-native navigation &amp; system back</td>
+      <td>All three flows — the gesture pill at the bottom of each frame</td>
+      <td>Back walks detail → list → home preserving scroll/selection; back from a notification destination never
+        exits to an unrelated tenant screen; back at root shows an honest “would leave the app” state instead of
+        navigating nowhere.</td>
+      <td><span class="tag">V1 behavior — expected baseline</span></td>
+    </tr>
+    <tr>
+      <td>5 · Controlled local private storage</td>
+      <td><a href="flow-offline.html">flow-offline.html</a> — storage facts panel</td>
+      <td>Stored fields enumerated and minimal, encrypted at rest under a documented key/ownership model, cleared
+        on logout/identity change/expiry, and revocable by the user. If the model can't be audited, the snapshot
+        stays out of scope.</td>
+      <td><span class="tag">Concept — storage design owed</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="foot">
+  Read-only spike artifact — no platform commitment, no implementation authorization (docs/49 approval gate stands).
+  Every frame carries at least one <code>data-state</code> provenance marker; the router in
+  <code>spike.js</code> and <code>verify-states.mjs</code> (<code>node verify-states.mjs</code>) make that assertable. Styling follows
+  <code>design/android-material/visual-system.md</code>; pixel-level polish is @designerbot's lane, flows and states
+  are @uxbot's.
+</p>
+
+<script src="spike.js"></script>
+</main>
+</body></html>

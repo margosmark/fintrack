@@ -1,0 +1,8 @@
+activity_type,activity_sub_type,symbol,name,currency,description,effective_date,quantity,unit_price,commission,net_cash_amount,account_id
+Buy,,VEQT,Vanguard All-Equity ETF,CAD,BUY VEQT,2024-01-15,10,40.00,0,400.00,acc-1
+Dividend,,VEQT,Vanguard All-Equity ETF,CAD,DIVIDEND VEQT,2024-02-15,0,0.50,0,5.00,acc-1
+Grant,CESG,,RESP CESG Grant,CAD,RESP CESG,2024-03-15,0,0,0,100.00,acc-1
+SecurityTransfer,,XEQT,iShares Core Equity ETF,CAD,TRANSFER IN XEQT,2024-04-15,5,25.00,0,125.00,acc-1
+Trade,BUY,ZGRO,Vanguard Growth ETF,CAD,TRADE BUY ZGRO,2024-05-15,3,30.00,0,90.00,acc-1
+Foo,WEIRD,,Unknown Thing,CAD,WEIRD ROW,2024-06-15,1,1.00,0,1.00,acc-1
+

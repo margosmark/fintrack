@@ -1,0 +1,285 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "generated_at": "2026-10-11T00:11:49-0400",
+  "tenant": "m146-probe-1791691906@example.com",
+  "checks": [
+    {
+      "label": "register the throwaway tenant",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "label": "login (no password touches a form)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "5 investment accounts created",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "4 securities created",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "10 trades across the 5 accounts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "6 manual closes (two per priced security)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "GET /portfolio/positions 200",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "session injected as the httpOnly cookie \u2192 /investments",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "the table painted (flat rows on screen)",
+      "ok": true,
+      "detail": "10"
+    },
+    {
+      "label": "By account | By security toggle renders",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "By account is the default (no stored lens yet)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "the flat table shows one row per account+security pair",
+      "ok": true,
+      "detail": "53"
+    },
+    {
+      "label": "the lens persisted to localStorage",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "one group row per MULTI-ACCOUNT security (single-account stays flat)",
+      "ok": true,
+      "detail": "3 rows vs 3 multi-account securities"
+    },
+    {
+      "label": "the 5-account holding is one group row",
+      "ok": true,
+      "detail": "5 accounts\tVEQTEST\t1500\t$62,000.00\t40.00 CAD\t | , 5 accounts | \t+1.01%\t | manual \u00b7 0d\t60,000.00 CAD\t$60,000.00\t-$2,000.0"
+    },
+    {
+      "label": "\u2026with the '5 accounts' chip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "\u03a3 quantity 1500 matches the server's rows",
+      "ok": true,
+      "detail": "5 accounts\tVEQTEST\t1500\t$62,000.00\t40.00 CAD\t | , 5 accounts | \t+1.01%\t | manual \u00b7 0d\t60,000.00 CAD\t$60,000.00\t-$2,000.00\t-3.23%"
+    },
+    {
+      "label": "\u03a3 market value $60,000.00",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "\u03a3 book cost $62,000.00 (display only \u2014 not a pooled ACB)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "\u03a3 gain -$2,000.00",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "Day \u0394 is the value-weighted formula's answer (+1.01%)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "Your gain % is VALUE-WEIGHTED (-3.23%), not the mean of the rows (+0.50%)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "the chevron is a real button with aria-expanded=false",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "the panel opens with 5 sub-rows",
+      "ok": true,
+      "detail": "{'rows': 5, 'links': ['/accounts/455', '/accounts/456', '/accounts/457', '/accounts/458', '/accounts/459']}"
+    },
+    {
+      "label": "every sub-row links its account to /accounts/{id}",
+      "ok": true,
+      "detail": "['/accounts/455', '/accounts/456', '/accounts/457', '/accounts/458', '/accounts/459']"
+    },
+    {
+      "label": "aria-expanded is now true",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "a second disclosure CLOSES the first (one panel at a time)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "the single-account security is NOT a group row (flat, no chevron)",
+      "ok": true,
+      "detail": "{'group': False, 'flat': True}"
+    },
+    {
+      "label": "\u2026so no per-account disclosure exists for it",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "the unpriced security still folds (2 accounts)",
+      "ok": true,
+      "detail": "2 accounts\tNQPTEST\t20\t$200.00\t\u2014\t | \u2014 | , 2 accounts | \t\u2014\tno price \u2014 enter one manually\t\u2014\t\u2014\t\u2014\t\u2014"
+    },
+    {
+      "label": "\u2026and says 'no price'",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "\u2026with em dashes, never a fabricated $0",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "label": "the grouped \u03a3 row carries the SERVER's totals",
+      "ok": true,
+      "detail": "Total\t\t\t\t\t\t | Total day change: | +0.83%\t\t\t | Total market value (CAD): | $74,500.00\t | Total unrealized (CAD): | +$500.00\t\u2014"
+    },
+    {
+      "label": "byte-identical across both views",
+      "ok": true,
+      "detail": "'Total\\t\\t\\t\\t\\t\\t | Total day change: | +0.83%\\t\\t\\t | Total market value (CAD): | $74,500.00\\t | Total unrealized (CAD): | +$500.00\\t\u2014' vs 'Total\\t\\t\\t\\t\\t\\t | Total day change: | +0.83%\\t\\t\\t | Total market value (CAD): | $74,500.00\\t | Total unrealized (CAD): | +$500.00\\t\u2014'"
+    },
+    {
+      "label": "axe-core 0 critical/serious at 1440",
+      "ok": true,
+      "detail": "{'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}"
+    },
+    {
+      "label": "console 0 errors",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "label": "axe-core 0 critical/serious at 390",
+      "ok": true,
+      "detail": "{'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}"
+    }
+  ],
+  "server_payload": {
+    "flat_rows": 10,
+    "per_security": {
+      "VEQTEST": {
+        "accounts": [
+          "Probe 1",
+          "Probe 2",
+          "Probe 3",
+          "Probe 4",
+          "Probe 5"
+        ],
+        "quantity": 1500.0,
+        "value": 60000.0,
+        "book": 62000.0,
+        "day": 600.0,
+        "day_base": 59400.0,
+        "gain": -2000.0,
+        "day_pcts": [
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01
+        ]
+      },
+      "VXUTEST": {
+        "accounts": [
+          "Probe 1",
+          "Probe 2"
+        ],
+        "quantity": 200.0,
+        "value": 12000.0,
+        "book": 10000.0,
+        "day": 0.0,
+        "day_base": 12000.0,
+        "gain": 2000.0,
+        "day_pcts": [
+          0.0,
+          0.0
+        ]
+      },
+      "ZGRTEST": {
+        "accounts": [
+          "Probe 1"
+        ],
+        "quantity": 10.0,
+        "value": 2500.0,
+        "book": 2000.0,
+        "day": 10.0,
+        "day_base": 2490.0,
+        "gain": 500.0,
+        "day_pcts": [
+          0.4
+        ]
+      },
+      "NQPTEST": {
+        "accounts": [
+          "Probe 3",
+          "Probe 4"
+        ],
+        "quantity": 20.0,
+        "value": 0.0,
+        "book": 200.0,
+        "day": 0.0,
+        "day_base": 0.0,
+        "gain": 0.0,
+        "day_pcts": []
+      }
+    },
+    "totals": {
+      "total_value_cad": "74500.00",
+      "total_unrealized_cad": "500.00"
+    }
+  },
+  "axe_1440": {
+    "counts": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "minor": 0
+    },
+    "violations": []
+  },
+  "axe_390": {
+    "counts": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "minor": 0
+    },
+    "violations": []
+  },
+  "failures": []
+}

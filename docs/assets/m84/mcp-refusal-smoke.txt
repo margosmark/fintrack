@@ -1,0 +1,38 @@
+M84 / F-1 — MCP tool-call check on the deployed stack (refusal + audit receipt)
+================================================================================
+commit : 87d48b9 fix(M84): close the MCP cross-tenant credential leak (F-1)
+base   : https://fintrac.princessandmark.com
+date   : 2026-10-01 (EDT)
+tenant : the shared demo account (sanctioned test tenant), read-only MCP token
+script : prints statuses and codes only — no token values
+
+1. demo login: 200
+2. mint: 201 (demo tokens are forced read_only)
+3. initialize: 200
+4. tools/call auth_refresh: isError=True
+   envelope: {"error": 403, "detail": {"detail": "Auth tools are not available over the MCP HTTP transport: the session identity is already fixed by your MCP token, so a login/refresh/logout here could only act on another tenant's session. Use the web app for session management.", "code": "auth_tools_unavailable_on_mcp"}}
+   expect isError=True, 403 auth_tools_unavailable_on_mcp -> OK
+5. tools/call accounts_list: isError=False -> {"items": [ { "id": 74, "institution_id": null, "name": "RBC Main Chequing", "type": "che...
+   expect a normal result (identity from the MCP token) -> OK
+6. GET /mcp-audit: 200, rows for this run: 2
+   accounts_list: response_code=200 duration_ms=109
+   auth_refresh: response_code=403 duration_ms=0
+   expect auth_refresh=403 + accounts_list=200 -> OK
+7. revoke: 204 (expect 204)
+MCP M84 CHECK: PASS
+
+Reading
+  * `auth_refresh` is answered at the seam: `duration_ms=0` means the proxy
+    never ran — there is no `/api/v1/auth/refresh` call to leak a cookie
+    through, and `accounts_list` still executes normally with identity taken
+    from the MCP token (docs/40 §3: own rows, `response_code`).
+  * The receipt is a `mcp_audit` row with `response_code=403` and a hashed
+    `args_hash` — no arguments, no token, no cookie (docs/40 §4).
+
+Related battery (public origin, same deploy): `scripts/smoke.sh` -> 11/11
+  1 200 + Secure/HttpOnly, body refresh_token absent   7 200 refresh round-trip, no token in body
+  2 403 demo_account_restricted                        8 internal 401 / public 403 403
+  3 201 register, refresh cookie-only                  9 site 200 on 127.0.0.1:8090
+  4 422 invalid_llm_base_url                          10 204 delete throwaway
+  5 200 loopback allowed                              11 429 at attempt 9 (expect <=11)
+  6 export/full 35 keys

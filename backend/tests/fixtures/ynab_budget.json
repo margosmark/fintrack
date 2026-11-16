@@ -1,0 +1,72 @@
+{
+  "data": {
+    "plan": {
+      "id": "plan-fixture-0001",
+      "name": "Household 2026",
+      "date_format": "YYYY-MM-DD",
+      "currency_format": {
+        "iso_code": "CAD",
+        "example_format": "$1,234.56",
+        "decimal_digits": 2,
+        "decimal_separator": ".",
+        "group_separator": ",",
+        "symbol_first": true,
+        "currency_symbol": "$",
+        "display_symbol": true
+      },
+      "accounts": [
+        {"id": "acc1", "name": "Chequing", "type": "checking", "on_budget": true, "closed": false, "balance": 123456, "cleared_balance": 123456, "uncleared_balance": 0, "transfer_payee_id": null, "deleted": false},
+        {"id": "acc2", "name": "MasterCard", "type": "creditCard", "on_budget": true, "closed": false, "balance": -43210, "cleared_balance": -43210, "uncleared_balance": 0, "transfer_payee_id": null, "deleted": false},
+        {"id": "acc3", "name": "Old Loan", "type": "autoLoan", "on_budget": false, "closed": true, "balance": 0, "deleted": true},
+        {"id": "acc4", "name": "Vacation Fund", "type": "savings", "on_budget": false, "closed": true, "balance": 50000, "deleted": false},
+        {"id": "acc5", "name": "Weird Wallet", "type": "otherWeird", "on_budget": false, "closed": false, "balance": 7000, "deleted": false}
+      ],
+      "category_groups": [
+        {"id": "g1", "name": "Monthly Bills", "hidden": false, "deleted": false},
+        {"id": "g2", "name": "Everyday", "hidden": false, "deleted": false},
+        {"id": "g3", "name": "Internal Master Category", "hidden": false, "deleted": false}
+      ],
+      "categories": [
+        {"id": "c1", "category_group_id": "g1", "name": "Rent", "hidden": false, "budgeted": 1500000, "activity": -1500000, "balance": 0, "goal_type": "MF", "goal_target": 1500000, "goal_target_month": null, "goal_day": null, "goal_cadence": 1, "goal_cadence_frequency": 1, "deleted": false},
+        {"id": "c2", "category_group_id": "g2", "name": "Groceries", "hidden": false, "budgeted": 400000, "activity": -84320, "balance": 315680, "goal_type": "TB", "goal_target": 400000, "goal_target_month": "2026-12-31", "deleted": false},
+        {"id": "c3", "category_group_id": "g2", "name": "Fun Money", "hidden": false, "budgeted": 0, "activity": 0, "balance": 0, "goal_type": "NEED", "goal_target": 100000, "goal_target_month": null, "deleted": false},
+        {"id": "c4", "category_group_id": "g3", "name": "Salary", "hidden": false, "budgeted": 0, "activity": 4200000, "balance": 4200000, "goal_type": null, "goal_target": null, "deleted": false},
+        {"id": "c5", "category_group_id": "g2", "name": "Deleted Cat", "hidden": false, "budgeted": 0, "activity": 0, "balance": 0, "goal_type": null, "deleted": true}
+      ],
+      "payees": [
+        {"id": "p1", "name": "ACME Landlord", "transfer_account_id": null, "deleted": false},
+        {"id": "p2", "name": "Corner Market", "transfer_account_id": null, "deleted": false},
+        {"id": "p3", "name": "Transfer: Vacation Fund", "transfer_account_id": "acc4", "deleted": false},
+        {"id": "p4", "name": "Ghost Mart", "transfer_account_id": null, "deleted": true},
+        {"id": "p5", "name": "ACME Payroll", "transfer_account_id": null, "deleted": false}
+      ],
+      "transactions": [
+        {"id": "t1", "date": "2026-01-01", "amount": -1500000, "memo": "January rent", "cleared": "reconciled", "approved": true, "account_id": "acc1", "payee_id": "p1", "category_id": "c1", "deleted": false},
+        {"id": "t2", "date": "2026-01-03", "amount": -84320, "memo": null, "cleared": "cleared", "approved": true, "account_id": "acc1", "payee_id": "p2", "category_id": "c2", "deleted": false},
+        {"id": "t3", "date": "2026-01-15", "amount": 4200000, "memo": "paycheque", "cleared": "cleared", "approved": true, "account_id": "acc1", "payee_id": "p5", "category_id": "c4", "deleted": false},
+        {"id": "t4", "date": "2026-01-20", "amount": -50000, "memo": "to savings", "cleared": "uncleared", "approved": true, "account_id": "acc1", "payee_id": "p3", "category_id": null, "transfer_account_id": "acc4", "transfer_transaction_id": "t5", "deleted": false},
+        {"id": "t5", "date": "2026-01-20", "amount": 50000, "memo": "to savings", "cleared": "uncleared", "approved": true, "account_id": "acc4", "payee_id": "p3", "category_id": null, "transfer_account_id": "acc1", "transfer_transaction_id": "t4", "deleted": false},
+        {"id": "t6", "date": "2026-01-05", "amount": -20000, "memo": "first payment", "cleared": "cleared", "approved": true, "account_id": "acc3", "payee_id": "p1", "category_id": "c1", "deleted": false},
+        {"id": "t7", "date": "2026-01-06", "amount": -3000, "memo": null, "cleared": "cleared", "approved": true, "account_id": "ghost-account", "payee_id": "p2", "deleted": false},
+        {"id": "t8", "date": "2026-13-45", "amount": -1000, "memo": null, "cleared": "cleared", "approved": true, "account_id": "acc1", "payee_id": "p2", "deleted": false},
+        {"id": "t9", "date": "2026-01-07", "amount": "not-a-number", "memo": null, "cleared": "cleared", "approved": true, "account_id": "acc1", "payee_id": "p2", "deleted": false},
+        {"id": "t10", "date": "2026-01-08", "amount": -12000, "memo": "sale", "cleared": "cleared", "approved": true, "account_id": "acc2", "payee_id": "p2", "category_id": "c5", "deleted": false},
+        {"id": "t11", "date": "2026-01-09", "amount": -30000, "memo": "split me", "cleared": "uncleared", "approved": true, "account_id": "acc2", "payee_id": "p1", "category_id": "c1", "deleted": false},
+        {"id": "t12", "date": "2026-01-10", "amount": -1500, "memo": "see receipt", "cleared": "cleared", "approved": true, "account_id": "acc1", "payee_id": "ghost-payee", "deleted": false},
+        {"id": "t13", "date": "2026-01-11", "amount": -2500, "memo": null, "cleared": "sometimes", "approved": true, "account_id": "acc1", "payee_id": "p2", "category_id": "c2", "deleted": false},
+        {"id": "t14", "date": "2026-01-12", "amount": -10000, "memo": "gift", "cleared": "cleared", "approved": true, "account_id": "acc5", "payee_id": "p2", "deleted": false},
+        {"id": "t15", "date": "2026-01-13", "amount": -500, "memo": "removed in YNAB", "cleared": "cleared", "approved": true, "account_id": "acc1", "payee_id": "p2", "deleted": true},
+        {"id": "t16", "date": "2026-01-14", "amount": -777, "memo": null, "cleared": "uncleared", "approved": true, "account_id": "acc1", "deleted": false}
+      ],
+      "subtransactions": [
+        {"id": "st1", "transaction_id": "t11", "amount": -20000, "category_id": "c2", "deleted": false},
+        {"id": "st2", "transaction_id": "t11", "amount": -10000, "category_id": "c3", "deleted": false}
+      ],
+      "scheduled_transactions": [
+        {"id": "s1", "date_first": "2026-03-01", "date_next": "2026-03-01", "frequency": "monthly", "amount": -100000, "account_id": "acc1", "payee_id": "p1", "category_id": "c1", "deleted": false}
+      ],
+      "months": []
+    }
+  },
+  "server_knowledge": 1
+}

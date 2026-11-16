@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rules &amp; automation — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Rules &amp; automation</h1>
+      <p class="sub">File transactions automatically, preview safely, backfill history.</p>
+      <ol class="steps">
+        <li class="card"><h2>Create a rule</h2><p>Pick a match type (contains a keyword, exact payee, or regex), type the pattern (e.g. NETFLIX), set priority, and choose the category plus optional tags. Rules run lowest priority number first. Keep broad rules at high numbers (100+) and specific exceptions at low numbers (10–20).</p>
+          <figure class="shot"><img src="../assets/rules.png" alt="Categorization rules editor with pattern, priority, and stop toggle" loading="lazy"></figure></li>
+        <li class="card"><h2>Stop vs continue</h2><p>“Stop here on match” (on by default) files the transaction and skips later rules — the classic first-match-wins. Turn it off and processing continues: each later match applies in order, so the last matching rule's category wins and tags accumulate. Continuing rules show a “continues” badge in the table.</p></li>
+        <li class="card"><h2>Test run before you trust it</h2><p>Press the magnifier on any rule for a dry-run: it shows exactly which transactions would match, and it never writes anything. When satisfied, Apply with a scope — Forward only for new transactions from now on, All history, or a Date range — plus Only-unassigned to skip already-categorized rows and Overwrite to re-file them.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Rules &amp; automation.</span></div></footer>
+</body>
+</html>

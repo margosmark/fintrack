@@ -1,0 +1,93 @@
+{
+  "base": "http://192.0.2.109:8080",
+  "deployed_sha": "e93cf8f",
+  "api": {
+    "quote_check_apotex": {
+      "symbol": "APOTEX",
+      "quote_found": false,
+      "reason": "$APOTEX.TO: No data found, symbol may be delisted"
+    },
+    "quote_check_aapl": {
+      "symbol": "AAPL",
+      "quote_found": true,
+      "reason": null
+    },
+    "flag_after_three_misses": {
+      "security_id": 899,
+      "dead_symbol": true,
+      "quote_miss_count": 3,
+      "dead_symbol_reason": "$APOTEX.TO: possibly delisted; no timezone found"
+    },
+    "sweep": {
+      "queued": 0,
+      "skipped_dead": 1
+    },
+    "quote_not_found_log_lines": {
+      "scoped_to": "APOTEX",
+      "in_the_window_before": 2,
+      "new_since_baseline": 0,
+      "baseline_utc": "2026-10-11T07:30:54.371870Z"
+    }
+  },
+  "ran_at": "2026-10-11T03:31:22-0400",
+  "checks_passed": true,
+  "failures": [],
+  "report": {
+    "detail": {
+      "path": "/securities/899",
+      "booted_to_login": false,
+      "body_head": "Amounts visible. Dollar figures are shown. | Skip to main content | fin_tracker | Unmasked | Search | Command palette | Ctrl+K | Dashboard | Transactions | Imports | Investments | Reports | Forecast | Calendar | Taxes | Tax Projection | Shared household | Settings | Help | TOOL",
+      "title": "No public quote for APOTEX",
+      "hint": "$APOTEX.TO: possibly delisted; no timezone found It may be delisted or private \u2014 this symbol will not track unless a public listing appears.",
+      "action_reason": "Yahoo has no public quote for this symbol, so refreshing cannot produce a price.",
+      "refresh": [
+        {
+          "disabled": true,
+          "describedby": "empty-action-reason-refresh-prices"
+        }
+      ],
+      "try_refresh_present": true,
+      "try_refresh_enabled": true,
+      "old_lie": false
+    },
+    "watch": "APOTEX | Apotex Inc. | \u2014 | no public quote | Remove",
+    "form_ownership": {
+      "has_form": true,
+      "react_owned": true,
+      "onsubmit_is_fn": true,
+      "button_type": "submit"
+    },
+    "add_trace": [
+      {
+        "path": "/investments",
+        "ready": "complete",
+        "title": "fin_tracker",
+        "head": "Amounts visible. Dollar figures are shown. | Skip to main content | fin_tracker | Unmasked | Search | Command palette | Ctrl+K | Dashboard | Transactions | Imports | Investments | Re"
+      }
+    ],
+    "console_errors": [],
+    "native_submits": [
+      {
+        "prevented_at_capture": false,
+        "action": "http://192.0.2.109:8080/investments"
+      }
+    ],
+    "add": {
+      "warning_shown": true,
+      "warning_text": "No public quote found for APOTEX2 \u2014 $APOTEX2.TO: No data found, symbol may be delisted Add anyway?  Add anyway Cancel",
+      "add_anyway": true,
+      "cancel": true,
+      "path": "/investments",
+      "dead": null,
+      "http_failures": [],
+      "document_requests": [
+        "http://192.0.2.109:8080/securities/899"
+      ]
+    },
+    "anyway": {
+      "warning_cleared": true,
+      "form_reset": true,
+      "created": true
+    }
+  }
+}

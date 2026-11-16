@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your agent did this — fin_tracker guides</title>
+  <meta name="description" content="You ask, your agent calls a tool, a receipt lands. A real run, step by step — tools listed, a read allowed, a write refused, and the receipts behind both.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#agents">Agents</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+
+    <section class="block">
+      <h1>Your agent did this — watch it happen</h1>
+      <p class="sub">You ask, your agent calls a tool, a receipt lands. A real run, step by step, with the transcript as proof.</p>
+
+      <ol class="steps">
+        <li class="card">
+          <h2>What you asked for</h2>
+          <p>Your agent &mdash; Claude, Cursor, or a script you wrote &mdash; has been handed a token you minted yourself, and you asked it a plain question about your own data. From here on there is no screen involved: everything below happened between your agent and your fin_tracker, and it was recorded whether or not you were watching.</p>
+        </li>
+        <li class="card">
+          <h2>What your agent actually called</h2>
+          <p>The session opens, then the agent asks what it is allowed to do, and <code>tools/list</code> answers with 52 tools &mdash; every one of them read-only, because a read-only token is never shown the write tools at all; they are not in the list to begin with. A read then goes through (<code>health_check</code>, healthy, 73&nbsp;ms), and an attempted write (<code>accounts_create</code>) gets 403: this token is read-only. That refusal is structural rather than polite &mdash; the same token cannot get a different answer on a second attempt.</p>
+          <figure class="shot"><img src="../assets/agent-run.png" alt="Transcript of a session in which the tools list is read-only, one read succeeds and one write is refused with 403" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>The receipt it left behind</h2>
+          <p>Every call writes one row: which tool, what it answered, how long it took, and which token carried it. Two calls, two receipts, newest first &mdash; <code>health_check</code> at 200 in 73&nbsp;ms, <code>accounts_create</code> at 403 in 0&nbsp;ms. Arguments are hashed rather than stored, so a receipt can never leak a password you handed your agent, and when you revoke the token the rows it produced stay with your account.</p>
+          <figure class="shot"><img src="../assets/agent-receipts.png" alt="Receipts listing two rows: health_check 200 in 73 ms and accounts_create 403 in 0 ms" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>Do it against your own data</h2>
+          <p>Mint your own token, point your client at the MCP endpoint, and ask it something real. The agent integration guide explains what each policy allows before you hand one over, and Configuration (MCP) has the exact request shapes if you would rather read them first.</p>
+        </li>
+      </ol>
+
+      <p class="meta"><a class="back" href="../index.html#guides">&larr; All guides</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>fin_tracker &mdash; self-hosted personal finance.</span>
+      <span>Guides mirror the in-app Help center.</span>
+    </div>
+  </footer>
+</body>
+</html>

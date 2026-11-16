@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trust &amp; privacy — fin_tracker</title>
+  <meta name="description" content="fin_tracker's data promises, stated as checkable facts: never sold, never used to train AI, yours to export or delete anytime — with the payload, egress and who-can-see-it details written out.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="nav">
+      <a class="brand" href="index.html">fin<span>_tracker</span>.</a>
+      <nav class="links" aria-label="Page sections">
+        <a href="index.html#privacy">Privacy</a>
+        <a href="trust.html" aria-current="page">Trust &amp; privacy</a>
+        <a href="changelog.html">What&rsquo;s new</a>
+        <a href="guides/getting-started.html">Guides</a>
+        <a href="index.html#selfhost">Self-host</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+
+    <div class="hero">
+      <p class="kicker">fin_tracker &middot; trust &amp; privacy</p>
+      <h1>Three promises, written <span>as facts.</span></h1>
+      <p>Most finance apps write a trust page you have to take on faith. Every claim on this page is a fact about the shipped code &mdash; each states exactly what happens, and the sections below carry the payload, egress and who-can-see-it details, including the ones that make us look less clever.</p>
+      <div class="tldr">
+        <p><strong>Never sold.</strong> There are no ads, no trackers &mdash; and no billing at all: no payment processor, no plans, no metering. There is no revenue stream your data could substitute for.</p>
+        <p><strong>Never used to train AI.</strong> Your data is never fed to model training &mdash; the product contains no training code. AI features send small, fixed-shape prompts to the endpoint <em>you</em> configure, and their exact contents are listed below.</p>
+        <p><strong>Yours to take or delete.</strong> Settings &rarr; Privacy &amp; data &rarr; Export my data (Download ZIP / Download JSON, plus a scheduled export) &mdash; and Settings &rarr; Account &rarr; Delete account (type <code tabindex="0">DELETE</code> + password) removes every row your account owns in one transaction.</p>
+      </div>
+    </div>
+
+    <section class="block" id="sold">
+      <h2>Never sold</h2>
+      <p class="sub">No ads, no data resale &mdash; and the honest part: nothing could be sold, because there is no billing anywhere in the product.</p>
+      <ul class="nots">
+        <li><strong>No ads and no tracking.</strong> Neither the app nor this site contains an ad, analytics or session-recording SDK. The site's own test scans every shipped page and fails the build if any page requests anything off-origin; the app loads no third-party scripts, fonts or images.</li>
+        <li><strong>No billing, therefore no data revenue.</strong> No payment processor exists in the code &mdash; no plans, no metering, nothing to buy. A "never sold" promise is easy to keep when there is no ledger it could feed.</li>
+        <li><strong>No bank credentials, ever.</strong> We never ask for your bank password and never sign in as you. Statements are files you choose to upload; bank sync exists only as an open-banking readiness seam, with no credential storage.</li>
+        <li><strong>The outbound-HTTP inventory is public.</strong> The docs enumerate every destination the server can ever contact &mdash; all of them listed below &mdash; and none of them is an ad network, analytics vendor or data broker. Nothing else leaves.</li>
+      </ul>
+    </section>
+
+    <section class="block" id="ai">
+      <h2>Never used to train AI</h2>
+      <p class="sub">State exactly what happens, no marketing fog.</p>
+      <ul class="nots">
+        <li><strong>There is no training pipeline.</strong> fin_tracker contains no model-training code &mdash; there is no place your data could be "used to train" from our side. Your data is never sent anywhere by us for training, fine-tuning or improvement.</li>
+        <li><strong>AI features are inference-only, to the endpoint you configure.</strong> Categorization and import column-mapping each build a small, fixed-shape prompt and send it to the LLM base URL set in Settings &rarr; LLM provider &mdash; your own Ollama or your own OpenAI-compatible gateway, with your own key.</li>
+        <li><strong>On the hosted instance, that endpoint is ours.</strong> The demo's AI runs against an Ollama server the operator runs on their own private network, serving an open-weight model from local weights (qwen2.5:7b&#8209;instruct, verified live 2026&#8209;11&#8209;10). Your prompts do not reach OpenAI, Anthropic or any other model vendor.</li>
+        <li><strong>Privacy mode seals it entirely.</strong> With privacy mode on, no AI request leaves unless the endpoint is on your own machine (loopback) &mdash; enforced at send time in one chokepoint, which refuses anything else with 403 <code tabindex="0">privacy_mode_blocks_external_api</code>.</li>
+        <li><strong>The honest boundary.</strong> If <em>you</em> point the app at a third-party endpoint, that provider handles the request under its own terms &mdash; we don't control their side, and we won't pretend otherwise. What we control: what we put in the prompt (table below), where it goes (the URL you set), and that none of it is used to train anything by us.</li>
+      </ul>
+
+      <div class="table-card">
+        <h3>What actually leaves when AI runs</h3>
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <caption class="sr-only">Exact payloads sent to the LLM endpoint you configure</caption>
+            <thead>
+              <tr><th scope="col">Feature</th><th scope="col">Exactly what is sent</th><th scope="col">Where it goes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Category suggestions</td><td>Your category names, up to 10 <code tabindex="0">payee &rArr; category</code> examples from your own history, and up to 25 <code tabindex="0">transaction_id: payee</code> pairs. Never amounts, dates or account names.</td><td>The LLM endpoint you configure</td></tr>
+              <tr><td>CSV column mapping</td><td>The file's column headers plus up to 5 sample data rows, verbatim.</td><td>The LLM endpoint you configure</td></tr>
+              <tr><td>Connection test</td><td>A fixed ping string, nothing else.</td><td>The LLM endpoint you configure</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="take-or-delete">
+      <h2>Yours to take or delete</h2>
+      <p class="sub">The actual Settings paths, not a description of a someday feature &mdash; both exist today and work with privacy mode on.</p>
+      <ul class="nots">
+        <li><strong>Export everything, any time.</strong> Settings &rarr; Privacy &amp; data &rarr; <strong>Export my data</strong>: <strong>Download ZIP</strong> (one CSV per table plus a manifest) or <strong>Download JSON</strong> (every table, full fidelity). Per-account OFX downloads and a scheduled export that archives into your own browser's storage are in the app too. Pure database reads &mdash; they need no external service.</li>
+        <li><strong>Delete everything, any time.</strong> Settings &rarr; Account &rarr; <strong>Delete account</strong>: confirm with your password and the word <code tabindex="0">DELETE</code>, and the server removes every row your account owns &mdash; accounts, transactions, staged imports, trades, budgets, rules, goals, shares, tokens &mdash; in one transaction, then the login itself (<code tabindex="0">DELETE /api/v1/users/me</code>). There is no "soft-delete grace period" quietly keeping a copy. The shared public demo is read-only by design, so this applies to accounts you create.</li>
+      </ul>
+    </section>
+
+    <section class="block" id="leave">
+      <h2>What actually leaves the machine</h2>
+      <p class="sub">The complete outbound-HTTP inventory, as derived by a repo-wide search and documented in the docs &mdash; every destination the server can contact, nothing else.</p>
+      <div class="table-card">
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <caption class="sr-only">Every destination the server can contact, and what each request carries</caption>
+            <thead>
+              <tr><th scope="col">Destination</th><th scope="col">What leaves</th><th scope="col">When</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Bank of Canada (FX rates)</td><td>Currency pair + date range.</td><td>Filling the FX cache</td></tr>
+              <tr><td>Yahoo Finance (prices)</td><td>Ticker symbols + date ranges.</td><td>Price lookups and refreshes</td></tr>
+              <tr><td>Fund-issuer hosts (iShares, Vanguard)</td><td>Ticker symbols and fund identifiers only &mdash; never amounts, holdings or account data.</td><td>Only when a ticker is not yet in the local fund registry (fund look-ups)</td></tr>
+              <tr><td>Your LLM endpoint</td><td>The prompts listed above, nothing else.</td><td>When an AI feature runs</td></tr>
+              <tr><td>SMTP relay (your own)</td><td>A constant subject, the alert link and the recipient &mdash; <em>never</em> amounts or item names.</td><td>Only if you enable the email channel</td></tr>
+              <tr><td>Your webhook target</td><td>The same five fields, HMAC-signed.</td><td>Only if you enable the webhook channel</td></tr>
+              <tr><td>Bank-sync provider (one you registered)</td><td>The sync calls that provider defines.</td><td>Only if you connect an account sync &mdash; the built-in provider is a no-network stub today</td></tr>
+              <tr><td>Your identity provider (only if OIDC sign-in is configured)</td><td>The sign-in code exchange &mdash; never financial data.</td><td>Only on instances an operator has configured OIDC sign-in (not the hosted demo)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Privacy mode seals every destination that carries your data</strong> &mdash; FX, prices, fund-issuer look-ups, LLM and sync have no opt-out path, and notifications deliver only if you explicitly opt that channel back in (<code tabindex="0">privacy_opt_in</code>). Sign-in itself (OIDC) is not a data destination: it runs only on instances an operator has configured it, before any session exists, and carries no financial data. The landing page's <a href="index.html#limits">honest limitations</a> say the same thing, because it is the same fact.</p>
+      </div>
+    </section>
+
+    <section class="block" id="where">
+      <h2>Where your data lives, and who can see it</h2>
+      <ul class="nots">
+        <li><strong>Self-hosted (the design): your hardware.</strong> <code tabindex="0">docker compose up</code> on your server keeps the app and its Postgres database on your machine. Nothing syncs out of it beyond the destinations listed above.</li>
+        <li><strong>The hosted instance: one server.</strong> The demo at fintrac.princessandmark.com is one server the operator controls (requests are TLS-terminated at the operator's own edge in front of it) &mdash; its public address geolocates to Toronto, Ontario, Canada (checked via IP geolocation 2026&#8209;11&#8209;10) &mdash; with one Postgres database in a container. No third-party cloud database, no data warehouse, no aggregator.</li>
+        <li><strong>Who can see it:</strong> you; the operator of the instance you use (on the hosted demo, that's us &mdash; self-hosted, it's you); anyone you explicitly share a household link with; and, when you run an AI feature, the endpoint you configured. Nobody else &mdash; every table holding your data is filtered by your account in the application layer; Postgres row-level security ships as a second lock at the database and is active only on instances provisioned for it (the hosted instance currently runs without it; docs/55).</li>
+        <li><strong>The honest status on encryption:</strong> not zero-knowledge. Client-side encryption is in progress &mdash; the server can still read your data, and the docs say exactly that. Your browser can keep an encrypted backup and scheduled export archives in its own storage; those never leave your device, and the server is the canonical store.</li>
+        <li><strong>The door is guarded:</strong> TOTP two-factor and passkeys are built in, and agent access (MCP) works only through tokens you mint, scoped permissions and per-call receipts you can audit.</li>
+      </ul>
+    </section>
+
+    <section class="block" id="checks">
+      <h2>How these claims are checked</h2>
+      <p class="sub">Trust copy that can't fail isn't trust copy.</p>
+      <ul class="nots">
+        <li><strong>The site's own test.</strong> A test scans every page the site ships &mdash; including this one &mdash; and fails the build if any page requests anything off-origin or carries an inline script.</li>
+        <li><strong>Copy-drift pins.</strong> The Settings paths, the deletion endpoint and the AI payload numbers stated above are pinned against the actual source by a test &mdash; if the app changes and this page stops matching, the build goes red.</li>
+        <li><strong>Accessibility.</strong> Every page, including this one, is scanned with axe-core at three viewport widths and must report zero violations.</li>
+        <li><strong>Last verified against the code: 2026&#8209;11&#8209;10.</strong></li>
+      </ul>
+    </section>
+
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>fin_tracker &mdash; self-hosted personal finance.</span>
+        <span><a href="index.html#privacy">Privacy</a> &middot; <a href="changelog.html">What&rsquo;s new</a> &middot; <a href="guides/getting-started.html">Guides</a> &middot; <a href="https://fintrac.princessandmark.com/login">Demo</a></span>
+      </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,434 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dual-theme token system (docs/09 §CSS tokens, re-skinned by the Ledger
+   redesign M185 / docs/47 §5): "Ledger Night" dark is the hero default;
+   :root:not(.dark) is the "Ledger Daylight" light companion (warm paper,
+   signal blue, shadows instead of glows). TOKEN NAMES ARE A CONTRACT — only
+   the VALUES changed for M185 (designer's artifact `assets/ledger.css`, both
+   themes measured by tools/contrast.py). index.html starts with class="dark"
+   and its inline snippet drops it for a saved light choice or the OS
+   preference; ThemeProvider keeps <html> in sync from then on. Components
+   consume ONLY these semantic tokens — no other file hardcodes a
+   surface/ink color.
+
+   Colour discipline (docs/47 §5): accent is never money, money is never
+   accent — --color-gain/--color-danger are positive/negative money and
+   destructive emphasis only; the brand/eyebrow hue never touches money.
+   Chart series are tints of accent/warn/rule so a donut can never be
+   misread as gain/loss. */
+@layer base {
+  :root {
+    /* Ledger Night — graphite surfaces, chalk ink, signal blue. */
+    --color-surface: 16 18 22; /* #101216 — page paper (graphite) */
+    --color-surface-raised: 23 26 33; /* #171a21 — panel surface */
+    --color-border: 38 42 50; /* #262a32 — card hairline */
+    /* Hairline rule (M185): in-component 1px rules — table rows, truth bar,
+       state rows. Decorative (WCAG 1.4.11 exempt), so it is NOT pair-tested. */
+    --color-rule: 38 42 50;
+    /* Form-control boundary — WCAG 1.4.11 needs 3:1, hairline dividers do not. */
+    --color-border-control: 104 111 123; /* #686f7b — 3.69:1 on surface */
+    --color-text: 233 234 238; /* #e9eaee — 15.6:1 */
+    --color-muted: 162 168 179; /* #a2a8b3 — 7.84:1 */
+    --color-accent: 121 169 255; /* #79a9ff — signal blue, interactive only */
+    --color-accent-soft: 165 196 255; /* #a5c4ff — gradient partner */
+    --color-accent-ink: 10 16 32; /* #0a1020 — readable ink on accent fills */
+    --color-veil: 255 255 255; /* overlay base for chips/inputs/hovers */
+    --color-warn: 239 181 58; /* #efb53a — stale/needs-attention & momentum */
+    --color-gain: 63 207 151; /* #3fcf97 — semantic green, gains only */
+    --color-danger: 255 128 120; /* #ff8078 — negative money/destructive */
+    /* Themed black veil for modal scrims (FPages #9). */
+    --color-overlay: 4 6 10;
+
+    /* Glass panel recipe (dark): white at whisper alphas + blur. */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-bg-strong: rgba(13, 17, 25, 0.88);
+    --glass-border: rgba(255, 255, 255, 0.07);
+    --glass-border-hover: rgba(255, 255, 255, 0.16);
+
+    /* Effect tokens (dark, M185): the accent "glow" is retired in favour of
+       elevation — a pop shadow on overlays. Token names keep their legacy
+       shape so no component changes; only the values are elevation now. */
+    --shadow-card: 0 8px 30px -12px rgb(0 0 0 / 0.55);
+    --shadow-glow: 0 16px 40px -16px rgb(0 0 0 / 0.75);
+    --shadow-glow-sm: 0 12px 32px -14px rgb(0 0 0 / 0.6);
+    --shadow-glow-danger:
+      0 0 0 1px rgb(var(--color-danger) / 0.25),
+      0 12px 32px -14px rgb(0 0 0 / 0.55);
+
+    /* Skeleton shimmer band (dark): veil whisper sweep. */
+    --skeleton-lo: rgba(255, 255, 255, 0.04);
+    --skeleton-hi: rgba(255, 255, 255, 0.1);
+
+    /* Modal scrim (dark): blackout wash behind dialogs. */
+    --scrim: rgba(4, 6, 10, 0.55);
+
+    /* Ambient login blobs (dark): cyan/teal/amber neon. */
+    --ambient-a: #22d3ee;
+    --ambient-b: #5eead4;
+    --ambient-c: #fbbf24;
+  }
+
+  :root:not(.dark) {
+    /* Ledger Daylight (M185): warm paper surfaces, ink polarity, signal
+       blue identity — the light theme carries its OWN accent, never a tint
+       of the dark one. */
+    --color-surface: 246 244 239; /* #f6f4ef — warm paper */
+    --color-surface-raised: 255 255 255; /* white panel */
+    --color-border: 226 221 211; /* #e2ddd3 — card hairline */
+    /* Hairline rule (M185), light twin of the dark block's. */
+    --color-rule: 226 221 211;
+    --color-border-control: 145 138 124; /* #918a7c — 3.12:1 on surface */
+    --color-text: 20 22 26; /* #14161a — 16.5:1 */
+    --color-muted: 86 93 104; /* #565d68 — 5.96:1 */
+    --color-accent: 11 79 184; /* #0b4fb8 — signal blue, 6.76:1 */
+    --color-accent-soft: 9 63 149; /* #093f95 — gradient partner */
+    --color-accent-ink: 255 255 255; /* readable ink on accent fills */
+    --color-veil: 20 22 26; /* low-alpha ink (#14161a); overlays flip polarity */
+    --color-danger: 179 38 30; /* #b3261e — 5.95:1 on paper */
+    /* Themed ink veil for modal scrims (FPages #9). */
+    --color-overlay: 20 22 26;
+    --color-gain: 10 107 69; /* #0a6b45 — 6.04:1 on paper */
+    /* amber-800 was the daybreak value; Ledger Daylight's warn is #7a4e00 —
+       6.58:1 on surface, 5.26:1 on bg-warn/15. Theme-scoped like every other
+       ink token (docs/09 contrast pair 9). */
+    --color-warn: 122 78 0; /* #7a4e00 */
+
+    /* Glass panel recipe (light): white cards over paper + blur. */
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-bg-strong: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-border-hover: rgba(15, 23, 42, 0.2);
+
+    /* Effect tokens (light, M185): shadows replace glows — soft elevation,
+       and the accent "glow" becomes a 1px ring + faint tinted halo. */
+    --shadow-card: 0 8px 30px -12px rgb(20 22 26 / 0.14);
+    --shadow-glow: 0 12px 32px -14px rgb(20 22 26 / 0.35);
+    --shadow-glow-sm: 0 8px 24px -12px rgb(20 22 26 / 0.28);
+    --shadow-glow-danger:
+      0 0 0 1px rgb(var(--color-danger) / 0.25),
+      0 8px 24px -12px rgb(20 22 26 / 0.25);
+
+    /* Skeleton shimmer band (light): paper track, lighter crest. */
+    --skeleton-lo: rgba(234, 230, 221, 0.85);
+    --skeleton-hi: rgba(247, 245, 240, 0.95);
+
+    /* Modal scrim (light): ink wash behind dialogs. */
+    --scrim: rgba(20, 22, 26, 0.45);
+
+    /* Ambient login blobs (light): soft sky/cyan tints. */
+    --ambient-a: #38bdf8;
+    --ambient-b: #67e8f9;
+    --ambient-c: #a5f3fc;
+  }
+
+  body {
+    @apply bg-surface text-text antialiased;
+    font-feature-settings: "cv02", "ss01";
+  }
+
+  /* Money is always tabular so columns stop breathing (ui-contract). */
+  .tabular,
+ .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-accent) / 0.3);
+  }
+
+  /* WCAG 2.4.7 focus visibility — global baseline (docs/09 Keyboard contract).
+     Lives in @layer base, so any component that declares its own indicator in
+     a LATER layer wins and keeps it: `outline-none focus-visible:ring-2 …`
+     (utilities) and `.field-ring` (components) both opt out below. Without
+     this baseline the shared Button, bare <button>, <a> and <select> painted
+     no indicator at all, because the old rule was `outline: none` uncondi-
+     tionally. */
+  *:focus-visible {
+    /* rgb(): `--color-accent` is a bare triplet (`79 70 229`), so the bare
+       `var()` made the whole shorthand invalid and the baseline silently
+       never applied — every control without its own ring painted no focus
+       indicator at all (M58b: budgets/bills row actions, Button variants,
+       account links). */
+    outline: 2px solid rgb(var(--color-accent));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Signature glass card surface (ui-contract move #1). */
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: border-color 0.25s ease;
+  }
+
+  .glass-hover:hover {
+    border-color: var(--glass-border-hover);
+  }
+
+  /* Stronger glass for tooltips/popovers that float over charts. */
+  .glass-strong {
+    background: var(--glass-bg-strong);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  /* Skeleton shimmer base (ui-contract move #6). Keyframes live in plain CSS
+     below so they exist regardless of which animation utilities TSX uses. */
+  .skeleton {
+    border-radius: 0.375rem;
+    animation: shimmer 1.8s linear infinite;
+    background: linear-gradient(
+      90deg,
+      var(--skeleton-lo) 25%,
+      var(--skeleton-hi) 50%,
+      var(--skeleton-lo) 75%
+    );
+    background-size: 200% 100%;
+  }
+
+  /* Ambient auth-hero blobs — pure CSS, compositor-only transforms. */
+  .ambient-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  /* Blob tints are token-driven so daybreak swaps neon for soft sky/cyan. */
+  .blob-a {
+    background: radial-gradient(circle, var(--ambient-a) 0%, transparent 65%);
+  }
+
+  .blob-b {
+    background: radial-gradient(circle, var(--ambient-b) 0%, transparent 65%);
+  }
+
+  .blob-c {
+    background: radial-gradient(circle, var(--ambient-c) 0%, transparent 60%);
+  }
+
+  /* Chart active-dot halo / radar-blip (SVG circles need transform-box to
+     scale in place). Two flavors: ring for custom shapes, dot for the
+     config-based activeDot. */
+  .chart-pulse-ring,
+  .chart-pulse-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: pulse-ring 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  /* Accent focus ring shared by inputs/selects. The border goes to full
+     accent (docs/09 contrast pair 14: the focus indicator itself must clear
+     3:1 — accent/55 was 2.6:1 on paper) and opts out of the global outline so
+     the ring is not drawn twice. */
+  .field-ring:focus-visible {
+    border-color: rgb(var(--color-accent) / 0.85) !important;
+    box-shadow: 0 0 0 3px rgb(var(--color-accent) / 0.25);
+    outline: none;
+  }
+
+  /* KPI figure weight (M185): the Ledger re-skin retires the accent glow —
+     a KPI is a 34px tabular figure, not a neon sign. The class stays so no
+     call site changes, but it no longer paints a drop-shadow. */
+  .glow-text {
+    filter: none;
+  }
+
+  /* M64 (docs/09 "Horizontal table scroll"): table wrappers draw their OWN
+     scrollbar (TableScroller's 10px track), so the native one is suppressed —
+     two scrollbars on one box is worse than either alone, and native is exactly
+     what fails in overlay/hidden-scrollbar environments (the M61 audit saw no
+     scrollbar at all). Scrolling itself is untouched: wheel, trackpad, touch,
+     Shift+wheel and the focusable region's arrow keys all still move it. */
+  .table-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .table-scroll::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    display: none;
+  }
+}
+
+/* Custom keyframes, plain CSS: Tailwind only emits config keyframes when the
+   matching utility class is used in source, and these are referenced from
+   component classes / config animations that may not appear in TSX. */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes drift-a {
+  0% { transform: translate(-10%, -6%) scale(1); }
+  100% { transform: translate(12%, 10%) scale(1.25); }
+}
+
+@keyframes drift-b {
+  0% { transform: translate(8%, 12%) scale(1.15); }
+  100% { transform: translate(-12%, -8%) scale(0.95); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  80%, 100% { transform: scale(2.4); opacity: 0; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* M126 — a live SSE tick on a positions row: one accent sweep across the price
+   cell so the eye catches the number that just moved. Applied for ~1.4s by
+   PositionRow when the patched quote differs from the previous one, then
+   removed — the cell is never permanently painted. The global
+   prefers-reduced-motion rule below collapses it to an instant, brief state
+   change (docs/09 §Reduced motion). Semantic token only — no literal colour
+   (docs/09 §Theming), so it clears contrast in both themes. */
+@keyframes price-tick {
+  0% { background-color: rgb(var(--color-accent) / 0.26); }
+  70% { background-color: rgb(var(--color-accent) / 0.10); }
+  100% { background-color: transparent; }
+}
+
+.price-live-tick {
+  animation: price-tick 1.4s ease-out 1;
+  border-radius: 4px;
+}
+
+/* Respect prefers-reduced-motion (hard constraint): kill ambience, shimmer
+   sweeps, halos and entrance motion. Opacity/position land instantly. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ambient-blob {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   M72 — mobile-grade experience (docs/09 §Mobile & PWA).
+--------------------------------------------------------------------------- */
+
+/* Touch-target floor: WCAG 2.5.8 asks for 24px, the platform HIGs for 44 —
+   below the 768px breakpoint every standalone control in the page area gets
+   the 44px box. Scoped by media query so the desktop layout (1280/768) is
+   byte-for-byte what it was; `.touch-inline` opts a dense control out. Inline
+   text links are unaffected (min-height does not apply to inline boxes). */
+@media (max-width: 767.98px) {
+  main button,
+  main a[href],
+  main select,
+  main input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+    min-height: 44px;
+  }
+
+  main button:not(.touch-inline) {
+    min-width: 44px;
+  }
+
+  /* The floor follows the SURFACE, not the element type (PM ruling on QA F3):
+     below md the `<nav id="app-nav">` IS the primary mobile navigation — it
+     sits outside `main`, so the rules above never reached it and the drawer's
+     own rows measured 36px (menu links) and 32px (account rows) at 390. Same
+     selectors, same 44px, scoped to the same breakpoint so the desktop rail
+     keeps M71's metrics byte-for-byte. */
+  #app-nav button,
+  #app-nav a[href],
+  #app-nav select,
+  #app-nav input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+    min-height: 44px;
+  }
+
+  #app-nav button:not(.touch-inline) {
+    min-width: 44px;
+  }
+
+  /* Links inside data rows are inline boxes, where min-height is ignored —
+     promote them to a 44px inline-flex target so a row's account/category
+     link is as tappable as the row itself. */
+  main td a[href] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* The M64 scrollbar thumb is a 10px visual bar (its height is a pinned
+     contract: the native scrollbar is suppressed and exactly one custom bar
+     is drawn). On touch it still needs a 44px hit band, which this pseudo
+     element adds WITHOUT changing what is painted: clicks inside the band
+     land on the bar's own click-to-jump / drag handler. */
+  main [role="scrollbar"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -17px;
+    bottom: -17px;
+  }
+}
+
+/* M101 — scroll performance: no backdrop-filter below md (docs/09 §Scroll
+   performance, docs/34 scroll-frame budget).
+
+   `backdrop-filter` is the scroll cost, not the translucency: at 412×915 /
+   DPR 2.6 on Firefox a scripted sweep of /transactions dropped 26 of ~400
+   frames to >50 ms with `.glass` blurred, and 0 when the blur was removed
+   while the alpha backgrounds were left byte-identical (`a_bg_only` alone
+   changed nothing). The fixed mobile header + the drawer rail and every
+   other blur surface were each independently able to stall /dashboard, so
+   the rule below kills the whole class of work at this breakpoint instead
+   of hunting surfaces one at a time.
+
+   Deliberately UNLAYERED (this whole file's @layer blocks lose to it) and
+   `!important`, so a Tailwind `backdrop-blur-*` utility added later can't
+   silently reintroduce a per-frame blur. Everything above keeps its token
+   background/border — only the blur goes, and only below 768px, so the
+   desktop glass surface (docs/09 §Glass tokens) is untouched. */
+@media (max-width: 767.98px) {
+  * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* `.glass` opens a stacking context with its backdrop-filter (docs/09
+     §Sidebar stacking context: a z-50 dropdown inside the rail loses to the
+     card layer otherwise). Dropping the filter here would drop that context
+     too and let in-card z-* children paint into the root context, so keep the
+     context explicitly — painting is identical to today, only the blur is
+     gone. */
+  .glass,
+  .glass-strong {
+    isolation: isolate;
+  }
+}
+
+/* Pull-to-refresh indicator glyph (M72). The component already renders static
+   text under prefers-reduced-motion, and the global reduce rule above
+   collapses this animation to a single frame either way. */
+@keyframes m72-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.m72-spin {
+  display: inline-block;
+  animation: m72-spin 900ms linear infinite;
+}

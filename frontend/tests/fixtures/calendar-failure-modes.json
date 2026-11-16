@@ -1,0 +1,164 @@
+{
+ "meta": {
+  "slice": "calendar-failure-modes",
+  "base_commit": "captured from origin/main via the route, not hand-written",
+  "capture_command": "CALENDAR_GOLDEN=1 uv run pytest tests/test_calendar_failure_modes.py",
+  "notes": [
+   "One CashflowCalendar payload for the cross-layer failure-mode matrix (t_742c9dc0): a 31st-anchored all-USD group on the month that lacks the 31st. Written by the backend route; rendered by frontend/tests/calendarFailureModes.test.tsx; byte-diffed against the live route by tests/test_calendar_failure_modes.py."
+  ]
+ },
+ "cases": [
+  {
+   "name": "month_end_usd_feb",
+   "seed": {
+    "frozen_now": "2027-02-01T12:00:00-05:00",
+    "payee": "MATRIX FAILURE USD",
+    "rows": [
+     [
+      "USD",
+      "-11.99"
+     ],
+     [
+      "USD",
+      "-11.99"
+     ]
+    ],
+    "charge_days": [
+     "2026-12-31",
+     "2027-01-31"
+    ]
+   },
+   "request": {
+    "month": "2027-02"
+   },
+   "response": {
+    "month": "2027-02",
+    "today": "2027-02-01",
+    "days": [
+     {
+      "date": "2027-02-01",
+      "events": []
+     },
+     {
+      "date": "2027-02-02",
+      "events": []
+     },
+     {
+      "date": "2027-02-03",
+      "events": []
+     },
+     {
+      "date": "2027-02-04",
+      "events": []
+     },
+     {
+      "date": "2027-02-05",
+      "events": []
+     },
+     {
+      "date": "2027-02-06",
+      "events": []
+     },
+     {
+      "date": "2027-02-07",
+      "events": []
+     },
+     {
+      "date": "2027-02-08",
+      "events": []
+     },
+     {
+      "date": "2027-02-09",
+      "events": []
+     },
+     {
+      "date": "2027-02-10",
+      "events": []
+     },
+     {
+      "date": "2027-02-11",
+      "events": []
+     },
+     {
+      "date": "2027-02-12",
+      "events": []
+     },
+     {
+      "date": "2027-02-13",
+      "events": []
+     },
+     {
+      "date": "2027-02-14",
+      "events": []
+     },
+     {
+      "date": "2027-02-15",
+      "events": []
+     },
+     {
+      "date": "2027-02-16",
+      "events": []
+     },
+     {
+      "date": "2027-02-17",
+      "events": []
+     },
+     {
+      "date": "2027-02-18",
+      "events": []
+     },
+     {
+      "date": "2027-02-19",
+      "events": []
+     },
+     {
+      "date": "2027-02-20",
+      "events": []
+     },
+     {
+      "date": "2027-02-21",
+      "events": []
+     },
+     {
+      "date": "2027-02-22",
+      "events": []
+     },
+     {
+      "date": "2027-02-23",
+      "events": []
+     },
+     {
+      "date": "2027-02-24",
+      "events": []
+     },
+     {
+      "date": "2027-02-25",
+      "events": []
+     },
+     {
+      "date": "2027-02-26",
+      "events": []
+     },
+     {
+      "date": "2027-02-27",
+      "events": []
+     },
+     {
+      "date": "2027-02-28",
+      "events": [
+       {
+        "kind": "subscription",
+        "label": "MATRIX FAILURE USD",
+        "amount": "-11.99",
+        "currency": "USD",
+        "source_id": "MATRIX FAILURE USD",
+        "status": "upcoming"
+       }
+      ]
+     }
+    ],
+    "confirmed_subscription_count": 1
+   }
+  }
+ ]
+}

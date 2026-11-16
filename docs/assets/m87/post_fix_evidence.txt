@@ -1,0 +1,66 @@
+=== M87 evidence: post_fix @ https://fintrac.princessandmark.com 2026-10-02T06:13:48Z
+
+--- 1. POST /auth/register (fresh address)
+HTTP 200
+{"status":"accepted","detail":"Registration accepted: if this address was free, an account now exists with the password you just chose. Sign in to continue."}
+--- 1b. POST /auth/login with the password just posted (M87 recovery path)
+HTTP 200
+  token acquired: yes
+--- 2. POST /auth/register (SAME address again = the oracle)
+HTTP 200
+{"status":"accepted","detail":"Registration accepted: if this address was free, an account now exists with the password you just chose. Sign in to continue."}
+--- 3. POST /auth/passkeys/login/options (address with NO account)
+HTTP 200
+{"challenge_token":"<redacted-jwt>","options":{"challenge":"ysBdNPE5w13kICKIlTeQpoG9SNOBRTVwZTXygPXC7lm4MPkY-3jvX0_ZBX87RaAon9xWycuKy0ZAnu9U909zvA","timeout":60000,"rpId":"localhost","allowCredentials":[{"id":"hYgrVSNNOBTOMJN40FGDugjd3qYx538-VQp-do58edQ","type":"public-key"}],"userVerification":"preferred"}}
+--- 4. POST /auth/passkeys/login/options (address WITH an account)
+HTTP 200
+{"challenge_token":"<redacted-jwt>","options":{"challenge":"-As0lsLarBjVMzn-q-6Fd_IzAQJWjY1vrlQlV7DUp6fgNVYKYghyrTc8nqF-5QKfjAJmVt1ZZCU7Lgdn0Zie9Q","timeout":60000,"rpId":"localhost","allowCredentials":[{"id":"qpC6P0lZXkem-2vM8JR40RxcK18OFDLMM3p97izzZA4","type":"public-key"}],"userVerification":"preferred"}}
+--- 5. GET /docs (anonymous)
+HTTP 401 content-type=application/json
+{"detail":"Authentication required to read the API documentation","code":"docs_auth_required"}
+--- 6. GET /openapi.json (anonymous)
+HTTP 401 content-type=application/json
+{"detail":"Authentication required to read the API documentation","code":"docs_auth_required"}
+--- 7. GET /openapi.json with a session access token
+HTTP 200
+{"openapi":"3.1.0","info":{"title":"fin_tracker API","versio
+--- 8. response headers on /
+content-security-policy: default-src 'self'; script-src 'self' 'sha256-+ZALdw0iadt/tBIxsuaCO41RtzhTbzMDens3eBB3Ntc=' 'sha256-qf3l4/KPFG0mZjBijINyOtWln+1RnQ+Cz7atNIcdFpk='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+permissions-policy: camera=(), microphone=(), geolocation=(), payment=()
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+--- 9. CORS preflight from the REAL origin
+HTTP 200 allow-origin=https://fintrac.princessandmark.com
+--- 10. CORS preflight from http://localhost:5173
+HTTP 400 allow-origin=
+--- 11. cleanup: delete the probe account
+DELETE /users/me HTTP 204
+=== end post_fix
+=== M87 evidence: post_fix (part 2) @ 2026-10-02T06:20:12Z
+register: HTTP 200
+login:     HTTP 200
+mcp-token: HTTP 201
+GET /openapi.json with LIVE MCP token: HTTP 200 {"openapi":"3.1.0","info":{"title":"fin_
+GET /docs with LIVE MCP token:        HTTP 200 type=text/html; charset=utf-8
+GET /openapi.json with GARBAGE bearer: HTTP 401 {"detail":"Authentication required to read the API documentation","code":"docs_auth_requir
+--- API port (uvicorn :8000, no nginx in front)
+  /docs -> HTTP 401 type=application/json {"detail":"Authentication required to read the API docu
+  /redoc -> HTTP 401 type=application/json {"detail":"Authentication required to read the API docu
+  /openapi.json -> HTTP 401 type=application/json {"detail":"Authentication required to read the API docu
+cleanup DELETE /users/me: HTTP 204
+=== end part 2
+
+--- 12. browser-level verification of the register change (AGENTS.md 4.5)
+  step 1: GET /register            -> form: Email / Password / Confirm password / "Create account"
+  step 2: POST via UI              -> state: heading "Registration accepted"
+          copy: "If this address was free, an account now exists with the
+                 password you just chose. If it was already in use, nothing
+                 changed. Either way, sign in to continue."
+          action: single "Sign in" button (no auto-login, no session issued)
+  step 3: click "Sign in"          -> /login form "Welcome back"
+  step 4: sign in with that account -> Dashboard rendered, nav shows
+          m87-ui-verify-0001@example.com  (recovery path works end to end)
+  screenshot: docs/assets/m87/ui_register_accepted.png
+  cleanup: DELETE /users/me -> HTTP 204 (no prod residue)
+=== end post_fix

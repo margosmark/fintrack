@@ -1,0 +1,32 @@
+{
+  "phase": "after",
+  "base": "https://fintrac.princessandmark.com",
+  "viewport": [
+    1440,
+    900
+  ],
+  "entry_on_load": "https://fintrac.princessandmark.com/assets/index-D5rUDzcF.js",
+  "index_cache_control": "no-cache, must-revalidate",
+  "controller": "https://fintrac.princessandmark.com/sw.js",
+  "caches": [
+    "fintrack-shell-v1-aad525685e9c"
+  ],
+  "indexed_cache_control": "no-cache, must-revalidate",
+  "missing_chunk": {
+    "status": 200,
+    "type": "text/javascript; charset=utf-8",
+    "marker": true,
+    "head": "/* M114 stale-shell self-heal: this document names a chunk the server\n * no longer has, so"
+  },
+  "trigger": "clicked",
+  "palette": true,
+  "error": false,
+  "entry_final": "https://fintrac.princessandmark.com/assets/index-D5rUDzcF.js",
+  "caches_final": [
+    "fintrack-shell-v1-aad525685e9c"
+  ],
+  "controllerchange": 0,
+  "pathname": "/dashboard",
+  "console_errors": [],
+  "screenshot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_0debdfa5/frontend/scripts/a11y/m114-live-after-1440x900.png"
+}

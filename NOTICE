@@ -1,0 +1,196 @@
+THIRD-PARTY NOTICES — fin_tracker
+=================================
+
+This product is licensed under the MIT License; see the LICENSE file at the
+repository root. The following third-party components are incorporated via
+backend/uv.lock (Python) and frontend/package-lock.json (npm). Inventories
+below were generated from those lockfiles; license identifiers for the eight
+backend packages that are platform-conditional (not installed on Linux) were
+verified against PyPI metadata and the upstream LICENSE files.
+
+SPDX identifiers are reproduced as published upstream; where a package used a
+free-text license string it is normalized to the equivalent SPDX id.
+
+
+BACKEND (Python) — 96 locked packages
+--------------------------------------------------
+
+Direct dependencies (backend/pyproject.toml): fastapi, sqlmodel, alembic,
+psycopg[binary], pydantic-settings, pyjwt, httpx, bcrypt, uvicorn, ofxparse,
+yfinance, python-multipart, slowapi, regex, cryptography, email-validator,
+mcp[cli], webauthn. The rest are transitive.
+
+Full locked set (backend/uv.lock), name / version / license:
+
+  alembic                    1.20.1        MIT
+  annotated-doc              0.0.5         MIT
+  annotated-types            0.8.0         MIT
+  anyio                      4.14.2        MIT
+  attrs                      26.1.0        MIT
+  bcrypt                     5.0.0         Apache-2.0
+  beautifulsoup4             4.15.0        MIT
+  cbor2                      6.1.4         MIT
+  certifi                    2026.10.23    MPL-2.0
+  cffi                       2.1.1         MIT-0
+  charset-normalizer         3.5.1         MIT
+  click                      8.4.2         BSD-3-Clause
+  colorama                   0.4.6         BSD-3-Clause
+  coverage                   7.17.0        Apache-2.0
+  cryptography               50.0.2        Apache-2.0 OR BSD-3-Clause
+  curl-cffi                  0.16.1        MIT
+  deprecated                 1.3.1         MIT
+  dnspython                  2.9.2         ISC
+  email-validator            2.3.0         Unlicense
+  execnet                    2.1.2         MIT
+  fastapi                    0.162.0       MIT
+  greenlet                   3.5.5         MIT AND PSF-2.0
+  h11                        0.16.0        MIT
+  httpcore                   1.0.9         BSD-3-Clause
+  httpcore2                  2.12.0        BSD-3-Clause
+  httpx                      0.28.1        BSD-3-Clause
+  httpx2                     2.12.0        BSD-3-Clause
+  httpx2-jsfetch             1.0           BSD-3-Clause
+  hypothesis                 6.170.14      MPL-2.0
+  idna                       3.19          BSD-3-Clause
+  iniconfig                  2.3.0         MIT
+  jsonschema                 4.26.0        MIT
+  jsonschema-specifications  2025.9.1      MIT
+  limits                     5.8.0         MIT
+  lxml                       6.1.2         BSD-3-Clause
+  mako                       1.4.1         MIT
+  markdown-it-py             4.2.0         MIT
+  markupsafe                 3.0.3         BSD-3-Clause
+  mcp                        2.3.0         MIT
+  mcp-types                  2.3.0         MIT
+  mdurl                      0.1.2         MIT
+  multitasking               0.0.13        Apache-2.0
+  numpy                      2.5.2         BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0
+  ofxparse                   0.21          MIT
+  opentelemetry-api          1.45.2        Apache-2.0
+  packaging                  26.3          Apache-2.0 OR BSD-2-Clause
+  pandas                     3.0.5         BSD-3-Clause
+  peewee                     4.4.0         MIT
+  platformdirs               4.11.3        MIT
+  pluggy                     1.6.0         MIT
+  protobuf                   7.36.0        BSD-3-Clause
+  psycopg                    3.3.4         LGPL-3.0-only
+  psycopg-binary             3.3.4         LGPL-3.0-only
+  pyasn1                     0.6.5         BSD-2-Clause
+  pyasn1-modules             0.4.2         BSD-3-Clause
+  pycparser                  3.0           BSD-3-Clause
+  pydantic                   2.13.4        MIT
+  pydantic-core              2.46.4        MIT
+  pydantic-settings          2.15.0        MIT
+  pygments                   2.21.0        BSD-2-Clause
+  pyjwt                      2.15.1        MIT
+  pyopenssl                  26.4.0        Apache-2.0
+  pytest                     9.1.1         MIT
+  pytest-cov                 7.1.0         MIT
+  pytest-xdist               3.8.0         MIT
+  python-dateutil            2.9.0.post0   Apache-2.0 OR BSD-3-Clause
+  python-dotenv              1.2.3         BSD-3-Clause
+  python-multipart           0.0.32        Apache-2.0
+  pytz                       2026.3.post1  MIT
+  pywin32                    312           PSF-2.0
+  referencing                0.37.0        MIT
+  regex                      2026.9.29     Apache-2.0 AND CNRI-Python
+  requests                   2.34.2        Apache-2.0
+  rich                       15.0.0        MIT
+  rpds-py                    2026.6.3      MIT
+  ruff                       0.16.9        MIT
+  shellingham                1.5.4         ISC
+  six                        1.17.0        MIT
+  slowapi                    0.1.10        MIT
+  sortedcontainers           2.4.0         Apache-2.0
+  soupsieve                  2.9.2         MIT
+  sqlalchemy                 2.0.52        MIT
+  sqlmodel                   0.0.39        MIT
+  sse-starlette              3.4.8         BSD-3-Clause
+  starlette                  1.6.0         BSD-3-Clause
+  truststore                 0.10.4        MIT
+  typer                      0.27.2        MIT
+  typing-extensions          4.16.0        PSF-2.0
+  typing-inspection          0.4.4         MIT
+  tzdata                     2026.3        Apache-2.0
+  urllib3                    2.8.0         MIT
+  uvicorn                    0.54.0        BSD-3-Clause
+  webauthn                   3.0.1         BSD-3-Clause
+  websockets                 17.0.1        BSD-3-Clause
+  wrapt                      2.3.0         BSD-2-Clause
+  yfinance                   1.7.0         Apache-2.0
+
+
+FRONTEND (npm) — 24 direct dependencies
+-----------------------------------------------------
+
+  @tanstack/react-query   5.104.0  MIT
+  framer-motion           13.1.1   MIT
+  lucide-react            1.34.0   ISC
+  react                   18.3.1   MIT
+  react-dom               18.3.1   MIT
+  react-router-dom        7.18.5   MIT
+  recharts                3.10.1   MIT
+  @playwright/test        1.64.1   Apache-2.0
+  @testing-library/dom    10.4.2   MIT
+  @testing-library/react  16.3.2   MIT
+  @types/react            18.3.31  MIT
+  @types/react-dom        18.3.7   MIT
+  @vitejs/plugin-react    4.7.0    MIT
+  autoprefixer            10.5.4   MIT
+  axe-core                4.13.0   MPL-2.0
+  eslint                  10.12.0  MIT
+  fake-indexeddb          6.2.5    Apache-2.0
+  jsdom                   30.0.1   MIT
+  postcss                 8.5.26   MIT
+  tailwindcss             3.4.19   MIT
+  typescript              5.6.3    Apache-2.0
+  typescript-eslint       8.71.0   MIT
+  vite                    5.4.21   MIT
+  vitest                  3.2.7    MIT
+
+Transitive npm set: 406 locked packages. License distribution:
+MIT x332, ISC x28, Apache-2.0 x23, BSD-2-Clause x8, BlueOak-1.0.0 x4, BSD-3-Clause x4, MIT-0 x2, MPL-2.0 x1, CC-BY-4.0 x1, CC0-1.0 x1, 0BSD x1, MIT AND ISC x1.
+
+
+RESTRICTIVE-LICENSE FLAGS
+-------------------------
+
+NON-PERMISSIVE / RESTRICTIVE LICENSES — flagged for review (none block MIT use
+of this repository; obligations attach to the named components only):
+
+  LGPL-3.0-only     psycopg 3.3.4, psycopg-binary 3.3.4
+                    Weak copyleft (GNU LGPLv3). Dynamically linked, unmodified:
+                    the application need not be LGPL. Source of the library must
+                    remain available to recipients. This is the Postgres driver,
+                    linked at runtime — acceptable, but it is the strongest
+                    license in the backend set.
+
+  MPL-2.0           certifi 2026.10.23 (CA bundle), hypothesis 6.170.14 (tests),
+                    axe-core 4.13.0 (a11y tests, frontend)
+                    File-level copyleft: modifications to THESE files must stay
+                    MPL; mere aggregation with MIT code imposes no obligation
+                    on this repository's own sources.
+
+  CC-BY-4.0         caniuse-lite (transitive, frontend build data)
+                    Attribution required: the CC-BY notice must accompany
+                    distributions of the data. Browser-support tables are
+                    consumed at build time; the upstream NOTICE travels with
+                    node_modules, not with the built bundle.
+
+  Apache-2.0        TypeScript, fake-indexeddb, @playwright/test, tzdata (backend, transitive)
+                    Permissive WITH a patent grant and an attribution/NOTICE
+                    obligation: retain the Apache notice on redistribution.
+
+  Dual license       python-dateutil 2.9.0.post0 — "Apache-2.0 OR BSD-3-Clause";
+                    either license may be taken. Also: the "BSD-3-Clause AND
+                    0BSD AND MIT AND Zlib AND CC0-1.0" entry in the backend set
+                    is a multi-license declaration (choose any one).
+
+Everything else in both inventories is MIT / BSD / ISC / Apache-2.0 / PSF /
+Unlicense / MIT-0 / 0BSD / CC0 / BlueOak — permissive, no action needed.
+
+KNOWN NON-ISSUES (checked, deliberately not flagged):
+  - No GPL, AGPL, SSPL, BUSL, or CC-BY-ND component appears in either lock.
+  - pywin32 is a Windows-only optional dependency of uvicorn; it is not
+    installed on any deployment target of this project (Linux) and is listed
+    here only because uv.lock records it for platform completeness.

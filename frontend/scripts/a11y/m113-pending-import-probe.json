@@ -1,0 +1,185 @@
+{
+  "milestone": "M113",
+  "base": "https://fintrac.princessandmark.com",
+  "width": 1440,
+  "file": "/home/hermes/.hermes/profiles/pm/cache/documents/doc_84b666942adf_tfsa.csv",
+  "resp_file": "/home/hermes/.hermes/profiles/pm/cache/documents/doc_c4d4510ffb5c_activities-export-2026-10-07.csv",
+  "captured_at": "2026-10-08T01:10:58-0400",
+  "before_parser": {
+    "tfsa": {
+      "rows": 71,
+      "unmapped": 20,
+      "by_kind": {
+        "MoneyMovement/TRANSFER_TF": 4,
+        "Tax/NRT": 16
+      }
+    },
+    "resp": {
+      "rows": 19,
+      "unmapped": 1,
+      "by_kind": {
+        "MoneyMovement/TRANSFER": 1
+      }
+    }
+  },
+  "tfsa_import": {
+    "preview_status": 201,
+    "preview_unmapped": 0,
+    "preview_rows": 91,
+    "preview_profile": null,
+    "stage_status": 201,
+    "stage_unmapped": 0,
+    "stage_unmapped_reasons": [],
+    "imported": 91,
+    "duplicates_skipped": 0,
+    "batch_id": 182,
+    "institution": null
+  },
+  "banner_light": {
+    "text": "1 uncommitted import for TFSA\n\nReview the rows and press Commit on the Imports page \u2014 until you do, nothing in it is live in this account.\n\nGo to the Imports page\nDismiss",
+    "role": "status",
+    "live": "polite",
+    "href": "/imports",
+    "link_height": 44
+  },
+  "banner_dark": {
+    "text": "1 uncommitted import for TFSA\n\nReview the rows and press Commit on the Imports page \u2014 until you do, nothing in it is live in this account.\n\nGo to the Imports page\nDismiss",
+    "role": "status",
+    "live": "polite",
+    "href": "/imports",
+    "link_height": 44
+  },
+  "tfsa_commit": {
+    "status": 422,
+    "body": {
+      "detail": "No USD/CAD fx rate for NVDA on 2025-12-26; add a manual rate before computing tax values",
+      "code": "fx_rate_missing"
+    }
+  },
+  "tfsa_discard": {
+    "status": 200,
+    "body": {
+      "status": "discarded",
+      "batch_id": 182
+    }
+  },
+  "resp_import": {
+    "preview_status": 201,
+    "preview_unmapped": 0,
+    "preview_rows": 20,
+    "preview_profile": null,
+    "stage_status": 201,
+    "stage_unmapped": 0,
+    "stage_unmapped_reasons": [],
+    "imported": 18,
+    "duplicates_skipped": 2,
+    "batch_id": 183,
+    "institution": null
+  },
+  "resp_commit": {
+    "status": 200,
+    "body": {
+      "id": 183,
+      "account_id": 269,
+      "institution": "investment_csv",
+      "file_name": "m113-real-export.csv",
+      "status": "committed",
+      "imported": 18,
+      "duplicates_skipped": 2,
+      "unresolved": 0
+    }
+  },
+  "watched_account_batches_before": "discarded=1\nreverted=1",
+  "watched_account_batches_after": "discarded=1\nreverted=1",
+  "screenshots": [
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_9bba21d1/frontend/scripts/a11y/m113-banner-prod-1440-light.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_9bba21d1/frontend/scripts/a11y/m113-banner-prod-1440-dark.png"
+  ],
+  "checks": [
+    {
+      "check": "before (pre-M113 parser, TFSA)",
+      "ok": true,
+      "detail": "20 unmapped of 91 rows: {'MoneyMovement/TRANSFER_TF': 4, 'Tax/NRT': 16}"
+    },
+    {
+      "check": "before (pre-M113 parser, RESP)",
+      "ok": true,
+      "detail": "1 unmapped of 20 rows: {'MoneyMovement/TRANSFER': 1}"
+    },
+    {
+      "check": "seed",
+      "ok": true,
+      "detail": "{\"email\": \"m113-probe-1791436210@example.com\", \"register\": 200, \"login\": 200, \"account_id\": 268, \"account_status\": 201}"
+    },
+    {
+      "check": "preview 0 unmapped (was 20)",
+      "ok": true,
+      "detail": "status=201 unmapped=0 rows=91 profile=None"
+    },
+    {
+      "check": "stage 0 unmapped / 91 imported",
+      "ok": true,
+      "detail": "status=201 unmapped=0 imported=91 batch=182 reasons=[]"
+    },
+    {
+      "check": "banner renders while pending",
+      "ok": true,
+      "detail": "{\"text\": \"1 uncommitted import for TFSA\\n\\nReview the rows and press Commit on the Imports page \\u2014 until you do, nothing in it is live in this account.\\n\\nGo to the Imports page\\nDismiss\", \"role\": \"status\", \"live\": \"polite\", \"href\": \"/imports\", \"link_height\": 44}"
+    },
+    {
+      "check": "banner a11y + link contract",
+      "ok": true,
+      "detail": "{\"text\": \"1 uncommitted import for TFSA\\n\\nReview the rows and press Commit on the Imports page \\u2014 until you do, nothing in it is live in this account.\\n\\nGo to the Imports page\\nDismiss\", \"role\": \"status\", \"live\": \"polite\", \"href\": \"/imports\", \"link_height\": 44}"
+    },
+    {
+      "check": "banner in dark theme",
+      "ok": true,
+      "detail": "{\"text\": \"1 uncommitted import for TFSA\\n\\nReview the rows and press Commit on the Imports page \\u2014 until you do, nothing in it is live in this account.\\n\\nGo to the Imports page\\nDismiss\", \"role\": \"status\", \"live\": \"polite\", \"href\": \"/imports\", \"link_height\": 44}"
+    },
+    {
+      "check": "link routes to /imports",
+      "ok": true,
+      "detail": "/imports"
+    },
+    {
+      "check": "commit answers 200 or the documented 422 (never a 500)",
+      "ok": true,
+      "detail": "status=422 body={\"detail\": \"No USD/CAD fx rate for NVDA on 2025-12-26; add a manual rate before computing tax values\", \"code\": \"fx_rate_missing\"}"
+    },
+    {
+      "check": "discard clears the batch",
+      "ok": true,
+      "detail": "status=200 body={\"status\": \"discarded\", \"batch_id\": 182}"
+    },
+    {
+      "check": "banner gone once the batch is no longer pending",
+      "ok": true,
+      "detail": "absent"
+    },
+    {
+      "check": "resp account",
+      "ok": true,
+      "detail": "{\"status\": 201, \"account_id\": 269}"
+    },
+    {
+      "check": "RESP preview/stage 0 unmapped (was 1)",
+      "ok": true,
+      "detail": "preview_unmapped=0 stage_unmapped=0 imported=18 duplicates=2 reasons=[]"
+    },
+    {
+      "check": "RESP commit runs the ACB replay (incl. qty-0 cash transfer_out)",
+      "ok": true,
+      "detail": "status=200 body={\"id\": 183, \"account_id\": 269, \"institution\": \"investment_csv\", \"file_name\": \"m113-real-export.csv\", \"status\": \"committed\", \"imported\": 18, \"duplicates_skipped\": 2, \"unresolved\": 0}"
+    },
+    {
+      "check": "no console errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "watched account untouched by the probe",
+      "ok": true,
+      "detail": "before='discarded=1\\nreverted=1' after='discarded=1\\nreverted=1'"
+    }
+  ]
+}

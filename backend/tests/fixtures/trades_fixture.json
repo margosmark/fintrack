@@ -1,0 +1,101 @@
+{
+  "description": "M5 tax-engine / M8 investment-performance fixture (docs/03). Content only — not consumed by the import pipeline. Quantities follow the pinned sign convention (buys positive, sells negative); money values are strings to preserve Decimal semantics.",
+  "securities": [
+    {
+      "symbol": "RY",
+      "name": "Royal Bank of Canada",
+      "kind": "stock",
+      "listing_currency": "CAD",
+      "exchange": "TSX"
+    },
+    {
+      "symbol": "VTI",
+      "name": "Vanguard Total Stock Market ETF",
+      "kind": "etf",
+      "listing_currency": "USD",
+      "exchange": "ARCA"
+    }
+  ],
+  "trades": [
+    {
+      "ref": "ry_buy_1",
+      "security": "RY",
+      "action": "buy",
+      "date": "2024-01-15",
+      "quantity": "100",
+      "price_native": "120.00",
+      "commission": "9.95"
+    },
+    {
+      "ref": "ry_buy_2",
+      "security": "RY",
+      "action": "buy",
+      "date": "2024-03-10",
+      "quantity": "50",
+      "price_native": "132.00",
+      "commission": "9.95"
+    },
+    {
+      "ref": "roc_distribution",
+      "security": "RY",
+      "action": "return_of_capital",
+      "date": "2024-05-24",
+      "quantity": "0",
+      "price_native": "0.35",
+      "commission": "0",
+      "note": "ROC cash distribution; reduces ACB per share (docs/06)"
+    },
+    {
+      "ref": "ry_sell_partial",
+      "security": "RY",
+      "action": "sell",
+      "date": "2024-06-20",
+      "quantity": "-60",
+      "price_native": "140.00",
+      "commission": "9.95",
+      "note": "Partial sell: realized gain on 60 of 150 shares"
+    },
+    {
+      "ref": "ry_superficial_loss_sell",
+      "security": "RY",
+      "action": "sell",
+      "date": "2024-11-25",
+      "quantity": "-10",
+      "price_native": "118.00",
+      "commission": "0",
+      "note": "Sell at a loss vs ACB per share"
+    },
+    {
+      "ref": "ry_superficial_loss_rebuy",
+      "security": "RY",
+      "action": "buy",
+      "date": "2024-12-05",
+      "quantity": "10",
+      "price_native": "119.50",
+      "commission": "0",
+      "note": "Repurchase within 30 days -> superficial loss (denied, added to new ACB; docs/06)"
+    },
+    {
+      "ref": "vti_buy_usd",
+      "security": "VTI",
+      "action": "buy",
+      "date": "2024-02-01",
+      "quantity": "20",
+      "price_native": "210.00",
+      "commission": "1.00",
+      "fx_rate_used": "1.35",
+      "note": "USD-listed buy in a CAD account; FX precedence per docs/06 (stored rate is display-only)"
+    },
+    {
+      "ref": "vti_split_2to1",
+      "security": "VTI",
+      "action": "corporate_action_adjustment",
+      "date": "2024-09-16",
+      "quantity": "0",
+      "price_native": "0",
+      "commission": "0",
+      "adjustment": {"type": "split", "ratio": "2:1"},
+      "note": "2:1 split entered as corporate_action_adjustment; quantity doubles, unit price halves (mechanics docs/06)"
+    }
+  ]
+}

@@ -1,0 +1,1994 @@
+{
+  "task": "t_06c510ef",
+  "label": "after",
+  "base": "https://fintrac.princessandmark.com",
+  "widths": [
+    320,
+    360,
+    390,
+    420,
+    1440
+  ],
+  "captured_at": "2026-10-07T22:34:39-0400",
+  "email": "m110-transfer-probe-1791426862@example.com",
+  "account_id": 248,
+  "seed": {
+    "email": "m110-transfer-probe-1791426862@example.com",
+    "register": 200,
+    "login": 200,
+    "accounts": [
+      248,
+      249,
+      250
+    ],
+    "txns": [
+      6800,
+      6801,
+      6802,
+      6803
+    ],
+    "suggestions": 2,
+    "payees": [
+      [
+        "-",
+        "INTERAC e-Transfer PRINCESS"
+      ],
+      [
+        "PAYMENT - THANK YOU",
+        "CIBC VISA ONLINE PAYMENT"
+      ]
+    ]
+  },
+  "axe": {
+    "counts": {},
+    "rows": []
+  },
+  "measurements": [
+    {
+      "found": true,
+      "inner": 320,
+      "count": 2,
+      "dom_count": 4,
+      "hidden_skipped": 2,
+      "suggestions": [
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 166,
+                "t": 1933,
+                "b": 1953,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 166,
+                "t": 1957,
+                "b": 1977,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-12"
+              },
+              "account": {
+                "l": 78,
+                "r": 166,
+                "t": 1981,
+                "b": 1997,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": null,
+              "hasPayee": false
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 166,
+                "t": 2007,
+                "b": 2027,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 166,
+                "t": 2031,
+                "b": 2051,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-13"
+              },
+              "account": {
+                "l": 78,
+                "r": 166,
+                "t": 2055,
+                "b": 2071,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(Tangerine Savings)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 166,
+                "t": 2075,
+                "b": 2091,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "INTERAC e-Transfer PRINCESS"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 246,
+            "sw": 244,
+            "cw": 244
+          },
+          "buttons": [
+            {
+              "t": 1990,
+              "b": 2034
+            },
+            {
+              "t": 1990,
+              "b": 2034
+            }
+          ],
+          "contentLines": [
+            "-$85.00",
+            "2026-09-12",
+            "(CIBC Chequing (USD ",
+            "$85.00",
+            "2026-09-13",
+            "(Tangerine Savings)",
+            "INTERAC e-Transfer P"
+          ]
+        },
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 166,
+                "t": 2129,
+                "b": 2149,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 166,
+                "t": 2153,
+                "b": 2173,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-20"
+              },
+              "account": {
+                "l": 78,
+                "r": 166,
+                "t": 2177,
+                "b": 2193,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": {
+                "l": 78,
+                "r": 166,
+                "t": 2197,
+                "b": 2213,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "PAYMENT - THANK YOU"
+              },
+              "hasPayee": true
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 166,
+                "t": 2223,
+                "b": 2243,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 166,
+                "t": 2247,
+                "b": 2267,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-21"
+              },
+              "account": {
+                "l": 78,
+                "r": 166,
+                "t": 2271,
+                "b": 2287,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(Aventura Visa)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 166,
+                "t": 2291,
+                "b": 2307,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "CIBC VISA ONLINE PAYMENT"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 246,
+            "sw": 244,
+            "cw": 244
+          },
+          "buttons": [
+            {
+              "t": 2196,
+              "b": 2240
+            },
+            {
+              "t": 2196,
+              "b": 2240
+            }
+          ],
+          "contentLines": [
+            "-$1,234.56",
+            "2026-09-20",
+            "(CIBC Chequing (USD ",
+            "PAYMENT - THANK YOU",
+            "$1,234.56",
+            "2026-09-21",
+            "(Aventura Visa)",
+            "CIBC VISA ONLINE PAY"
+          ]
+        }
+      ],
+      "sweep": {
+        "nodes": 42,
+        "overlaps": 0,
+        "samples": []
+      },
+      "panel_top": {
+        "y": 477
+      },
+      "shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-320.png",
+      "panel_shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-320-panel.png"
+    },
+    {
+      "found": true,
+      "inner": 360,
+      "count": 2,
+      "dom_count": 4,
+      "hidden_skipped": 2,
+      "suggestions": [
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 206,
+                "t": 1861,
+                "b": 1881,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 206,
+                "t": 1885,
+                "b": 1905,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-12"
+              },
+              "account": {
+                "l": 78,
+                "r": 206,
+                "t": 1909,
+                "b": 1925,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": null,
+              "hasPayee": false
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 206,
+                "t": 1935,
+                "b": 1955,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 206,
+                "t": 1959,
+                "b": 1979,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-13"
+              },
+              "account": {
+                "l": 78,
+                "r": 206,
+                "t": 1983,
+                "b": 1999,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Tangerine Savings)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 206,
+                "t": 2003,
+                "b": 2019,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "INTERAC e-Transfer PRINCESS"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 286,
+            "sw": 284,
+            "cw": 284
+          },
+          "buttons": [
+            {
+              "t": 1918,
+              "b": 1962
+            },
+            {
+              "t": 1918,
+              "b": 1962
+            }
+          ],
+          "contentLines": [
+            "-$85.00",
+            "2026-09-12",
+            "(CIBC Chequing (USD ",
+            "$85.00",
+            "2026-09-13",
+            "(Tangerine Savings)",
+            "INTERAC e-Transfer P"
+          ]
+        },
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 206,
+                "t": 2057,
+                "b": 2077,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 206,
+                "t": 2081,
+                "b": 2101,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-20"
+              },
+              "account": {
+                "l": 78,
+                "r": 206,
+                "t": 2105,
+                "b": 2121,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": {
+                "l": 78,
+                "r": 206,
+                "t": 2125,
+                "b": 2141,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "PAYMENT - THANK YOU"
+              },
+              "hasPayee": true
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 206,
+                "t": 2151,
+                "b": 2171,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 206,
+                "t": 2175,
+                "b": 2195,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-21"
+              },
+              "account": {
+                "l": 78,
+                "r": 206,
+                "t": 2199,
+                "b": 2215,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Aventura Visa)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 206,
+                "t": 2219,
+                "b": 2235,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "CIBC VISA ONLINE PAYMENT"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 286,
+            "sw": 284,
+            "cw": 284
+          },
+          "buttons": [
+            {
+              "t": 2124,
+              "b": 2168
+            },
+            {
+              "t": 2124,
+              "b": 2168
+            }
+          ],
+          "contentLines": [
+            "-$1,234.56",
+            "2026-09-20",
+            "(CIBC Chequing (USD ",
+            "PAYMENT - THANK YOU",
+            "$1,234.56",
+            "2026-09-21",
+            "(Aventura Visa)",
+            "CIBC VISA ONLINE PAY"
+          ]
+        }
+      ],
+      "sweep": {
+        "nodes": 42,
+        "overlaps": 0,
+        "samples": []
+      },
+      "panel_top": {
+        "y": 477
+      },
+      "shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-360.png",
+      "panel_shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-360-panel.png"
+    },
+    {
+      "found": true,
+      "inner": 390,
+      "count": 2,
+      "dom_count": 4,
+      "hidden_skipped": 2,
+      "suggestions": [
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 236,
+                "t": 1789,
+                "b": 1809,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 236,
+                "t": 1813,
+                "b": 1833,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-12"
+              },
+              "account": {
+                "l": 78,
+                "r": 236,
+                "t": 1837,
+                "b": 1853,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": null,
+              "hasPayee": false
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 236,
+                "t": 1863,
+                "b": 1883,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 236,
+                "t": 1887,
+                "b": 1907,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-13"
+              },
+              "account": {
+                "l": 78,
+                "r": 236,
+                "t": 1911,
+                "b": 1927,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Tangerine Savings)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 236,
+                "t": 1931,
+                "b": 1947,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "INTERAC e-Transfer PRINCESS"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 316,
+            "sw": 314,
+            "cw": 314
+          },
+          "buttons": [
+            {
+              "t": 1846,
+              "b": 1890
+            },
+            {
+              "t": 1846,
+              "b": 1890
+            }
+          ],
+          "contentLines": [
+            "-$85.00",
+            "2026-09-12",
+            "(CIBC Chequing (USD ",
+            "$85.00",
+            "2026-09-13",
+            "(Tangerine Savings)",
+            "INTERAC e-Transfer P"
+          ]
+        },
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 236,
+                "t": 1985,
+                "b": 2005,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 236,
+                "t": 2009,
+                "b": 2029,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-20"
+              },
+              "account": {
+                "l": 78,
+                "r": 236,
+                "t": 2033,
+                "b": 2049,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": {
+                "l": 78,
+                "r": 236,
+                "t": 2053,
+                "b": 2069,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "PAYMENT - THANK YOU"
+              },
+              "hasPayee": true
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 236,
+                "t": 2079,
+                "b": 2099,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 236,
+                "t": 2103,
+                "b": 2123,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-21"
+              },
+              "account": {
+                "l": 78,
+                "r": 236,
+                "t": 2127,
+                "b": 2143,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Aventura Visa)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 236,
+                "t": 2147,
+                "b": 2163,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "CIBC VISA ONLINE PAYMENT"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 316,
+            "sw": 314,
+            "cw": 314
+          },
+          "buttons": [
+            {
+              "t": 2052,
+              "b": 2096
+            },
+            {
+              "t": 2052,
+              "b": 2096
+            }
+          ],
+          "contentLines": [
+            "-$1,234.56",
+            "2026-09-20",
+            "(CIBC Chequing (USD ",
+            "PAYMENT - THANK YOU",
+            "$1,234.56",
+            "2026-09-21",
+            "(Aventura Visa)",
+            "CIBC VISA ONLINE PAY"
+          ]
+        }
+      ],
+      "sweep": {
+        "nodes": 41,
+        "overlaps": 0,
+        "samples": []
+      },
+      "panel_top": {
+        "y": 477
+      },
+      "shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-390.png",
+      "panel_shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-390-panel.png"
+    },
+    {
+      "found": true,
+      "inner": 420,
+      "count": 2,
+      "dom_count": 4,
+      "hidden_skipped": 2,
+      "suggestions": [
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 266,
+                "t": 1673,
+                "b": 1693,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 266,
+                "t": 1697,
+                "b": 1717,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-12"
+              },
+              "account": {
+                "l": 78,
+                "r": 266,
+                "t": 1721,
+                "b": 1737,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": null,
+              "hasPayee": false
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 266,
+                "t": 1747,
+                "b": 1767,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$85.00"
+              },
+              "date": {
+                "l": 78,
+                "r": 266,
+                "t": 1771,
+                "b": 1791,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-13"
+              },
+              "account": {
+                "l": 78,
+                "r": 266,
+                "t": 1795,
+                "b": 1811,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Tangerine Savings)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 266,
+                "t": 1815,
+                "b": 1831,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "INTERAC e-Transfer PRINCESS"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 346,
+            "sw": 344,
+            "cw": 344
+          },
+          "buttons": [
+            {
+              "t": 1730,
+              "b": 1774
+            },
+            {
+              "t": 1730,
+              "b": 1774
+            }
+          ],
+          "contentLines": [
+            "-$85.00",
+            "2026-09-12",
+            "(CIBC Chequing (USD ",
+            "$85.00",
+            "2026-09-13",
+            "(Tangerine Savings)",
+            "INTERAC e-Transfer P"
+          ]
+        },
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 78,
+                "r": 266,
+                "t": 1869,
+                "b": 1889,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 266,
+                "t": 1893,
+                "b": 1913,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-20"
+              },
+              "account": {
+                "l": 78,
+                "r": 266,
+                "t": 1917,
+                "b": 1933,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": {
+                "l": 78,
+                "r": 266,
+                "t": 1937,
+                "b": 1953,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "PAYMENT - THANK YOU"
+              },
+              "hasPayee": true
+            },
+            {
+              "amount": {
+                "l": 78,
+                "r": 266,
+                "t": 1963,
+                "b": 1983,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$1,234.56"
+              },
+              "date": {
+                "l": 78,
+                "r": 266,
+                "t": 1987,
+                "b": 2007,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-21"
+              },
+              "account": {
+                "l": 78,
+                "r": 266,
+                "t": 2011,
+                "b": 2027,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Aventura Visa)"
+              },
+              "payee": {
+                "l": 78,
+                "r": 266,
+                "t": 2031,
+                "b": 2047,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "CIBC VISA ONLINE PAYMENT"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 346,
+            "sw": 344,
+            "cw": 344
+          },
+          "buttons": [
+            {
+              "t": 1936,
+              "b": 1980
+            },
+            {
+              "t": 1936,
+              "b": 1980
+            }
+          ],
+          "contentLines": [
+            "-$1,234.56",
+            "2026-09-20",
+            "(CIBC Chequing (USD ",
+            "PAYMENT - THANK YOU",
+            "$1,234.56",
+            "2026-09-21",
+            "(Aventura Visa)",
+            "CIBC VISA ONLINE PAY"
+          ]
+        }
+      ],
+      "sweep": {
+        "nodes": 39,
+        "overlaps": 0,
+        "samples": []
+      },
+      "panel_top": {
+        "y": 477
+      },
+      "shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-420.png",
+      "panel_shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-420-panel.png"
+    },
+    {
+      "found": true,
+      "inner": 1440,
+      "count": 2,
+      "dom_count": 4,
+      "hidden_skipped": 2,
+      "suggestions": [
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 1146,
+                "r": 1306,
+                "t": 94,
+                "b": 114,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$85.00"
+              },
+              "date": {
+                "l": 1146,
+                "r": 1306,
+                "t": 118,
+                "b": 138,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-12"
+              },
+              "account": {
+                "l": 1146,
+                "r": 1306,
+                "t": 142,
+                "b": 158,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": null,
+              "hasPayee": false
+            },
+            {
+              "amount": {
+                "l": 1146,
+                "r": 1306,
+                "t": 168,
+                "b": 188,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$85.00"
+              },
+              "date": {
+                "l": 1146,
+                "r": 1306,
+                "t": 192,
+                "b": 212,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-13"
+              },
+              "account": {
+                "l": 1146,
+                "r": 1306,
+                "t": 216,
+                "b": 232,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Tangerine Savings)"
+              },
+              "payee": {
+                "l": 1146,
+                "r": 1306,
+                "t": 236,
+                "b": 252,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "INTERAC e-Transfer PRINCESS"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 286,
+            "sw": 284,
+            "cw": 284
+          },
+          "buttons": [
+            {
+              "t": 159,
+              "b": 187
+            },
+            {
+              "t": 159,
+              "b": 187
+            }
+          ],
+          "contentLines": [
+            "-$85.00",
+            "2026-09-12",
+            "(CIBC Chequing (USD ",
+            "$85.00",
+            "2026-09-13",
+            "(Tangerine Savings)",
+            "INTERAC e-Transfer P"
+          ]
+        },
+        {
+          "shape": "grid",
+          "sides": [
+            {
+              "amount": {
+                "l": 1146,
+                "r": 1306,
+                "t": 290,
+                "b": 310,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "-$1,234.56"
+              },
+              "date": {
+                "l": 1146,
+                "r": 1306,
+                "t": 314,
+                "b": 334,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-20"
+              },
+              "account": {
+                "l": 1146,
+                "r": 1306,
+                "t": 338,
+                "b": 354,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "(CIBC Chequing (USD Foreign Currency Wrap Me))"
+              },
+              "payee": {
+                "l": 1146,
+                "r": 1306,
+                "t": 358,
+                "b": 374,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "PAYMENT - THANK YOU"
+              },
+              "hasPayee": true
+            },
+            {
+              "amount": {
+                "l": 1146,
+                "r": 1306,
+                "t": 384,
+                "b": 404,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "$1,234.56"
+              },
+              "date": {
+                "l": 1146,
+                "r": 1306,
+                "t": 408,
+                "b": 428,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "2026-09-21"
+              },
+              "account": {
+                "l": 1146,
+                "r": 1306,
+                "t": 432,
+                "b": 448,
+                "lines": 1,
+                "ellipsized": false,
+                "text": "(Aventura Visa)"
+              },
+              "payee": {
+                "l": 1146,
+                "r": 1306,
+                "t": 452,
+                "b": 468,
+                "lines": 1,
+                "ellipsized": true,
+                "text": "CIBC VISA ONLINE PAYMENT"
+              },
+              "hasPayee": true
+            }
+          ],
+          "dash": false,
+          "overlap": null,
+          "overflow": false,
+          "card": {
+            "w": 286,
+            "sw": 284,
+            "cw": 284
+          },
+          "buttons": [
+            {
+              "t": 365,
+              "b": 393
+            },
+            {
+              "t": 365,
+              "b": 393
+            }
+          ],
+          "contentLines": [
+            "-$1,234.56",
+            "2026-09-20",
+            "(CIBC Chequing (USD ",
+            "PAYMENT - THANK YOU",
+            "$1,234.56",
+            "2026-09-21",
+            "(Aventura Visa)",
+            "CIBC VISA ONLINE PAY"
+          ]
+        }
+      ],
+      "sweep": {
+        "nodes": 46,
+        "overlaps": 0,
+        "samples": []
+      },
+      "panel_top": {
+        "y": 159
+      },
+      "shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-1440.png",
+      "panel_shot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-1440-panel.png"
+    }
+  ],
+  "screenshots": [
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-320.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-360.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-390.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-420.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-1440.png"
+  ],
+  "panel_screenshots": [
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-320-panel.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-360-panel.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-390-panel.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-420-panel.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_06c510ef/frontend/scripts/a11y/transfer-suggestions-after-1440-panel.png"
+  ],
+  "checks": [
+    {
+      "check": "seed tenant + 2 transfer suggestions",
+      "ok": true,
+      "detail": "{\"email\": \"m110-transfer-probe-1791426862@example.com\", \"register\": 200, \"login\": 200, \"accounts\": [248, 249, 250], \"txns\": [6800, 6801, 6802, 6803], \"suggestions\": 2, \"payees\": [[\"-\", \"INTERAC e-Transfer PRINCESS\"], [\"PAYMENT - THANK YOU\", \"CIBC VISA ONLINE PAYMENT\"]]}"
+    },
+    {
+      "check": "viewport 320 really applied",
+      "ok": true,
+      "detail": "innerWidth=320 got=[320, 900]"
+    },
+    {
+      "check": "panel found \u2014 320px",
+      "ok": true,
+      "detail": "visible cards=2 (dom=4, hidden skipped=2)"
+    },
+    {
+      "check": "two visible suggestion pairs \u2014 320px",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "check": "pair 1 @ 320px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 1 @ 320px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 320px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 320px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$85.00"
+    },
+    {
+      "check": "pair 1 @ 320px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-12'"
+    },
+    {
+      "check": "pair 1 @ 320px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$85.00"
+    },
+    {
+      "check": "pair 1 @ 320px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-13'"
+    },
+    {
+      "check": "pair 1 @ 320px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Tangerine Savings)'"
+    },
+    {
+      "check": "pair 1 @ 320px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 320px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 320px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 246, \"sw\": 244, \"cw\": 244}"
+    },
+    {
+      "check": "pair 2 @ 320px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 2 @ 320px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 320px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 320px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 320px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-20'"
+    },
+    {
+      "check": "pair 2 @ 320px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 320px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-21'"
+    },
+    {
+      "check": "pair 2 @ 320px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Aventura Visa)'"
+    },
+    {
+      "check": "pair 2 @ 320px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 320px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 320px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 246, \"sw\": 244, \"cw\": 244}"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 main @320",
+      "ok": true,
+      "detail": "nodes=42 overlaps=0 []"
+    },
+    {
+      "check": "viewport 360 really applied",
+      "ok": true,
+      "detail": "innerWidth=360 got=[360, 900]"
+    },
+    {
+      "check": "panel found \u2014 360px",
+      "ok": true,
+      "detail": "visible cards=2 (dom=4, hidden skipped=2)"
+    },
+    {
+      "check": "two visible suggestion pairs \u2014 360px",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "check": "pair 1 @ 360px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 1 @ 360px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 360px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 360px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$85.00"
+    },
+    {
+      "check": "pair 1 @ 360px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-12'"
+    },
+    {
+      "check": "pair 1 @ 360px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$85.00"
+    },
+    {
+      "check": "pair 1 @ 360px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-13'"
+    },
+    {
+      "check": "pair 1 @ 360px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Tangerine Savings)'"
+    },
+    {
+      "check": "pair 1 @ 360px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 360px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 360px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 286, \"sw\": 284, \"cw\": 284}"
+    },
+    {
+      "check": "pair 2 @ 360px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 2 @ 360px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 360px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 360px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 360px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-20'"
+    },
+    {
+      "check": "pair 2 @ 360px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 360px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-21'"
+    },
+    {
+      "check": "pair 2 @ 360px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Aventura Visa)'"
+    },
+    {
+      "check": "pair 2 @ 360px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 360px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 360px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 286, \"sw\": 284, \"cw\": 284}"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 main @360",
+      "ok": true,
+      "detail": "nodes=42 overlaps=0 []"
+    },
+    {
+      "check": "viewport 390 really applied",
+      "ok": true,
+      "detail": "innerWidth=390 got=[390, 900]"
+    },
+    {
+      "check": "panel found \u2014 390px",
+      "ok": true,
+      "detail": "visible cards=2 (dom=4, hidden skipped=2)"
+    },
+    {
+      "check": "two visible suggestion pairs \u2014 390px",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "check": "pair 1 @ 390px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 1 @ 390px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 390px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 390px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$85.00"
+    },
+    {
+      "check": "pair 1 @ 390px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-12'"
+    },
+    {
+      "check": "pair 1 @ 390px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$85.00"
+    },
+    {
+      "check": "pair 1 @ 390px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-13'"
+    },
+    {
+      "check": "pair 1 @ 390px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Tangerine Savings)'"
+    },
+    {
+      "check": "pair 1 @ 390px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 390px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 390px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 316, \"sw\": 314, \"cw\": 314}"
+    },
+    {
+      "check": "pair 2 @ 390px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 2 @ 390px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 390px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 390px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 390px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-20'"
+    },
+    {
+      "check": "pair 2 @ 390px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 390px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-21'"
+    },
+    {
+      "check": "pair 2 @ 390px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Aventura Visa)'"
+    },
+    {
+      "check": "pair 2 @ 390px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 390px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 390px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 316, \"sw\": 314, \"cw\": 314}"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 main @390",
+      "ok": true,
+      "detail": "nodes=41 overlaps=0 []"
+    },
+    {
+      "check": "viewport 420 really applied",
+      "ok": true,
+      "detail": "innerWidth=420 got=[420, 900]"
+    },
+    {
+      "check": "panel found \u2014 420px",
+      "ok": true,
+      "detail": "visible cards=2 (dom=4, hidden skipped=2)"
+    },
+    {
+      "check": "two visible suggestion pairs \u2014 420px",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "check": "pair 1 @ 420px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 1 @ 420px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 420px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 1 @ 420px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$85.00"
+    },
+    {
+      "check": "pair 1 @ 420px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-12'"
+    },
+    {
+      "check": "pair 1 @ 420px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$85.00"
+    },
+    {
+      "check": "pair 1 @ 420px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-13'"
+    },
+    {
+      "check": "pair 1 @ 420px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Tangerine Savings)'"
+    },
+    {
+      "check": "pair 1 @ 420px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 420px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 420px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 346, \"sw\": 344, \"cw\": 344}"
+    },
+    {
+      "check": "pair 2 @ 420px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 2 @ 420px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 420px: date column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "pair 2 @ 420px: account column aligned",
+      "ok": true,
+      "detail": "src.l=78 cand.l=78 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 420px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-20'"
+    },
+    {
+      "check": "pair 2 @ 420px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 420px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-21'"
+    },
+    {
+      "check": "pair 2 @ 420px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Aventura Visa)'"
+    },
+    {
+      "check": "pair 2 @ 420px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 420px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 420px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 346, \"sw\": 344, \"cw\": 344}"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 main @420",
+      "ok": true,
+      "detail": "nodes=39 overlaps=0 []"
+    },
+    {
+      "check": "viewport 1440 really applied",
+      "ok": true,
+      "detail": "innerWidth=1440 got=[1440, 900]"
+    },
+    {
+      "check": "panel found \u2014 1440px",
+      "ok": true,
+      "detail": "visible cards=2 (dom=4, hidden skipped=2)"
+    },
+    {
+      "check": "two visible suggestion pairs \u2014 1440px",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "check": "pair 1 @ 1440px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 1 @ 1440px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=1146 cand.l=1146 delta=0"
+    },
+    {
+      "check": "pair 1 @ 1440px: date column aligned",
+      "ok": true,
+      "detail": "src.l=1146 cand.l=1146 delta=0"
+    },
+    {
+      "check": "pair 1 @ 1440px: account column aligned",
+      "ok": true,
+      "detail": "src.l=1146 cand.l=1146 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$85.00"
+    },
+    {
+      "check": "pair 1 @ 1440px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-12'"
+    },
+    {
+      "check": "pair 1 @ 1440px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$85.00"
+    },
+    {
+      "check": "pair 1 @ 1440px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-13'"
+    },
+    {
+      "check": "pair 1 @ 1440px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Tangerine Savings)'"
+    },
+    {
+      "check": "pair 1 @ 1440px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 1440px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 1 @ 1440px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 286, \"sw\": 284, \"cw\": 284}"
+    },
+    {
+      "check": "pair 2 @ 1440px: one grid for the pair",
+      "ok": true,
+      "detail": "grid"
+    },
+    {
+      "check": "pair 2 @ 1440px: amount column aligned",
+      "ok": true,
+      "detail": "src.l=1146 cand.l=1146 delta=0"
+    },
+    {
+      "check": "pair 2 @ 1440px: date column aligned",
+      "ok": true,
+      "detail": "src.l=1146 cand.l=1146 delta=0"
+    },
+    {
+      "check": "pair 2 @ 1440px: account column aligned",
+      "ok": true,
+      "detail": "src.l=1146 cand.l=1146 delta=0"
+    },
+    {
+      "check": "source amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "-$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 1440px: source date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-20'"
+    },
+    {
+      "check": "pair 2 @ 1440px: source account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(CIBC Chequing (USD Foreign Currency Wrap Me))'"
+    },
+    {
+      "check": "candidate amount shown in full (never ellipsized)",
+      "ok": true,
+      "detail": "$1,234.56"
+    },
+    {
+      "check": "pair 2 @ 1440px: candidate date on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '2026-09-21'"
+    },
+    {
+      "check": "pair 2 @ 1440px: candidate account on one line (no mid-label wrap)",
+      "ok": true,
+      "detail": "lines=1 '(Aventura Visa)'"
+    },
+    {
+      "check": "pair 2 @ 1440px: no stray '-' payee line",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 1440px: buttons never print over text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pair 2 @ 1440px: card does not overflow",
+      "ok": true,
+      "detail": "{\"w\": 286, \"sw\": 284, \"cw\": 284}"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 main @1440",
+      "ok": true,
+      "detail": "nodes=46 overlaps=0 []"
+    },
+    {
+      "check": "viewport 390 really applied",
+      "ok": true,
+      "detail": "got=[390, 900]"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /accounts/<probe> 390px",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "no console errors",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

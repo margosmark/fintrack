@@ -1,0 +1,112 @@
+[
+  {
+    "check": "seed tenant (register/login/account/category/tag/2 rows)",
+    "ok": true,
+    "detail": "{\"email\": \"m123-1791520111761@example.com\", \"password\": \"<redacted-password>\", \"register\": 200, \"login\": 200, \"account_id\": 9, \"category_id\": 43, \"tag_id\": 3, \"rows\": [201, 201]}"
+  },
+  {
+    "check": "landed on /transactions",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "Budget disabled + reason without a category filter",
+    "ok": true,
+    "detail": "{\"disabled\": \"true\", \"text\": \"BudgetSet a category filter first\"}"
+  },
+  {
+    "check": "Escape closes the menu and restores the trigger",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "Apply filters mirrors category into the address bar",
+    "ok": true,
+    "detail": "location.search=?account=9&category=43"
+  },
+  {
+    "check": "menu has exactly four targets",
+    "ok": true,
+    "detail": "{\"count\": 4, \"label\": \"Create from this search\", \"summary\": \"This search: Probe Groceries \\u00b7 Probe ChequingSaved viewKeep this search as a bookmarkRuleCategorize the payees this search matchesBillA recurring bill for this payeeBudgetA monthly amount for this category\", \"focused\": \"Saved viewKeep this search as a bookmark\", \"expanded\": \"true\"}"
+  },
+  {
+    "check": "trigger reports aria-expanded=true and the menu is labelled",
+    "ok": true,
+    "detail": "expanded=true label=Create from this search"
+  },
+  {
+    "check": "focus opens on the first target (roving focus)",
+    "ok": true,
+    "detail": "Saved viewKeep this search as a bookmark"
+  },
+  {
+    "check": "criteria line names the labels, not raw ids",
+    "ok": true,
+    "detail": "This search: Probe Groceries \u00b7 Probe ChequingSaved viewKeep this search as a bookmarkRuleCategorize the payees this search matchesBillA recurring bill for this payeeBudgetA monthly"
+  },
+  {
+    "check": "Budget is enabled once a category filter is set",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "axe 0 critical/serious \u2014 Create menu open",
+    "ok": true,
+    "detail": "{'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0} []"
+  },
+  {
+    "check": "save panel opens with the criteria as the default title",
+    "ok": true,
+    "detail": "Probe Groceries \u00b7 Probe Chequing"
+  },
+  {
+    "check": "PATCH /users/me stores kind=transactions + the criteria verbatim",
+    "ok": true,
+    "detail": "{\"id\": \"v0cbf17ee5d4440a08fc51e5ab7eaaf40\", \"title\": \"Probe grocery run\", \"tab\": \"transactions\", \"kind\": \"transactions\", \"state\": {\"category\": \"43\", \"account\": \"9\"}}"
+  },
+  {
+    "check": "save panel closes on success",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "Views row names the view and its criteria",
+    "ok": true,
+    "detail": "Probe grocery runProbe Groceries \u00b7 Probe Chequing"
+  },
+  {
+    "check": "restore NAVIGATES to the view's bookmark URL",
+    "ok": true,
+    "detail": "location.search=?category=43&account=9"
+  },
+  {
+    "check": "rule pattern prefilled from the deep link",
+    "ok": true,
+    "detail": "ROGERS"
+  },
+  {
+    "check": "rule provenance says what a rule cannot carry",
+    "ok": true,
+    "detail": "Created from search: \u201cROGERS\u201d \u00b7 Probe Groceries \u2014 account, tags not carried into a rule."
+  },
+  {
+    "check": "budget category pre-selected",
+    "ok": true,
+    "detail": "value=43"
+  },
+  {
+    "check": "budget period is monthly (the current month)",
+    "ok": true,
+    "detail": "monthly"
+  },
+  {
+    "check": "budget Create stays gated until an amount is typed",
+    "ok": true,
+    "detail": "disabled=True"
+  },
+  {
+    "check": "bill draft opened with amount blank and a provenance line",
+    "ok": true,
+    "detail": "amount='' prov=Created from search: \u201cROGERS\u201d \u00b7 Probe Groceries"
+  }
+]

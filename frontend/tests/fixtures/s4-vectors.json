@@ -1,0 +1,7660 @@
+{
+ "meta": {
+  "slice": "s4",
+  "base_url": "https://fintrac.princessandmark.com/api/v1",
+  "tenant": "demo",
+  "base_commit": "37faa054efbd61721f51677c46fe103d750ffaf6",
+  "captured_at_utc": "2026-09-28T03:05:02.404Z",
+  "captured_at_et": "2026-09-27",
+  "reporting_currency": "CAD",
+  "capture_command": "node frontend/scripts/parity/capture.ts --slice s4",
+  "diff_command": "node frontend/scripts/parity/capture.ts --slice s4 && node frontend/scripts/parity/parity.ts --slice s4",
+  "notes": [
+   "Coverage on this tenant: 1/13 tax years have disposal rows, 0/13 have superficial-loss denials. If S4 needs denial/ROC coverage the demo does not carry, extend the capture with a synthetic tenant (same pattern as the S3 previews) rather than weakening the comparison.",
+   "fx captured cache-only (fetch=false), 2000-01-01 .. meta.captured_at_et — reports never fetch (docs/07/docs/12).",
+   "prices/trades/accounts/securities are the S2b loaders' populations: GET /trades?committed_only=true, 200/page, merged.",
+   "reporting_currency is meta.reporting_currency (get_settings().reporting_currency, not exposed by any endpoint).",
+   "GET /acb is captured exactly as Taxes.tsx calls it (`?limit=200`, no offset).",
+   "`datasets.demo.acbPools` is that same GET /acb response kept as an INPUT: `acb_pools.id` (serial) and `updated_at` (last rebuild_user_pools write) are assigned by Postgres and re-issued by any demo-exempt POST /acb/rebuild, so they cannot be derived from trades. The S4 engine computes the other six fields per row plus order/total/limit/offset itself and takes ONLY those two columns from the frozen fetch (PM scope decision A, 2026-09-27); the acb.pools case still gates every computed field."
+  ]
+ },
+ "datasets": {
+  "demo": {
+   "trades": [
+    {
+     "id": 1,
+     "account_id": 4,
+     "security_id": 4,
+     "action": "buy",
+     "date": "2025-10-02",
+     "quantity": "120.000000",
+     "price_native": "57.52000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 2,
+     "account_id": 4,
+     "security_id": 3,
+     "action": "buy",
+     "date": "2025-10-03",
+     "quantity": "80.000000",
+     "price_native": "135.38000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 3,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2025-10-05",
+     "quantity": "0.000000",
+     "price_native": "2000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 4,
+     "account_id": 6,
+     "security_id": 3,
+     "action": "contribution",
+     "date": "2025-10-05",
+     "quantity": "0.000000",
+     "price_native": "21000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 5,
+     "account_id": 6,
+     "security_id": 3,
+     "action": "buy",
+     "date": "2025-10-05",
+     "quantity": "150.000000",
+     "price_native": "135.38000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 6,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2025-10-10",
+     "quantity": "34.000000",
+     "price_native": "124.18000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 7,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "buy",
+     "date": "2025-10-12",
+     "quantity": "28.000000",
+     "price_native": "227.07000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 8,
+     "account_id": 5,
+     "security_id": 7,
+     "action": "buy",
+     "date": "2025-10-14",
+     "quantity": "12.000000",
+     "price_native": "114.88000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 9,
+     "account_id": 4,
+     "security_id": 4,
+     "action": "dividend",
+     "date": "2025-10-15",
+     "quantity": "0.000000",
+     "price_native": "79.20000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 10,
+     "account_id": 4,
+     "security_id": 3,
+     "action": "dividend",
+     "date": "2025-10-15",
+     "quantity": "0.000000",
+     "price_native": "118.40000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 11,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "dividend",
+     "date": "2025-10-15",
+     "quantity": "0.000000",
+     "price_native": "45.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 12,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "dividend",
+     "date": "2025-10-20",
+     "quantity": "0.000000",
+     "price_native": "85.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 13,
+     "account_id": 5,
+     "security_id": 6,
+     "action": "dividend",
+     "date": "2025-10-20",
+     "quantity": "0.000000",
+     "price_native": "45.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 14,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2025-10-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 15,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2025-10-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 16,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2025-11-10",
+     "quantity": "25.000000",
+     "price_native": "126.12000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 17,
+     "account_id": 5,
+     "security_id": 6,
+     "action": "buy",
+     "date": "2025-11-13",
+     "quantity": "24.000000",
+     "price_native": "58.26000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 18,
+     "account_id": 5,
+     "security_id": 7,
+     "action": "buy",
+     "date": "2025-11-14",
+     "quantity": "10.000000",
+     "price_native": "120.60000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 19,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2025-11-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 20,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2025-11-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 21,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2025-12-10",
+     "quantity": "30.000000",
+     "price_native": "128.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 22,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "buy",
+     "date": "2025-12-12",
+     "quantity": "22.000000",
+     "price_native": "243.49000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 23,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2025-12-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 24,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2025-12-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 25,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-01-10",
+     "quantity": "28.000000",
+     "price_native": "132.83000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 26,
+     "account_id": 4,
+     "security_id": 4,
+     "action": "dividend",
+     "date": "2026-01-15",
+     "quantity": "0.000000",
+     "price_native": "79.20000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 27,
+     "account_id": 4,
+     "security_id": 3,
+     "action": "dividend",
+     "date": "2026-01-15",
+     "quantity": "0.000000",
+     "price_native": "118.40000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 28,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "dividend",
+     "date": "2026-01-15",
+     "quantity": "0.000000",
+     "price_native": "60.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 29,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "dividend",
+     "date": "2026-01-20",
+     "quantity": "0.000000",
+     "price_native": "85.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 30,
+     "account_id": 5,
+     "security_id": 6,
+     "action": "dividend",
+     "date": "2026-01-20",
+     "quantity": "0.000000",
+     "price_native": "45.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 31,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-01-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 32,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-01-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 33,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-02-10",
+     "quantity": "21.000000",
+     "price_native": "133.94000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 34,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "buy",
+     "date": "2026-02-12",
+     "quantity": "29.000000",
+     "price_native": "253.42000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 35,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-02-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 36,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-02-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 37,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-03-10",
+     "quantity": "29.000000",
+     "price_native": "137.53000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 38,
+     "account_id": 5,
+     "security_id": 6,
+     "action": "buy",
+     "date": "2026-03-13",
+     "quantity": "26.000000",
+     "price_native": "58.99000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 39,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-03-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 40,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-03-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 41,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-04-10",
+     "quantity": "30.000000",
+     "price_native": "137.30000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 42,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "buy",
+     "date": "2026-04-12",
+     "quantity": "20.000000",
+     "price_native": "265.01000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 43,
+     "account_id": 4,
+     "security_id": 4,
+     "action": "dividend",
+     "date": "2026-04-15",
+     "quantity": "0.000000",
+     "price_native": "79.20000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 44,
+     "account_id": 4,
+     "security_id": 3,
+     "action": "dividend",
+     "date": "2026-04-15",
+     "quantity": "0.000000",
+     "price_native": "118.40000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 45,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "dividend",
+     "date": "2026-04-15",
+     "quantity": "0.000000",
+     "price_native": "75.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 46,
+     "account_id": 4,
+     "security_id": 4,
+     "action": "return_of_capital",
+     "date": "2026-04-16",
+     "quantity": "0.000000",
+     "price_native": "40.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 47,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "dividend",
+     "date": "2026-04-20",
+     "quantity": "0.000000",
+     "price_native": "85.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 48,
+     "account_id": 5,
+     "security_id": 6,
+     "action": "dividend",
+     "date": "2026-04-20",
+     "quantity": "0.000000",
+     "price_native": "45.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 49,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-04-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 50,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-04-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 51,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-05-10",
+     "quantity": "26.000000",
+     "price_native": "145.31000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 52,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-05-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 53,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-05-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 54,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-06-10",
+     "quantity": "30.000000",
+     "price_native": "142.44000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 55,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "buy",
+     "date": "2026-06-12",
+     "quantity": "16.000000",
+     "price_native": "271.93000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 56,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-06-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 57,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-06-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 58,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-07-10",
+     "quantity": "24.000000",
+     "price_native": "149.79000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 59,
+     "account_id": 5,
+     "security_id": 6,
+     "action": "buy",
+     "date": "2026-07-13",
+     "quantity": "30.000000",
+     "price_native": "60.51000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 60,
+     "account_id": 4,
+     "security_id": 4,
+     "action": "dividend",
+     "date": "2026-07-15",
+     "quantity": "0.000000",
+     "price_native": "79.20000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 61,
+     "account_id": 4,
+     "security_id": 3,
+     "action": "dividend",
+     "date": "2026-07-15",
+     "quantity": "0.000000",
+     "price_native": "118.40000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 62,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "dividend",
+     "date": "2026-07-15",
+     "quantity": "0.000000",
+     "price_native": "90.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 63,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "sell",
+     "date": "2026-07-16",
+     "quantity": "-46.000000",
+     "price_native": "274.65000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 64,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "dividend",
+     "date": "2026-07-20",
+     "quantity": "0.000000",
+     "price_native": "85.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 65,
+     "account_id": 5,
+     "security_id": 6,
+     "action": "dividend",
+     "date": "2026-07-20",
+     "quantity": "0.000000",
+     "price_native": "45.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 66,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-07-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 67,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-07-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 68,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-08-10",
+     "quantity": "37.000000",
+     "price_native": "153.08000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 69,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "buy",
+     "date": "2026-08-12",
+     "quantity": "23.000000",
+     "price_native": "280.08000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 70,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-08-22",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    },
+    {
+     "id": 71,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-08-28",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 72,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "buy",
+     "date": "2026-09-02",
+     "quantity": "21.000000",
+     "price_native": "154.31000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 73,
+     "account_id": 4,
+     "security_id": 1,
+     "action": "contribution",
+     "date": "2026-09-02",
+     "quantity": "0.000000",
+     "price_native": "4000.00000000",
+     "commission": "0.00",
+     "fx_rate_used": null
+    },
+    {
+     "id": 74,
+     "account_id": 5,
+     "security_id": 5,
+     "action": "transfer_in",
+     "date": "2026-09-02",
+     "quantity": "0.000000",
+     "price_native": "3300.00000000",
+     "commission": "0.00",
+     "fx_rate_used": "0.74000000"
+    }
+   ],
+   "accounts": [
+    {
+     "id": 1,
+     "institution_id": null,
+     "name": "RBC Main Chequing",
+     "type": "chequing",
+     "currency": "CAD",
+     "taxable": false,
+     "llm_autopilot": false,
+     "cash_balance": "1711.22",
+     "investment_value": "0.00",
+     "total_value": "1711.22",
+     "starting_balance": "0.00",
+     "name_cipher": null
+    },
+    {
+     "id": 2,
+     "institution_id": null,
+     "name": "RBC Credit Card",
+     "type": "credit_card",
+     "currency": "CAD",
+     "taxable": false,
+     "llm_autopilot": false,
+     "cash_balance": "-1390.19",
+     "investment_value": "0.00",
+     "total_value": "-1390.19",
+     "starting_balance": "0.00",
+     "name_cipher": null
+    },
+    {
+     "id": 3,
+     "institution_id": null,
+     "name": "TD Emergency Savings",
+     "type": "savings",
+     "currency": "CAD",
+     "taxable": false,
+     "llm_autopilot": false,
+     "cash_balance": "37.50",
+     "investment_value": "0.00",
+     "total_value": "37.50",
+     "starting_balance": "0.00",
+     "name_cipher": null
+    },
+    {
+     "id": 4,
+     "institution_id": null,
+     "name": "WS TFSA",
+     "type": "tfsa",
+     "currency": "CAD",
+     "taxable": false,
+     "llm_autopilot": false,
+     "cash_balance": "0.00",
+     "investment_value": "125059.40",
+     "total_value": "125059.40",
+     "starting_balance": "0.00",
+     "name_cipher": null
+    },
+    {
+     "id": 5,
+     "institution_id": null,
+     "name": "WS Margin",
+     "type": "brokerage_non_registered",
+     "currency": "USD",
+     "taxable": true,
+     "llm_autopilot": false,
+     "cash_balance": "0.00",
+     "investment_value": "47035.56",
+     "total_value": "47035.56",
+     "starting_balance": "0.00",
+     "name_cipher": null
+    },
+    {
+     "id": 6,
+     "institution_id": null,
+     "name": "NB LIRA",
+     "type": "lira",
+     "currency": "CAD",
+     "taxable": false,
+     "llm_autopilot": false,
+     "cash_balance": "0.00",
+     "investment_value": "37326.00",
+     "total_value": "37326.00",
+     "starting_balance": "0.00",
+     "name_cipher": null
+    }
+   ],
+   "securities": [
+    {
+     "id": 1,
+     "symbol": "RY.TO",
+     "name": "Royal Bank of Canada",
+     "kind": "stock",
+     "listing_currency": "CAD",
+     "exchange": "TSX"
+    },
+    {
+     "id": 2,
+     "symbol": "TD.TO",
+     "name": "Toronto-Dominion Bank",
+     "kind": "stock",
+     "listing_currency": "CAD",
+     "exchange": "TSX"
+    },
+    {
+     "id": 3,
+     "symbol": "BMO.TO",
+     "name": "Bank of Montreal",
+     "kind": "stock",
+     "listing_currency": "CAD",
+     "exchange": "TSX"
+    },
+    {
+     "id": 4,
+     "symbol": "ENB.TO",
+     "name": "Enbridge Inc.",
+     "kind": "stock",
+     "listing_currency": "CAD",
+     "exchange": "TSX"
+    },
+    {
+     "id": 5,
+     "symbol": "VTI",
+     "name": "Vanguard Total Stock Market ETF",
+     "kind": "etf",
+     "listing_currency": "USD",
+     "exchange": "NYSE"
+    },
+    {
+     "id": 6,
+     "symbol": "VXUS",
+     "name": "Vanguard Total International Stock ETF",
+     "kind": "etf",
+     "listing_currency": "USD",
+     "exchange": "NYSE"
+    },
+    {
+     "id": 7,
+     "symbol": "NVDA",
+     "name": "NVIDIA Corporation",
+     "kind": "stock",
+     "listing_currency": "USD",
+     "exchange": "NASDAQ"
+    }
+   ],
+   "prices": [
+    {
+     "id": 636,
+     "security_id": 1,
+     "date": "2026-09-21",
+     "price": "289.64001465",
+     "source": "yfinance"
+    },
+    {
+     "id": 637,
+     "security_id": 3,
+     "date": "2026-09-21",
+     "price": "248.83999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 638,
+     "security_id": 4,
+     "date": "2026-09-21",
+     "price": "67.69000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 639,
+     "security_id": 5,
+     "date": "2026-09-21",
+     "price": "381.10000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 640,
+     "security_id": 6,
+     "date": "2026-09-21",
+     "price": "87.15000153",
+     "source": "yfinance"
+    },
+    {
+     "id": 641,
+     "security_id": 7,
+     "date": "2026-09-21",
+     "price": "227.38000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 630,
+     "security_id": 1,
+     "date": "2026-09-11",
+     "price": "285.20001221",
+     "source": "yfinance"
+    },
+    {
+     "id": 631,
+     "security_id": 3,
+     "date": "2026-09-11",
+     "price": "242.47000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 632,
+     "security_id": 4,
+     "date": "2026-09-11",
+     "price": "66.23000336",
+     "source": "yfinance"
+    },
+    {
+     "id": 633,
+     "security_id": 5,
+     "date": "2026-09-11",
+     "price": "376.30999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 634,
+     "security_id": 6,
+     "date": "2026-09-11",
+     "price": "87.13999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 635,
+     "security_id": 7,
+     "date": "2026-09-11",
+     "price": "218.28999329",
+     "source": "yfinance"
+    },
+    {
+     "id": 629,
+     "security_id": 1,
+     "date": "2026-09-02",
+     "price": "287.89001465",
+     "source": "yfinance"
+    },
+    {
+     "id": 628,
+     "security_id": 1,
+     "date": "2026-09-01",
+     "price": "283.10998535",
+     "source": "yfinance"
+    },
+    {
+     "id": 627,
+     "security_id": 1,
+     "date": "2026-08-31",
+     "price": "283.39999390",
+     "source": "yfinance"
+    },
+    {
+     "id": 61,
+     "security_id": 1,
+     "date": "2026-08-28",
+     "price": "154.31000000",
+     "source": "manual"
+    },
+    {
+     "id": 122,
+     "security_id": 2,
+     "date": "2026-08-28",
+     "price": "104.66000000",
+     "source": "manual"
+    },
+    {
+     "id": 183,
+     "security_id": 3,
+     "date": "2026-08-28",
+     "price": "160.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 244,
+     "security_id": 4,
+     "date": "2026-08-28",
+     "price": "66.44000000",
+     "source": "manual"
+    },
+    {
+     "id": 305,
+     "security_id": 5,
+     "date": "2026-08-28",
+     "price": "293.13000000",
+     "source": "manual"
+    },
+    {
+     "id": 366,
+     "security_id": 6,
+     "date": "2026-08-28",
+     "price": "61.85000000",
+     "source": "manual"
+    },
+    {
+     "id": 427,
+     "security_id": 7,
+     "date": "2026-08-28",
+     "price": "179.80000000",
+     "source": "manual"
+    },
+    {
+     "id": 626,
+     "security_id": 1,
+     "date": "2026-08-27",
+     "price": "283.47000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 625,
+     "security_id": 1,
+     "date": "2026-08-26",
+     "price": "288.10998535",
+     "source": "yfinance"
+    },
+    {
+     "id": 624,
+     "security_id": 1,
+     "date": "2026-08-25",
+     "price": "286.63000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 623,
+     "security_id": 1,
+     "date": "2026-08-24",
+     "price": "282.61999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 60,
+     "security_id": 1,
+     "date": "2026-08-21",
+     "price": "147.01000000",
+     "source": "manual"
+    },
+    {
+     "id": 121,
+     "security_id": 2,
+     "date": "2026-08-21",
+     "price": "109.31000000",
+     "source": "manual"
+    },
+    {
+     "id": 182,
+     "security_id": 3,
+     "date": "2026-08-21",
+     "price": "158.59000000",
+     "source": "manual"
+    },
+    {
+     "id": 243,
+     "security_id": 4,
+     "date": "2026-08-21",
+     "price": "67.07000000",
+     "source": "manual"
+    },
+    {
+     "id": 304,
+     "security_id": 5,
+     "date": "2026-08-21",
+     "price": "282.31000000",
+     "source": "manual"
+    },
+    {
+     "id": 365,
+     "security_id": 6,
+     "date": "2026-08-21",
+     "price": "64.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 426,
+     "security_id": 7,
+     "date": "2026-08-21",
+     "price": "178.89000000",
+     "source": "manual"
+    },
+    {
+     "id": 622,
+     "security_id": 1,
+     "date": "2026-08-20",
+     "price": "283.32998657",
+     "source": "yfinance"
+    },
+    {
+     "id": 621,
+     "security_id": 1,
+     "date": "2026-08-19",
+     "price": "286.92001343",
+     "source": "yfinance"
+    },
+    {
+     "id": 620,
+     "security_id": 1,
+     "date": "2026-08-18",
+     "price": "296.26000977",
+     "source": "yfinance"
+    },
+    {
+     "id": 619,
+     "security_id": 1,
+     "date": "2026-08-17",
+     "price": "300.08999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 59,
+     "security_id": 1,
+     "date": "2026-08-14",
+     "price": "153.69000000",
+     "source": "manual"
+    },
+    {
+     "id": 120,
+     "security_id": 2,
+     "date": "2026-08-14",
+     "price": "107.69000000",
+     "source": "manual"
+    },
+    {
+     "id": 181,
+     "security_id": 3,
+     "date": "2026-08-14",
+     "price": "156.93000000",
+     "source": "manual"
+    },
+    {
+     "id": 242,
+     "security_id": 4,
+     "date": "2026-08-14",
+     "price": "66.27000000",
+     "source": "manual"
+    },
+    {
+     "id": 303,
+     "security_id": 5,
+     "date": "2026-08-14",
+     "price": "291.39000000",
+     "source": "manual"
+    },
+    {
+     "id": 364,
+     "security_id": 6,
+     "date": "2026-08-14",
+     "price": "63.21000000",
+     "source": "manual"
+    },
+    {
+     "id": 425,
+     "security_id": 7,
+     "date": "2026-08-14",
+     "price": "171.17000000",
+     "source": "manual"
+    },
+    {
+     "id": 618,
+     "security_id": 1,
+     "date": "2026-08-13",
+     "price": "299.45001221",
+     "source": "yfinance"
+    },
+    {
+     "id": 617,
+     "security_id": 1,
+     "date": "2026-08-12",
+     "price": "297.55999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 616,
+     "security_id": 1,
+     "date": "2026-08-11",
+     "price": "293.11999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 615,
+     "security_id": 1,
+     "date": "2026-08-10",
+     "price": "294.08999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 58,
+     "security_id": 1,
+     "date": "2026-08-07",
+     "price": "153.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 119,
+     "security_id": 2,
+     "date": "2026-08-07",
+     "price": "103.88000000",
+     "source": "manual"
+    },
+    {
+     "id": 180,
+     "security_id": 3,
+     "date": "2026-08-07",
+     "price": "159.89000000",
+     "source": "manual"
+    },
+    {
+     "id": 241,
+     "security_id": 4,
+     "date": "2026-08-07",
+     "price": "65.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 302,
+     "security_id": 5,
+     "date": "2026-08-07",
+     "price": "280.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 363,
+     "security_id": 6,
+     "date": "2026-08-07",
+     "price": "63.70000000",
+     "source": "manual"
+    },
+    {
+     "id": 424,
+     "security_id": 7,
+     "date": "2026-08-07",
+     "price": "174.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 614,
+     "security_id": 1,
+     "date": "2026-08-06",
+     "price": "296.55999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 613,
+     "security_id": 1,
+     "date": "2026-08-05",
+     "price": "295.95001221",
+     "source": "yfinance"
+    },
+    {
+     "id": 612,
+     "security_id": 1,
+     "date": "2026-08-04",
+     "price": "293.47000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 57,
+     "security_id": 1,
+     "date": "2026-07-31",
+     "price": "146.09000000",
+     "source": "manual"
+    },
+    {
+     "id": 118,
+     "security_id": 2,
+     "date": "2026-07-31",
+     "price": "106.20000000",
+     "source": "manual"
+    },
+    {
+     "id": 179,
+     "security_id": 3,
+     "date": "2026-07-31",
+     "price": "159.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 240,
+     "security_id": 4,
+     "date": "2026-07-31",
+     "price": "63.57000000",
+     "source": "manual"
+    },
+    {
+     "id": 301,
+     "security_id": 5,
+     "date": "2026-07-31",
+     "price": "279.59000000",
+     "source": "manual"
+    },
+    {
+     "id": 362,
+     "security_id": 6,
+     "date": "2026-07-31",
+     "price": "63.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 423,
+     "security_id": 7,
+     "date": "2026-07-31",
+     "price": "167.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 611,
+     "security_id": 1,
+     "date": "2026-07-30",
+     "price": "294.36999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 610,
+     "security_id": 1,
+     "date": "2026-07-29",
+     "price": "290.33999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 609,
+     "security_id": 1,
+     "date": "2026-07-28",
+     "price": "299.39999390",
+     "source": "yfinance"
+    },
+    {
+     "id": 608,
+     "security_id": 1,
+     "date": "2026-07-27",
+     "price": "296.10998535",
+     "source": "yfinance"
+    },
+    {
+     "id": 56,
+     "security_id": 1,
+     "date": "2026-07-24",
+     "price": "153.02000000",
+     "source": "manual"
+    },
+    {
+     "id": 117,
+     "security_id": 2,
+     "date": "2026-07-24",
+     "price": "102.29000000",
+     "source": "manual"
+    },
+    {
+     "id": 178,
+     "security_id": 3,
+     "date": "2026-07-24",
+     "price": "159.72000000",
+     "source": "manual"
+    },
+    {
+     "id": 239,
+     "security_id": 4,
+     "date": "2026-07-24",
+     "price": "66.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 300,
+     "security_id": 5,
+     "date": "2026-07-24",
+     "price": "278.76000000",
+     "source": "manual"
+    },
+    {
+     "id": 361,
+     "security_id": 6,
+     "date": "2026-07-24",
+     "price": "60.96000000",
+     "source": "manual"
+    },
+    {
+     "id": 422,
+     "security_id": 7,
+     "date": "2026-07-24",
+     "price": "167.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 607,
+     "security_id": 1,
+     "date": "2026-07-23",
+     "price": "293.67001343",
+     "source": "yfinance"
+    },
+    {
+     "id": 606,
+     "security_id": 1,
+     "date": "2026-07-22",
+     "price": "297.95001221",
+     "source": "yfinance"
+    },
+    {
+     "id": 605,
+     "security_id": 1,
+     "date": "2026-07-21",
+     "price": "297.73999023",
+     "source": "yfinance"
+    },
+    {
+     "id": 604,
+     "security_id": 1,
+     "date": "2026-07-20",
+     "price": "295.76998901",
+     "source": "yfinance"
+    },
+    {
+     "id": 55,
+     "security_id": 1,
+     "date": "2026-07-17",
+     "price": "149.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 116,
+     "security_id": 2,
+     "date": "2026-07-17",
+     "price": "105.99000000",
+     "source": "manual"
+    },
+    {
+     "id": 177,
+     "security_id": 3,
+     "date": "2026-07-17",
+     "price": "156.93000000",
+     "source": "manual"
+    },
+    {
+     "id": 238,
+     "security_id": 4,
+     "date": "2026-07-17",
+     "price": "65.07000000",
+     "source": "manual"
+    },
+    {
+     "id": 299,
+     "security_id": 5,
+     "date": "2026-07-17",
+     "price": "272.98000000",
+     "source": "manual"
+    },
+    {
+     "id": 360,
+     "security_id": 6,
+     "date": "2026-07-17",
+     "price": "63.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 421,
+     "security_id": 7,
+     "date": "2026-07-17",
+     "price": "164.96000000",
+     "source": "manual"
+    },
+    {
+     "id": 603,
+     "security_id": 1,
+     "date": "2026-07-16",
+     "price": "303.16000366",
+     "source": "yfinance"
+    },
+    {
+     "id": 602,
+     "security_id": 1,
+     "date": "2026-07-15",
+     "price": "305.73999023",
+     "source": "yfinance"
+    },
+    {
+     "id": 601,
+     "security_id": 1,
+     "date": "2026-07-14",
+     "price": "300.95001221",
+     "source": "yfinance"
+    },
+    {
+     "id": 600,
+     "security_id": 1,
+     "date": "2026-07-13",
+     "price": "297.85998535",
+     "source": "yfinance"
+    },
+    {
+     "id": 54,
+     "security_id": 1,
+     "date": "2026-07-10",
+     "price": "149.79000000",
+     "source": "manual"
+    },
+    {
+     "id": 115,
+     "security_id": 2,
+     "date": "2026-07-10",
+     "price": "105.33000000",
+     "source": "manual"
+    },
+    {
+     "id": 176,
+     "security_id": 3,
+     "date": "2026-07-10",
+     "price": "154.15000000",
+     "source": "manual"
+    },
+    {
+     "id": 237,
+     "security_id": 4,
+     "date": "2026-07-10",
+     "price": "65.54000000",
+     "source": "manual"
+    },
+    {
+     "id": 298,
+     "security_id": 5,
+     "date": "2026-07-10",
+     "price": "274.65000000",
+     "source": "manual"
+    },
+    {
+     "id": 359,
+     "security_id": 6,
+     "date": "2026-07-10",
+     "price": "60.51000000",
+     "source": "manual"
+    },
+    {
+     "id": 420,
+     "security_id": 7,
+     "date": "2026-07-10",
+     "price": "168.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 599,
+     "security_id": 1,
+     "date": "2026-07-09",
+     "price": "295.83999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 598,
+     "security_id": 1,
+     "date": "2026-07-08",
+     "price": "291.61999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 597,
+     "security_id": 1,
+     "date": "2026-07-07",
+     "price": "296.88000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 596,
+     "security_id": 1,
+     "date": "2026-07-06",
+     "price": "295.29000854",
+     "source": "yfinance"
+    },
+    {
+     "id": 53,
+     "security_id": 1,
+     "date": "2026-07-03",
+     "price": "143.68000000",
+     "source": "manual"
+    },
+    {
+     "id": 114,
+     "security_id": 2,
+     "date": "2026-07-03",
+     "price": "103.51000000",
+     "source": "manual"
+    },
+    {
+     "id": 175,
+     "security_id": 3,
+     "date": "2026-07-03",
+     "price": "160.72000000",
+     "source": "manual"
+    },
+    {
+     "id": 236,
+     "security_id": 4,
+     "date": "2026-07-03",
+     "price": "66.62000000",
+     "source": "manual"
+    },
+    {
+     "id": 297,
+     "security_id": 5,
+     "date": "2026-07-03",
+     "price": "272.76000000",
+     "source": "manual"
+    },
+    {
+     "id": 358,
+     "security_id": 6,
+     "date": "2026-07-03",
+     "price": "61.42000000",
+     "source": "manual"
+    },
+    {
+     "id": 419,
+     "security_id": 7,
+     "date": "2026-07-03",
+     "price": "170.96000000",
+     "source": "manual"
+    },
+    {
+     "id": 595,
+     "security_id": 1,
+     "date": "2026-07-02",
+     "price": "290.42999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 594,
+     "security_id": 1,
+     "date": "2026-06-30",
+     "price": "293.67999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 593,
+     "security_id": 1,
+     "date": "2026-06-29",
+     "price": "290.88000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 52,
+     "security_id": 1,
+     "date": "2026-06-26",
+     "price": "147.97000000",
+     "source": "manual"
+    },
+    {
+     "id": 113,
+     "security_id": 2,
+     "date": "2026-06-26",
+     "price": "103.34000000",
+     "source": "manual"
+    },
+    {
+     "id": 174,
+     "security_id": 3,
+     "date": "2026-06-26",
+     "price": "151.85000000",
+     "source": "manual"
+    },
+    {
+     "id": 235,
+     "security_id": 4,
+     "date": "2026-06-26",
+     "price": "66.54000000",
+     "source": "manual"
+    },
+    {
+     "id": 296,
+     "security_id": 5,
+     "date": "2026-06-26",
+     "price": "272.73000000",
+     "source": "manual"
+    },
+    {
+     "id": 357,
+     "security_id": 6,
+     "date": "2026-06-26",
+     "price": "62.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 418,
+     "security_id": 7,
+     "date": "2026-06-26",
+     "price": "161.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 592,
+     "security_id": 1,
+     "date": "2026-06-25",
+     "price": "289.11999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 591,
+     "security_id": 1,
+     "date": "2026-06-24",
+     "price": "288.02999878",
+     "source": "yfinance"
+    },
+    {
+     "id": 590,
+     "security_id": 1,
+     "date": "2026-06-23",
+     "price": "288.41000366",
+     "source": "yfinance"
+    },
+    {
+     "id": 589,
+     "security_id": 1,
+     "date": "2026-06-22",
+     "price": "286.79998779",
+     "source": "yfinance"
+    },
+    {
+     "id": 51,
+     "security_id": 1,
+     "date": "2026-06-19",
+     "price": "147.65000000",
+     "source": "manual"
+    },
+    {
+     "id": 112,
+     "security_id": 2,
+     "date": "2026-06-19",
+     "price": "105.81000000",
+     "source": "manual"
+    },
+    {
+     "id": 173,
+     "security_id": 3,
+     "date": "2026-06-19",
+     "price": "159.09000000",
+     "source": "manual"
+    },
+    {
+     "id": 234,
+     "security_id": 4,
+     "date": "2026-06-19",
+     "price": "65.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 295,
+     "security_id": 5,
+     "date": "2026-06-19",
+     "price": "275.42000000",
+     "source": "manual"
+    },
+    {
+     "id": 356,
+     "security_id": 6,
+     "date": "2026-06-19",
+     "price": "61.01000000",
+     "source": "manual"
+    },
+    {
+     "id": 417,
+     "security_id": 7,
+     "date": "2026-06-19",
+     "price": "165.91000000",
+     "source": "manual"
+    },
+    {
+     "id": 588,
+     "security_id": 1,
+     "date": "2026-06-18",
+     "price": "285.10000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 587,
+     "security_id": 1,
+     "date": "2026-06-17",
+     "price": "283.23001099",
+     "source": "yfinance"
+    },
+    {
+     "id": 586,
+     "security_id": 1,
+     "date": "2026-06-16",
+     "price": "281.51000977",
+     "source": "yfinance"
+    },
+    {
+     "id": 585,
+     "security_id": 1,
+     "date": "2026-06-15",
+     "price": "278.45999146",
+     "source": "yfinance"
+    },
+    {
+     "id": 50,
+     "security_id": 1,
+     "date": "2026-06-12",
+     "price": "149.61000000",
+     "source": "manual"
+    },
+    {
+     "id": 111,
+     "security_id": 2,
+     "date": "2026-06-12",
+     "price": "100.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 172,
+     "security_id": 3,
+     "date": "2026-06-12",
+     "price": "156.81000000",
+     "source": "manual"
+    },
+    {
+     "id": 233,
+     "security_id": 4,
+     "date": "2026-06-12",
+     "price": "65.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 294,
+     "security_id": 5,
+     "date": "2026-06-12",
+     "price": "271.93000000",
+     "source": "manual"
+    },
+    {
+     "id": 355,
+     "security_id": 6,
+     "date": "2026-06-12",
+     "price": "62.72000000",
+     "source": "manual"
+    },
+    {
+     "id": 416,
+     "security_id": 7,
+     "date": "2026-06-12",
+     "price": "167.33000000",
+     "source": "manual"
+    },
+    {
+     "id": 584,
+     "security_id": 1,
+     "date": "2026-06-11",
+     "price": "277.92999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 583,
+     "security_id": 1,
+     "date": "2026-06-10",
+     "price": "275.76000977",
+     "source": "yfinance"
+    },
+    {
+     "id": 582,
+     "security_id": 1,
+     "date": "2026-06-09",
+     "price": "276.01000977",
+     "source": "yfinance"
+    },
+    {
+     "id": 581,
+     "security_id": 1,
+     "date": "2026-06-08",
+     "price": "272.63000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 49,
+     "security_id": 1,
+     "date": "2026-06-05",
+     "price": "142.44000000",
+     "source": "manual"
+    },
+    {
+     "id": 110,
+     "security_id": 2,
+     "date": "2026-06-05",
+     "price": "104.73000000",
+     "source": "manual"
+    },
+    {
+     "id": 171,
+     "security_id": 3,
+     "date": "2026-06-05",
+     "price": "154.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 232,
+     "security_id": 4,
+     "date": "2026-06-05",
+     "price": "62.71000000",
+     "source": "manual"
+    },
+    {
+     "id": 293,
+     "security_id": 5,
+     "date": "2026-06-05",
+     "price": "270.86000000",
+     "source": "manual"
+    },
+    {
+     "id": 354,
+     "security_id": 6,
+     "date": "2026-06-05",
+     "price": "60.33000000",
+     "source": "manual"
+    },
+    {
+     "id": 415,
+     "security_id": 7,
+     "date": "2026-06-05",
+     "price": "160.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 580,
+     "security_id": 1,
+     "date": "2026-06-04",
+     "price": "270.94000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 579,
+     "security_id": 1,
+     "date": "2026-06-03",
+     "price": "265.80999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 578,
+     "security_id": 1,
+     "date": "2026-06-02",
+     "price": "264.55999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 577,
+     "security_id": 1,
+     "date": "2026-06-01",
+     "price": "261.08999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 48,
+     "security_id": 1,
+     "date": "2026-05-29",
+     "price": "140.99000000",
+     "source": "manual"
+    },
+    {
+     "id": 109,
+     "security_id": 2,
+     "date": "2026-05-29",
+     "price": "103.80000000",
+     "source": "manual"
+    },
+    {
+     "id": 170,
+     "security_id": 3,
+     "date": "2026-05-29",
+     "price": "149.37000000",
+     "source": "manual"
+    },
+    {
+     "id": 231,
+     "security_id": 4,
+     "date": "2026-05-29",
+     "price": "64.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 292,
+     "security_id": 5,
+     "date": "2026-05-29",
+     "price": "276.02000000",
+     "source": "manual"
+    },
+    {
+     "id": 353,
+     "security_id": 6,
+     "date": "2026-05-29",
+     "price": "60.10000000",
+     "source": "manual"
+    },
+    {
+     "id": 414,
+     "security_id": 7,
+     "date": "2026-05-29",
+     "price": "161.82000000",
+     "source": "manual"
+    },
+    {
+     "id": 576,
+     "security_id": 1,
+     "date": "2026-05-28",
+     "price": "260.54000854",
+     "source": "yfinance"
+    },
+    {
+     "id": 575,
+     "security_id": 1,
+     "date": "2026-05-27",
+     "price": "261.64001465",
+     "source": "yfinance"
+    },
+    {
+     "id": 574,
+     "security_id": 1,
+     "date": "2026-05-26",
+     "price": "262.32998657",
+     "source": "yfinance"
+    },
+    {
+     "id": 573,
+     "security_id": 1,
+     "date": "2026-05-25",
+     "price": "264.14999390",
+     "source": "yfinance"
+    },
+    {
+     "id": 47,
+     "security_id": 1,
+     "date": "2026-05-22",
+     "price": "145.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 108,
+     "security_id": 2,
+     "date": "2026-05-22",
+     "price": "103.79000000",
+     "source": "manual"
+    },
+    {
+     "id": 169,
+     "security_id": 3,
+     "date": "2026-05-22",
+     "price": "153.07000000",
+     "source": "manual"
+    },
+    {
+     "id": 230,
+     "security_id": 4,
+     "date": "2026-05-22",
+     "price": "63.03000000",
+     "source": "manual"
+    },
+    {
+     "id": 291,
+     "security_id": 5,
+     "date": "2026-05-22",
+     "price": "272.57000000",
+     "source": "manual"
+    },
+    {
+     "id": 352,
+     "security_id": 6,
+     "date": "2026-05-22",
+     "price": "61.83000000",
+     "source": "manual"
+    },
+    {
+     "id": 413,
+     "security_id": 7,
+     "date": "2026-05-22",
+     "price": "154.12000000",
+     "source": "manual"
+    },
+    {
+     "id": 572,
+     "security_id": 1,
+     "date": "2026-05-21",
+     "price": "260.58999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 571,
+     "security_id": 1,
+     "date": "2026-05-20",
+     "price": "257.33999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 570,
+     "security_id": 1,
+     "date": "2026-05-19",
+     "price": "252.52999878",
+     "source": "yfinance"
+    },
+    {
+     "id": 46,
+     "security_id": 1,
+     "date": "2026-05-15",
+     "price": "139.97000000",
+     "source": "manual"
+    },
+    {
+     "id": 107,
+     "security_id": 2,
+     "date": "2026-05-15",
+     "price": "100.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 168,
+     "security_id": 3,
+     "date": "2026-05-15",
+     "price": "155.01000000",
+     "source": "manual"
+    },
+    {
+     "id": 229,
+     "security_id": 4,
+     "date": "2026-05-15",
+     "price": "62.69000000",
+     "source": "manual"
+    },
+    {
+     "id": 290,
+     "security_id": 5,
+     "date": "2026-05-15",
+     "price": "265.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 351,
+     "security_id": 6,
+     "date": "2026-05-15",
+     "price": "59.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 412,
+     "security_id": 7,
+     "date": "2026-05-15",
+     "price": "159.74000000",
+     "source": "manual"
+    },
+    {
+     "id": 569,
+     "security_id": 1,
+     "date": "2026-05-14",
+     "price": "252.42999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 568,
+     "security_id": 1,
+     "date": "2026-05-13",
+     "price": "246.83000183",
+     "source": "yfinance"
+    },
+    {
+     "id": 567,
+     "security_id": 1,
+     "date": "2026-05-12",
+     "price": "249.86999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 566,
+     "security_id": 1,
+     "date": "2026-05-11",
+     "price": "247.36999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 45,
+     "security_id": 1,
+     "date": "2026-05-08",
+     "price": "145.31000000",
+     "source": "manual"
+    },
+    {
+     "id": 106,
+     "security_id": 2,
+     "date": "2026-05-08",
+     "price": "101.13000000",
+     "source": "manual"
+    },
+    {
+     "id": 167,
+     "security_id": 3,
+     "date": "2026-05-08",
+     "price": "155.85000000",
+     "source": "manual"
+    },
+    {
+     "id": 228,
+     "security_id": 4,
+     "date": "2026-05-08",
+     "price": "63.24000000",
+     "source": "manual"
+    },
+    {
+     "id": 289,
+     "security_id": 5,
+     "date": "2026-05-08",
+     "price": "268.78000000",
+     "source": "manual"
+    },
+    {
+     "id": 350,
+     "security_id": 6,
+     "date": "2026-05-08",
+     "price": "59.17000000",
+     "source": "manual"
+    },
+    {
+     "id": 411,
+     "security_id": 7,
+     "date": "2026-05-08",
+     "price": "157.10000000",
+     "source": "manual"
+    },
+    {
+     "id": 565,
+     "security_id": 1,
+     "date": "2026-05-07",
+     "price": "247.63999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 564,
+     "security_id": 1,
+     "date": "2026-05-06",
+     "price": "247.72000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 563,
+     "security_id": 1,
+     "date": "2026-05-05",
+     "price": "243.17999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 562,
+     "security_id": 1,
+     "date": "2026-05-04",
+     "price": "242.36999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 44,
+     "security_id": 1,
+     "date": "2026-05-01",
+     "price": "140.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 105,
+     "security_id": 2,
+     "date": "2026-05-01",
+     "price": "101.24000000",
+     "source": "manual"
+    },
+    {
+     "id": 166,
+     "security_id": 3,
+     "date": "2026-05-01",
+     "price": "149.22000000",
+     "source": "manual"
+    },
+    {
+     "id": 227,
+     "security_id": 4,
+     "date": "2026-05-01",
+     "price": "64.86000000",
+     "source": "manual"
+    },
+    {
+     "id": 288,
+     "security_id": 5,
+     "date": "2026-05-01",
+     "price": "261.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 349,
+     "security_id": 6,
+     "date": "2026-05-01",
+     "price": "61.54000000",
+     "source": "manual"
+    },
+    {
+     "id": 410,
+     "security_id": 7,
+     "date": "2026-05-01",
+     "price": "156.55000000",
+     "source": "manual"
+    },
+    {
+     "id": 561,
+     "security_id": 1,
+     "date": "2026-04-30",
+     "price": "244.30999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 560,
+     "security_id": 1,
+     "date": "2026-04-29",
+     "price": "239.99000549",
+     "source": "yfinance"
+    },
+    {
+     "id": 559,
+     "security_id": 1,
+     "date": "2026-04-28",
+     "price": "243.13999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 558,
+     "security_id": 1,
+     "date": "2026-04-27",
+     "price": "240.77000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 43,
+     "security_id": 1,
+     "date": "2026-04-24",
+     "price": "140.65000000",
+     "source": "manual"
+    },
+    {
+     "id": 104,
+     "security_id": 2,
+     "date": "2026-04-24",
+     "price": "103.77000000",
+     "source": "manual"
+    },
+    {
+     "id": 165,
+     "security_id": 3,
+     "date": "2026-04-24",
+     "price": "152.02000000",
+     "source": "manual"
+    },
+    {
+     "id": 226,
+     "security_id": 4,
+     "date": "2026-04-24",
+     "price": "61.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 287,
+     "security_id": 5,
+     "date": "2026-04-24",
+     "price": "272.46000000",
+     "source": "manual"
+    },
+    {
+     "id": 348,
+     "security_id": 6,
+     "date": "2026-04-24",
+     "price": "61.59000000",
+     "source": "manual"
+    },
+    {
+     "id": 409,
+     "security_id": 7,
+     "date": "2026-04-24",
+     "price": "155.13000000",
+     "source": "manual"
+    },
+    {
+     "id": 557,
+     "security_id": 1,
+     "date": "2026-04-23",
+     "price": "239.55999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 556,
+     "security_id": 1,
+     "date": "2026-04-22",
+     "price": "241.25999451",
+     "source": "yfinance"
+    },
+    {
+     "id": 555,
+     "security_id": 1,
+     "date": "2026-04-21",
+     "price": "242.80999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 554,
+     "security_id": 1,
+     "date": "2026-04-20",
+     "price": "245.85000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 42,
+     "security_id": 1,
+     "date": "2026-04-17",
+     "price": "138.97000000",
+     "source": "manual"
+    },
+    {
+     "id": 103,
+     "security_id": 2,
+     "date": "2026-04-17",
+     "price": "99.55000000",
+     "source": "manual"
+    },
+    {
+     "id": 164,
+     "security_id": 3,
+     "date": "2026-04-17",
+     "price": "154.12000000",
+     "source": "manual"
+    },
+    {
+     "id": 225,
+     "security_id": 4,
+     "date": "2026-04-17",
+     "price": "62.44000000",
+     "source": "manual"
+    },
+    {
+     "id": 286,
+     "security_id": 5,
+     "date": "2026-04-17",
+     "price": "271.88000000",
+     "source": "manual"
+    },
+    {
+     "id": 347,
+     "security_id": 6,
+     "date": "2026-04-17",
+     "price": "59.87000000",
+     "source": "manual"
+    },
+    {
+     "id": 408,
+     "security_id": 7,
+     "date": "2026-04-17",
+     "price": "151.52000000",
+     "source": "manual"
+    },
+    {
+     "id": 553,
+     "security_id": 1,
+     "date": "2026-04-16",
+     "price": "241.10000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 552,
+     "security_id": 1,
+     "date": "2026-04-15",
+     "price": "241.74000549",
+     "source": "yfinance"
+    },
+    {
+     "id": 551,
+     "security_id": 1,
+     "date": "2026-04-14",
+     "price": "240.71000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 550,
+     "security_id": 1,
+     "date": "2026-04-13",
+     "price": "239.00000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 41,
+     "security_id": 1,
+     "date": "2026-04-10",
+     "price": "137.30000000",
+     "source": "manual"
+    },
+    {
+     "id": 102,
+     "security_id": 2,
+     "date": "2026-04-10",
+     "price": "103.45000000",
+     "source": "manual"
+    },
+    {
+     "id": 163,
+     "security_id": 3,
+     "date": "2026-04-10",
+     "price": "147.71000000",
+     "source": "manual"
+    },
+    {
+     "id": 224,
+     "security_id": 4,
+     "date": "2026-04-10",
+     "price": "63.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 285,
+     "security_id": 5,
+     "date": "2026-04-10",
+     "price": "265.01000000",
+     "source": "manual"
+    },
+    {
+     "id": 346,
+     "security_id": 6,
+     "date": "2026-04-10",
+     "price": "59.11000000",
+     "source": "manual"
+    },
+    {
+     "id": 407,
+     "security_id": 7,
+     "date": "2026-04-10",
+     "price": "153.82000000",
+     "source": "manual"
+    },
+    {
+     "id": 549,
+     "security_id": 1,
+     "date": "2026-04-09",
+     "price": "235.83000183",
+     "source": "yfinance"
+    },
+    {
+     "id": 548,
+     "security_id": 1,
+     "date": "2026-04-08",
+     "price": "234.27999878",
+     "source": "yfinance"
+    },
+    {
+     "id": 547,
+     "security_id": 1,
+     "date": "2026-04-07",
+     "price": "229.99000549",
+     "source": "yfinance"
+    },
+    {
+     "id": 546,
+     "security_id": 1,
+     "date": "2026-04-06",
+     "price": "228.83000183",
+     "source": "yfinance"
+    },
+    {
+     "id": 40,
+     "security_id": 1,
+     "date": "2026-04-03",
+     "price": "138.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 101,
+     "security_id": 2,
+     "date": "2026-04-03",
+     "price": "102.39000000",
+     "source": "manual"
+    },
+    {
+     "id": 162,
+     "security_id": 3,
+     "date": "2026-04-03",
+     "price": "145.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 223,
+     "security_id": 4,
+     "date": "2026-04-03",
+     "price": "62.35000000",
+     "source": "manual"
+    },
+    {
+     "id": 284,
+     "security_id": 5,
+     "date": "2026-04-03",
+     "price": "256.68000000",
+     "source": "manual"
+    },
+    {
+     "id": 345,
+     "security_id": 6,
+     "date": "2026-04-03",
+     "price": "58.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 406,
+     "security_id": 7,
+     "date": "2026-04-03",
+     "price": "150.43000000",
+     "source": "manual"
+    },
+    {
+     "id": 545,
+     "security_id": 1,
+     "date": "2026-04-02",
+     "price": "227.33999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 544,
+     "security_id": 1,
+     "date": "2026-04-01",
+     "price": "226.92999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 543,
+     "security_id": 1,
+     "date": "2026-03-31",
+     "price": "224.88000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 542,
+     "security_id": 1,
+     "date": "2026-03-30",
+     "price": "219.78999329",
+     "source": "yfinance"
+    },
+    {
+     "id": 39,
+     "security_id": 1,
+     "date": "2026-03-27",
+     "price": "143.71000000",
+     "source": "manual"
+    },
+    {
+     "id": 100,
+     "security_id": 2,
+     "date": "2026-03-27",
+     "price": "101.35000000",
+     "source": "manual"
+    },
+    {
+     "id": 161,
+     "security_id": 3,
+     "date": "2026-03-27",
+     "price": "148.36000000",
+     "source": "manual"
+    },
+    {
+     "id": 222,
+     "security_id": 4,
+     "date": "2026-03-27",
+     "price": "62.09000000",
+     "source": "manual"
+    },
+    {
+     "id": 283,
+     "security_id": 5,
+     "date": "2026-03-27",
+     "price": "258.23000000",
+     "source": "manual"
+    },
+    {
+     "id": 344,
+     "security_id": 6,
+     "date": "2026-03-27",
+     "price": "60.77000000",
+     "source": "manual"
+    },
+    {
+     "id": 405,
+     "security_id": 7,
+     "date": "2026-03-27",
+     "price": "143.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 541,
+     "security_id": 1,
+     "date": "2026-03-26",
+     "price": "222.00000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 540,
+     "security_id": 1,
+     "date": "2026-03-25",
+     "price": "224.50999451",
+     "source": "yfinance"
+    },
+    {
+     "id": 539,
+     "security_id": 1,
+     "date": "2026-03-24",
+     "price": "223.17999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 538,
+     "security_id": 1,
+     "date": "2026-03-23",
+     "price": "221.89999390",
+     "source": "yfinance"
+    },
+    {
+     "id": 38,
+     "security_id": 1,
+     "date": "2026-03-20",
+     "price": "136.09000000",
+     "source": "manual"
+    },
+    {
+     "id": 99,
+     "security_id": 2,
+     "date": "2026-03-20",
+     "price": "102.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 160,
+     "security_id": 3,
+     "date": "2026-03-20",
+     "price": "144.20000000",
+     "source": "manual"
+    },
+    {
+     "id": 221,
+     "security_id": 4,
+     "date": "2026-03-20",
+     "price": "64.10000000",
+     "source": "manual"
+    },
+    {
+     "id": 282,
+     "security_id": 5,
+     "date": "2026-03-20",
+     "price": "265.22000000",
+     "source": "manual"
+    },
+    {
+     "id": 343,
+     "security_id": 6,
+     "date": "2026-03-20",
+     "price": "57.99000000",
+     "source": "manual"
+    },
+    {
+     "id": 404,
+     "security_id": 7,
+     "date": "2026-03-20",
+     "price": "146.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 537,
+     "security_id": 1,
+     "date": "2026-03-19",
+     "price": "220.25000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 536,
+     "security_id": 1,
+     "date": "2026-03-18",
+     "price": "222.94999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 535,
+     "security_id": 1,
+     "date": "2026-03-17",
+     "price": "224.88999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 534,
+     "security_id": 1,
+     "date": "2026-03-16",
+     "price": "224.21000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 37,
+     "security_id": 1,
+     "date": "2026-03-13",
+     "price": "134.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 98,
+     "security_id": 2,
+     "date": "2026-03-13",
+     "price": "98.30000000",
+     "source": "manual"
+    },
+    {
+     "id": 159,
+     "security_id": 3,
+     "date": "2026-03-13",
+     "price": "150.99000000",
+     "source": "manual"
+    },
+    {
+     "id": 220,
+     "security_id": 4,
+     "date": "2026-03-13",
+     "price": "61.69000000",
+     "source": "manual"
+    },
+    {
+     "id": 281,
+     "security_id": 5,
+     "date": "2026-03-13",
+     "price": "256.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 342,
+     "security_id": 6,
+     "date": "2026-03-13",
+     "price": "58.99000000",
+     "source": "manual"
+    },
+    {
+     "id": 403,
+     "security_id": 7,
+     "date": "2026-03-13",
+     "price": "141.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 533,
+     "security_id": 1,
+     "date": "2026-03-12",
+     "price": "222.11000061",
+     "source": "yfinance"
+    },
+    {
+     "id": 532,
+     "security_id": 1,
+     "date": "2026-03-11",
+     "price": "224.19000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 531,
+     "security_id": 1,
+     "date": "2026-03-10",
+     "price": "224.61000061",
+     "source": "yfinance"
+    },
+    {
+     "id": 530,
+     "security_id": 1,
+     "date": "2026-03-09",
+     "price": "221.94999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 36,
+     "security_id": 1,
+     "date": "2026-03-06",
+     "price": "137.53000000",
+     "source": "manual"
+    },
+    {
+     "id": 97,
+     "security_id": 2,
+     "date": "2026-03-06",
+     "price": "101.77000000",
+     "source": "manual"
+    },
+    {
+     "id": 158,
+     "security_id": 3,
+     "date": "2026-03-06",
+     "price": "149.74000000",
+     "source": "manual"
+    },
+    {
+     "id": 219,
+     "security_id": 4,
+     "date": "2026-03-06",
+     "price": "61.45000000",
+     "source": "manual"
+    },
+    {
+     "id": 280,
+     "security_id": 5,
+     "date": "2026-03-06",
+     "price": "254.29000000",
+     "source": "manual"
+    },
+    {
+     "id": 341,
+     "security_id": 6,
+     "date": "2026-03-06",
+     "price": "59.48000000",
+     "source": "manual"
+    },
+    {
+     "id": 402,
+     "security_id": 7,
+     "date": "2026-03-06",
+     "price": "147.31000000",
+     "source": "manual"
+    },
+    {
+     "id": 529,
+     "security_id": 1,
+     "date": "2026-03-05",
+     "price": "224.78999329",
+     "source": "yfinance"
+    },
+    {
+     "id": 528,
+     "security_id": 1,
+     "date": "2026-03-04",
+     "price": "226.41000366",
+     "source": "yfinance"
+    },
+    {
+     "id": 527,
+     "security_id": 1,
+     "date": "2026-03-03",
+     "price": "226.77000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 526,
+     "security_id": 1,
+     "date": "2026-03-02",
+     "price": "230.74000549",
+     "source": "yfinance"
+    },
+    {
+     "id": 35,
+     "security_id": 1,
+     "date": "2026-02-27",
+     "price": "137.25000000",
+     "source": "manual"
+    },
+    {
+     "id": 96,
+     "security_id": 2,
+     "date": "2026-02-27",
+     "price": "100.72000000",
+     "source": "manual"
+    },
+    {
+     "id": 157,
+     "security_id": 3,
+     "date": "2026-02-27",
+     "price": "144.29000000",
+     "source": "manual"
+    },
+    {
+     "id": 218,
+     "security_id": 4,
+     "date": "2026-02-27",
+     "price": "60.88000000",
+     "source": "manual"
+    },
+    {
+     "id": 279,
+     "security_id": 5,
+     "date": "2026-02-27",
+     "price": "252.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 340,
+     "security_id": 6,
+     "date": "2026-02-27",
+     "price": "57.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 401,
+     "security_id": 7,
+     "date": "2026-02-27",
+     "price": "142.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 525,
+     "security_id": 1,
+     "date": "2026-02-26",
+     "price": "232.13999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 524,
+     "security_id": 1,
+     "date": "2026-02-25",
+     "price": "237.21000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 523,
+     "security_id": 1,
+     "date": "2026-02-24",
+     "price": "234.05000305",
+     "source": "yfinance"
+    },
+    {
+     "id": 522,
+     "security_id": 1,
+     "date": "2026-02-23",
+     "price": "234.00000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 34,
+     "security_id": 1,
+     "date": "2026-02-20",
+     "price": "137.71000000",
+     "source": "manual"
+    },
+    {
+     "id": 95,
+     "security_id": 2,
+     "date": "2026-02-20",
+     "price": "96.90000000",
+     "source": "manual"
+    },
+    {
+     "id": 156,
+     "security_id": 3,
+     "date": "2026-02-20",
+     "price": "147.83000000",
+     "source": "manual"
+    },
+    {
+     "id": 217,
+     "security_id": 4,
+     "date": "2026-02-20",
+     "price": "62.19000000",
+     "source": "manual"
+    },
+    {
+     "id": 278,
+     "security_id": 5,
+     "date": "2026-02-20",
+     "price": "254.74000000",
+     "source": "manual"
+    },
+    {
+     "id": 339,
+     "security_id": 6,
+     "date": "2026-02-20",
+     "price": "60.65000000",
+     "source": "manual"
+    },
+    {
+     "id": 400,
+     "security_id": 7,
+     "date": "2026-02-20",
+     "price": "139.45000000",
+     "source": "manual"
+    },
+    {
+     "id": 521,
+     "security_id": 1,
+     "date": "2026-02-19",
+     "price": "233.96000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 520,
+     "security_id": 1,
+     "date": "2026-02-18",
+     "price": "233.97999573",
+     "source": "yfinance"
+    },
+    {
+     "id": 519,
+     "security_id": 1,
+     "date": "2026-02-17",
+     "price": "230.99000549",
+     "source": "yfinance"
+    },
+    {
+     "id": 33,
+     "security_id": 1,
+     "date": "2026-02-13",
+     "price": "135.29000000",
+     "source": "manual"
+    },
+    {
+     "id": 94,
+     "security_id": 2,
+     "date": "2026-02-13",
+     "price": "98.33000000",
+     "source": "manual"
+    },
+    {
+     "id": 155,
+     "security_id": 3,
+     "date": "2026-02-13",
+     "price": "144.83000000",
+     "source": "manual"
+    },
+    {
+     "id": 216,
+     "security_id": 4,
+     "date": "2026-02-13",
+     "price": "59.97000000",
+     "source": "manual"
+    },
+    {
+     "id": 277,
+     "security_id": 5,
+     "date": "2026-02-13",
+     "price": "259.19000000",
+     "source": "manual"
+    },
+    {
+     "id": 338,
+     "security_id": 6,
+     "date": "2026-02-13",
+     "price": "60.18000000",
+     "source": "manual"
+    },
+    {
+     "id": 399,
+     "security_id": 7,
+     "date": "2026-02-13",
+     "price": "138.87000000",
+     "source": "manual"
+    },
+    {
+     "id": 518,
+     "security_id": 1,
+     "date": "2026-02-12",
+     "price": "230.49000549",
+     "source": "yfinance"
+    },
+    {
+     "id": 517,
+     "security_id": 1,
+     "date": "2026-02-11",
+     "price": "234.71000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 516,
+     "security_id": 1,
+     "date": "2026-02-10",
+     "price": "237.82000732",
+     "source": "yfinance"
+    },
+    {
+     "id": 515,
+     "security_id": 1,
+     "date": "2026-02-09",
+     "price": "236.28999329",
+     "source": "yfinance"
+    },
+    {
+     "id": 32,
+     "security_id": 1,
+     "date": "2026-02-06",
+     "price": "133.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 93,
+     "security_id": 2,
+     "date": "2026-02-06",
+     "price": "100.68000000",
+     "source": "manual"
+    },
+    {
+     "id": 154,
+     "security_id": 3,
+     "date": "2026-02-06",
+     "price": "143.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 215,
+     "security_id": 4,
+     "date": "2026-02-06",
+     "price": "61.23000000",
+     "source": "manual"
+    },
+    {
+     "id": 276,
+     "security_id": 5,
+     "date": "2026-02-06",
+     "price": "253.42000000",
+     "source": "manual"
+    },
+    {
+     "id": 337,
+     "security_id": 6,
+     "date": "2026-02-06",
+     "price": "58.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 398,
+     "security_id": 7,
+     "date": "2026-02-06",
+     "price": "138.93000000",
+     "source": "manual"
+    },
+    {
+     "id": 514,
+     "security_id": 1,
+     "date": "2026-02-05",
+     "price": "231.13000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 513,
+     "security_id": 1,
+     "date": "2026-02-04",
+     "price": "232.36999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 512,
+     "security_id": 1,
+     "date": "2026-02-03",
+     "price": "232.75000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 511,
+     "security_id": 1,
+     "date": "2026-02-02",
+     "price": "230.50999451",
+     "source": "yfinance"
+    },
+    {
+     "id": 31,
+     "security_id": 1,
+     "date": "2026-01-30",
+     "price": "131.23000000",
+     "source": "manual"
+    },
+    {
+     "id": 92,
+     "security_id": 2,
+     "date": "2026-01-30",
+     "price": "97.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 153,
+     "security_id": 3,
+     "date": "2026-01-30",
+     "price": "145.11000000",
+     "source": "manual"
+    },
+    {
+     "id": 214,
+     "security_id": 4,
+     "date": "2026-01-30",
+     "price": "62.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 275,
+     "security_id": 5,
+     "date": "2026-01-30",
+     "price": "253.61000000",
+     "source": "manual"
+    },
+    {
+     "id": 336,
+     "security_id": 6,
+     "date": "2026-01-30",
+     "price": "57.63000000",
+     "source": "manual"
+    },
+    {
+     "id": 397,
+     "security_id": 7,
+     "date": "2026-01-30",
+     "price": "137.40000000",
+     "source": "manual"
+    },
+    {
+     "id": 510,
+     "security_id": 1,
+     "date": "2026-01-29",
+     "price": "227.52000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 509,
+     "security_id": 1,
+     "date": "2026-01-28",
+     "price": "225.92999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 508,
+     "security_id": 1,
+     "date": "2026-01-27",
+     "price": "229.19000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 507,
+     "security_id": 1,
+     "date": "2026-01-26",
+     "price": "229.55999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 30,
+     "security_id": 1,
+     "date": "2026-01-23",
+     "price": "131.85000000",
+     "source": "manual"
+    },
+    {
+     "id": 91,
+     "security_id": 2,
+     "date": "2026-01-23",
+     "price": "98.18000000",
+     "source": "manual"
+    },
+    {
+     "id": 152,
+     "security_id": 3,
+     "date": "2026-01-23",
+     "price": "140.12000000",
+     "source": "manual"
+    },
+    {
+     "id": 213,
+     "security_id": 4,
+     "date": "2026-01-23",
+     "price": "62.18000000",
+     "source": "manual"
+    },
+    {
+     "id": 274,
+     "security_id": 5,
+     "date": "2026-01-23",
+     "price": "254.59000000",
+     "source": "manual"
+    },
+    {
+     "id": 335,
+     "security_id": 6,
+     "date": "2026-01-23",
+     "price": "57.31000000",
+     "source": "manual"
+    },
+    {
+     "id": 396,
+     "security_id": 7,
+     "date": "2026-01-23",
+     "price": "133.82000000",
+     "source": "manual"
+    },
+    {
+     "id": 506,
+     "security_id": 1,
+     "date": "2026-01-22",
+     "price": "232.80000305",
+     "source": "yfinance"
+    },
+    {
+     "id": 505,
+     "security_id": 1,
+     "date": "2026-01-21",
+     "price": "232.30999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 504,
+     "security_id": 1,
+     "date": "2026-01-20",
+     "price": "231.89999390",
+     "source": "yfinance"
+    },
+    {
+     "id": 503,
+     "security_id": 1,
+     "date": "2026-01-19",
+     "price": "234.96000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 29,
+     "security_id": 1,
+     "date": "2026-01-16",
+     "price": "132.53000000",
+     "source": "manual"
+    },
+    {
+     "id": 90,
+     "security_id": 2,
+     "date": "2026-01-16",
+     "price": "95.30000000",
+     "source": "manual"
+    },
+    {
+     "id": 151,
+     "security_id": 3,
+     "date": "2026-01-16",
+     "price": "142.71000000",
+     "source": "manual"
+    },
+    {
+     "id": 212,
+     "security_id": 4,
+     "date": "2026-01-16",
+     "price": "59.37000000",
+     "source": "manual"
+    },
+    {
+     "id": 273,
+     "security_id": 5,
+     "date": "2026-01-16",
+     "price": "241.89000000",
+     "source": "manual"
+    },
+    {
+     "id": 334,
+     "security_id": 6,
+     "date": "2026-01-16",
+     "price": "58.12000000",
+     "source": "manual"
+    },
+    {
+     "id": 395,
+     "security_id": 7,
+     "date": "2026-01-16",
+     "price": "132.87000000",
+     "source": "manual"
+    },
+    {
+     "id": 502,
+     "security_id": 1,
+     "date": "2026-01-15",
+     "price": "235.33999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 501,
+     "security_id": 1,
+     "date": "2026-01-14",
+     "price": "234.08000183",
+     "source": "yfinance"
+    },
+    {
+     "id": 500,
+     "security_id": 1,
+     "date": "2026-01-13",
+     "price": "234.55999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 499,
+     "security_id": 1,
+     "date": "2026-01-12",
+     "price": "235.30999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 28,
+     "security_id": 1,
+     "date": "2026-01-09",
+     "price": "132.83000000",
+     "source": "manual"
+    },
+    {
+     "id": 89,
+     "security_id": 2,
+     "date": "2026-01-09",
+     "price": "95.72000000",
+     "source": "manual"
+    },
+    {
+     "id": 150,
+     "security_id": 3,
+     "date": "2026-01-09",
+     "price": "145.61000000",
+     "source": "manual"
+    },
+    {
+     "id": 211,
+     "security_id": 4,
+     "date": "2026-01-09",
+     "price": "62.78000000",
+     "source": "manual"
+    },
+    {
+     "id": 272,
+     "security_id": 5,
+     "date": "2026-01-09",
+     "price": "245.67000000",
+     "source": "manual"
+    },
+    {
+     "id": 333,
+     "security_id": 6,
+     "date": "2026-01-09",
+     "price": "59.24000000",
+     "source": "manual"
+    },
+    {
+     "id": 394,
+     "security_id": 7,
+     "date": "2026-01-09",
+     "price": "135.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 498,
+     "security_id": 1,
+     "date": "2026-01-08",
+     "price": "235.02999878",
+     "source": "yfinance"
+    },
+    {
+     "id": 497,
+     "security_id": 1,
+     "date": "2026-01-07",
+     "price": "234.67999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 496,
+     "security_id": 1,
+     "date": "2026-01-06",
+     "price": "235.44999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 495,
+     "security_id": 1,
+     "date": "2026-01-05",
+     "price": "238.25000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 27,
+     "security_id": 1,
+     "date": "2026-01-02",
+     "price": "133.21000000",
+     "source": "manual"
+    },
+    {
+     "id": 88,
+     "security_id": 2,
+     "date": "2026-01-02",
+     "price": "94.45000000",
+     "source": "manual"
+    },
+    {
+     "id": 149,
+     "security_id": 3,
+     "date": "2026-01-02",
+     "price": "143.72000000",
+     "source": "manual"
+    },
+    {
+     "id": 210,
+     "security_id": 4,
+     "date": "2026-01-02",
+     "price": "61.22000000",
+     "source": "manual"
+    },
+    {
+     "id": 271,
+     "security_id": 5,
+     "date": "2026-01-02",
+     "price": "249.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 332,
+     "security_id": 6,
+     "date": "2026-01-02",
+     "price": "58.63000000",
+     "source": "manual"
+    },
+    {
+     "id": 393,
+     "security_id": 7,
+     "date": "2026-01-02",
+     "price": "131.11000000",
+     "source": "manual"
+    },
+    {
+     "id": 494,
+     "security_id": 1,
+     "date": "2025-12-31",
+     "price": "233.99000549",
+     "source": "yfinance"
+    },
+    {
+     "id": 493,
+     "security_id": 1,
+     "date": "2025-12-30",
+     "price": "235.00000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 492,
+     "security_id": 1,
+     "date": "2025-12-29",
+     "price": "235.17999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 26,
+     "security_id": 1,
+     "date": "2025-12-26",
+     "price": "130.07000000",
+     "source": "manual"
+    },
+    {
+     "id": 87,
+     "security_id": 2,
+     "date": "2025-12-26",
+     "price": "97.53000000",
+     "source": "manual"
+    },
+    {
+     "id": 148,
+     "security_id": 3,
+     "date": "2025-12-26",
+     "price": "140.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 209,
+     "security_id": 4,
+     "date": "2025-12-26",
+     "price": "62.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 270,
+     "security_id": 5,
+     "date": "2025-12-26",
+     "price": "246.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 331,
+     "security_id": 6,
+     "date": "2025-12-26",
+     "price": "57.40000000",
+     "source": "manual"
+    },
+    {
+     "id": 392,
+     "security_id": 7,
+     "date": "2025-12-26",
+     "price": "126.98000000",
+     "source": "manual"
+    },
+    {
+     "id": 491,
+     "security_id": 1,
+     "date": "2025-12-24",
+     "price": "233.85000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 490,
+     "security_id": 1,
+     "date": "2025-12-23",
+     "price": "234.05000305",
+     "source": "yfinance"
+    },
+    {
+     "id": 489,
+     "security_id": 1,
+     "date": "2025-12-22",
+     "price": "233.55999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 25,
+     "security_id": 1,
+     "date": "2025-12-19",
+     "price": "135.13000000",
+     "source": "manual"
+    },
+    {
+     "id": 86,
+     "security_id": 2,
+     "date": "2025-12-19",
+     "price": "95.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 147,
+     "security_id": 3,
+     "date": "2025-12-19",
+     "price": "138.79000000",
+     "source": "manual"
+    },
+    {
+     "id": 208,
+     "security_id": 4,
+     "date": "2025-12-19",
+     "price": "59.63000000",
+     "source": "manual"
+    },
+    {
+     "id": 269,
+     "security_id": 5,
+     "date": "2025-12-19",
+     "price": "243.05000000",
+     "source": "manual"
+    },
+    {
+     "id": 330,
+     "security_id": 6,
+     "date": "2025-12-19",
+     "price": "58.36000000",
+     "source": "manual"
+    },
+    {
+     "id": 391,
+     "security_id": 7,
+     "date": "2025-12-19",
+     "price": "129.66000000",
+     "source": "manual"
+    },
+    {
+     "id": 488,
+     "security_id": 1,
+     "date": "2025-12-18",
+     "price": "230.36000061",
+     "source": "yfinance"
+    },
+    {
+     "id": 487,
+     "security_id": 1,
+     "date": "2025-12-17",
+     "price": "227.86000061",
+     "source": "yfinance"
+    },
+    {
+     "id": 486,
+     "security_id": 1,
+     "date": "2025-12-16",
+     "price": "228.77999878",
+     "source": "yfinance"
+    },
+    {
+     "id": 485,
+     "security_id": 1,
+     "date": "2025-12-15",
+     "price": "230.10000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 24,
+     "security_id": 1,
+     "date": "2025-12-12",
+     "price": "128.86000000",
+     "source": "manual"
+    },
+    {
+     "id": 85,
+     "security_id": 2,
+     "date": "2025-12-12",
+     "price": "93.33000000",
+     "source": "manual"
+    },
+    {
+     "id": 146,
+     "security_id": 3,
+     "date": "2025-12-12",
+     "price": "141.44000000",
+     "source": "manual"
+    },
+    {
+     "id": 207,
+     "security_id": 4,
+     "date": "2025-12-12",
+     "price": "61.23000000",
+     "source": "manual"
+    },
+    {
+     "id": 268,
+     "security_id": 5,
+     "date": "2025-12-12",
+     "price": "243.49000000",
+     "source": "manual"
+    },
+    {
+     "id": 329,
+     "security_id": 6,
+     "date": "2025-12-12",
+     "price": "57.70000000",
+     "source": "manual"
+    },
+    {
+     "id": 390,
+     "security_id": 7,
+     "date": "2025-12-12",
+     "price": "127.80000000",
+     "source": "manual"
+    },
+    {
+     "id": 484,
+     "security_id": 1,
+     "date": "2025-12-11",
+     "price": "230.00000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 483,
+     "security_id": 1,
+     "date": "2025-12-10",
+     "price": "227.75000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 482,
+     "security_id": 1,
+     "date": "2025-12-09",
+     "price": "226.02999878",
+     "source": "yfinance"
+    },
+    {
+     "id": 481,
+     "security_id": 1,
+     "date": "2025-12-08",
+     "price": "226.44999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 23,
+     "security_id": 1,
+     "date": "2025-12-05",
+     "price": "128.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 84,
+     "security_id": 2,
+     "date": "2025-12-05",
+     "price": "94.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 145,
+     "security_id": 3,
+     "date": "2025-12-05",
+     "price": "141.01000000",
+     "source": "manual"
+    },
+    {
+     "id": 206,
+     "security_id": 4,
+     "date": "2025-12-05",
+     "price": "59.58000000",
+     "source": "manual"
+    },
+    {
+     "id": 267,
+     "security_id": 5,
+     "date": "2025-12-05",
+     "price": "248.83000000",
+     "source": "manual"
+    },
+    {
+     "id": 328,
+     "security_id": 6,
+     "date": "2025-12-05",
+     "price": "55.80000000",
+     "source": "manual"
+    },
+    {
+     "id": 389,
+     "security_id": 7,
+     "date": "2025-12-05",
+     "price": "125.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 480,
+     "security_id": 1,
+     "date": "2025-12-04",
+     "price": "224.05999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 479,
+     "security_id": 1,
+     "date": "2025-12-03",
+     "price": "218.63999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 478,
+     "security_id": 1,
+     "date": "2025-12-02",
+     "price": "216.21000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 477,
+     "security_id": 1,
+     "date": "2025-12-01",
+     "price": "214.08999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 22,
+     "security_id": 1,
+     "date": "2025-11-28",
+     "price": "131.99000000",
+     "source": "manual"
+    },
+    {
+     "id": 83,
+     "security_id": 2,
+     "date": "2025-11-28",
+     "price": "94.93000000",
+     "source": "manual"
+    },
+    {
+     "id": 144,
+     "security_id": 3,
+     "date": "2025-11-28",
+     "price": "137.78000000",
+     "source": "manual"
+    },
+    {
+     "id": 205,
+     "security_id": 4,
+     "date": "2025-11-28",
+     "price": "58.41000000",
+     "source": "manual"
+    },
+    {
+     "id": 266,
+     "security_id": 5,
+     "date": "2025-11-28",
+     "price": "233.89000000",
+     "source": "manual"
+    },
+    {
+     "id": 327,
+     "security_id": 6,
+     "date": "2025-11-28",
+     "price": "58.33000000",
+     "source": "manual"
+    },
+    {
+     "id": 388,
+     "security_id": 7,
+     "date": "2025-11-28",
+     "price": "121.57000000",
+     "source": "manual"
+    },
+    {
+     "id": 476,
+     "security_id": 1,
+     "date": "2025-11-27",
+     "price": "215.41000366",
+     "source": "yfinance"
+    },
+    {
+     "id": 475,
+     "security_id": 1,
+     "date": "2025-11-26",
+     "price": "215.05999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 474,
+     "security_id": 1,
+     "date": "2025-11-25",
+     "price": "214.72000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 473,
+     "security_id": 1,
+     "date": "2025-11-24",
+     "price": "211.38999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 21,
+     "security_id": 1,
+     "date": "2025-11-21",
+     "price": "127.26000000",
+     "source": "manual"
+    },
+    {
+     "id": 82,
+     "security_id": 2,
+     "date": "2025-11-21",
+     "price": "91.83000000",
+     "source": "manual"
+    },
+    {
+     "id": 143,
+     "security_id": 3,
+     "date": "2025-11-21",
+     "price": "135.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 204,
+     "security_id": 4,
+     "date": "2025-11-21",
+     "price": "59.98000000",
+     "source": "manual"
+    },
+    {
+     "id": 265,
+     "security_id": 5,
+     "date": "2025-11-21",
+     "price": "236.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 326,
+     "security_id": 6,
+     "date": "2025-11-21",
+     "price": "57.05000000",
+     "source": "manual"
+    },
+    {
+     "id": 387,
+     "security_id": 7,
+     "date": "2025-11-21",
+     "price": "125.69000000",
+     "source": "manual"
+    },
+    {
+     "id": 472,
+     "security_id": 1,
+     "date": "2025-11-20",
+     "price": "207.97999573",
+     "source": "yfinance"
+    },
+    {
+     "id": 471,
+     "security_id": 1,
+     "date": "2025-11-19",
+     "price": "208.50999451",
+     "source": "yfinance"
+    },
+    {
+     "id": 470,
+     "security_id": 1,
+     "date": "2025-11-18",
+     "price": "208.38000488",
+     "source": "yfinance"
+    },
+    {
+     "id": 469,
+     "security_id": 1,
+     "date": "2025-11-17",
+     "price": "206.92999268",
+     "source": "yfinance"
+    },
+    {
+     "id": 20,
+     "security_id": 1,
+     "date": "2025-11-14",
+     "price": "128.88000000",
+     "source": "manual"
+    },
+    {
+     "id": 81,
+     "security_id": 2,
+     "date": "2025-11-14",
+     "price": "94.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 142,
+     "security_id": 3,
+     "date": "2025-11-14",
+     "price": "141.07000000",
+     "source": "manual"
+    },
+    {
+     "id": 203,
+     "security_id": 4,
+     "date": "2025-11-14",
+     "price": "60.37000000",
+     "source": "manual"
+    },
+    {
+     "id": 264,
+     "security_id": 5,
+     "date": "2025-11-14",
+     "price": "245.26000000",
+     "source": "manual"
+    },
+    {
+     "id": 325,
+     "security_id": 6,
+     "date": "2025-11-14",
+     "price": "57.12000000",
+     "source": "manual"
+    },
+    {
+     "id": 386,
+     "security_id": 7,
+     "date": "2025-11-14",
+     "price": "120.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 468,
+     "security_id": 1,
+     "date": "2025-11-13",
+     "price": "205.85000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 467,
+     "security_id": 1,
+     "date": "2025-11-12",
+     "price": "208.75999451",
+     "source": "yfinance"
+    },
+    {
+     "id": 466,
+     "security_id": 1,
+     "date": "2025-11-11",
+     "price": "206.80999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 465,
+     "security_id": 1,
+     "date": "2025-11-10",
+     "price": "205.83999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 19,
+     "security_id": 1,
+     "date": "2025-11-07",
+     "price": "126.12000000",
+     "source": "manual"
+    },
+    {
+     "id": 80,
+     "security_id": 2,
+     "date": "2025-11-07",
+     "price": "93.82000000",
+     "source": "manual"
+    },
+    {
+     "id": 141,
+     "security_id": 3,
+     "date": "2025-11-07",
+     "price": "138.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 202,
+     "security_id": 4,
+     "date": "2025-11-07",
+     "price": "59.16000000",
+     "source": "manual"
+    },
+    {
+     "id": 263,
+     "security_id": 5,
+     "date": "2025-11-07",
+     "price": "240.41000000",
+     "source": "manual"
+    },
+    {
+     "id": 324,
+     "security_id": 6,
+     "date": "2025-11-07",
+     "price": "58.26000000",
+     "source": "manual"
+    },
+    {
+     "id": 385,
+     "security_id": 7,
+     "date": "2025-11-07",
+     "price": "119.76000000",
+     "source": "manual"
+    },
+    {
+     "id": 464,
+     "security_id": 1,
+     "date": "2025-11-06",
+     "price": "205.25000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 463,
+     "security_id": 1,
+     "date": "2025-11-05",
+     "price": "205.63999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 462,
+     "security_id": 1,
+     "date": "2025-11-04",
+     "price": "205.39999390",
+     "source": "yfinance"
+    },
+    {
+     "id": 461,
+     "security_id": 1,
+     "date": "2025-11-03",
+     "price": "207.22000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 18,
+     "security_id": 1,
+     "date": "2025-10-31",
+     "price": "129.45000000",
+     "source": "manual"
+    },
+    {
+     "id": 79,
+     "security_id": 2,
+     "date": "2025-10-31",
+     "price": "94.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 140,
+     "security_id": 3,
+     "date": "2025-10-31",
+     "price": "139.09000000",
+     "source": "manual"
+    },
+    {
+     "id": 201,
+     "security_id": 4,
+     "date": "2025-10-31",
+     "price": "61.07000000",
+     "source": "manual"
+    },
+    {
+     "id": 262,
+     "security_id": 5,
+     "date": "2025-10-31",
+     "price": "240.82000000",
+     "source": "manual"
+    },
+    {
+     "id": 323,
+     "security_id": 6,
+     "date": "2025-10-31",
+     "price": "54.90000000",
+     "source": "manual"
+    },
+    {
+     "id": 384,
+     "security_id": 7,
+     "date": "2025-10-31",
+     "price": "115.81000000",
+     "source": "manual"
+    },
+    {
+     "id": 460,
+     "security_id": 1,
+     "date": "2025-10-30",
+     "price": "204.11999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 459,
+     "security_id": 1,
+     "date": "2025-10-29",
+     "price": "204.55000305",
+     "source": "yfinance"
+    },
+    {
+     "id": 458,
+     "security_id": 1,
+     "date": "2025-10-28",
+     "price": "207.80000305",
+     "source": "yfinance"
+    },
+    {
+     "id": 457,
+     "security_id": 1,
+     "date": "2025-10-27",
+     "price": "207.44999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 17,
+     "security_id": 1,
+     "date": "2025-10-24",
+     "price": "123.85000000",
+     "source": "manual"
+    },
+    {
+     "id": 78,
+     "security_id": 2,
+     "date": "2025-10-24",
+     "price": "92.55000000",
+     "source": "manual"
+    },
+    {
+     "id": 139,
+     "security_id": 3,
+     "date": "2025-10-24",
+     "price": "138.99000000",
+     "source": "manual"
+    },
+    {
+     "id": 200,
+     "security_id": 4,
+     "date": "2025-10-24",
+     "price": "58.37000000",
+     "source": "manual"
+    },
+    {
+     "id": 261,
+     "security_id": 5,
+     "date": "2025-10-24",
+     "price": "239.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 322,
+     "security_id": 6,
+     "date": "2025-10-24",
+     "price": "58.02000000",
+     "source": "manual"
+    },
+    {
+     "id": 383,
+     "security_id": 7,
+     "date": "2025-10-24",
+     "price": "118.76000000",
+     "source": "manual"
+    },
+    {
+     "id": 456,
+     "security_id": 1,
+     "date": "2025-10-23",
+     "price": "206.33999634",
+     "source": "yfinance"
+    },
+    {
+     "id": 455,
+     "security_id": 1,
+     "date": "2025-10-22",
+     "price": "205.27000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 454,
+     "security_id": 1,
+     "date": "2025-10-21",
+     "price": "205.44000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 453,
+     "security_id": 1,
+     "date": "2025-10-20",
+     "price": "206.21000671",
+     "source": "yfinance"
+    },
+    {
+     "id": 16,
+     "security_id": 1,
+     "date": "2025-10-17",
+     "price": "125.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 77,
+     "security_id": 2,
+     "date": "2025-10-17",
+     "price": "93.87000000",
+     "source": "manual"
+    },
+    {
+     "id": 138,
+     "security_id": 3,
+     "date": "2025-10-17",
+     "price": "139.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 199,
+     "security_id": 4,
+     "date": "2025-10-17",
+     "price": "58.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 260,
+     "security_id": 5,
+     "date": "2025-10-17",
+     "price": "240.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 321,
+     "security_id": 6,
+     "date": "2025-10-17",
+     "price": "55.18000000",
+     "source": "manual"
+    },
+    {
+     "id": 382,
+     "security_id": 7,
+     "date": "2025-10-17",
+     "price": "117.54000000",
+     "source": "manual"
+    },
+    {
+     "id": 452,
+     "security_id": 1,
+     "date": "2025-10-16",
+     "price": "204.19999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 451,
+     "security_id": 1,
+     "date": "2025-10-15",
+     "price": "206.30000305",
+     "source": "yfinance"
+    },
+    {
+     "id": 450,
+     "security_id": 1,
+     "date": "2025-10-14",
+     "price": "204.19000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 15,
+     "security_id": 1,
+     "date": "2025-10-10",
+     "price": "124.18000000",
+     "source": "manual"
+    },
+    {
+     "id": 76,
+     "security_id": 2,
+     "date": "2025-10-10",
+     "price": "93.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 137,
+     "security_id": 3,
+     "date": "2025-10-10",
+     "price": "135.02000000",
+     "source": "manual"
+    },
+    {
+     "id": 198,
+     "security_id": 4,
+     "date": "2025-10-10",
+     "price": "57.38000000",
+     "source": "manual"
+    },
+    {
+     "id": 259,
+     "security_id": 5,
+     "date": "2025-10-10",
+     "price": "227.07000000",
+     "source": "manual"
+    },
+    {
+     "id": 320,
+     "security_id": 6,
+     "date": "2025-10-10",
+     "price": "57.52000000",
+     "source": "manual"
+    },
+    {
+     "id": 381,
+     "security_id": 7,
+     "date": "2025-10-10",
+     "price": "114.88000000",
+     "source": "manual"
+    },
+    {
+     "id": 449,
+     "security_id": 1,
+     "date": "2025-10-09",
+     "price": "203.80999756",
+     "source": "yfinance"
+    },
+    {
+     "id": 448,
+     "security_id": 1,
+     "date": "2025-10-08",
+     "price": "202.50999451",
+     "source": "yfinance"
+    },
+    {
+     "id": 447,
+     "security_id": 1,
+     "date": "2025-10-07",
+     "price": "203.61000061",
+     "source": "yfinance"
+    },
+    {
+     "id": 446,
+     "security_id": 1,
+     "date": "2025-10-06",
+     "price": "205.02999878",
+     "source": "yfinance"
+    },
+    {
+     "id": 14,
+     "security_id": 1,
+     "date": "2025-10-03",
+     "price": "127.74000000",
+     "source": "manual"
+    },
+    {
+     "id": 75,
+     "security_id": 2,
+     "date": "2025-10-03",
+     "price": "91.72000000",
+     "source": "manual"
+    },
+    {
+     "id": 136,
+     "security_id": 3,
+     "date": "2025-10-03",
+     "price": "135.38000000",
+     "source": "manual"
+    },
+    {
+     "id": 197,
+     "security_id": 4,
+     "date": "2025-10-03",
+     "price": "57.34000000",
+     "source": "manual"
+    },
+    {
+     "id": 258,
+     "security_id": 5,
+     "date": "2025-10-03",
+     "price": "224.65000000",
+     "source": "manual"
+    },
+    {
+     "id": 319,
+     "security_id": 6,
+     "date": "2025-10-03",
+     "price": "56.12000000",
+     "source": "manual"
+    },
+    {
+     "id": 380,
+     "security_id": 7,
+     "date": "2025-10-03",
+     "price": "117.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 445,
+     "security_id": 1,
+     "date": "2025-10-02",
+     "price": "204.44000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 444,
+     "security_id": 1,
+     "date": "2025-10-01",
+     "price": "205.25000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 443,
+     "security_id": 1,
+     "date": "2025-09-30",
+     "price": "205.11999512",
+     "source": "yfinance"
+    },
+    {
+     "id": 442,
+     "security_id": 1,
+     "date": "2025-09-29",
+     "price": "204.69999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 13,
+     "security_id": 1,
+     "date": "2025-09-26",
+     "price": "125.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 74,
+     "security_id": 2,
+     "date": "2025-09-26",
+     "price": "89.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 135,
+     "security_id": 3,
+     "date": "2025-09-26",
+     "price": "130.67000000",
+     "source": "manual"
+    },
+    {
+     "id": 196,
+     "security_id": 4,
+     "date": "2025-09-26",
+     "price": "57.52000000",
+     "source": "manual"
+    },
+    {
+     "id": 257,
+     "security_id": 5,
+     "date": "2025-09-26",
+     "price": "231.30000000",
+     "source": "manual"
+    },
+    {
+     "id": 318,
+     "security_id": 6,
+     "date": "2025-09-26",
+     "price": "55.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 379,
+     "security_id": 7,
+     "date": "2025-09-26",
+     "price": "113.49000000",
+     "source": "manual"
+    },
+    {
+     "id": 441,
+     "security_id": 1,
+     "date": "2025-09-25",
+     "price": "203.85000610",
+     "source": "yfinance"
+    },
+    {
+     "id": 440,
+     "security_id": 1,
+     "date": "2025-09-24",
+     "price": "204.77000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 439,
+     "security_id": 1,
+     "date": "2025-09-23",
+     "price": "205.03999329",
+     "source": "yfinance"
+    },
+    {
+     "id": 438,
+     "security_id": 1,
+     "date": "2025-09-22",
+     "price": "205.50000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 12,
+     "security_id": 1,
+     "date": "2025-09-19",
+     "price": "125.65000000",
+     "source": "manual"
+    },
+    {
+     "id": 73,
+     "security_id": 2,
+     "date": "2025-09-19",
+     "price": "93.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 134,
+     "security_id": 3,
+     "date": "2025-09-19",
+     "price": "137.91000000",
+     "source": "manual"
+    },
+    {
+     "id": 195,
+     "security_id": 4,
+     "date": "2025-09-19",
+     "price": "57.81000000",
+     "source": "manual"
+    },
+    {
+     "id": 256,
+     "security_id": 5,
+     "date": "2025-09-19",
+     "price": "222.03000000",
+     "source": "manual"
+    },
+    {
+     "id": 317,
+     "security_id": 6,
+     "date": "2025-09-19",
+     "price": "56.03000000",
+     "source": "manual"
+    },
+    {
+     "id": 378,
+     "security_id": 7,
+     "date": "2025-09-19",
+     "price": "109.60000000",
+     "source": "manual"
+    },
+    {
+     "id": 437,
+     "security_id": 1,
+     "date": "2025-09-18",
+     "price": "201.63999939",
+     "source": "yfinance"
+    },
+    {
+     "id": 436,
+     "security_id": 1,
+     "date": "2025-09-17",
+     "price": "201.52000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 435,
+     "security_id": 1,
+     "date": "2025-09-16",
+     "price": "201.02000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 434,
+     "security_id": 1,
+     "date": "2025-09-15",
+     "price": "200.25000000",
+     "source": "yfinance"
+    },
+    {
+     "id": 11,
+     "security_id": 1,
+     "date": "2025-09-12",
+     "price": "124.82000000",
+     "source": "manual"
+    },
+    {
+     "id": 72,
+     "security_id": 2,
+     "date": "2025-09-12",
+     "price": "93.56000000",
+     "source": "manual"
+    },
+    {
+     "id": 133,
+     "security_id": 3,
+     "date": "2025-09-12",
+     "price": "132.49000000",
+     "source": "manual"
+    },
+    {
+     "id": 194,
+     "security_id": 4,
+     "date": "2025-09-12",
+     "price": "57.14000000",
+     "source": "manual"
+    },
+    {
+     "id": 255,
+     "security_id": 5,
+     "date": "2025-09-12",
+     "price": "229.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 316,
+     "security_id": 6,
+     "date": "2025-09-12",
+     "price": "56.13000000",
+     "source": "manual"
+    },
+    {
+     "id": 377,
+     "security_id": 7,
+     "date": "2025-09-12",
+     "price": "111.38000000",
+     "source": "manual"
+    },
+    {
+     "id": 433,
+     "security_id": 1,
+     "date": "2025-09-11",
+     "price": "200.82000732",
+     "source": "yfinance"
+    },
+    {
+     "id": 432,
+     "security_id": 1,
+     "date": "2025-09-10",
+     "price": "199.94000244",
+     "source": "yfinance"
+    },
+    {
+     "id": 431,
+     "security_id": 1,
+     "date": "2025-09-09",
+     "price": "199.69999695",
+     "source": "yfinance"
+    },
+    {
+     "id": 430,
+     "security_id": 1,
+     "date": "2025-09-08",
+     "price": "199.77000427",
+     "source": "yfinance"
+    },
+    {
+     "id": 10,
+     "security_id": 1,
+     "date": "2025-09-05",
+     "price": "121.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 71,
+     "security_id": 2,
+     "date": "2025-09-05",
+     "price": "89.94000000",
+     "source": "manual"
+    },
+    {
+     "id": 132,
+     "security_id": 3,
+     "date": "2025-09-05",
+     "price": "131.14000000",
+     "source": "manual"
+    },
+    {
+     "id": 193,
+     "security_id": 4,
+     "date": "2025-09-05",
+     "price": "56.90000000",
+     "source": "manual"
+    },
+    {
+     "id": 254,
+     "security_id": 5,
+     "date": "2025-09-05",
+     "price": "224.62000000",
+     "source": "manual"
+    },
+    {
+     "id": 315,
+     "security_id": 6,
+     "date": "2025-09-05",
+     "price": "56.18000000",
+     "source": "manual"
+    },
+    {
+     "id": 376,
+     "security_id": 7,
+     "date": "2025-09-05",
+     "price": "108.74000000",
+     "source": "manual"
+    },
+    {
+     "id": 429,
+     "security_id": 1,
+     "date": "2025-09-04",
+     "price": "201.72000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 428,
+     "security_id": 1,
+     "date": "2025-09-03",
+     "price": "200.97000122",
+     "source": "yfinance"
+    },
+    {
+     "id": 9,
+     "security_id": 1,
+     "date": "2025-08-29",
+     "price": "125.47000000",
+     "source": "manual"
+    },
+    {
+     "id": 70,
+     "security_id": 2,
+     "date": "2025-08-29",
+     "price": "88.93000000",
+     "source": "manual"
+    },
+    {
+     "id": 131,
+     "security_id": 3,
+     "date": "2025-08-29",
+     "price": "129.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 192,
+     "security_id": 4,
+     "date": "2025-08-29",
+     "price": "57.77000000",
+     "source": "manual"
+    },
+    {
+     "id": 253,
+     "security_id": 5,
+     "date": "2025-08-29",
+     "price": "227.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 314,
+     "security_id": 6,
+     "date": "2025-08-29",
+     "price": "56.67000000",
+     "source": "manual"
+    },
+    {
+     "id": 375,
+     "security_id": 7,
+     "date": "2025-08-29",
+     "price": "105.80000000",
+     "source": "manual"
+    },
+    {
+     "id": 8,
+     "security_id": 1,
+     "date": "2025-08-22",
+     "price": "122.77000000",
+     "source": "manual"
+    },
+    {
+     "id": 69,
+     "security_id": 2,
+     "date": "2025-08-22",
+     "price": "88.50000000",
+     "source": "manual"
+    },
+    {
+     "id": 130,
+     "security_id": 3,
+     "date": "2025-08-22",
+     "price": "128.73000000",
+     "source": "manual"
+    },
+    {
+     "id": 191,
+     "security_id": 4,
+     "date": "2025-08-22",
+     "price": "58.50000000",
+     "source": "manual"
+    },
+    {
+     "id": 252,
+     "security_id": 5,
+     "date": "2025-08-22",
+     "price": "225.10000000",
+     "source": "manual"
+    },
+    {
+     "id": 313,
+     "security_id": 6,
+     "date": "2025-08-22",
+     "price": "55.80000000",
+     "source": "manual"
+    },
+    {
+     "id": 374,
+     "security_id": 7,
+     "date": "2025-08-22",
+     "price": "106.54000000",
+     "source": "manual"
+    },
+    {
+     "id": 7,
+     "security_id": 1,
+     "date": "2025-08-15",
+     "price": "120.59000000",
+     "source": "manual"
+    },
+    {
+     "id": 68,
+     "security_id": 2,
+     "date": "2025-08-15",
+     "price": "88.85000000",
+     "source": "manual"
+    },
+    {
+     "id": 129,
+     "security_id": 3,
+     "date": "2025-08-15",
+     "price": "129.11000000",
+     "source": "manual"
+    },
+    {
+     "id": 190,
+     "security_id": 4,
+     "date": "2025-08-15",
+     "price": "56.59000000",
+     "source": "manual"
+    },
+    {
+     "id": 251,
+     "security_id": 5,
+     "date": "2025-08-15",
+     "price": "228.10000000",
+     "source": "manual"
+    },
+    {
+     "id": 312,
+     "security_id": 6,
+     "date": "2025-08-15",
+     "price": "55.06000000",
+     "source": "manual"
+    },
+    {
+     "id": 373,
+     "security_id": 7,
+     "date": "2025-08-15",
+     "price": "106.27000000",
+     "source": "manual"
+    },
+    {
+     "id": 6,
+     "security_id": 1,
+     "date": "2025-08-08",
+     "price": "122.08000000",
+     "source": "manual"
+    },
+    {
+     "id": 67,
+     "security_id": 2,
+     "date": "2025-08-08",
+     "price": "88.30000000",
+     "source": "manual"
+    },
+    {
+     "id": 128,
+     "security_id": 3,
+     "date": "2025-08-08",
+     "price": "131.90000000",
+     "source": "manual"
+    },
+    {
+     "id": 189,
+     "security_id": 4,
+     "date": "2025-08-08",
+     "price": "56.32000000",
+     "source": "manual"
+    },
+    {
+     "id": 250,
+     "security_id": 5,
+     "date": "2025-08-08",
+     "price": "226.50000000",
+     "source": "manual"
+    },
+    {
+     "id": 311,
+     "security_id": 6,
+     "date": "2025-08-08",
+     "price": "54.64000000",
+     "source": "manual"
+    },
+    {
+     "id": 372,
+     "security_id": 7,
+     "date": "2025-08-08",
+     "price": "103.01000000",
+     "source": "manual"
+    },
+    {
+     "id": 5,
+     "security_id": 1,
+     "date": "2025-08-01",
+     "price": "123.55000000",
+     "source": "manual"
+    },
+    {
+     "id": 66,
+     "security_id": 2,
+     "date": "2025-08-01",
+     "price": "90.80000000",
+     "source": "manual"
+    },
+    {
+     "id": 127,
+     "security_id": 3,
+     "date": "2025-08-01",
+     "price": "130.03000000",
+     "source": "manual"
+    },
+    {
+     "id": 188,
+     "security_id": 4,
+     "date": "2025-08-01",
+     "price": "57.96000000",
+     "source": "manual"
+    },
+    {
+     "id": 249,
+     "security_id": 5,
+     "date": "2025-08-01",
+     "price": "220.92000000",
+     "source": "manual"
+    },
+    {
+     "id": 310,
+     "security_id": 6,
+     "date": "2025-08-01",
+     "price": "55.84000000",
+     "source": "manual"
+    },
+    {
+     "id": 371,
+     "security_id": 7,
+     "date": "2025-08-01",
+     "price": "101.56000000",
+     "source": "manual"
+    },
+    {
+     "id": 4,
+     "security_id": 1,
+     "date": "2025-07-25",
+     "price": "120.75000000",
+     "source": "manual"
+    },
+    {
+     "id": 65,
+     "security_id": 2,
+     "date": "2025-07-25",
+     "price": "91.00000000",
+     "source": "manual"
+    },
+    {
+     "id": 126,
+     "security_id": 3,
+     "date": "2025-07-25",
+     "price": "129.42000000",
+     "source": "manual"
+    },
+    {
+     "id": 187,
+     "security_id": 4,
+     "date": "2025-07-25",
+     "price": "57.43000000",
+     "source": "manual"
+    },
+    {
+     "id": 248,
+     "security_id": 5,
+     "date": "2025-07-25",
+     "price": "212.90000000",
+     "source": "manual"
+    },
+    {
+     "id": 309,
+     "security_id": 6,
+     "date": "2025-07-25",
+     "price": "55.42000000",
+     "source": "manual"
+    },
+    {
+     "id": 370,
+     "security_id": 7,
+     "date": "2025-07-25",
+     "price": "98.67000000",
+     "source": "manual"
+    },
+    {
+     "id": 3,
+     "security_id": 1,
+     "date": "2025-07-18",
+     "price": "118.43000000",
+     "source": "manual"
+    },
+    {
+     "id": 64,
+     "security_id": 2,
+     "date": "2025-07-18",
+     "price": "87.89000000",
+     "source": "manual"
+    },
+    {
+     "id": 125,
+     "security_id": 3,
+     "date": "2025-07-18",
+     "price": "125.34000000",
+     "source": "manual"
+    },
+    {
+     "id": 186,
+     "security_id": 4,
+     "date": "2025-07-18",
+     "price": "56.15000000",
+     "source": "manual"
+    },
+    {
+     "id": 247,
+     "security_id": 5,
+     "date": "2025-07-18",
+     "price": "220.17000000",
+     "source": "manual"
+    },
+    {
+     "id": 308,
+     "security_id": 6,
+     "date": "2025-07-18",
+     "price": "54.61000000",
+     "source": "manual"
+    },
+    {
+     "id": 369,
+     "security_id": 7,
+     "date": "2025-07-18",
+     "price": "97.62000000",
+     "source": "manual"
+    },
+    {
+     "id": 2,
+     "security_id": 1,
+     "date": "2025-07-11",
+     "price": "115.50000000",
+     "source": "manual"
+    },
+    {
+     "id": 63,
+     "security_id": 2,
+     "date": "2025-07-11",
+     "price": "89.79000000",
+     "source": "manual"
+    },
+    {
+     "id": 124,
+     "security_id": 3,
+     "date": "2025-07-11",
+     "price": "127.28000000",
+     "source": "manual"
+    },
+    {
+     "id": 185,
+     "security_id": 4,
+     "date": "2025-07-11",
+     "price": "56.63000000",
+     "source": "manual"
+    },
+    {
+     "id": 246,
+     "security_id": 5,
+     "date": "2025-07-11",
+     "price": "210.18000000",
+     "source": "manual"
+    },
+    {
+     "id": 307,
+     "security_id": 6,
+     "date": "2025-07-11",
+     "price": "53.21000000",
+     "source": "manual"
+    },
+    {
+     "id": 368,
+     "security_id": 7,
+     "date": "2025-07-11",
+     "price": "95.37000000",
+     "source": "manual"
+    },
+    {
+     "id": 1,
+     "security_id": 1,
+     "date": "2025-07-04",
+     "price": "116.62000000",
+     "source": "manual"
+    },
+    {
+     "id": 62,
+     "security_id": 2,
+     "date": "2025-07-04",
+     "price": "89.22000000",
+     "source": "manual"
+    },
+    {
+     "id": 123,
+     "security_id": 3,
+     "date": "2025-07-04",
+     "price": "131.40000000",
+     "source": "manual"
+    },
+    {
+     "id": 184,
+     "security_id": 4,
+     "date": "2025-07-04",
+     "price": "57.15000000",
+     "source": "manual"
+    },
+    {
+     "id": 245,
+     "security_id": 5,
+     "date": "2025-07-04",
+     "price": "213.71000000",
+     "source": "manual"
+    },
+    {
+     "id": 306,
+     "security_id": 6,
+     "date": "2025-07-04",
+     "price": "54.66000000",
+     "source": "manual"
+    },
+    {
+     "id": 367,
+     "security_id": 7,
+     "date": "2025-07-04",
+     "price": "96.02000000",
+     "source": "manual"
+    }
+   ],
+   "fx": {
+    "USD": [
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-09-25",
+      "rate": "1.39270000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-09-26",
+      "rate": "1.39410000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-09-29",
+      "rate": "1.39210000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-01",
+      "rate": "1.39400000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-02",
+      "rate": "1.39630000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-03",
+      "rate": "1.39530000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-05",
+      "rate": "1.39530000",
+      "source": "manual"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-06",
+      "rate": "1.39550000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-07",
+      "rate": "1.39510000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-08",
+      "rate": "1.39520000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-09",
+      "rate": "1.40000000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-10",
+      "rate": "1.40000000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-12",
+      "rate": "1.40000000",
+      "source": "manual"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-14",
+      "rate": "1.40460000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-15",
+      "rate": "1.40450000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-16",
+      "rate": "1.40480000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-17",
+      "rate": "1.40350000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-20",
+      "rate": "1.40360000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-21",
+      "rate": "1.40220000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-22",
+      "rate": "1.39960000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-23",
+      "rate": "1.39930000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-24",
+      "rate": "1.40140000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-27",
+      "rate": "1.39950000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-28",
+      "rate": "1.39590000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-29",
+      "rate": "1.39160000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-30",
+      "rate": "1.39870000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-10-31",
+      "rate": "1.40180000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-03",
+      "rate": "1.40570000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-04",
+      "rate": "1.40900000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-05",
+      "rate": "1.41200000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-06",
+      "rate": "1.41160000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-07",
+      "rate": "1.40630000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-10",
+      "rate": "1.40200000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-12",
+      "rate": "1.40050000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-13",
+      "rate": "1.40180000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-14",
+      "rate": "1.40250000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-17",
+      "rate": "1.40350000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-18",
+      "rate": "1.39970000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-19",
+      "rate": "1.40400000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-20",
+      "rate": "1.40800000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-21",
+      "rate": "1.41000000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-22",
+      "rate": "1.41000000",
+      "source": "manual"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-24",
+      "rate": "1.41080000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-25",
+      "rate": "1.41040000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-26",
+      "rate": "1.40590000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-27",
+      "rate": "1.40340000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-11-28",
+      "rate": "1.39790000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-01",
+      "rate": "1.39790000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-02",
+      "rate": "1.39860000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-03",
+      "rate": "1.39490000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-04",
+      "rate": "1.39520000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-05",
+      "rate": "1.38600000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-08",
+      "rate": "1.38370000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-09",
+      "rate": "1.38440000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-10",
+      "rate": "1.38350000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-11",
+      "rate": "1.37740000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-12",
+      "rate": "1.37690000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-15",
+      "rate": "1.37700000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-16",
+      "rate": "1.37480000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-17",
+      "rate": "1.37820000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-18",
+      "rate": "1.37740000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-19",
+      "rate": "1.37810000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-22",
+      "rate": "1.37480000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-23",
+      "rate": "1.37050000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-24",
+      "rate": "1.36740000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-29",
+      "rate": "1.36860000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-30",
+      "rate": "1.36930000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2025-12-31",
+      "rate": "1.37060000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-02",
+      "rate": "1.37370000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-05",
+      "rate": "1.37680000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-06",
+      "rate": "1.37890000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-07",
+      "rate": "1.38230000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-08",
+      "rate": "1.38660000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-09",
+      "rate": "1.38960000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-12",
+      "rate": "1.38750000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-13",
+      "rate": "1.38860000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-14",
+      "rate": "1.38770000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-15",
+      "rate": "1.38990000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-16",
+      "rate": "1.39130000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-19",
+      "rate": "1.38700000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-20",
+      "rate": "1.38290000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-21",
+      "rate": "1.38140000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-22",
+      "rate": "1.37980000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-23",
+      "rate": "1.37320000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-26",
+      "rate": "1.37020000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-27",
+      "rate": "1.36200000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-28",
+      "rate": "1.35710000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-29",
+      "rate": "1.35150000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-01-30",
+      "rate": "1.35620000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-02",
+      "rate": "1.36760000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-03",
+      "rate": "1.36520000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-04",
+      "rate": "1.36680000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-05",
+      "rate": "1.36760000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-06",
+      "rate": "1.36480000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-09",
+      "rate": "1.35760000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-10",
+      "rate": "1.35440000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-11",
+      "rate": "1.35740000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-12",
+      "rate": "1.36050000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-13",
+      "rate": "1.36140000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-17",
+      "rate": "1.36560000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-18",
+      "rate": "1.36780000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-19",
+      "rate": "1.36960000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-20",
+      "rate": "1.36890000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-22",
+      "rate": "1.36890000",
+      "source": "manual"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-23",
+      "rate": "1.36890000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-24",
+      "rate": "1.37080000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-25",
+      "rate": "1.36850000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-26",
+      "rate": "1.36880000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-02-27",
+      "rate": "1.36420000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-02",
+      "rate": "1.36880000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-03",
+      "rate": "1.36840000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-04",
+      "rate": "1.36640000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-05",
+      "rate": "1.36770000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-06",
+      "rate": "1.36130000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-09",
+      "rate": "1.35740000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-10",
+      "rate": "1.35670000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-11",
+      "rate": "1.35870000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-12",
+      "rate": "1.36170000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-13",
+      "rate": "1.37160000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-16",
+      "rate": "1.36750000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-17",
+      "rate": "1.36990000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-18",
+      "rate": "1.37060000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-19",
+      "rate": "1.37280000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-20",
+      "rate": "1.37180000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-22",
+      "rate": "1.37180000",
+      "source": "manual"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-23",
+      "rate": "1.37170000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-24",
+      "rate": "1.37610000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-25",
+      "rate": "1.38010000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-26",
+      "rate": "1.38440000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-27",
+      "rate": "1.38750000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-30",
+      "rate": "1.39260000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-03-31",
+      "rate": "1.39390000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-01",
+      "rate": "1.38880000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-02",
+      "rate": "1.39180000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-06",
+      "rate": "1.39160000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-07",
+      "rate": "1.39070000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-08",
+      "rate": "1.38510000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-09",
+      "rate": "1.38210000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-10",
+      "rate": "1.38250000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-12",
+      "rate": "1.38250000",
+      "source": "manual"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-13",
+      "rate": "1.38120000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-14",
+      "rate": "1.37570000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-15",
+      "rate": "1.37460000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-16",
+      "rate": "1.37100000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-17",
+      "rate": "1.36710000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-20",
+      "rate": "1.36600000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-21",
+      "rate": "1.36530000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-22",
+      "rate": "1.36620000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-23",
+      "rate": "1.36880000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-24",
+      "rate": "1.36780000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-27",
+      "rate": "1.36150000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-28",
+      "rate": "1.36780000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-29",
+      "rate": "1.36820000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-04-30",
+      "rate": "1.36240000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-01",
+      "rate": "1.35760000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-04",
+      "rate": "1.36110000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-05",
+      "rate": "1.36170000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-06",
+      "rate": "1.36250000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-07",
+      "rate": "1.36350000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-08",
+      "rate": "1.36860000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-11",
+      "rate": "1.36670000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-12",
+      "rate": "1.37100000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-13",
+      "rate": "1.37030000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-14",
+      "rate": "1.37250000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-15",
+      "rate": "1.37520000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-19",
+      "rate": "1.37570000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-20",
+      "rate": "1.37510000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-21",
+      "rate": "1.37830000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-22",
+      "rate": "1.38090000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-25",
+      "rate": "1.38040000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-26",
+      "rate": "1.38120000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-27",
+      "rate": "1.38310000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-28",
+      "rate": "1.38090000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-05-29",
+      "rate": "1.37980000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-01",
+      "rate": "1.38370000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-02",
+      "rate": "1.38340000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-03",
+      "rate": "1.38840000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-04",
+      "rate": "1.38960000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-05",
+      "rate": "1.39240000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-08",
+      "rate": "1.39470000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-09",
+      "rate": "1.39470000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-10",
+      "rate": "1.39300000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-11",
+      "rate": "1.39930000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-12",
+      "rate": "1.39770000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-15",
+      "rate": "1.39820000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-16",
+      "rate": "1.39960000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-17",
+      "rate": "1.40340000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-18",
+      "rate": "1.41310000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-19",
+      "rate": "1.41710000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-22",
+      "rate": "1.41620000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-23",
+      "rate": "1.42000000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-24",
+      "rate": "1.42340000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-25",
+      "rate": "1.42040000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-26",
+      "rate": "1.41860000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-29",
+      "rate": "1.42060000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-06-30",
+      "rate": "1.42100000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-02",
+      "rate": "1.41810000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-03",
+      "rate": "1.42010000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-06",
+      "rate": "1.42190000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-07",
+      "rate": "1.41990000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-08",
+      "rate": "1.41740000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-09",
+      "rate": "1.41690000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-10",
+      "rate": "1.41460000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-13",
+      "rate": "1.41450000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-14",
+      "rate": "1.40670000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-15",
+      "rate": "1.40490000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-16",
+      "rate": "1.40380000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-17",
+      "rate": "1.40140000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-20",
+      "rate": "1.40540000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-21",
+      "rate": "1.40950000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-22",
+      "rate": "1.40880000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-23",
+      "rate": "1.40830000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-24",
+      "rate": "1.40930000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-27",
+      "rate": "1.41140000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-28",
+      "rate": "1.41020000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-29",
+      "rate": "1.40830000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-30",
+      "rate": "1.40140000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-07-31",
+      "rate": "1.40290000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-04",
+      "rate": "1.40680000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-05",
+      "rate": "1.40260000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-06",
+      "rate": "1.40180000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-07",
+      "rate": "1.39430000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-10",
+      "rate": "1.39420000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-11",
+      "rate": "1.39270000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-12",
+      "rate": "1.39300000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-13",
+      "rate": "1.39380000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-14",
+      "rate": "1.38750000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-17",
+      "rate": "1.38650000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-18",
+      "rate": "1.38890000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-19",
+      "rate": "1.38240000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-20",
+      "rate": "1.37850000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-21",
+      "rate": "1.37600000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-22",
+      "rate": "1.37600000",
+      "source": "manual"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-24",
+      "rate": "1.38420000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-25",
+      "rate": "1.38390000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-26",
+      "rate": "1.38760000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-27",
+      "rate": "1.38610000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-28",
+      "rate": "1.38880000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-08-31",
+      "rate": "1.38660000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-01",
+      "rate": "1.38960000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-02",
+      "rate": "1.38630000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-03",
+      "rate": "1.37890000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-04",
+      "rate": "1.38400000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-08",
+      "rate": "1.37840000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-09",
+      "rate": "1.37980000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-10",
+      "rate": "1.38220000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-11",
+      "rate": "1.38660000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-14",
+      "rate": "1.39090000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-15",
+      "rate": "1.39170000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-16",
+      "rate": "1.39470000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-17",
+      "rate": "1.39880000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-18",
+      "rate": "1.40020000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-21",
+      "rate": "1.40210000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-22",
+      "rate": "1.40640000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-23",
+      "rate": "1.40960000",
+      "source": "boc_valet"
+     },
+     {
+      "base": "USD",
+      "quote": "CAD",
+      "date": "2026-09-24",
+      "rate": "1.41360000",
+      "source": "boc_valet"
+     }
+    ]
+   },
+   "acbPools": {
+    "items": [
+     {
+      "id": 24,
+      "account_id": 5,
+      "security_id": 7,
+      "symbol": "NVDA",
+      "quantity": "22.000000",
+      "total_acb_cad": "3627.75",
+      "updated_at": "2026-09-26T02:04:58.984398Z"
+     },
+     {
+      "id": 22,
+      "account_id": 5,
+      "security_id": 5,
+      "symbol": "VTI",
+      "quantity": "92.000000",
+      "total_acb_cad": "32784.00",
+      "updated_at": "2026-09-26T02:04:58.984398Z"
+     },
+     {
+      "id": 23,
+      "account_id": 5,
+      "security_id": 6,
+      "symbol": "VXUS",
+      "quantity": "80.000000",
+      "total_acb_cad": "6631.47",
+      "updated_at": "2026-09-26T02:04:58.984398Z"
+     }
+    ],
+    "total": 3,
+    "limit": 200,
+    "offset": 0
+   }
+  }
+ },
+ "cases": [
+  {
+   "id": "capital-gains.2026",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2026"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2026,
+     "items": [
+      {
+       "security": "VTI",
+       "security_id": 5,
+       "symbol": "VTI",
+       "proceeds_cad": "17735.47",
+       "acb_cad": "15873.68",
+       "gain_loss_cad": "1861.79",
+       "outlays_commissions_cad": "0.00"
+      }
+     ],
+     "totals": {
+      "proceeds_cad": "17735.47",
+      "acb_cad": "15873.68",
+      "gain_loss_cad": "1861.79",
+      "outlays_commissions_cad": "0.00"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2025",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2025"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2025,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2024",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2024"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2024,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2023",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2023"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2023,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2022",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2022"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2022,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2021",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2021"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2021,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2020",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2020"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2020,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2019",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2019"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2019,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2018",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2018"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2018,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2017",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2017"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2017,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2016",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2016"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2016,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2015",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2015"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2015,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "capital-gains.2014",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/reports/capital-gains?year=2014"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "year": 2014,
+     "items": [],
+     "totals": {
+      "proceeds_cad": "0",
+      "acb_cad": "0",
+      "gain_loss_cad": "0",
+      "outlays_commissions_cad": "0"
+     },
+     "denials": [],
+     "disclaimer": "Informational only — not filed automatically."
+    }
+   }
+  },
+  {
+   "id": "acb.pools",
+   "dataset": "demo",
+   "request": {
+    "method": "GET",
+    "path": "/acb?limit=200"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "items": [
+      {
+       "id": 24,
+       "account_id": 5,
+       "security_id": 7,
+       "symbol": "NVDA",
+       "quantity": "22.000000",
+       "total_acb_cad": "3627.75",
+       "updated_at": "2026-09-26T02:04:58.984398Z"
+      },
+      {
+       "id": 22,
+       "account_id": 5,
+       "security_id": 5,
+       "symbol": "VTI",
+       "quantity": "92.000000",
+       "total_acb_cad": "32784.00",
+       "updated_at": "2026-09-26T02:04:58.984398Z"
+      },
+      {
+       "id": 23,
+       "account_id": 5,
+       "security_id": 6,
+       "symbol": "VXUS",
+       "quantity": "80.000000",
+       "total_acb_cad": "6631.47",
+       "updated_at": "2026-09-26T02:04:58.984398Z"
+      }
+     ],
+     "total": 3,
+     "limit": 200,
+     "offset": 0
+    }
+   }
+  }
+ ]
+}

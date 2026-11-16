@@ -1,0 +1,47 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "tenant": "m124-78ea535969dd@x.c",
+  "group_by_options": [
+    "Category",
+    "Tag"
+  ],
+  "tag_caption": "Sum of tag totals: $151.35 across 12 data points \u2014 totals per tag; multi-tag transactions count in each, so this can exceed the $101.35 actually spent.",
+  "matrix": {
+    "regionTabIndex": "0",
+    "overflowX": "auto",
+    "colHeaders": 4,
+    "rowHeaders": 3,
+    "text": "Spending by category and tag from 2026-01-01 to 2026-10-09. Cells count a transaction once per tag; totals count each transaction once.CategoryvacationworkUntaggedGroceries$63.60$50.00\u2014Dining\u2014\u2014$25.50Uncategorized\u2014$12.25\u2014"
+  },
+  "donut_slice": null,
+  "drill": {
+    "breadcrumb": "\u2190 All categories/Food",
+    "hasTableFallback": true
+  },
+  "axe": {
+    "dark-1440": {
+      "counts": {},
+      "rows": []
+    },
+    "dark-390": {
+      "counts": {},
+      "rows": []
+    },
+    "dark-412": {
+      "counts": {},
+      "rows": []
+    },
+    "light-1440": {
+      "counts": {},
+      "rows": []
+    },
+    "light-390": {
+      "counts": {},
+      "rows": []
+    },
+    "light-412": {
+      "counts": {},
+      "rows": []
+    }
+  }
+}

@@ -1,0 +1,5016 @@
+{
+ "base": "http://127.0.0.1:18080",
+ "viewports": [
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 52,
+   "touchTargetsSmall": 52,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Light mode"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 40,
+     "h": 24,
+     "raw": "40x24",
+     "text": "1W"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "1M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "3M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "6M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 44,
+     "h": 24,
+     "raw": "44x24",
+     "text": "YTD"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "1Y"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "button.shrink-0.rounded-lg.border.border-danger/40",
+     "w": 86,
+     "h": 30,
+     "raw": "86x30",
+     "text": "Mark read"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "dashboard",
+   "path": "/dashboard",
+   "theme": "dark",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 313,
+   "touchTargetsSmall": 311,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Light mode"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 118,
+     "h": 28,
+     "raw": "118x28",
+     "text": "New transaction"
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 32,
+     "raw": "176x32",
+     "text": "All accounts\nRBC Main Chequing\nRBC Credi"
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 144,
+     "h": 32,
+     "raw": "144x32",
+     "text": "Any category\nUncategorized\ngroceries\ndin"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 97,
+     "h": 32,
+     "raw": "97x32",
+     "text": "Any tag"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "All"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 40,
+     "h": 24,
+     "raw": "40x24",
+     "text": "1W"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "1M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "3M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "6M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 44,
+     "h": 24,
+     "raw": "44x24",
+     "text": "YTD"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "1Y"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 154,
+     "h": 36,
+     "raw": "154x36",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 154,
+     "h": 36,
+     "raw": "154x36",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 160,
+     "h": 34,
+     "raw": "160x34",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 96,
+     "h": 34,
+     "raw": "96x34",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 96,
+     "h": 34,
+     "raw": "96x34",
+     "text": ""
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 106,
+     "h": 32,
+     "raw": "106x32",
+     "text": "All\nPaid\nReceived"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 92,
+     "h": 28,
+     "raw": "92x28",
+     "text": "Apply filters"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 69,
+     "h": 28,
+     "raw": "69x28",
+     "text": "Clear all"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Auto-detect transfer pair"
+    },
+    {
+     "sel": "button.rounded.px-1.py-0.5.text-[10px]",
+     "w": 28,
+     "h": 24,
+     "raw": "28x24",
+     "text": "Link"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    }
+   ],
+   "tableScrollers": [
+    {
+     "clientW": 646,
+     "scrollW": 1113,
+     "maxScroll": 467,
+     "hint": true,
+     "label": "Transactions table"
+    }
+   ],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "transactions",
+   "path": "/transactions",
+   "theme": "dark",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 36,
+   "touchTargetsSmall": 36,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Light mode"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 141,
+     "h": 36,
+     "raw": "141x36",
+     "text": "New budget"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit budget \u2014 dining"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete budget \u2014 dining"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit budget \u2014 entertainment"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete budget \u2014 entertainment"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit budget \u2014 groceries"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete budget \u2014 groceries"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "budgets",
+   "path": "/budgets",
+   "theme": "dark",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 44,
+   "touchTargetsSmall": 44,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Light mode"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 112,
+     "h": 36,
+     "raw": "112x36",
+     "text": "New bill"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Mapleview Rent"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Mapleview Rent"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Fibrestream Internet"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Fibrestream Internet"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Spotify Canada"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Spotify Canada"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Netflix"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Netflix"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Airlink Mobile"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Airlink Mobile"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "bills",
+   "path": "/bills",
+   "theme": "dark",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 61,
+   "touchTargetsSmall": 31,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Light mode"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 36,
+     "h": 28,
+     "raw": "36x28",
+     "text": "Previous month"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 36,
+     "h": 28,
+     "raw": "36x28",
+     "text": "Next month"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 57,
+     "h": 28,
+     "raw": "57x28",
+     "text": "Today"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "calendar",
+   "path": "/calendar",
+   "theme": "dark",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 48,
+   "touchTargetsSmall": 48,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Light mode"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 40,
+     "h": 24,
+     "raw": "40x24",
+     "text": "1W"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "1M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "3M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "6M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 44,
+     "h": 24,
+     "raw": "44x24",
+     "text": "YTD"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "1Y"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 42,
+     "h": 24,
+     "raw": "42x24",
+     "text": "day"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 52,
+     "h": 24,
+     "raw": "52x24",
+     "text": "week"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 59,
+     "h": 24,
+     "raw": "59x24",
+     "text": "month"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 47,
+     "h": 24,
+     "raw": "47x24",
+     "text": "year"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 66,
+     "h": 28,
+     "raw": "66x28",
+     "text": "CSV"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 94,
+     "h": 36,
+     "raw": "94x36",
+     "text": "Spending"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 103,
+     "h": 36,
+     "raw": "103x36",
+     "text": "Categories"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 96,
+     "h": 36,
+     "raw": "96x36",
+     "text": "Cash flow"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 97,
+     "h": 36,
+     "raw": "97x36",
+     "text": "Net worth"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 117,
+     "h": 36,
+     "raw": "117x36",
+     "text": "Performance"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 97,
+     "h": 36,
+     "raw": "97x36",
+     "text": "Dividends"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 105,
+     "h": 36,
+     "raw": "105x36",
+     "text": "Projections"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "reports",
+   "path": "/reports",
+   "theme": "dark",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 52,
+   "touchTargetsSmall": 52,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dark mode"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 40,
+     "h": 24,
+     "raw": "40x24",
+     "text": "1W"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "1M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "3M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "6M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 44,
+     "h": 24,
+     "raw": "44x24",
+     "text": "YTD"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "1Y"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "button.shrink-0.rounded-lg.border.border-danger/40",
+     "w": 86,
+     "h": 30,
+     "raw": "86x30",
+     "text": "Mark read"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 162,
+     "h": 28,
+     "raw": "162x28",
+     "text": "Create bill reminder"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "dashboard",
+   "path": "/dashboard",
+   "theme": "light",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 313,
+   "touchTargetsSmall": 311,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dark mode"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 118,
+     "h": 28,
+     "raw": "118x28",
+     "text": "New transaction"
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 32,
+     "raw": "176x32",
+     "text": "All accounts\nRBC Main Chequing\nRBC Credi"
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 144,
+     "h": 32,
+     "raw": "144x32",
+     "text": "Any category\nUncategorized\ngroceries\ndin"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 97,
+     "h": 32,
+     "raw": "97x32",
+     "text": "Any tag"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "All"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 40,
+     "h": 24,
+     "raw": "40x24",
+     "text": "1W"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "1M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "3M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "6M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 44,
+     "h": 24,
+     "raw": "44x24",
+     "text": "YTD"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "1Y"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 154,
+     "h": 36,
+     "raw": "154x36",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 154,
+     "h": 36,
+     "raw": "154x36",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 160,
+     "h": 34,
+     "raw": "160x34",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 96,
+     "h": 34,
+     "raw": "96x34",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 96,
+     "h": 34,
+     "raw": "96x34",
+     "text": ""
+    },
+    {
+     "sel": "select.field-ring.rounded-lg.border.border-control",
+     "w": 106,
+     "h": 32,
+     "raw": "106x32",
+     "text": "All\nPaid\nReceived"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 92,
+     "h": 28,
+     "raw": "92x28",
+     "text": "Apply filters"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 69,
+     "h": 28,
+     "raw": "69x28",
+     "text": "Clear all"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Auto-detect transfer pair"
+    },
+    {
+     "sel": "button.rounded.px-1.py-0.5.text-[10px]",
+     "w": 28,
+     "h": 24,
+     "raw": "28x24",
+     "text": "Link"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 75,
+     "h": 36,
+     "raw": "75x36",
+     "text": "RBC Credit Card"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 55,
+     "h": 24,
+     "raw": "55x24",
+     "text": "Delete"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 176,
+     "h": 34,
+     "raw": "176x34",
+     "text": ""
+    },
+    {
+     "sel": "button.rounded-lg.p-1.text-muted.outline-none",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Similar past entries"
+    },
+    {
+     "sel": "a.hover:text-accent.transition-colors",
+     "w": 67,
+     "h": 36,
+     "raw": "67x36",
+     "text": "RBC Main Chequing"
+    },
+    {
+     "sel": "button.rounded.px-2.py-1.text-xs",
+     "w": 39,
+     "h": 24,
+     "raw": "39x24",
+     "text": "Edit"
+    }
+   ],
+   "tableScrollers": [
+    {
+     "clientW": 646,
+     "scrollW": 1113,
+     "maxScroll": 467,
+     "hint": true,
+     "label": "Transactions table"
+    }
+   ],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "transactions",
+   "path": "/transactions",
+   "theme": "light",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 36,
+   "touchTargetsSmall": 36,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dark mode"
+    },
+    {
+     "sel": "button.ml-1.inline-flex.size-4.cursor-help",
+     "w": 16,
+     "h": 16,
+     "raw": "16x16",
+     "text": "?"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 141,
+     "h": 36,
+     "raw": "141x36",
+     "text": "New budget"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit budget \u2014 dining"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete budget \u2014 dining"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit budget \u2014 entertainment"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete budget \u2014 entertainment"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit budget \u2014 groceries"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete budget \u2014 groceries"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "budgets",
+   "path": "/budgets",
+   "theme": "light",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 44,
+   "touchTargetsSmall": 44,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dark mode"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 112,
+     "h": 36,
+     "raw": "112x36",
+     "text": "New bill"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Mapleview Rent"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Mapleview Rent"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Fibrestream Internet"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Fibrestream Internet"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Spotify Canada"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Spotify Canada"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Netflix"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Netflix"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": ""
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Edit Airlink Mobile"
+    },
+    {
+     "sel": "button.p-1.rounded.hover:bg-surface-raised",
+     "w": 24,
+     "h": 24,
+     "raw": "24x24",
+     "text": "Delete Airlink Mobile"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "bills",
+   "path": "/bills",
+   "theme": "light",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 61,
+   "touchTargetsSmall": 31,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dark mode"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 36,
+     "h": 28,
+     "raw": "36x28",
+     "text": "Previous month"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 36,
+     "h": 28,
+     "raw": "36x28",
+     "text": "Next month"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 57,
+     "h": 28,
+     "raw": "57x28",
+     "text": "Today"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "calendar",
+   "path": "/calendar",
+   "theme": "light",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  },
+  {
+   "innerWidth": 1280,
+   "docScrollW": 1280,
+   "docClientW": 1280,
+   "pageHScroll": false,
+   "bodyScrollW": 1280,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 48,
+   "touchTargetsSmall": 48,
+   "smallSample": [
+    {
+     "sel": "input.field-ring.w-full.rounded-lg.border",
+     "w": 199,
+     "h": 34,
+     "raw": "199x34",
+     "text": "Search transactions, categories, account"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dashboard"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Transactions"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Imports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Investments"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Reports"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Calendar"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Taxes"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tax Projection"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Settings"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Help"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Currencies"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Tags"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Rules"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Budgets"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Goals"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Bills"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Debts"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Main Chequing\n$877.41"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "TD Emergency Savings\n$50.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "RBC Credit Card\n-$419.14"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS TFSA\n$76,489.26"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "NB LIRA\n$24,273.00"
+    },
+    {
+     "sel": "a.group.relative.flex.items-center",
+     "w": 199,
+     "h": 32,
+     "raw": "199x32",
+     "text": "WS Margin\nUS$35,740.37"
+    },
+    {
+     "sel": "button.relative.flex.w-full.items-center",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Notifications\n4"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Log out"
+    },
+    {
+     "sel": "button.hidden.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Collapse"
+    },
+    {
+     "sel": "button.flex.w-full.items-center.gap-3",
+     "w": 199,
+     "h": 36,
+     "raw": "199x36",
+     "text": "Dark mode"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 40,
+     "h": 24,
+     "raw": "40x24",
+     "text": "1W"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "1M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "3M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 38,
+     "h": 24,
+     "raw": "38x24",
+     "text": "6M"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 44,
+     "h": 24,
+     "raw": "44x24",
+     "text": "YTD"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 35,
+     "h": 24,
+     "raw": "35x24",
+     "text": "1Y"
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "input.field-ring.rounded-lg.border.border-control",
+     "w": 133,
+     "h": 28,
+     "raw": "133x28",
+     "text": ""
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 42,
+     "h": 24,
+     "raw": "42x24",
+     "text": "day"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 52,
+     "h": 24,
+     "raw": "52x24",
+     "text": "week"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 59,
+     "h": 24,
+     "raw": "59x24",
+     "text": "month"
+    },
+    {
+     "sel": "button.relative.shrink-0.cursor-pointer.rounded-md",
+     "w": 47,
+     "h": 24,
+     "raw": "47x24",
+     "text": "year"
+    },
+    {
+     "sel": "button.relative.inline-flex.select-none.items-center",
+     "w": 66,
+     "h": 28,
+     "raw": "66x28",
+     "text": "CSV"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 94,
+     "h": 36,
+     "raw": "94x36",
+     "text": "Spending"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 103,
+     "h": 36,
+     "raw": "103x36",
+     "text": "Categories"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 96,
+     "h": 36,
+     "raw": "96x36",
+     "text": "Cash flow"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 97,
+     "h": 36,
+     "raw": "97x36",
+     "text": "Net worth"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 117,
+     "h": 36,
+     "raw": "117x36",
+     "text": "Performance"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 97,
+     "h": 36,
+     "raw": "97x36",
+     "text": "Dividends"
+    },
+    {
+     "sel": "button.relative.px-3.5.pb-2.5.pt-1.5",
+     "w": 105,
+     "h": 36,
+     "raw": "105x36",
+     "text": "Projections"
+    }
+   ],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 224,
+    "x": 0,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 0,
+    "visible": false
+   },
+   "hamburger": false,
+   "drawer": null,
+   "page": "reports",
+   "path": "/reports",
+   "theme": "light",
+   "viewport": "1280x800",
+   "drawerEscapeClosed": null
+  }
+ ],
+ "consoleErrors": []
+}

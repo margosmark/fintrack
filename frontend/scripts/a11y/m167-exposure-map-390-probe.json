@@ -1,0 +1,206 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "generated_at": "2026-10-11T22:12:34-0400",
+  "checks": [
+    {
+      "check": "map-group-labelled",
+      "ok": true,
+      "detail": "Exposure by country \u2014 world choropleth, 51 points. Canada 71%."
+    },
+    {
+      "check": "shaded-countries-labelled",
+      "ok": true,
+      "detail": "41 controls"
+    },
+    {
+      "check": "map-matches-the-table",
+      "ok": true,
+      "detail": "41 shaded, 9 table rows, mismatched=[]"
+    },
+    {
+      "check": "ramp-reaches-the-map",
+      "ok": true,
+      "detail": "Canada=rgb(64, 56, 189) Indonesia=rgb(204, 205, 230)"
+    },
+    {
+      "check": "collapsed-to-head-plus-other",
+      "ok": true,
+      "detail": "9 rows, expander='Show remaining 44 countries (2.00%)'"
+    },
+    {
+      "check": "expander-reveals-full-list",
+      "ok": true,
+      "detail": "9 \u2192 52 rows \u00b7 'Show the top 8 countries only' \u00b7 session='[\"geography\"]'"
+    },
+    {
+      "check": "keyboard-country-drives-table",
+      "ok": true,
+      "detail": "readout 'Hover, focus or tap a shaded country to read its weight \u2014 every one of them is also a row in the table below.' \u2192 'Canada \u2014 70.22% \u00b7 $160,682.06' \u00b7 selected=True"
+    },
+    {
+      "check": "mask-flip-swaps-only-the-money",
+      "ok": true,
+      "detail": "'Canada \u2014 70.22% \u00b7 $160,682.06' \u2192 'Canada \u2014 70.22% \u00b7 \u2022\u2022\u2022\u2022\u2022'"
+    },
+    {
+      "check": "axe-dark-critical-serious",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0 []"
+    },
+    {
+      "check": "axe-light-critical-serious",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0 []"
+    },
+    {
+      "check": "no-horizontal-scroll",
+      "ok": true,
+      "detail": "scrollWidth=390 clientWidth=390"
+    },
+    {
+      "check": "map-fits-container",
+      "ok": true,
+      "detail": "svg=316px in 316px"
+    },
+    {
+      "check": "console-clean",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "viewport": [
+    390,
+    844
+  ],
+  "shaded_countries": [
+    "Canada, 70.22% of exposure",
+    "Indonesia, 0.01% of exposure",
+    "United States, 24.69% of exposure",
+    "China, 0.09% of exposure",
+    "Brazil, 0.04% of exposure",
+    "Australia, 0.17% of exposure",
+    "India, 0.16% of exposure",
+    "Chile, 0.01% of exposure",
+    "Norway, 0.02% of exposure",
+    "Mexico, 0.02% of exposure",
+    "Japan, 0.61% of exposure",
+    "South Africa, 0.04% of exposure",
+    "Italy, 0.08% of exposure",
+    "France, 0.19% of exposure",
+    "United Kingdom, 0.35% of exposure",
+    "New Zealand, 0.01% of exposure",
+    "Finland, 0.03% of exposure",
+    "Thailand, 0.02% of exposure",
+    "Saudi Arabia, 0.03% of exposure",
+    "Turkey, 0.01% of exposure",
+    "Germany, 0.21% of exposure",
+    "Malaysia, 0.02% of exposure",
+    "Sweden, 0.08% of exposure",
+    "Greece, 0.01% of exposure",
+    "Spain, 0.09% of exposure",
+    "Denmark, 0.04% of exposure",
+    "Poland, 0.02% of exposure",
+    "Austria, 0.01% of exposure",
+    "Ireland, 0.42% of exposure",
+    "South Korea, 0.25% of exposure",
+    "Israel, 0.03% of exposure",
+    "United Arab Emirates, 0.01% of exposure",
+    "Switzerland, 0.27% of exposure",
+    "Taiwan, 0.34% of exposure",
+    "Netherlands, 0.16% of exposure",
+    "Belgium, 0.02% of exposure",
+    "Qatar, 0.01% of exposure",
+    "Kuwait, 0.01% of exposure",
+    "Luxembourg, 0.01% of exposure",
+    "Hong Kong, 0.04% of exposure",
+    "Singapore, 0.05% of exposure"
+  ],
+  "map_weights": {
+    "Canada": "70.22",
+    "Indonesia": "0.01",
+    "United States": "24.69",
+    "China": "0.09",
+    "Brazil": "0.04",
+    "Australia": "0.17",
+    "India": "0.16",
+    "Chile": "0.01",
+    "Norway": "0.02",
+    "Mexico": "0.02",
+    "Japan": "0.61",
+    "South Africa": "0.04",
+    "Italy": "0.08",
+    "France": "0.19",
+    "United Kingdom": "0.35",
+    "New Zealand": "0.01",
+    "Finland": "0.03",
+    "Thailand": "0.02",
+    "Saudi Arabia": "0.03",
+    "Turkey": "0.01",
+    "Germany": "0.21",
+    "Malaysia": "0.02",
+    "Sweden": "0.08",
+    "Greece": "0.01",
+    "Spain": "0.09",
+    "Denmark": "0.04",
+    "Poland": "0.02",
+    "Austria": "0.01",
+    "Ireland": "0.42",
+    "South Korea": "0.25",
+    "Israel": "0.03",
+    "United Arab Emirates": "0.01",
+    "Switzerland": "0.27",
+    "Taiwan": "0.34",
+    "Netherlands": "0.16",
+    "Belgium": "0.02",
+    "Qatar": "0.01",
+    "Kuwait": "0.01",
+    "Luxembourg": "0.01",
+    "Hong Kong": "0.04",
+    "Singapore": "0.05"
+  },
+  "table_weights": {
+    "Canada": "70.22%",
+    "United States": "24.69%",
+    "Japan": "0.61%",
+    "Ireland": "0.42%",
+    "United Kingdom": "0.35%",
+    "Taiwan": "0.34%",
+    "Switzerland": "0.27%",
+    "Unclassified": "1.11%",
+    "Other": "2.00%"
+  },
+  "collapsed_rows": [
+    "Canada",
+    "United States",
+    "Japan",
+    "Ireland",
+    "United Kingdom",
+    "Taiwan",
+    "Switzerland",
+    "Unclassified",
+    "Other"
+  ],
+  "axe": {
+    "dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "rules": []
+    },
+    "light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "rules": []
+    }
+  },
+  "theme_applied": " | theme=light",
+  "console": [],
+  "ok": true
+}

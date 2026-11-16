@@ -1,0 +1,271 @@
+name: CI
+
+# --- CI KILL SWITCH - a RED RUN HERE IS NOT A TEST VERDICT (read this first) ---
+# Since 2026-10-11 every run died in 4-7 s with "The job was not started
+# because recent account payments have failed or your spending limit needs to
+# be increased" - Actions billing is dead on this account (fix it under
+# GitHub -> Settings -> Billing & plans). Those reds carry ZERO test
+# information while reading exactly like a gate failure, and with no branch
+# protection on this plan (M85 item 2) nothing else marks a commit safe or
+# unsafe.
+#
+# So every job below is gated by the CI_ENABLED repository variable: `vars.CI_ENABLED == 'true'`.
+# UNSET == OFF, deliberately: a missing variable must fail safe to "skipped", never to "red".
+# With the switch off a run is still recorded on every push - the Actions
+# history stays continuous - but no job requests a runner: no billable minute,
+# no billing annotation, and the run concludes GREEN with every job "skipped"
+# instead of red.
+#
+#   re-enable (once billing is fixed):  gh variable set CI_ENABLED --body true
+#   kill it again:                      gh variable set CI_ENABLED --body false
+#
+# deploy-smoke.yml is intentionally NOT gated - see the comment in that file.
+
+on:
+  push:
+  pull_request:
+
+# Least privilege (audit L24): every job only reads the repository — checkout,
+# lint, tests, build, secret scan. No job needs a write scope, so no job-level
+# override is required; every unlisted scope (issues, packages, actions, ...) is
+# explicitly none for the workflow GITHUB_TOKEN.
+permissions:
+  contents: read
+
+# One run per ref: a new push to the same branch/PR cancels the superseded
+# in-progress run instead of queueing parallel heads.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# M85 item 5: every `uses:` below is pinned to a FULL commit SHA with its
+# release tag as a trailing comment. A tag is a movable pointer — a compromised
+# or force-pushed tag re-points every build at once; a SHA cannot move. To
+# upgrade, change BOTH the SHA and the comment so they keep telling the truth.
+jobs:
+  secret-scan:
+    # CI KILL SWITCH (see header): skipped - no runner requested - unless
+    # CI_ENABLED is explicitly 'true'.
+    if: ${{ vars.CI_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          # M85 item 1: the content scan below diffs the pushed range against
+          # its base, and a depth-1 checkout has neither the merge-base nor
+          # origin/main. Repo pack is ~4 MB, so full history costs nothing.
+          fetch-depth: 0
+      - name: Secret scan
+        # Tracked files must never be .env payloads, PEM keys or secret files.
+        # The review's `token` pattern also matched source modules
+        # (mcp_tokens.py, refresh_tokens.py) — code, not secrets — so the scan
+        # narrows to patterns that can actually hold credentials.
+        # L25: matches `.env` AND every `.env.*` variant (.env.local,
+        # .env.production, backend/.env.staging, ...) except the tracked
+        # template .env.example; a newly tracked env payload fails CI.
+        run: |
+          git ls-files \
+            | grep -iE '(^|/)\.env|secret|pem' \
+            | grep -viE '(^|/)\.env\.example$' \
+            && exit 1 || exit 0
+      - name: Secret scan (content)
+        # M83 F-2: the filename gate above sails past a key PASTED into a .py
+        # fixture or a .ts constant. This step scans the ADDED lines of the
+        # pushed range (base -> HEAD) for assignment-shaped literals and for
+        # provider token shapes, and fails the job on a hit. The keyword match
+        # is case-insensitive on purpose: `API_KEY = "..."` is the Python idiom.
+        #
+        # ALLOW — every hit both patterns make over the WHOLE tree, measured
+        # 2026-10-01 (35 lines / 10 literals). All are documented test fixtures
+        # or template values, listed inline below. A NEW placeholder turns the
+        # gate red first: add its literal here, never widen a pattern to make a
+        # hit disappear.
+        #   correct-horse-battery                shared test-account password (~24 tests)
+        #   change-me-long-random-string         .env.example JWT_SECRET placeholder
+        #   dev-secret-change-me                 security-review H3 example
+        #   0123456789abcdef0123456789abcdef     test_settings: non-default value that must not raise
+        #   a-long-random-test-secret-0123456789abcd  test_settings: random-looking variant
+        #   test-internal-secret-for-m80         MCP internal-secret fixture
+        #   test-client-secret                   OIDC client_secret fixture
+        #   GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ     TOTP RFC-6238 vector, base32("12345678901234567890")
+        #   sk-env-operator-fake-key             LLM-egress test fake (name says -fake-)
+        #   ci-only-not-a-real-secret            this workflow's JWT_SECRET env value
+        # The review's `token` keyword is deliberately in NEITHER pattern: it
+        # matches the ORM/schema module names refresh_tokens.py / mcp_tokens.py
+        # (code, not credentials) — the audit's known false-positive source. A
+        # real token pasted into those same files is still caught by PAT_TOKEN.
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          ZERO=0000000000000000000000000000000000000000
+          if [ "$EVENT" = "pull_request" ] && [ -n "$PR_BASE" ]; then
+            RANGE="$PR_BASE...HEAD"              # a PR: only its own changes
+          elif [ -n "$BEFORE" ] && [ "$BEFORE" != "$ZERO" ] \
+               && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            RANGE="$BEFORE..HEAD"                # a push to main: the pushed commits
+          else
+            RANGE="origin/main...HEAD"           # a new-branch push (no before/base)
+          fi
+          # A range that cannot be resolved must fail loudly, never pass empty.
+          git diff --stat "$RANGE" > /dev/null \
+            || { echo "::error::secret scan: cannot resolve range $RANGE"; exit 1; }
+
+          # keyword = "literal" — api_key / apikey / secret / password
+          PAT_ASSIGN="(api_key|apikey|secret|password)[[:space:]]*=[[:space:]]*[\"'][A-Za-z0-9_-]{16,}[\"']"
+          # provider token shapes; \b stops "risk-..." from reading as sk-
+          PAT_TOKEN='\b(sk-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16})'
+          ALLOW='correct-horse-battery|change-me-long-random-string|dev-secret-change-me|0123456789abcdef0123456789abcdef|a-long-random-test-secret-0123456789abcd|test-internal-secret-for-m80|test-client-secret|GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ|sk-env-operator-fake-key|ci-only-not-a-real-secret'
+
+          ADDED=$(git diff "$RANGE" | grep '^+' | grep -v '^+++ b/' || true)
+          FOUND=$(printf '%s\n' "$ADDED" \
+            | grep -iE "$PAT_ASSIGN|$PAT_TOKEN" \
+            | grep -Ev "$ALLOW" || true)
+          if [ -n "$FOUND" ]; then
+            printf '::error::content secret scan hit in the added lines of %s\n' "$RANGE"
+            printf '%s\n' "$FOUND"
+            echo "Either a real credential (remove it from the commit) or a new"
+            echo "documented placeholder (add its literal to ALLOW above)."
+            exit 1
+          fi
+          echo "content scan clean over $RANGE: $(printf '%s' "$ADDED" | grep -c '^' || true) added lines"
+
+  backend:
+    # CI KILL SWITCH (see header).
+    if: ${{ vars.CI_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    # Guardrail (S2b review wave): a wedged suite (BUG-3 deadlock, Yahoo
+    # CLOSE-WAIT stall) burned 71 min of a 6 h job timeout on attempt 3 before
+    # anyone could read it. Fail fast and visibly instead: the job is killed at
+    # 15 min, so a hang surfaces as a red run inside one coffee, not an hour.
+    # Baseline backend Test step is 3.9-6.8 min, so 15 min = ~2x headroom.
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: fintrack
+          POSTGRES_PASSWORD: fintrack
+          POSTGRES_DB: fintrack
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U fintrack"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      # Job steps run on the runner VM: services are reachable via the
+      # localhost port mapping, not the service name (container-only DNS).
+      DATABASE_URL: postgresql+psycopg://fintrack:fintrack@localhost:5432/fintrack
+      # Settings fail fast on the public dev secret (security-hardening); CI
+      # CI never signs user tokens, it only needs a non-default value to boot.
+      JWT_SECRET: ci-only-not-a-real-secret-0123456789abcdef
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: uv sync --frozen
+      - name: Run migrations
+        run: uv run alembic upgrade head
+      - name: Lint
+        run: |
+          uv run ruff check
+          uv run ruff format --check
+      - name: Test
+        # faulthandler_timeout dumps every thread's traceback when a single
+        # test (fixtures included) exceeds 60 s — a wedge names its own node in
+        # the log instead of leaving the step silent until timeout-minutes
+        # kills it. It only prints; it never fails a slow-but-healthy test.
+        run: uv run pytest -o faulthandler_timeout=60
+
+  web:
+    # CI KILL SWITCH (see header).
+    if: ${{ vars.CI_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npx tsc --noEmit
+      - name: Lint
+        run: npx eslint . --max-warnings 0
+      # Gate the vitest suite in CI, not just locally. The include glob must
+      # stay {ts,tsx}: a .tsx-only regression test is silently SKIPPED (not
+      # failed) under a ts-only glob, which reads as a green run.
+      # NODE_ENV=test matches the local command in AGENTS.md: some suites
+      # branch on it to keep production-only code out of the test run.
+      - name: Unit tests
+        env:
+          NODE_ENV: test
+        run: npm run test
+      - name: Build
+        run: npm run build
+      # M86 item 1 — the config-only-lint gap: check:csp ran only in the
+      # Dockerfile build stage, so an inline-script hash break surfaced at
+      # image build instead of at PR time. It needs dist/index.html, so it
+      # must follow Build. A stale pin means 2 console errors per page load
+      # and a light-theme user getting a dark first paint — a user-visible
+      # defect, so it fails the PR rather than the deploy.
+      - name: CSP hash
+        run: npm run check:csp
+
+  # M85 item 2 — the audit's "red-but-merged" gap. Branch protection cannot be
+  # set on this repo (private, free plan: `gh api .../protection` → 403
+  # "Upgrade to GitHub Pro"), so no required status check stops a red commit
+  # from being merged, and a failed run otherwise reads like any other run in
+  # the Actions list. The hourly watcher page (owned separately) is the real
+  # guard; this job only makes red unmissable ON the run page itself, via the
+  # step summary. Small by design — one marker, one line of context.
+  status:
+    # `always()` keeps the RED step-summary marker writing when a needed job
+    # fails (its whole purpose, M85 item 2); the CI KILL SWITCH (see header)
+    # rides along as an AND so a billing-dead push cannot redden the run
+    # through this job alone - with the switch off it is skipped like the rest.
+    if: ${{ always() && vars.CI_ENABLED == 'true' }}
+    needs: [secret-scan, backend, web]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write status marker
+        # tee -a so the marker also lands in the JOB LOG: a step summary has no
+        # API to read it back, and the log is how this gets verified.
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+          REF: ${{ github.ref }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -uo pipefail
+          case "$RESULTS" in
+            *failure*)
+              if [ "$REF" = "refs/heads/main" ]; then
+                MARKER="## ! RED on origin/main"
+              else
+                MARKER="## ! RED on $REF"
+              fi
+              {
+                echo "$MARKER"
+                echo "Head ${SHA:0:7} at $(date -u +%FT%TZ) — nothing blocks the merge: branch protection is unavailable on this plan (M85 item 2)."
+              } | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 1
+              ;;
+            *cancelled*)
+              echo "## ! run cancelled (superseded push) — no verdict" | tee -a "$GITHUB_STEP_SUMMARY"
+              ;;
+            *)
+              echo "## green: $REF @ ${SHA:0:7}" | tee -a "$GITHUB_STEP_SUMMARY"
+              ;;
+          esac

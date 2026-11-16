@@ -1,0 +1,105 @@
+{
+  "milestone": "M110",
+  "base": "https://fintrac.princessandmark.com",
+  "width": 1440,
+  "captured_at": "2026-10-06T19:24:16-0400",
+  "budget_id": 71,
+  "email": "m110-probe-1791329047@example.com",
+  "seed": {
+    "email": "m110-probe-1791329047@example.com",
+    "register": 200,
+    "login": 200,
+    "account": 201,
+    "category": 201,
+    "budget": 201,
+    "budget_carry": "forward",
+    "budget_id": 71,
+    "source": 201,
+    "current": 201,
+    "category_name": "M110 carry"
+  },
+  "server_row": {
+    "id": 71,
+    "user_id": 278,
+    "category_id": 2948,
+    "amount": "600.00",
+    "period": "monthly",
+    "carry": "forward",
+    "category_name": "M110 carry",
+    "spent": "100.00",
+    "carried_in": "60.00",
+    "remaining": "560.00",
+    "pct_used": 15.151515151515152
+  },
+  "screenshots": [
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_e5c94876/frontend/scripts/a11y/m110-carry-prod-1440.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_e5c94876/frontend/scripts/a11y/m110-carry-prod-dark-1440.png"
+  ],
+  "checks": [
+    {
+      "check": "seed",
+      "ok": true,
+      "detail": "{\"email\": \"m110-probe-1791329047@example.com\", \"register\": 200, \"login\": 200, \"account\": 201, \"category\": 201, \"budget\": 201, \"budget_carry\": \"forward\", \"budget_id\": 71, \"source\": 201, \"current\": 201, \"category_name\": \"M110 carry\"}"
+    },
+    {
+      "check": "backdate",
+      "ok": true,
+      "detail": "71,UPDATE 1"
+    },
+    {
+      "check": "server carried_in",
+      "ok": true,
+      "detail": "{\"amount\": \"600.00\", \"carried_in\": \"60.00\", \"carry\": \"forward\", \"category_id\": 2948, \"category_name\": \"M110 carry\", \"id\": 71, \"pct_used\": 15.151515151515152, \"period\": \"monthly\", \"remaining\": \"560.00\", \"spent\": \"100.00\", \"user_id\": 278}"
+    },
+    {
+      "check": "server remaining",
+      "ok": true,
+      "detail": "560.00"
+    },
+    {
+      "check": "server pct_used",
+      "ok": true,
+      "detail": "15.151515151515152"
+    },
+    {
+      "check": "ui toggle present",
+      "ok": true,
+      "detail": "Carry leftover pill rendered"
+    },
+    {
+      "check": "ui aria-pressed=true",
+      "ok": true,
+      "detail": "true"
+    },
+    {
+      "check": "ui carried line",
+      "ok": true,
+      "detail": "+$60 carried in \u2014 extra room this period"
+    },
+    {
+      "check": "ui spendable denominator",
+      "ok": true,
+      "detail": "/ $660 spendable"
+    },
+    {
+      "check": "ui pct from the client port",
+      "ok": true,
+      "detail": "15% used (100/660)"
+    },
+    {
+      "check": "dark theme carries the same layers",
+      "ok": true,
+      "detail": "carried line + pool denominator in dark"
+    },
+    {
+      "check": "one click flips the row off",
+      "ok": true,
+      "detail": "aria-pressed=false, pool=True"
+    },
+    {
+      "check": "no console errors",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

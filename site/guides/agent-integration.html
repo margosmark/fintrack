@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drive it from your AI agent — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Drive it from your AI agent</h1>
+      <p class="sub">Connect Claude, Cursor, or your own script to your own fin_tracker — a scoped token, a read-only mode, and a receipt for every call.</p>
+      <ol class="steps">
+        <li class="card"><h2>Mint a token in one call</h2><p>Sign in the way you normally would, then POST to /api/v1/auth/mcp-tokens with a name and a policy — for example {&quot;name&quot;:&quot;laptop-agent&quot;,&quot;policy&quot;:&quot;read_only&quot;}. The response carries an opaque 64-character token that is shown exactly once and stored only as a hash; it expires 90 days after you create it. Omit policy and you get full — the behaviour every token had before policies existed. The demo tenant runs the same recipe with one rule: its tokens are always read-only, so an omitted policy gives you read_only and an explicit &quot;full&quot; is refused with 422 code demo_mcp_read_only instead of being quietly downgraded. Revoke any token at any time with DELETE /api/v1/auth/mcp-tokens/{id} — the demo tenant can revoke its own tokens too.</p></li>
+        <li class="card"><h2>Point your client at /mcp/mcp</h2><p>The Model Context Protocol endpoint lives on the same host as the app, one path deeper: https://your-server/mcp/mcp. Add it to your client as a remote server with your token as a bearer header — {&quot;mcpServers&quot;:{&quot;fin_tracker&quot;:{&quot;url&quot;:&quot;https://your-server/mcp/mcp&quot;,&quot;headers&quot;:{&quot;Authorization&quot;:&quot;Bearer &lt;your-token&gt;&quot;}}}}. On the same machine you can run the server in stdio mode instead (python -m mcp_server from the backend directory) and it exposes the same tools over stdin/stdout.</p></li>
+        <li class="card"><h2>A read-only token cannot write — by construction</h2><p>Connect with a read-only token and the client lists 52 tools instead of 105: every mutating tool is removed from the tools/list response rather than merely flagged, so an agent that has never seen accounts_create cannot call it. If a client that cached the full list tries anyway, the server answers 403 with code mcp_read_only before anything leaves the process — no request reaches the app, no credential is issued. The demo tenant gets the same protection from the other side: its list is filtered the same way, each tool carries the title marker “demo tenant is read-only”, and its refusals come back with the app&#x27;s own demo_account_restricted code.</p></li>
+        <li class="card"><h2>Every call leaves a receipt</h2><p>GET /api/v1/mcp-audit returns your own rows, newest first: which tool ran, the response code, how long it took, which token it came through, and a 64-character sha256 of the arguments. Arguments are hashed because a login call carries a password — the receipt answers “what did the agent touch?” without keeping the secret itself. Refusals are recorded too: a rejected write shows up with code 403, exactly like a successful one shows 200.</p></li>
+        <li class="card"><h2>Read what the agent did, then revoke it</h2><p>The trail is yours alone — it is scoped to your account the same way everything else is, and a different login sees none of your rows. Revoking the token kills access immediately (the next request comes back 401 with the body {&quot;error&quot;:&quot;Invalid MCP token&quot;} — the machine-readable code invalid_mcp_token exists only on the internal validate endpoint, which the reverse proxy answers 403 to) while the rows it produced stay put: the log belongs to the account, not to the credential, so cleaning up tokens never erases the history you may want to check.</p></li>
+      </ol>
+      <div class="card table-card">
+        <h2>What one receipt tells you</h2>
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <thead><tr><th scope="col">Field</th><th scope="col">Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>tool</td><td>The MCP tool that was called — accounts_create, transactions_delete, and so on.</td></tr>
+              <tr><td>response_code</td><td>200 for a success, 403 when the server refused it, the app&#x27;s own status when the API rejected it, 500 for an unexpected failure.</td></tr>
+              <tr><td>duration_ms</td><td>Wall-clock time of the whole call, measured at the MCP server.</td></tr>
+              <tr><td>mcp_token_id</td><td>Which token carried it — empty when the call arrived without one, as a local stdio session does.</td></tr>
+              <tr><td>args_hash</td><td>sha256 of the arguments, so identical calls match and secrets never land in the table.</td></tr>
+              <tr><td>created_at</td><td>When it happened.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Drive it from your AI agent.</span></div></footer>
+</body>
+</html>

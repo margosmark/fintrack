@@ -1,0 +1,125 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "width": 390,
+  "security_id": 159,
+  "generated_at": "2026-10-08T17:00:09-0400",
+  "checks": [
+    {
+      "check": "seed: security created",
+      "ok": true,
+      "detail": "status=201 id=159 {\"id\":159,\"symbol\":\"MSFT\",\"name\":\"Microsoft\",\"kind\":\"stock\",\"listing_currency\":\"USD\",\"exchange\":\"NMS\"}"
+    },
+    {
+      "check": "seed: trade accepted (security is HELD, so it is in the fan-out)",
+      "ok": true,
+      "detail": "201"
+    },
+    {
+      "check": "seed: positions report today's close (age 0)",
+      "ok": true,
+      "detail": "age=0 total=1"
+    },
+    {
+      "check": "seed: a price row dated today exists to delete",
+      "ok": true,
+      "detail": "price_id=6879"
+    },
+    {
+      "check": "stale: today's close deleted (age must now be 1)",
+      "ok": true,
+      "detail": "status=204"
+    },
+    {
+      "check": "stale: GET /portfolio/positions reports price_age_days == 1",
+      "ok": true,
+      "detail": "age=1"
+    },
+    {
+      "check": "auto: positions reach age 0 with no manual refresh",
+      "ok": true,
+      "detail": "age=0 after=1.6s"
+    },
+    {
+      "check": "button: today's close re-deleted (fresh row id after the auto heal)",
+      "ok": true,
+      "detail": "{\"status\":204,\"id\":6880}"
+    },
+    {
+      "check": "button: pre-condition age == 1 (side-effect free read)",
+      "ok": true,
+      "detail": "newest={'id': 6878, 'security_id': 159, 'date': '2026-10-07', 'price': '529.76000977', 'source': 'yfinance'}"
+    },
+    {
+      "check": "button: POST /portfolio/refresh answers 202 with queued >= 1",
+      "ok": true,
+      "detail": "{\"status\":202,\"body\":{\"queued\":1}}"
+    },
+    {
+      "check": "button: today's close is back within 15s (no other endpoint polled in between)",
+      "ok": true,
+      "detail": "age=0 elapsed=1.0s"
+    },
+    {
+      "check": "acceptance: GET /portfolio/positions reports price_age_days == 0",
+      "ok": true,
+      "detail": "age=0"
+    },
+    {
+      "check": "sse: indicator reaches 'Stream connected'",
+      "ok": true,
+      "detail": "{\"found\": true, \"label\": \"Stream connected\", \"title\": \"Last stream message: 5:00:10 PM\", \"dot\": true}"
+    },
+    {
+      "check": "sse: a stream message has been received",
+      "ok": true,
+      "detail": "Last stream message: 5:00:10 PM"
+    },
+    {
+      "check": "ui: Refresh prices button rendered",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sse: title CHANGES over 7s (events are arriving, not a one-shot open)",
+      "ok": true,
+      "detail": "Last stream message: 5:00:10 PM -> Last stream message: 5:00:15 PM"
+    },
+    {
+      "check": "axe: 0 critical + 0 serious on /investments in both themes",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "check": "console: no errors on /investments",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "auto_elapsed_s": 1.6,
+  "button_elapsed_s": 1.0,
+  "axe": {
+    "dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    }
+  },
+  "shots": [
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_89a72088/frontend/scripts/a11y/m117-investments-390-dark.png",
+    "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_89a72088/frontend/scripts/a11y/m117-investments-390-light.png"
+  ],
+  "console": []
+}

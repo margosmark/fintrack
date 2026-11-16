@@ -1,0 +1,1720 @@
+{
+ "captured_at": "2026-09-27",
+ "note": "S2c dividends golden vectors \u2014 inputs dividend_report() reads + server JSON",
+ "reporting_currency": null,
+ "trades": [
+  {
+   "id": 9,
+   "account_id": 4,
+   "security_id": 4,
+   "action": "dividend",
+   "date": "2025-10-15",
+   "quantity": "0.000000",
+   "price_native": "79.20000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 10,
+   "account_id": 4,
+   "security_id": 3,
+   "action": "dividend",
+   "date": "2025-10-15",
+   "quantity": "0.000000",
+   "price_native": "118.40000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 11,
+   "account_id": 4,
+   "security_id": 1,
+   "action": "dividend",
+   "date": "2025-10-15",
+   "quantity": "0.000000",
+   "price_native": "45.00000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 12,
+   "account_id": 5,
+   "security_id": 5,
+   "action": "dividend",
+   "date": "2025-10-20",
+   "quantity": "0.000000",
+   "price_native": "85.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  },
+  {
+   "id": 13,
+   "account_id": 5,
+   "security_id": 6,
+   "action": "dividend",
+   "date": "2025-10-20",
+   "quantity": "0.000000",
+   "price_native": "45.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  },
+  {
+   "id": 26,
+   "account_id": 4,
+   "security_id": 4,
+   "action": "dividend",
+   "date": "2026-01-15",
+   "quantity": "0.000000",
+   "price_native": "79.20000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 27,
+   "account_id": 4,
+   "security_id": 3,
+   "action": "dividend",
+   "date": "2026-01-15",
+   "quantity": "0.000000",
+   "price_native": "118.40000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 28,
+   "account_id": 4,
+   "security_id": 1,
+   "action": "dividend",
+   "date": "2026-01-15",
+   "quantity": "0.000000",
+   "price_native": "60.00000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 29,
+   "account_id": 5,
+   "security_id": 5,
+   "action": "dividend",
+   "date": "2026-01-20",
+   "quantity": "0.000000",
+   "price_native": "85.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  },
+  {
+   "id": 30,
+   "account_id": 5,
+   "security_id": 6,
+   "action": "dividend",
+   "date": "2026-01-20",
+   "quantity": "0.000000",
+   "price_native": "45.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  },
+  {
+   "id": 43,
+   "account_id": 4,
+   "security_id": 4,
+   "action": "dividend",
+   "date": "2026-04-15",
+   "quantity": "0.000000",
+   "price_native": "79.20000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 44,
+   "account_id": 4,
+   "security_id": 3,
+   "action": "dividend",
+   "date": "2026-04-15",
+   "quantity": "0.000000",
+   "price_native": "118.40000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 45,
+   "account_id": 4,
+   "security_id": 1,
+   "action": "dividend",
+   "date": "2026-04-15",
+   "quantity": "0.000000",
+   "price_native": "75.00000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 46,
+   "account_id": 4,
+   "security_id": 4,
+   "action": "return_of_capital",
+   "date": "2026-04-16",
+   "quantity": "0.000000",
+   "price_native": "40.00000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 47,
+   "account_id": 5,
+   "security_id": 5,
+   "action": "dividend",
+   "date": "2026-04-20",
+   "quantity": "0.000000",
+   "price_native": "85.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  },
+  {
+   "id": 48,
+   "account_id": 5,
+   "security_id": 6,
+   "action": "dividend",
+   "date": "2026-04-20",
+   "quantity": "0.000000",
+   "price_native": "45.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  },
+  {
+   "id": 60,
+   "account_id": 4,
+   "security_id": 4,
+   "action": "dividend",
+   "date": "2026-07-15",
+   "quantity": "0.000000",
+   "price_native": "79.20000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 61,
+   "account_id": 4,
+   "security_id": 3,
+   "action": "dividend",
+   "date": "2026-07-15",
+   "quantity": "0.000000",
+   "price_native": "118.40000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 62,
+   "account_id": 4,
+   "security_id": 1,
+   "action": "dividend",
+   "date": "2026-07-15",
+   "quantity": "0.000000",
+   "price_native": "90.00000000",
+   "commission": "0.00",
+   "fx_rate_used": null
+  },
+  {
+   "id": 64,
+   "account_id": 5,
+   "security_id": 5,
+   "action": "dividend",
+   "date": "2026-07-20",
+   "quantity": "0.000000",
+   "price_native": "85.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  },
+  {
+   "id": 65,
+   "account_id": 5,
+   "security_id": 6,
+   "action": "dividend",
+   "date": "2026-07-20",
+   "quantity": "0.000000",
+   "price_native": "45.00000000",
+   "commission": "0.00",
+   "fx_rate_used": "0.74000000"
+  }
+ ],
+ "securities": [
+  {
+   "id": 1,
+   "symbol": "RY.TO",
+   "name": "Royal Bank of Canada",
+   "listing_currency": "CAD"
+  },
+  {
+   "id": 2,
+   "symbol": "TD.TO",
+   "name": "Toronto-Dominion Bank",
+   "listing_currency": "CAD"
+  },
+  {
+   "id": 3,
+   "symbol": "BMO.TO",
+   "name": "Bank of Montreal",
+   "listing_currency": "CAD"
+  },
+  {
+   "id": 4,
+   "symbol": "ENB.TO",
+   "name": "Enbridge Inc.",
+   "listing_currency": "CAD"
+  },
+  {
+   "id": 5,
+   "symbol": "VTI",
+   "name": "Vanguard Total Stock Market ETF",
+   "listing_currency": "USD"
+  },
+  {
+   "id": 6,
+   "symbol": "VXUS",
+   "name": "Vanguard Total International Stock ETF",
+   "listing_currency": "USD"
+  },
+  {
+   "id": 7,
+   "symbol": "NVDA",
+   "name": "NVIDIA Corporation",
+   "listing_currency": "USD"
+  }
+ ],
+ "fx": {
+  "USD": [
+   {
+    "date": "2025-10-05",
+    "rate": "1.39530000"
+   },
+   {
+    "date": "2025-10-06",
+    "rate": "1.39550000"
+   },
+   {
+    "date": "2025-10-07",
+    "rate": "1.39510000"
+   },
+   {
+    "date": "2025-10-08",
+    "rate": "1.39520000"
+   },
+   {
+    "date": "2025-10-09",
+    "rate": "1.40000000"
+   },
+   {
+    "date": "2025-10-10",
+    "rate": "1.40000000"
+   },
+   {
+    "date": "2025-10-12",
+    "rate": "1.40000000"
+   },
+   {
+    "date": "2025-10-14",
+    "rate": "1.40460000"
+   },
+   {
+    "date": "2025-10-15",
+    "rate": "1.40450000"
+   },
+   {
+    "date": "2025-10-16",
+    "rate": "1.40480000"
+   },
+   {
+    "date": "2025-10-17",
+    "rate": "1.40350000"
+   },
+   {
+    "date": "2025-10-20",
+    "rate": "1.40360000"
+   },
+   {
+    "date": "2025-10-21",
+    "rate": "1.40220000"
+   },
+   {
+    "date": "2025-10-22",
+    "rate": "1.39960000"
+   },
+   {
+    "date": "2025-10-23",
+    "rate": "1.39930000"
+   },
+   {
+    "date": "2025-10-24",
+    "rate": "1.40140000"
+   },
+   {
+    "date": "2025-10-27",
+    "rate": "1.39950000"
+   },
+   {
+    "date": "2025-10-28",
+    "rate": "1.39590000"
+   },
+   {
+    "date": "2025-10-29",
+    "rate": "1.39160000"
+   },
+   {
+    "date": "2025-10-30",
+    "rate": "1.39870000"
+   },
+   {
+    "date": "2025-10-31",
+    "rate": "1.40180000"
+   },
+   {
+    "date": "2025-11-03",
+    "rate": "1.40570000"
+   },
+   {
+    "date": "2025-11-04",
+    "rate": "1.40900000"
+   },
+   {
+    "date": "2025-11-05",
+    "rate": "1.41200000"
+   },
+   {
+    "date": "2025-11-06",
+    "rate": "1.41160000"
+   },
+   {
+    "date": "2025-11-07",
+    "rate": "1.40630000"
+   },
+   {
+    "date": "2025-11-10",
+    "rate": "1.40200000"
+   },
+   {
+    "date": "2025-11-12",
+    "rate": "1.40050000"
+   },
+   {
+    "date": "2025-11-13",
+    "rate": "1.40180000"
+   },
+   {
+    "date": "2025-11-14",
+    "rate": "1.40250000"
+   },
+   {
+    "date": "2025-11-17",
+    "rate": "1.40350000"
+   },
+   {
+    "date": "2025-11-18",
+    "rate": "1.39970000"
+   },
+   {
+    "date": "2025-11-19",
+    "rate": "1.40400000"
+   },
+   {
+    "date": "2025-11-20",
+    "rate": "1.40800000"
+   },
+   {
+    "date": "2025-11-21",
+    "rate": "1.41000000"
+   },
+   {
+    "date": "2025-11-22",
+    "rate": "1.41000000"
+   },
+   {
+    "date": "2025-11-24",
+    "rate": "1.41080000"
+   },
+   {
+    "date": "2025-11-25",
+    "rate": "1.41040000"
+   },
+   {
+    "date": "2025-11-26",
+    "rate": "1.40590000"
+   },
+   {
+    "date": "2025-11-27",
+    "rate": "1.40340000"
+   },
+   {
+    "date": "2025-11-28",
+    "rate": "1.39790000"
+   },
+   {
+    "date": "2025-12-01",
+    "rate": "1.39790000"
+   },
+   {
+    "date": "2025-12-02",
+    "rate": "1.39860000"
+   },
+   {
+    "date": "2025-12-03",
+    "rate": "1.39490000"
+   },
+   {
+    "date": "2025-12-04",
+    "rate": "1.39520000"
+   },
+   {
+    "date": "2025-12-05",
+    "rate": "1.38600000"
+   },
+   {
+    "date": "2025-12-08",
+    "rate": "1.38370000"
+   },
+   {
+    "date": "2025-12-09",
+    "rate": "1.38440000"
+   },
+   {
+    "date": "2025-12-10",
+    "rate": "1.38350000"
+   },
+   {
+    "date": "2025-12-11",
+    "rate": "1.37740000"
+   },
+   {
+    "date": "2025-12-12",
+    "rate": "1.37690000"
+   },
+   {
+    "date": "2025-12-15",
+    "rate": "1.37700000"
+   },
+   {
+    "date": "2025-12-16",
+    "rate": "1.37480000"
+   },
+   {
+    "date": "2025-12-17",
+    "rate": "1.37820000"
+   },
+   {
+    "date": "2025-12-18",
+    "rate": "1.37740000"
+   },
+   {
+    "date": "2025-12-19",
+    "rate": "1.37810000"
+   },
+   {
+    "date": "2025-12-22",
+    "rate": "1.37480000"
+   },
+   {
+    "date": "2025-12-23",
+    "rate": "1.37050000"
+   },
+   {
+    "date": "2025-12-24",
+    "rate": "1.36740000"
+   },
+   {
+    "date": "2025-12-29",
+    "rate": "1.36860000"
+   },
+   {
+    "date": "2025-12-30",
+    "rate": "1.36930000"
+   },
+   {
+    "date": "2025-12-31",
+    "rate": "1.37060000"
+   },
+   {
+    "date": "2026-01-02",
+    "rate": "1.37370000"
+   },
+   {
+    "date": "2026-01-05",
+    "rate": "1.37680000"
+   },
+   {
+    "date": "2026-01-06",
+    "rate": "1.37890000"
+   },
+   {
+    "date": "2026-01-07",
+    "rate": "1.38230000"
+   },
+   {
+    "date": "2026-01-08",
+    "rate": "1.38660000"
+   },
+   {
+    "date": "2026-01-09",
+    "rate": "1.38960000"
+   },
+   {
+    "date": "2026-01-12",
+    "rate": "1.38750000"
+   },
+   {
+    "date": "2026-01-13",
+    "rate": "1.38860000"
+   },
+   {
+    "date": "2026-01-14",
+    "rate": "1.38770000"
+   },
+   {
+    "date": "2026-01-15",
+    "rate": "1.38990000"
+   },
+   {
+    "date": "2026-01-16",
+    "rate": "1.39130000"
+   },
+   {
+    "date": "2026-01-19",
+    "rate": "1.38700000"
+   },
+   {
+    "date": "2026-01-20",
+    "rate": "1.38290000"
+   },
+   {
+    "date": "2026-01-21",
+    "rate": "1.38140000"
+   },
+   {
+    "date": "2026-01-22",
+    "rate": "1.37980000"
+   },
+   {
+    "date": "2026-01-23",
+    "rate": "1.37320000"
+   },
+   {
+    "date": "2026-01-26",
+    "rate": "1.37020000"
+   },
+   {
+    "date": "2026-01-27",
+    "rate": "1.36200000"
+   },
+   {
+    "date": "2026-01-28",
+    "rate": "1.35710000"
+   },
+   {
+    "date": "2026-01-29",
+    "rate": "1.35150000"
+   },
+   {
+    "date": "2026-01-30",
+    "rate": "1.35620000"
+   },
+   {
+    "date": "2026-02-02",
+    "rate": "1.36760000"
+   },
+   {
+    "date": "2026-02-03",
+    "rate": "1.36520000"
+   },
+   {
+    "date": "2026-02-04",
+    "rate": "1.36680000"
+   },
+   {
+    "date": "2026-02-05",
+    "rate": "1.36760000"
+   },
+   {
+    "date": "2026-02-06",
+    "rate": "1.36480000"
+   },
+   {
+    "date": "2026-02-09",
+    "rate": "1.35760000"
+   },
+   {
+    "date": "2026-02-10",
+    "rate": "1.35440000"
+   },
+   {
+    "date": "2026-02-11",
+    "rate": "1.35740000"
+   },
+   {
+    "date": "2026-02-12",
+    "rate": "1.36050000"
+   },
+   {
+    "date": "2026-02-13",
+    "rate": "1.36140000"
+   },
+   {
+    "date": "2026-02-17",
+    "rate": "1.36560000"
+   },
+   {
+    "date": "2026-02-18",
+    "rate": "1.36780000"
+   },
+   {
+    "date": "2026-02-19",
+    "rate": "1.36960000"
+   },
+   {
+    "date": "2026-02-20",
+    "rate": "1.36890000"
+   },
+   {
+    "date": "2026-02-22",
+    "rate": "1.36890000"
+   },
+   {
+    "date": "2026-02-23",
+    "rate": "1.36890000"
+   },
+   {
+    "date": "2026-02-24",
+    "rate": "1.37080000"
+   },
+   {
+    "date": "2026-02-25",
+    "rate": "1.36850000"
+   },
+   {
+    "date": "2026-02-26",
+    "rate": "1.36880000"
+   },
+   {
+    "date": "2026-02-27",
+    "rate": "1.36420000"
+   },
+   {
+    "date": "2026-03-02",
+    "rate": "1.36880000"
+   },
+   {
+    "date": "2026-03-03",
+    "rate": "1.36840000"
+   },
+   {
+    "date": "2026-03-04",
+    "rate": "1.36640000"
+   },
+   {
+    "date": "2026-03-05",
+    "rate": "1.36770000"
+   },
+   {
+    "date": "2026-03-06",
+    "rate": "1.36130000"
+   },
+   {
+    "date": "2026-03-09",
+    "rate": "1.35740000"
+   },
+   {
+    "date": "2026-03-10",
+    "rate": "1.35670000"
+   },
+   {
+    "date": "2026-03-11",
+    "rate": "1.35870000"
+   },
+   {
+    "date": "2026-03-12",
+    "rate": "1.36170000"
+   },
+   {
+    "date": "2026-03-13",
+    "rate": "1.37160000"
+   },
+   {
+    "date": "2026-03-16",
+    "rate": "1.36750000"
+   },
+   {
+    "date": "2026-03-17",
+    "rate": "1.36990000"
+   },
+   {
+    "date": "2026-03-18",
+    "rate": "1.37060000"
+   },
+   {
+    "date": "2026-03-19",
+    "rate": "1.37280000"
+   },
+   {
+    "date": "2026-03-20",
+    "rate": "1.37180000"
+   },
+   {
+    "date": "2026-03-22",
+    "rate": "1.37180000"
+   },
+   {
+    "date": "2026-03-23",
+    "rate": "1.37170000"
+   },
+   {
+    "date": "2026-03-24",
+    "rate": "1.37610000"
+   },
+   {
+    "date": "2026-03-25",
+    "rate": "1.38010000"
+   },
+   {
+    "date": "2026-03-26",
+    "rate": "1.38440000"
+   },
+   {
+    "date": "2026-03-27",
+    "rate": "1.38750000"
+   },
+   {
+    "date": "2026-03-30",
+    "rate": "1.39260000"
+   },
+   {
+    "date": "2026-03-31",
+    "rate": "1.39390000"
+   },
+   {
+    "date": "2026-04-01",
+    "rate": "1.38880000"
+   },
+   {
+    "date": "2026-04-02",
+    "rate": "1.39180000"
+   },
+   {
+    "date": "2026-04-06",
+    "rate": "1.39160000"
+   },
+   {
+    "date": "2026-04-07",
+    "rate": "1.39070000"
+   },
+   {
+    "date": "2026-04-08",
+    "rate": "1.38510000"
+   },
+   {
+    "date": "2026-04-09",
+    "rate": "1.38210000"
+   },
+   {
+    "date": "2026-04-10",
+    "rate": "1.38250000"
+   },
+   {
+    "date": "2026-04-12",
+    "rate": "1.38250000"
+   },
+   {
+    "date": "2026-04-13",
+    "rate": "1.38120000"
+   },
+   {
+    "date": "2026-04-14",
+    "rate": "1.37570000"
+   },
+   {
+    "date": "2026-04-15",
+    "rate": "1.37460000"
+   },
+   {
+    "date": "2026-04-16",
+    "rate": "1.37100000"
+   },
+   {
+    "date": "2026-04-17",
+    "rate": "1.36710000"
+   },
+   {
+    "date": "2026-04-20",
+    "rate": "1.36600000"
+   },
+   {
+    "date": "2026-04-21",
+    "rate": "1.36530000"
+   },
+   {
+    "date": "2026-04-22",
+    "rate": "1.36620000"
+   },
+   {
+    "date": "2026-04-23",
+    "rate": "1.36880000"
+   },
+   {
+    "date": "2026-04-24",
+    "rate": "1.36780000"
+   },
+   {
+    "date": "2026-04-27",
+    "rate": "1.36150000"
+   },
+   {
+    "date": "2026-04-28",
+    "rate": "1.36780000"
+   },
+   {
+    "date": "2026-04-29",
+    "rate": "1.36820000"
+   },
+   {
+    "date": "2026-04-30",
+    "rate": "1.36240000"
+   },
+   {
+    "date": "2026-05-01",
+    "rate": "1.35760000"
+   },
+   {
+    "date": "2026-05-04",
+    "rate": "1.36110000"
+   },
+   {
+    "date": "2026-05-05",
+    "rate": "1.36170000"
+   },
+   {
+    "date": "2026-05-06",
+    "rate": "1.36250000"
+   },
+   {
+    "date": "2026-05-07",
+    "rate": "1.36350000"
+   },
+   {
+    "date": "2026-05-08",
+    "rate": "1.36860000"
+   },
+   {
+    "date": "2026-05-11",
+    "rate": "1.36670000"
+   },
+   {
+    "date": "2026-05-12",
+    "rate": "1.37100000"
+   },
+   {
+    "date": "2026-05-13",
+    "rate": "1.37030000"
+   },
+   {
+    "date": "2026-05-14",
+    "rate": "1.37250000"
+   },
+   {
+    "date": "2026-05-15",
+    "rate": "1.37520000"
+   },
+   {
+    "date": "2026-05-19",
+    "rate": "1.37570000"
+   },
+   {
+    "date": "2026-05-20",
+    "rate": "1.37510000"
+   },
+   {
+    "date": "2026-05-21",
+    "rate": "1.37830000"
+   },
+   {
+    "date": "2026-05-22",
+    "rate": "1.38090000"
+   },
+   {
+    "date": "2026-05-25",
+    "rate": "1.38040000"
+   },
+   {
+    "date": "2026-05-26",
+    "rate": "1.38120000"
+   },
+   {
+    "date": "2026-05-27",
+    "rate": "1.38310000"
+   },
+   {
+    "date": "2026-05-28",
+    "rate": "1.38090000"
+   },
+   {
+    "date": "2026-05-29",
+    "rate": "1.37980000"
+   },
+   {
+    "date": "2026-06-01",
+    "rate": "1.38370000"
+   },
+   {
+    "date": "2026-06-02",
+    "rate": "1.38340000"
+   },
+   {
+    "date": "2026-06-03",
+    "rate": "1.38840000"
+   },
+   {
+    "date": "2026-06-04",
+    "rate": "1.38960000"
+   },
+   {
+    "date": "2026-06-05",
+    "rate": "1.39240000"
+   },
+   {
+    "date": "2026-06-08",
+    "rate": "1.39470000"
+   },
+   {
+    "date": "2026-06-09",
+    "rate": "1.39470000"
+   },
+   {
+    "date": "2026-06-10",
+    "rate": "1.39300000"
+   },
+   {
+    "date": "2026-06-11",
+    "rate": "1.39930000"
+   },
+   {
+    "date": "2026-06-12",
+    "rate": "1.39770000"
+   },
+   {
+    "date": "2026-06-15",
+    "rate": "1.39820000"
+   },
+   {
+    "date": "2026-06-16",
+    "rate": "1.39960000"
+   },
+   {
+    "date": "2026-06-17",
+    "rate": "1.40340000"
+   },
+   {
+    "date": "2026-06-18",
+    "rate": "1.41310000"
+   },
+   {
+    "date": "2026-06-19",
+    "rate": "1.41710000"
+   },
+   {
+    "date": "2026-06-22",
+    "rate": "1.41620000"
+   },
+   {
+    "date": "2026-06-23",
+    "rate": "1.42000000"
+   },
+   {
+    "date": "2026-06-24",
+    "rate": "1.42340000"
+   },
+   {
+    "date": "2026-06-25",
+    "rate": "1.42040000"
+   },
+   {
+    "date": "2026-06-26",
+    "rate": "1.41860000"
+   },
+   {
+    "date": "2026-06-29",
+    "rate": "1.42060000"
+   },
+   {
+    "date": "2026-06-30",
+    "rate": "1.42100000"
+   },
+   {
+    "date": "2026-07-02",
+    "rate": "1.41810000"
+   },
+   {
+    "date": "2026-07-03",
+    "rate": "1.42010000"
+   },
+   {
+    "date": "2026-07-06",
+    "rate": "1.42190000"
+   },
+   {
+    "date": "2026-07-07",
+    "rate": "1.41990000"
+   },
+   {
+    "date": "2026-07-08",
+    "rate": "1.41740000"
+   },
+   {
+    "date": "2026-07-09",
+    "rate": "1.41690000"
+   },
+   {
+    "date": "2026-07-10",
+    "rate": "1.41460000"
+   },
+   {
+    "date": "2026-07-13",
+    "rate": "1.41450000"
+   },
+   {
+    "date": "2026-07-14",
+    "rate": "1.40670000"
+   },
+   {
+    "date": "2026-07-15",
+    "rate": "1.40490000"
+   },
+   {
+    "date": "2026-07-16",
+    "rate": "1.40380000"
+   },
+   {
+    "date": "2026-07-17",
+    "rate": "1.40140000"
+   },
+   {
+    "date": "2026-07-20",
+    "rate": "1.40540000"
+   },
+   {
+    "date": "2026-07-21",
+    "rate": "1.40950000"
+   },
+   {
+    "date": "2026-07-22",
+    "rate": "1.40880000"
+   },
+   {
+    "date": "2026-07-23",
+    "rate": "1.40830000"
+   },
+   {
+    "date": "2026-07-24",
+    "rate": "1.40930000"
+   },
+   {
+    "date": "2026-07-27",
+    "rate": "1.41140000"
+   },
+   {
+    "date": "2026-07-28",
+    "rate": "1.41020000"
+   },
+   {
+    "date": "2026-07-29",
+    "rate": "1.40830000"
+   },
+   {
+    "date": "2026-07-30",
+    "rate": "1.40140000"
+   },
+   {
+    "date": "2026-07-31",
+    "rate": "1.40290000"
+   },
+   {
+    "date": "2026-08-04",
+    "rate": "1.40680000"
+   },
+   {
+    "date": "2026-08-05",
+    "rate": "1.40260000"
+   },
+   {
+    "date": "2026-08-06",
+    "rate": "1.40180000"
+   },
+   {
+    "date": "2026-08-07",
+    "rate": "1.39430000"
+   },
+   {
+    "date": "2026-08-10",
+    "rate": "1.39420000"
+   },
+   {
+    "date": "2026-08-11",
+    "rate": "1.39270000"
+   },
+   {
+    "date": "2026-08-12",
+    "rate": "1.39300000"
+   },
+   {
+    "date": "2026-08-13",
+    "rate": "1.39380000"
+   },
+   {
+    "date": "2026-08-14",
+    "rate": "1.38750000"
+   },
+   {
+    "date": "2026-08-17",
+    "rate": "1.38650000"
+   },
+   {
+    "date": "2026-08-18",
+    "rate": "1.38890000"
+   },
+   {
+    "date": "2026-08-19",
+    "rate": "1.38240000"
+   },
+   {
+    "date": "2026-08-20",
+    "rate": "1.37850000"
+   },
+   {
+    "date": "2026-08-21",
+    "rate": "1.37600000"
+   },
+   {
+    "date": "2026-08-22",
+    "rate": "1.37600000"
+   },
+   {
+    "date": "2026-08-24",
+    "rate": "1.38420000"
+   },
+   {
+    "date": "2026-08-25",
+    "rate": "1.38390000"
+   },
+   {
+    "date": "2026-08-26",
+    "rate": "1.38760000"
+   },
+   {
+    "date": "2026-08-27",
+    "rate": "1.38610000"
+   },
+   {
+    "date": "2026-08-28",
+    "rate": "1.38880000"
+   },
+   {
+    "date": "2026-08-31",
+    "rate": "1.38660000"
+   },
+   {
+    "date": "2026-09-01",
+    "rate": "1.38960000"
+   },
+   {
+    "date": "2026-09-02",
+    "rate": "1.38630000"
+   },
+   {
+    "date": "2026-09-03",
+    "rate": "1.37890000"
+   },
+   {
+    "date": "2026-09-04",
+    "rate": "1.38400000"
+   },
+   {
+    "date": "2026-09-08",
+    "rate": "1.37840000"
+   },
+   {
+    "date": "2026-09-09",
+    "rate": "1.37980000"
+   },
+   {
+    "date": "2026-09-10",
+    "rate": "1.38220000"
+   },
+   {
+    "date": "2026-09-11",
+    "rate": "1.38660000"
+   },
+   {
+    "date": "2026-09-14",
+    "rate": "1.39090000"
+   },
+   {
+    "date": "2026-09-15",
+    "rate": "1.39170000"
+   },
+   {
+    "date": "2026-09-16",
+    "rate": "1.39470000"
+   },
+   {
+    "date": "2026-09-17",
+    "rate": "1.39880000"
+   },
+   {
+    "date": "2026-09-18",
+    "rate": "1.40020000"
+   },
+   {
+    "date": "2026-09-21",
+    "rate": "1.40210000"
+   },
+   {
+    "date": "2026-09-22",
+    "rate": "1.40640000"
+   },
+   {
+    "date": "2026-09-23",
+    "rate": "1.40960000"
+   },
+   {
+    "date": "2026-09-24",
+    "rate": "1.41360000"
+   }
+  ]
+ },
+ "goldens": {
+  "default": {
+   "year": 2026,
+   "available_years": [
+    2026,
+    2025
+   ],
+   "items": [
+    {
+     "security_id": 3,
+     "symbol": "BMO.TO",
+     "name": "Bank of Montreal",
+     "dividend_cad": "355.20",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "355.20",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-15"
+    },
+    {
+     "security_id": 4,
+     "symbol": "ENB.TO",
+     "name": "Enbridge Inc.",
+     "dividend_cad": "237.60",
+     "distribution_cad": "0.00",
+     "roc_cad": "40.00",
+     "total_cad": "277.60",
+     "payment_count": 4,
+     "last_payment_date": "2026-07-15"
+    },
+    {
+     "security_id": 1,
+     "symbol": "RY.TO",
+     "name": "Royal Bank of Canada",
+     "dividend_cad": "225.00",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "225.00",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-15"
+    },
+    {
+     "security_id": 5,
+     "symbol": "VTI",
+     "name": "Vanguard Total Stock Market ETF",
+     "dividend_cad": "353.12",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "353.12",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-20"
+    },
+    {
+     "security_id": 6,
+     "symbol": "VXUS",
+     "name": "Vanguard Total International Stock ETF",
+     "dividend_cad": "186.94",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "186.94",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-20"
+    }
+   ],
+   "by_month": [
+    {
+     "month": "2026-01",
+     "total_cad": "437.38"
+    },
+    {
+     "month": "2026-02",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-03",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-04",
+     "total_cad": "490.18"
+    },
+    {
+     "month": "2026-05",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-06",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-07",
+     "total_cad": "470.30"
+    },
+    {
+     "month": "2026-08",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-09",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-10",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-11",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-12",
+     "total_cad": "0.00"
+    }
+   ],
+   "totals": {
+    "dividend_cad": "1357.86",
+    "distribution_cad": "0.00",
+    "roc_cad": "40.00",
+    "total_cad": "1397.86"
+   },
+   "ttm_total_cad": "1822.93",
+   "unresolved_fx": 0
+  },
+  "2026": {
+   "year": 2026,
+   "available_years": [
+    2026,
+    2025
+   ],
+   "items": [
+    {
+     "security_id": 3,
+     "symbol": "BMO.TO",
+     "name": "Bank of Montreal",
+     "dividend_cad": "355.20",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "355.20",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-15"
+    },
+    {
+     "security_id": 4,
+     "symbol": "ENB.TO",
+     "name": "Enbridge Inc.",
+     "dividend_cad": "237.60",
+     "distribution_cad": "0.00",
+     "roc_cad": "40.00",
+     "total_cad": "277.60",
+     "payment_count": 4,
+     "last_payment_date": "2026-07-15"
+    },
+    {
+     "security_id": 1,
+     "symbol": "RY.TO",
+     "name": "Royal Bank of Canada",
+     "dividend_cad": "225.00",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "225.00",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-15"
+    },
+    {
+     "security_id": 5,
+     "symbol": "VTI",
+     "name": "Vanguard Total Stock Market ETF",
+     "dividend_cad": "353.12",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "353.12",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-20"
+    },
+    {
+     "security_id": 6,
+     "symbol": "VXUS",
+     "name": "Vanguard Total International Stock ETF",
+     "dividend_cad": "186.94",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "186.94",
+     "payment_count": 3,
+     "last_payment_date": "2026-07-20"
+    }
+   ],
+   "by_month": [
+    {
+     "month": "2026-01",
+     "total_cad": "437.38"
+    },
+    {
+     "month": "2026-02",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-03",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-04",
+     "total_cad": "490.18"
+    },
+    {
+     "month": "2026-05",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-06",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-07",
+     "total_cad": "470.30"
+    },
+    {
+     "month": "2026-08",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-09",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-10",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-11",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2026-12",
+     "total_cad": "0.00"
+    }
+   ],
+   "totals": {
+    "dividend_cad": "1357.86",
+    "distribution_cad": "0.00",
+    "roc_cad": "40.00",
+    "total_cad": "1397.86"
+   },
+   "ttm_total_cad": "1822.93",
+   "unresolved_fx": 0
+  },
+  "2025": {
+   "year": 2025,
+   "available_years": [
+    2026,
+    2025
+   ],
+   "items": [
+    {
+     "security_id": 3,
+     "symbol": "BMO.TO",
+     "name": "Bank of Montreal",
+     "dividend_cad": "118.40",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "118.40",
+     "payment_count": 1,
+     "last_payment_date": "2025-10-15"
+    },
+    {
+     "security_id": 4,
+     "symbol": "ENB.TO",
+     "name": "Enbridge Inc.",
+     "dividend_cad": "79.20",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "79.20",
+     "payment_count": 1,
+     "last_payment_date": "2025-10-15"
+    },
+    {
+     "security_id": 1,
+     "symbol": "RY.TO",
+     "name": "Royal Bank of Canada",
+     "dividend_cad": "45.00",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "45.00",
+     "payment_count": 1,
+     "last_payment_date": "2025-10-15"
+    },
+    {
+     "security_id": 5,
+     "symbol": "VTI",
+     "name": "Vanguard Total Stock Market ETF",
+     "dividend_cad": "119.31",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "119.31",
+     "payment_count": 1,
+     "last_payment_date": "2025-10-20"
+    },
+    {
+     "security_id": 6,
+     "symbol": "VXUS",
+     "name": "Vanguard Total International Stock ETF",
+     "dividend_cad": "63.16",
+     "distribution_cad": "0.00",
+     "roc_cad": "0.00",
+     "total_cad": "63.16",
+     "payment_count": 1,
+     "last_payment_date": "2025-10-20"
+    }
+   ],
+   "by_month": [
+    {
+     "month": "2025-01",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-02",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-03",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-04",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-05",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-06",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-07",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-08",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-09",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-10",
+     "total_cad": "425.07"
+    },
+    {
+     "month": "2025-11",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2025-12",
+     "total_cad": "0.00"
+    }
+   ],
+   "totals": {
+    "dividend_cad": "425.07",
+    "distribution_cad": "0.00",
+    "roc_cad": "0.00",
+    "total_cad": "425.07"
+   },
+   "ttm_total_cad": "1822.93",
+   "unresolved_fx": 0
+  },
+  "2018": {
+   "year": 2018,
+   "available_years": [
+    2026,
+    2025
+   ],
+   "items": [],
+   "by_month": [
+    {
+     "month": "2018-01",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-02",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-03",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-04",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-05",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-06",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-07",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-08",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-09",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-10",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-11",
+     "total_cad": "0.00"
+    },
+    {
+     "month": "2018-12",
+     "total_cad": "0.00"
+    }
+   ],
+   "totals": {
+    "dividend_cad": "0.00",
+    "distribution_cad": "0.00",
+    "roc_cad": "0.00",
+    "total_cad": "0.00"
+   },
+   "ttm_total_cad": "1822.93",
+   "unresolved_fx": 0
+  }
+ }
+}

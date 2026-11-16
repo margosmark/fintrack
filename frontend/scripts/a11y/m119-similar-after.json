@@ -1,0 +1,382 @@
+{
+  "checks": [
+    {
+      "check": "seed tenant",
+      "ok": true,
+      "detail": "{\"email\": \"m119-1791494173246@example.com\", \"password\": \"<redacted-password>\", \"register\": 200, \"login\": 200}"
+    },
+    {
+      "check": "bearer token",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "seed rows",
+      "ok": true,
+      "detail": "10 identical-payee + 450/450 filler rows, category 3979"
+    },
+    {
+      "check": "substrate pages",
+      "ok": true,
+      "detail": "total=460 (>200 forces the client's page loop)"
+    },
+    {
+      "check": "substrate populated",
+      "ok": true,
+      "detail": "472 rows arrived at the page; requests [('/api/v1/categories?limit=200&offset=0', 200, 0, None), ('/api/v1/accounts?limit=200&offset=0', 200, 0, None), ('/api/v1/categories?limit=200&offset=0', 200, 11, 11), ('/api/v1/accounts?limit=200&offset=0', 200, 1, 1), ('/api/v1/suggestions?status=suggested&limit=200&offset=0', 200, 0, 0), ('/api/v1/accounts?limit=200&offset=0', 200, 1, 1), ('/api/v1/categories?limit=200&offset=0', 200, 11, 11), ('/api/v1/tags?limit=200&offset=0', 200, 0, 0), ('/api/v1/categories?limit=200&offset=0', 200, 11, 11), ('/api/v1/transactions?limit=200&offset=0', 200, 200, 460), ('/api/v1/transactions?limit=200&offset=200', 200, 200, 460), ('/api/v1/transactions?limit=200&offset=400', 200, 60, 460)]"
+    },
+    {
+      "check": "console clean",
+      "ok": true,
+      "detail": "no errors/warnings/CSP refusals"
+    },
+    {
+      "check": "B (uncategorized anchor) shows the categorized twin",
+      "ok": true,
+      "detail": "'SIMILAR PAST ENTRIES | Total Tech Pools And Leis | 2026-09-25 | -$11.24 | pool | Total Tech Pools And Leis | 2026-05-16 | -$33.79 | Uncategorized | Total Tech P'"
+    },
+    {
+      "check": "A (categorized anchor) lists its 9 siblings",
+      "ok": true,
+      "detail": "items=9 'SIMILAR PAST ENTRIES | Total Tech Pools And Leis | 2026-05-16 | -$33.79 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$48.25 | Uncategorized | Tot'"
+    },
+    {
+      "check": "B (uncategorized anchor) lists 9 with the `pool` row first",
+      "ok": true,
+      "detail": "items=9 'SIMILAR PAST ENTRIES | Total Tech Pools And Leis | 2026-09-25 | -$11.24 | pool | Total Tech Pools And Leis | 2026-05-16 | -$33.79 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$48.25 | U'"
+    }
+  ],
+  "evidence": {
+    "tenant_total": 460,
+    "visible_rows": [
+      {
+        "cells": [
+          "",
+          "",
+          "2026-09-25",
+          "Total Tech Pools And Leis",
+          "-$11.24",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-09-23",
+          "Total Tech Pools And Leis",
+          "-$36.10",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-08-19",
+          "Total Tech Pools And Leis",
+          "-$38.99",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-08-07",
+          "Total Tech Pools And Leis",
+          "-$85.88",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-06-17",
+          "Total Tech Pools And Leis",
+          "-$126.00",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-06-11",
+          "Total Tech Pools And Leis",
+          "-$16.89",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-05-26",
+          "Total Tech Pools And Leis",
+          "-$38.99",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-05-19",
+          "Total Tech Pools And Leis",
+          "-$48.25",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-05-19",
+          "Total Tech Pools And Leis",
+          "-$85.88",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      },
+      {
+        "cells": [
+          "",
+          "",
+          "2026-05-16",
+          "Total Tech Pools And Leis",
+          "-$33.79",
+          "",
+          "Total Tech Pools And Leis",
+          "Probe Visa",
+          "",
+          "Split\nEdit\nHistory\nDelete"
+        ],
+        "category": ""
+      }
+    ],
+    "case_a": {
+      "states": [
+        "SIMILAR PAST ENTRIES | Searching\u2026",
+        "SIMILAR PAST ENTRIES | Total Tech Pools And Leis | 2026-05-16 | -$33.79 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$48.25 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-05-26 | -$38.99 | Uncategorized | Total Tech Pools And Leis | 2026-06-11 | -$16.89 | Uncategorized | Total Tech Pools And Leis | 2026-06-17 | -$126.00 | Uncategorized | Total Tech Pools And Leis | 2026-08-07 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-08-19 | -$38.99 | Uncategorized | Total Tech Pools And Leis | 2026-09-23 | -$36.10 | Uncategorized | See all similar \u2192"
+      ],
+      "final": {
+        "text": "SIMILAR PAST ENTRIES | Total Tech Pools And Leis | 2026-05-16 | -$33.79 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$48.25 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-05-26 | -$38.99 | Uncategorized | Total Tech Pools And Leis | 2026-06-11 | -$16.89 | Uncategorized | Total Tech Pools And Leis | 2026-06-17 | -$126.00 | Uncategorized | Total Tech Pools And Leis | 2026-08-07 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-08-19 | -$38.99 | Uncategorized | Total Tech Pools And Leis | 2026-09-23 | -$36.10 | Uncategorized | See all similar \u2192",
+        "items": 9
+      },
+      "clicked": {
+        "payee": "Total Tech Pools And Leis",
+        "x": 780.0625,
+        "y": 517
+      },
+      "screenshot_taken": false,
+      "network": [
+        {
+          "requestId": "109755.125",
+          "path": "/api/v1/categories?limit=200&offset=0",
+          "status": 200,
+          "items": 0,
+          "total": null
+        },
+        {
+          "requestId": "109755.126",
+          "path": "/api/v1/accounts?limit=200&offset=0",
+          "status": 200,
+          "items": 0,
+          "total": null
+        },
+        {
+          "requestId": "109755.169",
+          "path": "/api/v1/categories?limit=200&offset=0",
+          "status": 200,
+          "items": 11,
+          "total": 11
+        },
+        {
+          "requestId": "109755.170",
+          "path": "/api/v1/accounts?limit=200&offset=0",
+          "status": 200,
+          "items": 1,
+          "total": 1
+        },
+        {
+          "requestId": "109755.174",
+          "path": "/api/v1/suggestions?status=suggested&limit=200&offset=0",
+          "status": 200,
+          "items": 0,
+          "total": 0
+        },
+        {
+          "requestId": "109755.175",
+          "path": "/api/v1/accounts?limit=200&offset=0",
+          "status": 200,
+          "items": 1,
+          "total": 1
+        },
+        {
+          "requestId": "109755.176",
+          "path": "/api/v1/categories?limit=200&offset=0",
+          "status": 200,
+          "items": 11,
+          "total": 11
+        },
+        {
+          "requestId": "109755.177",
+          "path": "/api/v1/tags?limit=200&offset=0",
+          "status": 200,
+          "items": 0,
+          "total": 0
+        },
+        {
+          "requestId": "109755.183",
+          "path": "/api/v1/categories?limit=200&offset=0",
+          "status": 200,
+          "items": 11,
+          "total": 11
+        },
+        {
+          "requestId": "109755.182",
+          "path": "/api/v1/transactions?limit=200&offset=0",
+          "status": 200,
+          "items": 200,
+          "total": 460
+        },
+        {
+          "requestId": "109755.184",
+          "path": "/api/v1/transactions?limit=200&offset=200",
+          "status": 200,
+          "items": 200,
+          "total": 460
+        },
+        {
+          "requestId": "109755.185",
+          "path": "/api/v1/transactions?limit=200&offset=400",
+          "status": 200,
+          "items": 60,
+          "total": 460
+        }
+      ]
+    },
+    "case_b": {
+      "states": [
+        "SIMILAR PAST ENTRIES | Total Tech Pools And Leis | 2026-09-25 | -$11.24 | pool | Total Tech Pools And Leis | 2026-05-16 | -$33.79 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$48.25 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-05-26 | -$38.99 | Uncategorized | Total Tech Pools And Leis | 2026-06-11 | -$16.89 | Uncategorized | Total Tech Pools And Leis | 2026-06-17 | -$126.00 | Uncategorized | Total Tech Pools And Leis | 2026-08-07 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-08-19 | -$38.99 | Uncategorized | See all similar \u2192"
+      ],
+      "final": {
+        "text": "SIMILAR PAST ENTRIES | Total Tech Pools And Leis | 2026-09-25 | -$11.24 | pool | Total Tech Pools And Leis | 2026-05-16 | -$33.79 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$48.25 | Uncategorized | Total Tech Pools And Leis | 2026-05-19 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-05-26 | -$38.99 | Uncategorized | Total Tech Pools And Leis | 2026-06-11 | -$16.89 | Uncategorized | Total Tech Pools And Leis | 2026-06-17 | -$126.00 | Uncategorized | Total Tech Pools And Leis | 2026-08-07 | -$85.88 | Uncategorized | Total Tech Pools And Leis | 2026-08-19 | -$38.99 | Uncategorized | See all similar \u2192",
+        "items": 9
+      },
+      "clicked": {
+        "payee": "Total Tech Pools And Leis",
+        "x": 780.0625,
+        "y": 634
+      },
+      "screenshot_taken": false,
+      "network": [
+        "limit=200&offset=0"
+      ]
+    },
+    "substrate_rows_seen": 472,
+    "offline_case_a": [],
+    "offline_case_a_uncategorized_ok": [
+      {
+        "id": 7908,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7907,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7906,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7905,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7904,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7903,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7902,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7901,
+        "score": 1.0,
+        "category_id": null
+      },
+      {
+        "id": 7900,
+        "score": 1.0,
+        "category_id": null
+      }
+    ],
+    "offline_case_b": [
+      {
+        "id": 7899,
+        "score": 1.0,
+        "category_id": 3979
+      }
+    ],
+    "console": [],
+    "screenshot": "./m119-similar-after.png"
+  }
+}

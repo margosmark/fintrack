@@ -1,0 +1,21 @@
+{
+  "_readme": [
+    "Named probe suites for `python3 scripts/run_probes.py` (see scripts/probe_cache.py).",
+    "Patterns are globs relative to THIS directory; a positional argument that is not a",
+    "file and not a glob is treated as a suite name, so `run_probes.py live` works.",
+    "",
+    "A probe is only run when it can be pointed at the base URL: probes declaring",
+    "`--base` get it as an argument, probes reading A11Y_BASE/SITE_BASE get it in the",
+    "environment, and anything else is SKIPPED with a printed reason (it cannot be",
+    "aimed at the deployed build, so it must not be reported as verified against it).",
+    "",
+    "Add a suite when a wave wants a stable name for a subset, e.g.",
+    "  \"receipts\": [\"m120_receipts_probe.py\", \"m106_*probe.py\"]",
+    "Every run is cached per commit + deployed stack, so re-running a suite that has",
+    "already passed against the same build short-circuits with the stored evidence."
+  ],
+  "suites": {
+    "live": ["*_probe.py"],
+    "shell-visual": ["shell_visual_matrix_probe.py"]
+  }
+}

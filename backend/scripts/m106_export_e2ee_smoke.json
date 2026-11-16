@@ -1,0 +1,175 @@
+{
+  "target": "https://fintrac.princessandmark.com/api/v1",
+  "when": "2026-10-07T06:05:43.666246+00:00",
+  "totals": {
+    "email": "m106-smoke-1791353141112@example.com",
+    "full_events": 9,
+    "zip_events": 4,
+    "tables_full": 41
+  },
+  "checks": [
+    {
+      "name": "GET /api/v1/health -> 200 through nginx",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "register + login",
+      "ok": true,
+      "detail": "registered (attempt 1)"
+    },
+    {
+      "name": "POST /accounts -> 201",
+      "ok": true,
+      "detail": "{\"id\":238,\"institution_id\":null,\"name\":\"Smoke Chequing\",\"type\":\"chequing\",\"currency\":\"CAD\",\"taxable\":false,\"llm_autopilot\":false,\"cash_balance\":\"0.00\",\"investment_value\":\"0.00\",\"total_value\":\"0.00\",\"s"
+    },
+    {
+      "name": "two manual transactions created",
+      "ok": true,
+      "detail": "201/201"
+    },
+    {
+      "name": "PATCH -> 200 (writes one receipt)",
+      "ok": true,
+      "detail": "{\"id\":3908,\"account_id\":238,\"date\":\"2026-08-01\",\"posting_date\":null,\"raw_description\":\"Café ☕ 食品 😀\",\"normalized_payee\":\"SMOKE LATTE\",\"amount_native\":\"-12.34\",\"currency\":\"CAD\",\"cad_amount\":\"-12.34\",\"ca"
+    },
+    {
+      "name": "DELETE -> 204 (writes the outliving receipt)",
+      "ok": true,
+      "detail": "204"
+    },
+    {
+      "name": "import staged (pending batch, not committed)",
+      "ok": true,
+      "detail": "201 imported=5 {\"id\":161,\"account_id\":238,\"institution\":\"\",\"file_name\":\"sample.qfx\",\"status\":\"pending_review\",\"imported\":5,\"duplicates_"
+    },
+    {
+      "name": "GET /export/full -> 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "export/full carries every receipt (committed + staged)",
+      "ok": true,
+      "detail": "n=9 staged=5 kinds=['created', 'created', 'created', 'created', 'created', 'created', 'created', 'deleted', 'edited']"
+    },
+    {
+      "name": "every exported payload_hash re-derives",
+      "ok": true,
+      "detail": "9 rows"
+    },
+    {
+      "name": "unicode receipt payload survives export/full",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "GET /export/zip?vault=locked -> 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "manifest publishes the transaction_events filter",
+      "ok": true,
+      "detail": "receipts of committed/manual transactions + receipts whose row is gone"
+    },
+    {
+      "name": "CSV header IS the model's field order",
+      "ok": true,
+      "detail": "['created_at', 'updated_at', 'id', 'tx_id', 'user_id', 'event_kind', 'payload', 'payload_hash', 'actor']"
+    },
+    {
+      "name": "ZIP keeps the 4 receipts of visible/deleted rows, drops the staged one",
+      "ok": true,
+      "detail": "n=4 kinds=['created', 'created', 'deleted', 'edited'] staged_shipped=False"
+    },
+    {
+      "name": "every payload cell parses back to an object",
+      "ok": true,
+      "detail": "[{'source': 'manual'}, {'source': 'manual'}]"
+    },
+    {
+      "name": "unicode payload rides the CSV as raw UTF-8",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "POST /backup/artifacts -> 201",
+      "ok": true,
+      "detail": "{\"id\":17,\"period\":\"2026-10-07\",\"created_at\":\"2026-10-07T06:05:42.175790Z\",\"size_bytes\":85220}"
+    },
+    {
+      "name": "GET /backup/artifacts/{id} -> 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "stored artifact is opaque (no receipt text beside the ciphertext)",
+      "ok": true,
+      "detail": "len=85220"
+    },
+    {
+      "name": "artifact decrypts under the session DEK",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "decrypted snapshot == /export/full byte-for-byte",
+      "ok": true,
+      "detail": "tables=41"
+    },
+    {
+      "name": "receipts are INSIDE the envelope, payload + hash intact",
+      "ok": true,
+      "detail": "n=9"
+    },
+    {
+      "name": "partner can register + sign in",
+      "ok": true,
+      "detail": "registered (attempt 1)"
+    },
+    {
+      "name": "owner invites the partner -> 201",
+      "ok": true,
+      "detail": "{\"id\":92,\"email\":\"m106-smoke-partner-1791353141112@example.com\",\"status\":\"pending\",\"account_ids\":[238],\"expires_at\":\"2026-10-14T06:05:42.925019Z\",\"created_at\":\"2026-10-07T06:05:42.922054Z\",\"token\":\"FF"
+    },
+    {
+      "name": "partner accepts -> 200",
+      "ok": true,
+      "detail": "{\"status\":\"active\",\"link_id\":92,\"email\":\"m106-smoke-partner-1791353141112@example.com\",\"partner\":{\"user_id\":339,\"name\":\"Smoke Pat\",\"email\":\"m106-smoke-partner-1791353141112@example.com\"},\"account_ids\""
+    },
+    {
+      "name": "partner sees the row's receipts -> 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "name": "every projected actor is the owner (no system, no third party)",
+      "ok": true,
+      "detail": "[(338, 'edited'), (338, 'created')]"
+    },
+    {
+      "name": "no payload crosses to the partner, no written value either",
+      "ok": true,
+      "detail": "593"
+    },
+    {
+      "name": "a row whose receipts outlive it -> 404 for the partner",
+      "ok": true,
+      "detail": "{\"detail\":\"Transaction not found\",\"code\":\"not_found\"}"
+    },
+    {
+      "name": "stranger can register + sign in (the 401 below needs a session)",
+      "ok": true,
+      "detail": "registered (attempt 1)"
+    },
+    {
+      "name": "an unlinked caller -> 401 sharing_not_linked",
+      "ok": true,
+      "detail": "{\"detail\":\"No shared household is linked to this account\",\"code\":\"sharing_not_linked\"}"
+    }
+  ],
+  "passed": 32,
+  "failed": 0,
+  "skipped": 0
+}

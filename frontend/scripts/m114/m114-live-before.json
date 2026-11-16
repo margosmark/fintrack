@@ -1,0 +1,28 @@
+{
+  "phase": "before",
+  "base": "https://fintrac.princessandmark.com",
+  "entry_on_load": "https://fintrac.princessandmark.com/assets/index-ClU-gcha.js",
+  "index_cache_control": "no-cache, must-revalidate",
+  "controller": "https://fintrac.princessandmark.com/sw.js",
+  "caches": [
+    "fintrack-shell-v1"
+  ],
+  "indexed_cache_control": "no-cache, must-revalidate",
+  "missing_chunk": {
+    "status": 404,
+    "type": "text/html",
+    "marker": false,
+    "head": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1><"
+  },
+  "trigger": "clicked",
+  "palette": true,
+  "error": false,
+  "entry_final": "https://fintrac.princessandmark.com/assets/index-ClU-gcha.js",
+  "caches_final": [
+    "fintrack-shell-v1"
+  ],
+  "controllerchange": 0,
+  "pathname": "/dashboard",
+  "console_errors": [],
+  "screenshot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_0debdfa5/frontend/scripts/a11y/m114-live-before.png"
+}

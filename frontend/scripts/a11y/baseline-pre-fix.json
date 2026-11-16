@@ -1,0 +1,259 @@
+{
+  "base": "http://localhost:4173",
+  "generated_at": "2026-09-28T04:23:34-0400",
+  "pages": {
+    "dashboard:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": 5,
+          "targets": [
+            [
+              "span[aria-label=\"$151.8K\"]"
+            ],
+            [
+              "span[aria-label=\"+$38.1K\"]"
+            ],
+            [
+              "span[aria-label=\"$151.3K\"]"
+            ],
+            [
+              "span[aria-label=\"$508.27\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    "transactions:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "investments:dark": {
+      "counts": {
+        "critical": 1,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "select-name",
+          "impact": "critical",
+          "help": "Select element must have an accessible name",
+          "nodes": 3,
+          "targets": [
+            [
+              "select:nth-child(1)"
+            ],
+            [
+              ".flex-wrap.mb-3.gap-2 > select:nth-child(2)"
+            ],
+            [
+              "select:nth-child(3)"
+            ]
+          ]
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": 1,
+          "targets": [
+            [
+              "span[aria-label=\"7\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    "taxes:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "budgets:dark": {
+      "counts": {
+        "critical": 1,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "help": "Buttons must have discernible text",
+          "nodes": 6,
+          "targets": [
+            [
+              "div:nth-child(1) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(1)"
+            ],
+            [
+              "div:nth-child(1) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(2)"
+            ],
+            [
+              "div:nth-child(2) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(1)"
+            ],
+            [
+              "div:nth-child(2) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(2)"
+            ]
+          ]
+        }
+      ]
+    },
+    "bills:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "dashboard:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": 5,
+          "targets": [
+            [
+              "span[aria-label=\"$151.8K\"]"
+            ],
+            [
+              "span[aria-label=\"+$38.1K\"]"
+            ],
+            [
+              "span[aria-label=\"$151.3K\"]"
+            ],
+            [
+              "span[aria-label=\"$508.27\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    "transactions:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "investments:light": {
+      "counts": {
+        "critical": 1,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "select-name",
+          "impact": "critical",
+          "help": "Select element must have an accessible name",
+          "nodes": 3,
+          "targets": [
+            [
+              "select:nth-child(1)"
+            ],
+            [
+              ".flex-wrap.mb-3.gap-2 > select:nth-child(2)"
+            ],
+            [
+              "select:nth-child(3)"
+            ]
+          ]
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": 1,
+          "targets": [
+            [
+              "span[aria-label=\"7\"]"
+            ]
+          ]
+        }
+      ]
+    },
+    "taxes:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "budgets:light": {
+      "counts": {
+        "critical": 1,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "help": "Buttons must have discernible text",
+          "nodes": 6,
+          "targets": [
+            [
+              "div:nth-child(1) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(1)"
+            ],
+            [
+              "div:nth-child(1) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(2)"
+            ],
+            [
+              "div:nth-child(2) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(1)"
+            ],
+            [
+              "div:nth-child(2) > .glass.glass-hover.rounded-xl > .justify-between.items-center > .ml-4.gap-1 > .p-1.rounded.hover\\:bg-surface-raised:nth-child(2)"
+            ]
+          ]
+        }
+      ]
+    },
+    "bills:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    }
+  },
+  "raf_frames_in_500ms": 7,
+  "logged_in_path": "/dashboard",
+  "console": []
+}

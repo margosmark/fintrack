@@ -1,0 +1,6 @@
+Trade Date,Action,Symbol,Description,Quantity,Price,Commission,Net Amount,Currency
+2026-01-05,Contribution,,Cash to invest,,,,5000.00,CAD
+2026-01-12,BUY,SHOP,Shopify Inc,1E+1,150.00,9.99,-1509.99,CAD
+2026-01-31,DIVIDEND,SHOP,"Shopify Inc
+dividend",,0.00,0.00,12.50,CAD
+2026-02-10,SELL,SHOP,Shopify Inc,4,160.00,9.99,630.01,CAD

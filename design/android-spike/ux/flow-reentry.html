@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FinTracker spike · Flow A — secure re-entry</title>
+<link rel="stylesheet" href="spike.css"></head>
+<body>
+<main class="wrap">
+<header class="head">
+  <div>
+    <h1>Flow A · Secure re-entry (biometric / device-lock)</h1>
+    <p>Capability 1 (+5, storage of session state). Local re-lock over a still-valid server session — never login,
+      never account recovery. Values illustrative; every frame carries a provenance chip.</p>
+  </div>
+  <div class="links">
+    <a class="back" href="index.html">← Spike hub</a>
+    <button class="mode" id="modeToggle" type="button">◐ Toggle dark</button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ============ phone ============ -->
+  <section>
+  <div class="phone"><div class="screen">
+
+    <!-- r1 · locked cold open -->
+    <div class="scr" id="r1" data-rail="Locked · biometric prompt" data-back=""
+      data-title="Cold open after background/lock timeout"
+      data-note="App foregrounds with the server session still valid. The prompt is a <b>local gate</b>: it says so, and names when the session itself expires. Nothing here may look like account recovery — the spike's core comprehension risk is a user reading this as “I'm logged in forever now”."
+      data-probe="Does the tester understand (a) this is a local lock, (b) cancelling still leaves them signed out-or-not on the server side, (c) what happens when the session has expired meanwhile? Ask them to predict what Cancel does <i>before</i> tapping it.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="content" style="opacity:.45;pointer-events:none" aria-hidden="true">
+        <div class="balance"><div><h3>Total net worth</h3><div class="amount">••••••••</div><div class="asof">Values hidden</div></div></div>
+        <div class="panel"><div class="row"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash</small></span><span class="money">••••</span></div></div>
+      </div>
+      <div class="dim"></div>
+      <div class="scrim">
+        <div class="prompt" role="dialog" aria-label="Unlock FinTracker">
+          <svg class="fp" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M24 5C14.6 5 7 12.6 7 22c0 4.4 1.5 8.4 4 12.4"/>
+            <path d="M24 11c-6.6 0-12 5.4-12 12 0 5.2 1.7 9.6 4.6 13.4"/>
+            <path d="M24 17a6 6 0 0 0-6 6c0 4.6 1.4 8.6 4 12"/>
+            <path d="M24 23a1.8 1.8 0 0 0-1.8 1.8c0 3.4 1 6.4 3 9"/>
+            <path d="M31 34.4c1.9-3.6 3-7.6 3-11.4"/>
+          </svg>
+          <h3>Unlock FinTracker</h3>
+          <p>Verify it's you to continue your session.</p>
+          <div class="chiprow" style="justify-content:center"><span class="chip masked" data-state="masked">Values hidden until unlocked</span></div>
+          <p style="font-size:12px">Local re-lock · server session valid until <b>11:05 AM</b><br>This is not sign-in and cannot recover a signed-out account.</p>
+          <button class="btn primary block" type="button" data-go="r3">Unlock ✓</button>
+          <button class="btn block" type="button" data-go="r3">Use device PIN instead</button>
+          <button class="btn block" type="button" data-go="r2">Cancel</button>
+          <button class="textbtn" type="button" data-go="r6" style="margin-top:4px">▸ Simulate: session expired meanwhile</button>
+        </div>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- r2 · cancel fallback -->
+    <div class="scr" id="r2" data-rail="Cancel → sign-in" data-branch data-back="r1"
+      data-title="Prompt cancelled — fallback to sign-in"
+      data-note="Per docs/48, cancellation falls back to the sign-in screen. The session may still be valid server-side; sign-in is the honest path back in. Email preserved, password never. The spike question: does cancelling feel like a dead end, and does the tester know they aren't necessarily logged out?"
+      data-probe="Measure: does the tester tap Cancel then immediately try to dismiss the whole app, or do they find the sign-in path? Record the recovery path chosen.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><div class="brand" style="padding-left:8px">FinTracker</div></div>
+      <div class="content">
+        <div class="chiprow"><span class="chip offline" data-state="auth">Not signed in · no financial values on this screen</span></div>
+        <h3 style="font-size:22px;margin-top:10px">Sign in</h3>
+        <p style="color:var(--muted);font-size:13.5px">You cancelled unlock. Sign in to continue — your session is checked with the server.</p>
+        <input class="input" value="mark@example.com" readonly aria-label="Email">
+        <input class="input" type="password" value="············" readonly aria-label="Password">
+        <button class="btn primary block" type="button" data-go="r3">Sign in</button>
+        <button class="btn block" type="button" data-go="r3">Explore demo (read-only)</button>
+        <p class="backhint" style="margin-top:14px">System back ↑ returns to the unlock prompt</p>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- r3 · home masked fresh -->
+    <div class="scr" id="r3" data-rail="Home · masked (default)" data-back=""
+      data-title="Re-entry lands masked, fresh from the server"
+      data-note="Re-entry default is <b>masked</b>. The freshness chip is the server's own response time from the unlock-path fetch — not a client clock, not the snapshot of the prompt screen. Demo tenant marker is orthogonal and also present."
+      data-probe="Assert: every value on screen renders as bullets; chip count on this frame = 3 (fresh, demo, masked); no currency string anywhere in the DOM.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar">
+        <div class="brand" style="padding-left:8px">FinTracker</div>
+        <button class="iconbtn" type="button" data-go="r4" aria-label="Show values">◉</button>
+      </div>
+      <div class="content">
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Explore sample data. Changes are disabled.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 10:42 AM</span><span class="chip masked" data-state="masked">Values hidden</span></div>
+        <div class="balance">
+          <div><h3>Total net worth</h3><div class="amount">••••••••</div><div class="asof">Server response · 10:42 AM</div></div>
+          <button class="iconbtn" type="button" data-go="r4" aria-label="Show values">◉</button>
+        </div>
+        <div class="section"><h3>Accounts</h3></div>
+        <div class="panel">
+          <div class="row"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash</small></span><span class="money">••••</span></div>
+          <div class="row"><span class="avatar">I</span><span class="rowmain"><b>TFSA portfolio</b><small>Wealthsimple · Invest</small></span><span class="money">••••</span></div>
+          <div class="row"><span class="avatar">S</span><span class="rowmain"><b>High-interest savings</b><small>EQ Bank · Cash</small></span><span class="money">••••</span></div>
+        </div>
+        <div class="section"><h3>Needs review</h3></div>
+        <div class="panel"><button class="row tappable" type="button" data-go="r7"><span class="avatar">!</span><span class="rowmain"><b>1 alert to review</b><small>Notification previews show no financial values</small></span><span class="money">→</span></button></div>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem active" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem" type="button"><span class="glyph">⋮</span>More</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- r4 · values shown -->
+    <div class="scr" id="r4" data-rail="Home · values shown" data-back="r3"
+      data-title="Session reveal — state is explicit, not implied"
+      data-note="Reveal is a visible state (“Values shown”), reversible, and per docs/48 it re-masks on background/lock/logout. The chip pair on this frame proves the two axes don't collapse: fresh (server recency) and shown (display mask) are separate facts."
+      data-probe="Toggle Hide → assert every currency string flips to bullets in the same frame; then background the browser tab and re-check that reveal did not survive.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar">
+        <div class="brand" style="padding-left:8px">FinTracker</div>
+        <button class="iconbtn" type="button" data-go="r3" aria-label="Hide values">◎</button>
+      </div>
+      <div class="content">
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Explore sample data. Changes are disabled.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 10:42 AM</span><span class="chip masked" data-state="shown">Values shown · re-masks on background</span></div>
+        <div class="balance">
+          <div><h3>Total net worth</h3><div class="amount">$128,430.52</div><div class="asof">Server response · 10:42 AM · CAD</div></div>
+          <button class="iconbtn" type="button" data-go="r3" aria-label="Hide values">◎</button>
+        </div>
+        <div class="section"><h3>Accounts</h3></div>
+        <div class="panel">
+          <div class="row"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash</small></span><span class="money">$8,240.18</span></div>
+          <div class="row"><span class="avatar">I</span><span class="rowmain"><b>TFSA portfolio</b><small>Wealthsimple · Invest</small></span><span class="money">$42,190.34</span></div>
+          <div class="row"><span class="avatar">S</span><span class="rowmain"><b>High-interest savings</b><small>EQ Bank · Cash</small></span><span class="money">$18,000.00</span></div>
+        </div>
+        <div class="callout">Values shown = display only. Masking hides the screen from onlookers and switcher previews — it is not encryption and does not hide data from the server.</div>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem active" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem" type="button"><span class="glyph">⋮</span>More</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- r5 · recents preview -->
+    <div class="scr" id="r5" data-rail="App-switcher preview (privacy)" data-back="r4"
+      data-title="Android recents — preview is masked regardless of reveal"
+      data-note="The user was in r4 with values shown, then hit Home. The OS overview must render a generic card: no amounts, no account names. This is the frame the spike uses to judge whether the companion's privacy model survives contact with Android's own surfaces — a web PWA has weaker guarantees here, which is exactly the native-vs-web question."
+      data-probe="With values shown in-app, open recents: assert zero currency-shaped strings in the rendered card. Repeat with mask off. Both runs must be identical.">
+      <div class="status light" style="color:#e8ebf1"><span>9:41</span><span>▰</span></div>
+      <div class="content" style="background:linear-gradient(160deg,#20262f,#0c0e12);border-radius:0">
+        <p style="color:#b9c0cc;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;margin-top:8px">Recent apps</p>
+        <div style="background:#f4f6fa;color:#171a20;border-radius:18px;padding:14px;margin-top:8px;box-shadow:0 10px 26px #0006">
+          <div style="display:flex;gap:9px;align-items:center"><span class="appicon" style="width:26px;height:26px;border-radius:7px;background:#245db4;color:#fff;display:grid;place-items:center;font-weight:700;font-size:12px">F</span><b style="font-size:13.5px">FinTracker</b></div>
+          <div style="margin-top:10px;font-size:13px">Total net worth <b>••••••••</b></div>
+          <div style="font-size:13px;margin-top:4px">Everyday chequing <b>••••</b></div>
+          <div style="font-size:11.5px;color:#5d626c;margin-top:8px">Values hidden · preview masked</div>
+        </div>
+        <div class="chiprow" style="margin-top:14px"><span class="chip masked" data-state="masked" style="background:#252932;color:#c2c7d1">Values hidden in switcher preview</span></div>
+        <p style="color:#b9c0cc;font-size:12.5px">Tap the card to return — reveal state resets to masked (r3).</p>
+        <button class="btn primary block" type="button" data-go="r3">Return to FinTracker</button>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- r6 · session expired -->
+    <div class="scr" id="r6" data-rail="Variant: session expired" data-branch data-back="r1"
+      data-title="Unlock succeeded locally, session was expired server-side"
+      data-note="The biometric gate passed — but the server session died while backgrounded. Local unlock must <b>not</b> be able to resurrect it: the user lands on sign-in with an explanation, and the intended destination (home) is preserved as an internal route to continue after real authentication. This is the frame that keeps capability 1 honest."
+      data-probe="Ask: “You unlocked with your fingerprint — why are you being asked to sign in?” Correct answer must reference the server session, not the fingerprint. Failure here = the mockup teaches the wrong security model.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><div class="brand" style="padding-left:8px">FinTracker</div></div>
+      <div class="content">
+        <div class="banner err" data-state="expired"><span class="glyph">!</span><span><b>Session expired</b>Unlocking with biometrics can't restore a signed-out session. Sign in to continue.</span></div>
+        <div class="chiprow"><span class="chip offline" data-state="auth">Not signed in · no financial values on this screen</span></div>
+        <h3 style="font-size:22px;margin-top:10px">Sign in</h3>
+        <p style="color:var(--muted);font-size:13.5px">You'll return to where you were after sign-in — the destination is kept, the session is not.</p>
+        <input class="input" value="mark@example.com" readonly aria-label="Email">
+        <input class="input" type="password" value="············" readonly aria-label="Password">
+        <button class="btn primary block" type="button" data-go="r3">Sign in · continue to Home</button>
+        <button class="btn block" type="button" data-go="r2">Use another account</button>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- r7 · alert deep link target (cross-link into flow B) -->
+    <div class="scr" id="r7" data-rail="Alerts (cross-link)" data-back="r3"
+      data-title="“Needs review” row → Alerts"
+      data-note="Cross-link only — the notification handoff flow lives in <a href='flow-notification.html'>flow-notification.html</a>. Kept here so Home's one high-signal row has a real destination and Back has a list to return to."
+      data-probe="Back from here must return to Home with scroll position preserved, not to the top of the app.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><button class="iconbtn" type="button" data-go="r3" aria-label="Back">‹</button><div class="brand">Alerts</div><span style="width:44px"></span></div>
+      <div class="content">
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Alerts are informational; no actions persist.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 10:44 AM</span></div>
+        <div class="panel">
+          <button class="row tappable" type="button" data-go="r3"><span class="avatar">↑</span><span class="rowmain"><b>Price alert · VEQT</b><small>Manual price updated · Oct 24</small></span><span class="money">→</span></button>
+          <button class="row tappable" type="button" data-go="r3"><span class="avatar">↓</span><span class="rowmain"><b>Low-balance alert · chequing</b><small>Updated 10:42 AM</small></span><span class="money">→</span></button>
+        </div>
+        <div class="callout">Notification previews show no financial values.</div>
+        <p class="backhint">System back ↑ returns to Home</p>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+  </div></div>
+  </section>
+
+  <!-- ============ rail ============ -->
+  <aside class="rail">
+    <div class="card">
+      <h2>Steps</h2>
+      <ol class="steps" id="steps"></ol>
+      <p style="font-size:12.5px;color:var(--muted);margin:10px 0 0">↳ = branch / variant. The pill at the bottom of
+        each frame is Android system back — press it to test back behavior, including at the root.</p>
+    </div>
+    <div class="card">
+      <h2>Current step</h2>
+      <div class="note-title" id="noteTitle"></div>
+      <div class="note-body" id="noteBody"></div>
+      <div class="probe" id="probe"></div>
+    </div>
+    <div class="card verdict">
+      <h2>Capability 1 earns itself only if…</h2>
+      <ul>
+        <li>Re-entry to a valid session is measurably faster than the web sign-in path, without teaching users that biometrics = authentication.</li>
+        <li>Cancel and expired-session both land on sign-in with a preserved (internal) destination — zero dead ends.</li>
+        <li>Re-entry default is masked; reveal never survives backgrounding; recents preview is generic in every run.</li>
+        <li>Server auth stays authoritative: no frame offers fingerprint as recovery.</li>
+        <li>44px floor on every control; state carried by label + icon, not color alone.</li>
+      </ul>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px">If these hold on-device but the PWA can meet them
+        too (WebAuthn re-auth, screenshot/recents limits aside), capability 1 has not earned a native client — that
+        differential <b>is</b> the spike's measurement.</p>
+    </div>
+  </aside>
+</div>
+
+<script src="spike.js"></script>
+</main>
+</body></html>

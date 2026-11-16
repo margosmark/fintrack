@@ -1,0 +1,2405 @@
+[
+  {
+    "run": 0,
+    "timeline": [
+      "   +336ms  DOM badges=0 delta=\u25b2 +2.00 (+2.00%)vs previous close",
+      "  +2547ms  DOM badges=2 delta=\u25b2 +30.00 (+30.00%)vs previous closelive",
+      "  +2949ms  DOM badges=0 delta=\u25b2 +30.00 (+30.00%)vs previous close"
+    ],
+    "summary": {
+      "posted_at": 1791610892357,
+      "badge_seen": true,
+      "badge_samples": 2,
+      "first_badge_after_post_ms": 2547,
+      "badge_window_observed_ms": 401,
+      "first_1300_after_post_ms": 2547
+    },
+    "raw": {
+      "ev": {},
+      "samples": [
+        {
+          "t": 1791610892693,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610892894,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610893095,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610893296,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610893497,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610893698,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610893899,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610894100,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610894301,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610894502,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610894703,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610894904,
+          "badges": 2,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous closelive",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+        },
+        {
+          "t": 1791610895105,
+          "badges": 2,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous closelive",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+        },
+        {
+          "t": 1791610895306,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610895508,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610895709,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610895910,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610896111,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610896313,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610896514,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610896715,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610896916,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610897117,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610897319,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610897520,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610897721,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610897922,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610898123,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610898324,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610898525,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610898727,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610898928,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610899129,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610899330,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610899531,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610899732,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610899933,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610900134,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610900336,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610900537,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610900738,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610900939,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610901140,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610901341,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610901542,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610901743,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610901945,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610902146,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610902347,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610902548,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610902749,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610902950,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610903151,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610903352,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610903553,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610903754,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610903955,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610904156,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610904357,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610904558,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610904759,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610904961,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610905162,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610905363,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610905567,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610905769,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610905970,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610906171,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610906372,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610906573,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610906774,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610906975,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610907176,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610907378,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610907579,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610907780,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610907981,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610908182,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610908383,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610908584,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610908785,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610908987,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610909188,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610909389,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610909590,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610909791,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610909992,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610910193,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610910394,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610910595,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610910797,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610910998,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610911199,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610911401,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610911602,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610911803,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610912004,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610912205,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610912407,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610912608,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610912809,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610913010,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610913211,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610913412,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610913613,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610913814,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610914015,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610914217,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610914418,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610914619,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610914820,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610915021,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610915222,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610915423,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610915624,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610915825,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610916026,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610916227,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610916428,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610916629,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610916830,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610917031,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610917232,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610917433,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610917635,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610917836,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610918037,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610918238,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610918439,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610918640,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        }
+      ]
+    }
+  },
+  {
+    "run": 1,
+    "timeline": [
+      "   +313ms  DOM badges=0 delta=\u25b2 +2.00 (+2.00%)vs previous close",
+      "  +2526ms  DOM badges=2 delta=\u25b2 +30.00 (+30.00%)vs previous closelive",
+      "  +2928ms  DOM badges=0 delta=\u25b2 +30.00 (+30.00%)vs previous close"
+    ],
+    "summary": {
+      "posted_at": 1791610950473,
+      "badge_seen": true,
+      "badge_samples": 2,
+      "first_badge_after_post_ms": 2526,
+      "badge_window_observed_ms": 401,
+      "first_1300_after_post_ms": 2526
+    },
+    "raw": {
+      "ev": {},
+      "samples": [
+        {
+          "t": 1791610950786,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610950988,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610951189,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610951390,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610951591,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610951792,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610951993,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610952194,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610952396,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610952597,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610952798,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791610952999,
+          "badges": 2,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous closelive",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+        },
+        {
+          "t": 1791610953200,
+          "badges": 2,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous closelive",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+        },
+        {
+          "t": 1791610953401,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610953602,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610953803,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610954004,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610954205,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610954406,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610954608,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610954809,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610955010,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610955210,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610955411,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610955613,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610955814,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610956015,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610956216,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610956417,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610956618,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610956819,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610957021,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610957222,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610957423,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610957624,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610957825,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610958026,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610958228,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610958429,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610958630,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610958831,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610959032,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610959233,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610959434,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610959635,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610959836,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610960037,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610960239,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610960440,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610960641,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610960843,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610961044,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610961245,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610961446,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610961647,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610961848,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610962049,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610962250,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610962452,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610962653,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610962854,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610963055,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610963258,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610963459,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610963663,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610963864,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610964065,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610964266,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610964467,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610964669,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610964870,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610965071,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610965272,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610965473,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610965674,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610965875,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610966076,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610966277,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610966478,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610966680,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610966881,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610967082,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610967283,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610967484,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610967685,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610967887,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610968088,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610968289,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610968490,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610968691,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610968892,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610969093,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610969294,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610969495,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610969696,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610969898,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610970099,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610970300,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610970502,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610970703,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610970904,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610971105,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610971306,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610971507,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610971709,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610971910,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610972111,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610972312,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610972513,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610972715,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610972916,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610973117,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610973318,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610973519,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610973720,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610973921,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610974122,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610974323,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610974524,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610974726,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610974927,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610975128,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610975329,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610975530,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610975731,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610975932,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610976133,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610976334,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610976535,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791610976736,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        }
+      ]
+    }
+  },
+  {
+    "run": 2,
+    "timeline": [
+      "   +295ms  DOM badges=0 delta=\u25b2 +2.00 (+2.00%)vs previous close",
+      "  +2507ms  DOM badges=2 delta=\u25b2 +30.00 (+30.00%)vs previous closelive",
+      "  +2909ms  DOM badges=0 delta=\u25b2 +30.00 (+30.00%)vs previous close"
+    ],
+    "summary": {
+      "posted_at": 1791611009348,
+      "badge_seen": true,
+      "badge_samples": 2,
+      "first_badge_after_post_ms": 2507,
+      "badge_window_observed_ms": 401,
+      "first_1300_after_post_ms": 2507
+    },
+    "raw": {
+      "ev": {},
+      "samples": [
+        {
+          "t": 1791611009643,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611009844,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611010045,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611010246,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611010447,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611010648,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611010850,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611011051,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611011252,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611011453,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611011654,
+          "badges": 0,
+          "delta": "\u25b2 +2.00 (+2.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+        },
+        {
+          "t": 1791611011855,
+          "badges": 2,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous closelive",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+        },
+        {
+          "t": 1791611012056,
+          "badges": 2,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous closelive",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+        },
+        {
+          "t": 1791611012257,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611012458,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611012659,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611012861,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611013062,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611013263,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611013464,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611013665,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611013866,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611014067,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611014268,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611014469,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611014670,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611014871,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611015072,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611015273,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611015475,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611015676,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611015877,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611016078,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611016279,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611016480,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611016681,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611016882,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611017083,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611017285,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611017486,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611017687,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611017888,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611018089,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611018290,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611018491,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611018692,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611018893,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611019094,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611019295,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611019496,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611019697,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611019898,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611020099,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611020301,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611020502,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611020703,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611020904,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611021105,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611021306,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611021507,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611021708,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611021909,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611022110,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611022311,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611022512,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611022714,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611022915,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611023116,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611023317,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611023518,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611023719,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611023920,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611024121,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611024322,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611024524,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611024725,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611024926,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611025127,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611025328,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611025530,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611025731,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611025932,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611026133,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611026335,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611026536,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611026737,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611026938,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611027139,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611027340,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611027542,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611027743,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611027944,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611028145,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611028346,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611028547,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611028749,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611028950,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611029151,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611029352,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611029553,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611029755,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611029956,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611030157,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611030358,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611030559,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611030760,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611030961,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611031163,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611031364,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611031565,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611031766,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611031967,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611032168,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611032370,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611032571,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611032772,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611032973,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611033174,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611033375,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611033576,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611033777,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611033978,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611034180,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611034381,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611034582,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611034783,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611034984,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611035191,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611035392,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        },
+        {
+          "t": 1791611035593,
+          "badges": 0,
+          "delta": "\u25b2 +30.00 (+30.00%)vs previous close",
+          "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+        }
+      ]
+    }
+  }
+]

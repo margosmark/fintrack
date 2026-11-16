@@ -1,0 +1,64 @@
+[
+  {
+    "run": 0,
+    "summary": {
+      "stream_signal_after_s": 0.001691579818725586,
+      "post_status": 200,
+      "badge_seen": true,
+      "badge_samples": 64,
+      "badge_first_ms": 3012,
+      "badge_last_ms": 12605,
+      "gate_mid": {
+        "hold": true,
+        "held": [
+          null
+        ],
+        "starts": 1,
+        "released": 0,
+        "sse": []
+      },
+      "release": {
+        "starts": 1,
+        "released": 1,
+        "held_left": 0,
+        "sse": 0
+      }
+    },
+    "timeline": [
+      "   +288ms badges=0 stream=True delta=\u25b2 +2.00 (+2.00%)vs previous close",
+      "  +3012ms badges=2 stream=True delta=\u25b2 +30.00 (+30.00%)vs previous closelive",
+      " +12807ms badges=0 stream=True delta=\u25b2 +30.00 (+30.00%)vs previous close"
+    ]
+  },
+  {
+    "run": 1,
+    "summary": {
+      "stream_signal_after_s": 0.0042111873626708984,
+      "post_status": 200,
+      "badge_seen": true,
+      "badge_samples": 64,
+      "badge_first_ms": 3031,
+      "badge_last_ms": 12620,
+      "gate_mid": {
+        "hold": true,
+        "held": [
+          null
+        ],
+        "starts": 1,
+        "released": 0,
+        "sse": []
+      },
+      "release": {
+        "starts": 1,
+        "released": 1,
+        "held_left": 0,
+        "sse": 0
+      }
+    },
+    "timeline": [
+      "   +307ms badges=0 stream=True delta=\u25b2 +2.00 (+2.00%)vs previous close",
+      "  +3031ms badges=2 stream=True delta=\u25b2 +30.00 (+30.00%)vs previous closelive",
+      " +12821ms badges=0 stream=True delta=\u25b2 +30.00 (+30.00%)vs previous close"
+    ]
+  }
+]

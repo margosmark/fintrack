@@ -1,0 +1,176 @@
+{
+  "data": {
+    "funds": [
+      {
+        "profile": {
+          "fundFullName": "Vanguard FTSE Canada All Cap Index ETF",
+          "fundCurrency": "CAD",
+          "primarySectorEquityClassification": "ICB Sectors"
+        }
+      }
+    ],
+    "borHoldings": [
+      {
+        "holdings": {
+          "items": [
+            {
+              "issuerName": "Royal Bank of Canada",
+              "securityLongDescription": "Royal Bank of Canada",
+              "gicsSectorDescription": "Financials",
+              "icbSectorDescription": "Banks",
+              "icbIndustryDescription": "Financials",
+              "marketValuePercentage": 7.76333,
+              "sedol1": "2754383",
+              "quantity": 4878263,
+              "ticker": "RY",
+              "securityType": "EQ.STOCK",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 1382499734.2,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": "Toronto-Dominion Bank/The",
+              "securityLongDescription": "Toronto-Dominion Bank/The",
+              "gicsSectorDescription": "Financials",
+              "icbSectorDescription": "Banks",
+              "icbIndustryDescription": "Financials",
+              "marketValuePercentage": 5.49018,
+              "sedol1": "2897222",
+              "quantity": 5831076,
+              "ticker": "TD",
+              "securityType": "EQ.STOCK",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 977696512.92,
+              "bloombergIsoCountry": "CA",
+              "couponRate": 0
+            },
+            {
+              "issuerName": "Shopify Inc",
+              "securityLongDescription": "Shopify Inc",
+              "gicsSectorDescription": "Information Technology",
+              "icbSectorDescription": "Software & Computer Services",
+              "icbIndustryDescription": "Technology",
+              "marketValuePercentage": 4.90022,
+              "sedol1": "BX865C7",
+              "quantity": 4271969,
+              "ticker": "SHOP",
+              "securityType": "EQ.STOCK",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 872635107.63,
+              "bloombergIsoCountry": "CA",
+              "couponRate": 0
+            },
+            {
+              "issuerName": "RioCan Real Estate Investment Trust",
+              "securityLongDescription": "RioCan Real Estate Investment Trust",
+              "gicsSectorDescription": "Real Estate",
+              "icbSectorDescription": "Real Estate Investment Trusts",
+              "icbIndustryDescription": "Real Estate",
+              "marketValuePercentage": 0.11819,
+              "sedol1": "2229610",
+              "quantity": 1009910,
+              "ticker": "REI-U",
+              "securityType": "EQ.REIT",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 21046524.4,
+              "bloombergIsoCountry": "CA",
+              "couponRate": 0
+            },
+            {
+              "issuerName": "Constellation Software Inc/Canada",
+              "securityLongDescription": "CONSTELLATION SOFTWARE-WT 40",
+              "gicsSectorDescription": "Information Technology",
+              "icbSectorDescription": "Software & Computer Services",
+              "icbIndustryDescription": "Technology",
+              "marketValuePercentage": 0,
+              "sedol1": "BR52TP7",
+              "quantity": 38772,
+              "ticker": "2299955D",
+              "securityType": "EQ.WRT",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 0.39,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": null,
+              "securityLongDescription": "Canadian Dollar",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": null,
+              "icbIndustryDescription": null,
+              "marketValuePercentage": 0.25168,
+              "sedol1": null,
+              "quantity": 44818503.13,
+              "ticker": "CAD",
+              "securityType": "CRNY",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 44818503.13,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": "Montreal Exchange S&P/TSX 60 Index Future",
+              "securityLongDescription": "S&P/TSX 60 IX FUT Sep26",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": null,
+              "icbIndustryDescription": null,
+              "marketValuePercentage": 0.42077,
+              "sedol1": null,
+              "quantity": 176,
+              "ticker": "PTU6",
+              "securityType": "DE.IND",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 74930240,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": "AKITA Drilling Ltd",
+              "securityLongDescription": "AKITA Drilling Ltd",
+              "gicsSectorDescription": "Energy",
+              "icbSectorDescription": "Oil, Gas & Coal",
+              "icbIndustryDescription": "Energy",
+              "marketValuePercentage": 0,
+              "sedol1": "2013415",
+              "quantity": 11,
+              "ticker": "AKT",
+              "securityType": "EQ.STOCK",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 42.13,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": "Constellation Software Inc/Canada",
+              "securityLongDescription": "CONSTELLATION SOFTWARE-WT 40",
+              "gicsSectorDescription": "Information Technology",
+              "icbSectorDescription": "Software & Computer Services",
+              "icbIndustryDescription": "Technology",
+              "marketValuePercentage": 0,
+              "sedol1": "BR52TP7",
+              "quantity": 38772,
+              "ticker": "2299955D",
+              "securityType": "EQ.WRT",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 0.39,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            }
+          ],
+          "totalHoldings": 215,
+          "lastItemKey": null
+        }
+      }
+    ]
+  }
+}

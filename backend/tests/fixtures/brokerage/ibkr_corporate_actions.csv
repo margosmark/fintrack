@@ -1,0 +1,4 @@
+Statement,Header,Field Name,Field Value
+Statement,Data,Title,Activity Statement
+Corporate Actions,Header,Date,Type,Quantity,Amount,Currency,Description,Code,Symbol
+Corporate Actions,Data,20260215,Split,40,0,CAD,NVDA 4-for-1 split,,NVDA

@@ -1,0 +1,39 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "generated_at": "2026-10-11T02:06:33-0400",
+  "tenant": "m142-probe-1791698792@example.com",
+  "checks": [],
+  "chooser_text": "SEVERAL LISTINGS MATCH \u201cAPOTEX\u201d \u2014 PICK ONE\n\n\u2715\nAPTX.TO\nAPOTEX HEALTH CORP (Toronto, CAD)\nAPTX.NE\nAPOTEX HEALTH CORP (NEO, CAD)",
+  "axe_1440": {
+    "counts": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "minor": 0
+    },
+    "violations": []
+  },
+  "axe_390": {
+    "counts": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "minor": 0
+    },
+    "violations": []
+  },
+  "stored": [
+    {
+      "id": 467,
+      "symbol": "APTX.TO",
+      "name": "APOTEX HEALTH CORP",
+      "kind": "stock",
+      "listing_currency": "CAD",
+      "exchange": "TSX",
+      "dead_symbol": false,
+      "quote_miss_count": 0,
+      "dead_symbol_reason": null
+    }
+  ],
+  "failures": []
+}

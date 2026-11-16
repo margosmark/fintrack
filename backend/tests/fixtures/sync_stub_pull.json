@@ -1,0 +1,57 @@
+{
+  "institutions": [
+    {"ref": "stub-bank", "name": "Stub Bank (test provider)", "country": "CA"},
+    {"ref": "stub-credit-union", "name": "Stub Credit Union (test provider)", "country": "CA"}
+  ],
+  "transactions": [
+    {
+      "account_ref": "stub-acc-0",
+      "external_id": "TX-1001",
+      "date": "2025-11-03",
+      "amount_native": "-42.35",
+      "description": "CORNER STORE #1234 TORONTO ON",
+      "currency": "CAD",
+      "posting_date": null
+    },
+    {
+      "account_ref": "stub-acc-0",
+      "external_id": "TX-1002",
+      "date": "2025-11-04",
+      "amount_native": "2500.00",
+      "description": "ACME CORP PAYROLL DEPOSIT",
+      "currency": "CAD",
+      "posting_date": null
+    },
+    {
+      "account_ref": "stub-acc-0",
+      "external_id": "TX-1003",
+      "date": "2025-11-05",
+      "amount_native": "-12.99",
+      "description": "NETFLIX SUBSCRIPTION",
+      "currency": null,
+      "posting_date": "2025-11-06"
+    },
+    {
+      "account_ref": "stub-acc-1",
+      "external_id": "TX-1004",
+      "date": "2025-11-06",
+      "amount_native": "-60.00",
+      "description": "SHELL STATION 4471 MISSISSAUGA ON",
+      "currency": "CAD",
+      "posting_date": null
+    },
+    {
+      "account_ref": "stub-acc-9",
+      "external_id": "TX-9999",
+      "date": "2025-11-07",
+      "amount_native": "-5.00",
+      "description": "UNMAPPED ACCOUNT ROW",
+      "currency": "CAD",
+      "posting_date": null
+    }
+  ],
+  "balances": [
+    {"account_ref": "stub-acc-0", "amount": "1500.00", "currency": "CAD", "as_of": "2025-11-06"},
+    {"account_ref": "stub-acc-1", "amount": "300.00", "currency": "CAD", "as_of": "2025-11-06"}
+  ]
+}

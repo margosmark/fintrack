@@ -1,0 +1,337 @@
+{
+  "base": "http://127.0.0.1:4175",
+  "generated_at": "2026-10-05T04:06:00-0400",
+  "runs": [
+    {
+      "width": 390,
+      "height": 915,
+      "stableElementCount": {
+        "control": 1293,
+        "click": 1293
+      },
+      "trigger": "Add a symbol",
+      "control": {
+        "elementsDelta": 0,
+        "innerLenDelta": 0,
+        "visibleControlsDelta": 0,
+        "listboxDelta": 0,
+        "focusMoved": false,
+        "activeAfter": {
+          "tag": "body"
+        },
+        "domDelta": {
+          "added": {},
+          "removed": {}
+        }
+      },
+      "clicked": {
+        "elementsDelta": 29,
+        "innerLenDelta": 2364,
+        "visibleControlsDelta": 0,
+        "listboxDelta": 1,
+        "focusMoved": true,
+        "activeAfter": {
+          "tag": "input",
+          "role": "combobox",
+          "placeholder": "Add a symbol to follow\u2026",
+          "ariaLabel": "Security",
+          "testid": "",
+          "text": ""
+        },
+        "domDelta": {
+          "added": {
+            "button|option|security-option-BMO.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-ENB.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-NVDA|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-RY.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-TD.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-VTI|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-VXUS|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "input|combobox||Add a symbol to follow\u2026|true|field-ring rounded-lg border border-control bg-surface px-2.": 1,
+            "li|||||": 7,
+            "span|||||font-medium": 7,
+            "span|||||text-muted": 7,
+            "ul|listbox||||absolute z-20 mt-1 max-h-56 w-full overflow-y-auto rounded-l": 1
+          },
+          "removed": {
+            "input|combobox||Add a symbol to follow\u2026|false|field-ring rounded-lg border border-control bg-surface px-2.": 1
+          }
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "elements": 1322
+          },
+          {
+            "t": 0.3,
+            "elements": 1322
+          },
+          {
+            "t": 0.6,
+            "elements": 1322
+          },
+          {
+            "t": 0.9,
+            "elements": 1322
+          },
+          {
+            "t": 1.2,
+            "elements": 1322
+          },
+          {
+            "t": 1.5,
+            "elements": 1322
+          }
+        ]
+      },
+      "before": {
+        "url": "/investments",
+        "viewport": {
+          "w": 390,
+          "h": 915
+        },
+        "elements": 1293,
+        "innerLen": 113697,
+        "visibleControls": 40,
+        "dialogs": 0,
+        "listboxes": 0,
+        "listboxVisible": 0,
+        "comboboxes": [
+          {
+            "placeholder": "Add a symbol to follow\u2026",
+            "expanded": "false",
+            "focused": false,
+            "disabled": false
+          },
+          {
+            "placeholder": "Search symbol or name\u2026",
+            "expanded": "false",
+            "focused": false,
+            "disabled": false
+          }
+        ],
+        "live": "",
+        "active": {
+          "tag": "body"
+        },
+        "activeIsBody": true
+      },
+      "after": {
+        "url": "/investments",
+        "viewport": {
+          "w": 390,
+          "h": 915
+        },
+        "elements": 1322,
+        "innerLen": 116061,
+        "visibleControls": 40,
+        "dialogs": 0,
+        "listboxes": 1,
+        "listboxVisible": 1,
+        "comboboxes": [
+          {
+            "placeholder": "Add a symbol to follow\u2026",
+            "expanded": "true",
+            "focused": true,
+            "disabled": false
+          },
+          {
+            "placeholder": "Search symbol or name\u2026",
+            "expanded": "false",
+            "focused": false,
+            "disabled": false
+          }
+        ],
+        "live": "",
+        "active": {
+          "tag": "input",
+          "role": "combobox",
+          "placeholder": "Add a symbol to follow\u2026",
+          "ariaLabel": "Security",
+          "testid": "",
+          "text": ""
+        },
+        "activeIsBody": false
+      },
+      "keywalkWouldReportBefore": {
+        "result": "no-effect"
+      },
+      "keywalkWouldReportAfterM103": {
+        "result": "non-dialog-surface",
+        "effect": "focus moved to <input> Add a symbol to follow\u2026",
+        "checks": "M103 focus"
+      },
+      "screenshot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_3dec5e9f/frontend/scripts/a11y/m103-click-390.png"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "stableElementCount": {
+        "control": 1403,
+        "click": 1403
+      },
+      "trigger": "Add a symbol",
+      "control": {
+        "elementsDelta": 0,
+        "innerLenDelta": 0,
+        "visibleControlsDelta": 0,
+        "listboxDelta": 0,
+        "focusMoved": false,
+        "activeAfter": {
+          "tag": "body"
+        },
+        "domDelta": {
+          "added": {},
+          "removed": {}
+        }
+      },
+      "clicked": {
+        "elementsDelta": 29,
+        "innerLenDelta": 2364,
+        "visibleControlsDelta": 0,
+        "listboxDelta": 1,
+        "focusMoved": true,
+        "activeAfter": {
+          "tag": "input",
+          "role": "combobox",
+          "placeholder": "Add a symbol to follow\u2026",
+          "ariaLabel": "Security",
+          "testid": "",
+          "text": ""
+        },
+        "domDelta": {
+          "added": {
+            "button|option|security-option-BMO.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-ENB.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-NVDA|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-RY.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-TD.TO|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-VTI|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "button|option|security-option-VXUS|||block w-full truncate px-2.5 py-1.5 text-left text-sm transi": 1,
+            "input|combobox||Add a symbol to follow\u2026|true|field-ring rounded-lg border border-control bg-surface px-2.": 1,
+            "li|||||": 7,
+            "span|||||font-medium": 7,
+            "span|||||text-muted": 7,
+            "ul|listbox||||absolute z-20 mt-1 max-h-56 w-full overflow-y-auto rounded-l": 1
+          },
+          "removed": {
+            "input|combobox||Add a symbol to follow\u2026|false|field-ring rounded-lg border border-control bg-surface px-2.": 1
+          }
+        },
+        "samples": [
+          {
+            "t": 0.0,
+            "elements": 1432
+          },
+          {
+            "t": 0.3,
+            "elements": 1432
+          },
+          {
+            "t": 0.6,
+            "elements": 1432
+          },
+          {
+            "t": 0.9,
+            "elements": 1432
+          },
+          {
+            "t": 1.2,
+            "elements": 1432
+          },
+          {
+            "t": 1.5,
+            "elements": 1432
+          }
+        ]
+      },
+      "before": {
+        "url": "/investments",
+        "viewport": {
+          "w": 1440,
+          "h": 900
+        },
+        "elements": 1403,
+        "innerLen": 122777,
+        "visibleControls": 41,
+        "dialogs": 0,
+        "listboxes": 0,
+        "listboxVisible": 0,
+        "comboboxes": [
+          {
+            "placeholder": "Add a symbol to follow\u2026",
+            "expanded": "false",
+            "focused": false,
+            "disabled": false
+          },
+          {
+            "placeholder": "Search symbol or name\u2026",
+            "expanded": "false",
+            "focused": false,
+            "disabled": false
+          }
+        ],
+        "live": "",
+        "active": {
+          "tag": "body"
+        },
+        "activeIsBody": true
+      },
+      "after": {
+        "url": "/investments",
+        "viewport": {
+          "w": 1440,
+          "h": 900
+        },
+        "elements": 1432,
+        "innerLen": 125141,
+        "visibleControls": 41,
+        "dialogs": 0,
+        "listboxes": 1,
+        "listboxVisible": 1,
+        "comboboxes": [
+          {
+            "placeholder": "Add a symbol to follow\u2026",
+            "expanded": "true",
+            "focused": true,
+            "disabled": false
+          },
+          {
+            "placeholder": "Search symbol or name\u2026",
+            "expanded": "false",
+            "focused": false,
+            "disabled": false
+          }
+        ],
+        "live": "",
+        "active": {
+          "tag": "input",
+          "role": "combobox",
+          "placeholder": "Add a symbol to follow\u2026",
+          "ariaLabel": "Security",
+          "testid": "",
+          "text": ""
+        },
+        "activeIsBody": false
+      },
+      "keywalkWouldReportBefore": {
+        "result": "no-effect"
+      },
+      "keywalkWouldReportAfterM103": {
+        "result": "non-dialog-surface",
+        "effect": "focus moved to <input> Add a symbol to follow\u2026",
+        "checks": "M103 focus"
+      },
+      "screenshot": "/home/hermes/.hermes/kanban/boards/fintrack/workspaces/t_3dec5e9f/frontend/scripts/a11y/m103-click-1440.png"
+    }
+  ],
+  "deadControl": {
+    "injectedFirst": true,
+    "expected": "no-effect",
+    "result": {
+      "trigger": "Add nothing at all",
+      "result": "no-effect"
+    },
+    "passes": true
+  }
+}

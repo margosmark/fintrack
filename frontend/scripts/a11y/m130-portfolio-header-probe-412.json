@@ -1,0 +1,265 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "width": 412,
+  "generated_at": "2026-10-09T18:30:53-0400",
+  "tokens": {
+    "seeded": "token",
+    "demo": "token"
+  },
+  "checks": [
+    {
+      "check": "instrument: positions-delay wrapper armed before the SPA boots",
+      "ok": true,
+      "detail": "already"
+    },
+    {
+      "check": "seed: every write landed (no 4xx anywhere in the seed)",
+      "ok": true,
+      "detail": "14 calls ok"
+    },
+    {
+      "check": "seed: two investment accounts + a chequing control + two CAD securities with a 4-day-below baseline",
+      "ok": true,
+      "detail": "{\"tfsa\": 371, \"rrsp\": 372, \"chequing\": 373, \"a\": 240, \"b\": 241}"
+    },
+    {
+      "check": "wire: \u03a3 of the rows == total_value_cad == portfolio_value_cad == 14000.00 (cash is 0.00)",
+      "ok": true,
+      "detail": "{\"sigma\": \"14000.00\", \"total_value_cad\": \"14000.00\", \"cash_cad\": \"0.00\", \"portfolio_value_cad\": \"14000.00\"}"
+    },
+    {
+      "check": "wire: day \u0394 1400.00 / 11.11% / as-of = the carried-forward 2026-10-05 baseline, one date across every row",
+      "ok": true,
+      "detail": "{\"total_day_change_cad\": \"1400.00\", \"total_day_change_pct\": 11.11, \"day_change_as_of\": \"2026-10-05\", \"day_change_mixed_baseline\": false, \"day_of_rows\": [\"2026-10-05\", \"2026-10-05\"]}"
+    },
+    {
+      "check": "wire: the history scope is BOTH investment accounts and the chequing control is absent",
+      "ok": true,
+      "detail": "[371, 372]"
+    },
+    {
+      "check": "wire: stats.change_cad == last bucket \u2212 first bucket (the chart's own endpoints) and a real window is drawn",
+      "ok": true,
+      "detail": "{\"from_bucket\": \"2026-09-09\", \"to_bucket\": \"2026-10-09\", \"from_value_cad\": \"12600.00\", \"to_value_cad\": \"14000.00\", \"change_cad\": \"1400.00\", \"change_pct\": 11.11}"
+    },
+    {
+      "check": "instrument: the wrapper was re-armed after the navigation",
+      "ok": true,
+      "detail": "armed"
+    },
+    {
+      "check": "header: $14,000.00 \u2014 the server's \u03a3, rendered",
+      "ok": true,
+      "detail": "$14,000.00"
+    },
+    {
+      "check": "header: \u25b2 +$1,400.00 (+11.11%) with NO 'live' claim at rest",
+      "ok": true,
+      "detail": "\u25b2 +$1,400.00 (+11.11%)vs Oct 5 close"
+    },
+    {
+      "check": "header: the baseline caption names the real market day ('Oct 5 close'), never 'yesterday'",
+      "ok": true,
+      "detail": "\u25b2 +$1,400.00 (+11.11%)vs Oct 5 close"
+    },
+    {
+      "check": "header: the range sentence IS the response's stats \u2014 the two buckets and the signed change it subtracted, verbatim",
+      "ok": true,
+      "detail": "{\"range\": \"Over all time:+$1,400.00 (+11.11%)Sep 9 \\u2192 Oct 9?\", \"stats\": {\"from_bucket\": \"2026-09-09\", \"to_bucket\": \"2026-10-09\", \"from_value_cad\": \"12600.00\", \"to_value_cad\": \"14000.00\", \"change_cad\": \"1400.00\", \"change_pct\": 11.11}, \"captured\": {\"url\": \"/api/v1/portfolio/value-history?from=2026-09-09&to=2026-10-09\", \"from\": \"2026-09-09\", \"to\": \"2026-10-09\", \"granularity\": \"day\", \"buckets\": 31, \"stats\": {\"from_bucket\": \"2026-09-09\", \"to_bucket\": \"2026-10-09\", \"from_value_cad\": \"12600.00\", \"to_value_cad\": \"14000.00\", \"change_cad\": \"1400.00\", \"change_pct\": 11.11}, \"accounts\": [371, 372]}}"
+    },
+    {
+      "check": "header: no cash line \u2014 zero cash needs nothing to explain",
+      "ok": true,
+      "detail": "None"
+    },
+    {
+      "check": "sigma row: the CAD total and the day \u0394 % equal the header's ($14,000.00 / +11.11%) \u2014 one payload, one number",
+      "ok": true,
+      "detail": "{\"Total day change\": \"+11.11%\", \"Total market value (CAD)\": \"$14,000.00\", \"Total unrealized (CAD)\": \"$0.00\"}"
+    },
+    {
+      "check": "sigma row: every total it prints is NAMED (no bare number could be mistaken for a cross-currency \u03a3)",
+      "ok": true,
+      "detail": "TotalTotal day change: +11.11%Total market value (CAD): $14,000.00Total unrealized (CAD): $0.00\u2014"
+    },
+    {
+      "check": "layout @412: the header card, the value and the \u0394 all stay inside the viewport (wrap, never clip), value stacks above \u0394",
+      "ok": true,
+      "detail": "{\"vw\": 412, \"head_right\": 392, \"value_right\": 375, \"day_right\": 375, \"value_bottom\": 275, \"day_top\": 279, \"outside\": null, \"overhang\": null}"
+    },
+    {
+      "check": "range: seven focusable toggles in a labelled group, one pressed",
+      "ok": true,
+      "detail": "[{\"label\": \"1M\", \"pressed\": \"false\", \"focusable\": true}, {\"label\": \"3M\", \"pressed\": \"false\", \"focusable\": true}, {\"label\": \"6M\", \"pressed\": \"false\", \"focusable\": true}, {\"label\": \"YTD\", \"pressed\": \"false\", \"focusable\": true}, {\"label\": \"1Y\", \"pressed\": \"false\""
+    },
+    {
+      "check": "tick: POST /prices moved AAA 100 \u2192 110 (manual wins)",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "tick: the header re-evaluated LIVE to $15,000.00 with the 'live' badge (100\u00d7110 + 200\u00d720, server primitives only)",
+      "ok": true,
+      "detail": "value=$15,000.00live day=\u25b2 +$2,400.00 (+19.05%)vs Oct 5 close"
+    },
+    {
+      "check": "tick: the day \u0394 re-evaluated against the SAME pinned baseline \u2192 \u25b2 +$2,400.00 (+19.05%), caption unchanged",
+      "ok": true,
+      "detail": "\u25b2 +$2,400.00 (+19.05%)vs Oct 5 close"
+    },
+    {
+      "check": "tick: the range sentence did NOT move \u2014 it belongs to the value-history response, which has no quote in it",
+      "ok": true,
+      "detail": "Over all time:+$1,400.00 (+11.11%)Sep 9 \u2192 Oct 9?"
+    },
+    {
+      "check": "settle: the server payload landed \u2014 badge gone, $15,000.00 and +$2,400.00 now server-owned",
+      "ok": true,
+      "detail": "value=$15,000.00 day=\u25b2 +$2,400.00 (+19.05%)vs Oct 5 close"
+    },
+    {
+      "check": "range: picking 6M is a real re-request, not a relabel \u2014 the server answers with this tenant's own move (+$2,400.00 = the settled 15,000.00 minus the 12,600.00 baseline)",
+      "ok": true,
+      "detail": "Over 6 months:+$2,400.00 (+19.05%)Sep 9 \u2192 Oct 9?"
+    },
+    {
+      "check": "range: the pressed state followed the click (one toggle, 6M)",
+      "ok": true,
+      "detail": "[[\"1M\", \"false\"], [\"3M\", \"false\"], [\"6M\", \"true\"], [\"YTD\", \"false\"], [\"1Y\", \"false\"], [\"5Y\", \"false\"], [\"All\", \"false\"]]"
+    },
+    {
+      "check": "a11y: the range toggles take focus and Tab moves between them",
+      "ok": true,
+      "detail": "{\"ok\": true, \"start\": true, \"moved\": true, \"focusable\": true, \"open\": true, \"rows\": 33}"
+    },
+    {
+      "check": "a11y: the chart's data-table fallback is focusable, opens, and holds the selected range's rows",
+      "ok": true,
+      "detail": "{\"ok\": true, \"start\": true, \"moved\": true, \"focusable\": true, \"open\": true, \"rows\": 33}"
+    },
+    {
+      "check": "axe: 0 critical + 0 serious on /investments, both themes",
+      "ok": true,
+      "detail": "{'investments-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'investments-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}}"
+    },
+    {
+      "check": "console: no errors on the throwaway tenant",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "demo: the Explore-the-demo door is on the login page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "instrument: the wrapper was re-armed for the demo tenant",
+      "ok": true,
+      "detail": "armed"
+    },
+    {
+      "check": "demo: the WIRE's own \u03a3 (sum of the rows it ships) equals its total_value_cad \u2014 no second sum anywhere",
+      "ok": true,
+      "detail": "{\"wireSigma\": 228601.68000000002, \"wireTotal\": 228601.68, \"authed\": true}"
+    },
+    {
+      "check": "demo: the header's value == the \u03a3 row's CAD total + the cash line's cash \u2014 the two legs it names, added SERVER-side",
+      "ok": true,
+      "detail": "{\"header\": \"$227,739.75\", \"sigmaCell\": 228601.68, \"cash\": -861.93}"
+    },
+    {
+      "check": "demo: the rendered header equals portfolio_value_cad from the wire (\u00b1 one refetch) \u2014 and that equals \u03a3 + cash on the wire too",
+      "ok": true,
+      "detail": "{\"header\": \"$227,739.75\", \"wirePort\": 227739.75, \"wireSigma\": 228601.68000000002, \"wireCash\": -861.93}"
+    },
+    {
+      "check": "demo: the day change carries a real 'vs <date> close' caption (and the server names that date)",
+      "ok": true,
+      "detail": "{\"day\": \"\\u25b2 +$1,633.38 (+0.72%)vs Oct 8 close\", \"as_of\": \"2026-10-08\", \"cad\": \"1633.38\", \"pct\": 0.72}"
+    },
+    {
+      "check": "demo: the sentence IS the response's own stats \u2014 same two buckets, same signed change (captured off the request)",
+      "ok": true,
+      "detail": "{\"sentence\": \"Over all time:+$227,739.74Oct 2 \\u2192 Oct 9?\", \"captured\": {\"url\": \"/api/v1/portfolio/value-history\", \"from\": \"2025-10-02\", \"to\": \"2026-10-09\", \"granularity\": \"day\", \"buckets\": 373, \"stats\": {\"from_bucket\": \"2025-10-02\", \"to_bucket\": \"2026-10-09\", \"from_value_cad\": \"0.00\", \"to_value_cad\": \"227739.74\", \"change_cad\": \"227739.74\", \"change_pct\": null}, \"accounts\": [77, 78, 79]}, \"stats\": {\"from_bucket\": \"2025-10-02\", \"to_bucket\": \"2026-10-09\", \"from_value_cad\": \"0.00\", \"to_value_cad\": \"227739.74\", \"change_cad\": \"227739.74\", \"change_pct\": null}}"
+    },
+    {
+      "check": "demo: the portfolio chart drew (has_data with buckets) over the summed investment accounts",
+      "ok": true,
+      "detail": "{\"buckets\": 13, \"accounts\": [77, 78, 79]}"
+    },
+    {
+      "check": "demo: the cash line appears only when there IS cash to explain",
+      "ok": true,
+      "detail": "Holdings $228,601.68 \u00b7 Cash in investment accounts -$861.93"
+    },
+    {
+      "check": "demo: one range state drives both \u2014 1M relabels the sentence AND the server answers with a window starting inside the month",
+      "ok": true,
+      "detail": "{\"all\": \"Over all time:+$227,739.74Oct 2 \\u2192 Oct 9?\", \"1M\": \"Over 1 month:+$89,736.53 (+65.02%)Sep 9 \\u2192 Oct 9?\", \"all_from\": \"2025-10-02\", \"1M_from\": \"2026-09-09\"}"
+    },
+    {
+      "check": "axe: 0 critical + 0 serious on BOTH tenants' /investments",
+      "ok": true,
+      "detail": "{'investments-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'investments-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'demo-investments-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'demo-investments-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}}"
+    },
+    {
+      "check": "console: no errors on the demo tenant",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "axe": {
+    "investments-dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "investments-light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "demo-investments-dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "demo-investments-light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    }
+  },
+  "shots": [
+    "/home/hermes/fin_tracker/wt/t_0da6af9f/frontend/scripts/a11y/m130-portfolio-header-412.png",
+    "/home/hermes/fin_tracker/wt/t_0da6af9f/frontend/scripts/a11y/m130-demo-investments-412.png",
+    "/home/hermes/fin_tracker/wt/t_0da6af9f/frontend/scripts/a11y/m130-demo-1m-412.png"
+  ],
+  "wrap": {
+    "throwaway": "armed",
+    "demo": "armed"
+  },
+  "console_a": [],
+  "profile": {
+    "wipe": "wiped"
+  },
+  "console_b": [],
+  "passed": 40,
+  "failed": 0
+}

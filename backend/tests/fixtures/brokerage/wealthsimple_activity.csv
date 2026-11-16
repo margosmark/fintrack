@@ -1,0 +1,6 @@
+activity_type,activity_sub_type,symbol,name,currency,description,effective_date,quantity,unit_price,commission,net_cash_amount,account_id
+Buy,,VEQT,Vanguard All-Equity ETF,CAD,BUY VEQT,2026-01-05,10,40.00,0,400.00,ws-1
+Buy,Express,SHOP,Shopify Inc,CAD,BUY SHOP EXPRESS,2026-01-12,2,150.00,0,300.00,ws-1
+Dividend,DRIP,VEQT,Vanguard All-Equity ETF,CAD,DRIP VEQT,2026-02-15,0.25,40.00,0,10.00,ws-1
+Grant,CESG,,RESP CESG Grant,CAD,RESP CESG,2026-03-01,0,0,0,100.00,ws-1
+Foo,WEIRD,,Unknown Thing,CAD,WEIRD ROW,2026-04-01,1,1.00,0,1.00,ws-1

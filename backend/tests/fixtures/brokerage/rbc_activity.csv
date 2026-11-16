@@ -1,0 +1,5 @@
+Date,Account,Symbol,Description,Activity Type,Quantity,Price,Currency,Settlement Amount
+2026-01-05,12-34567,,Cash contribution,Deposit,,0.00,CAD,10000.00
+2026-01-12,12-34567,SHOP,Shopify Inc,Buy,10,150.00,CAD,-1500.00
+2026-01-31,12-34567,SHOP,Shopify Inc dividend,Dividend,,0.00,CAD,12.50
+2026-02-10,12-34567,SHOP,Shopify Inc,Sell,4,160.00,CAD,640.00

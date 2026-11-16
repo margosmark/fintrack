@@ -1,0 +1,5 @@
+Account,Flag,Check Number,Date,Payee,Category,Master Category,Sub Category,Memo,Outflow,Inflow,Cleared,Running Balance
+Chequing,,101,2026-02-01,Corner Market,,Everyday,Groceries,Weekly shop,45.67,,cleared,1500.00
+Chequing,,102,2026-02-03,ACME Payroll,,Income,Salary,,,2000.00,reconciled,3500.00
+Chequing,,103,2026-02-05,Corner Market,,Everyday,Everyday: Snacks,,20.00,,uncleared,3480.00
+Chequing,,104,2026-02-07,Corner Market,,Everyday,Groceries,,,,cleared,3480.00

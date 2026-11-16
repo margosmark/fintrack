@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Every HTTP call (okhttp DNS/connect) throws SecurityException without
+         this — and the boot-restore refresh fires before any UI renders, so a
+         missing declaration crashes the process at launch (t_6781e4c5). -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="@string/app_name"
+        android:theme="@style/Theme.FinTracker"
+        android:allowBackup="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Deep links: fintracker://app/... and https://…/app/...
+                 Resolution is NOT delegated to the nav graph: the shell parses
+                 the URI and gates it (authenticated + extant + same-tenant) in
+                 navigation/DeepLinks.kt, rendering the generic unavailable
+                 destination for anything unknown, stale, or foreign.
+                 The https host is the SERVED host (fintrac.…, the deployed
+                 stack) — NOT the apex, whose TLS is self-signed and which does
+                 not serve the app. Must match navigation/DeepLinks.kt
+                 SERVED_HOSTS exactly, one host per <data> element, no
+                 wildcards or suffixes. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="fintracker"
+                    android:host="app" />
+                <data android:scheme="https" android:host="fintrac.princessandmark.com" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

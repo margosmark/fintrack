@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brokerage imports — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Brokerage imports</h1>
+      <p class="sub">Where each broker keeps its activity export, which file to take, and exactly what the importer refuses.</p>
+      <ol class="steps">
+        <li class="card"><h2>Export activity, not positions</h2><p>Every one of these profiles wants a transaction file — one row per trade, dividend, deposit or fee — not a holdings snapshot. Positions files carry a balance with no history, so there is nothing to reconcile against. Take the widest date range you have not imported yet: re-reading the same file a second time stages nothing new, because duplicates are decided on account, security, date, action, quantity and price.</p></li>
+        <li class="card"><h2>Pick the broker before you upload</h2><p>Imports → choose an investment account → Import as “Investment trades” → Broker export. Leaving it on auto-detect matches the file header against every profile; choosing the institution pins the parser and refuses a file that does not match that broker's export instead of force-fitting it. Either way you get the same staged batch: review the rows, then commit — nothing counts toward balances or reports until you do.</p></li>
+        <li class="card"><h2>Questrade</h2><p>Where: Reports → Account Activity → all activity types → Download (CSV). Take the whole activity list, not a trades-only slice, so deposits and dividends land in the same file. Quirk: the export carries both Transaction Date and Settlement Date; only the trade date is used, and the settlement column is reported as read-and-ignored rather than silently feeding a calculation.</p></li>
+        <li class="card"><h2>Wealthsimple</h2><p>Where: the account's Activity list → Download activities → CSV. Quirk: express orders are labelled “Buy - Express” / “Sell - Express” in the file. Those labels are recognized, along with DRIP sub-types; anything Wealthsimple writes that is not in the profile's vocabulary comes back as a listed row with its line number rather than vanishing.</p></li>
+        <li class="card"><h2>Interactive Brokers (and IBKR Canada)</h2><p>Where: Performance &amp; Reports → Flex Queries → Activity Flex Query, and set Format = CSV — the two supported layouts are the flat CSV export and the sectioned Activity Statement, which is read block by block. Quirk: every row states its own CurrencyPrimary, so one file can hold CAD and USD rows side by side and each is treated in its own currency. Canadian accounts export the identical layout; only CurrencyPrimary reads CAD. Leave the Corporate Actions section out of the routine query — see “What the importer refuses” below.</p></li>
+        <li class="card"><h2>Fidelity (US)</h2><p>Where: Accounts &amp; Trade → Activity &amp; Orders → Download CSV. Quirk: the file states no currency at all, so every row is USD no matter which account you import it into — including a CAD account, where the conversion then runs through your cached exchange rates. Commission and fees arrive in two separate columns and are added together.</p></li>
+        <li class="card"><h2>TD Direct Investing</h2><p>Where: WebBroker → the account → Activity → Export (CSV). Quirk: the CAD and USD sides of an account are separate exports, so export both and import each against its matching account — nothing here merges them. Quantity notation such as 1E+1 is read as 10, and quoted descriptions that wrap across two lines stay one row.</p></li>
+        <li class="card"><h2>RBC Direct Investing</h2><p>Where: My Portfolio → Account Activity → Download (CSV). Quirk: the export has no commission column, so trades import with commission 0.00. That is stated as a notice on the preview — check the rows against your statement rather than assuming the broker charged nothing.</p></li>
+        <li class="card"><h2>National Bank Direct Brokerage</h2><p>Where: Account → Transaction History → Download (CSV). Quirk: NBDB publishes the same file in English or French. The French columns (Achat, Vente, Dividende, Dépôt, Quantité, Prix, Devise) and the semicolon separators are read as-is, and rows with no currency take the currency of the account you import into.</p></li>
+        <li class="card"><h2>What the importer refuses</h2><p>Two things stop the whole file rather than a row. A date or a number that cannot be read: importing the rows around it would leave a history that looks complete and is not, so the file is refused with the line number and the formats that would work. A split, merger or reorganization: no supported export states the share count an adjustment needs, so the row is refused with a pointer to entering it by hand instead of being turned into a wrong position. Everything else that cannot become a trade is listed with its line number, the raw activity word and the institution — never dropped in silence.</p></li>
+      </ol>
+      <div class="card table-card">
+        <h2>What is never guessed</h2>
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <thead><tr><th scope="col">Situation</th><th scope="col">What you get</th></tr></thead>
+            <tbody>
+              <tr><td>A date in an order the profile does not accept (05/06/2026)</td><td>The row is listed with its line number and the date formats that would work — never a silently swapped day and month. No Canadian profile reads a slash date at all, because the ambiguity cannot be resolved from the data.</td></tr>
+              <tr><td>A quantity, price or amount that is not a number</td><td>The whole file is refused with the line number, instead of importing the rows around it.</td></tr>
+              <tr><td>A split, merger or reorganization in the export</td><td>The whole file is refused with the line number and the activity word. Add the adjustment by hand on the Investments page, then re-import with that activity excluded.</td></tr>
+              <tr><td>An activity word the broker uses but the profile does not</td><td>A listed row carrying its line number, the raw word and the institution. It is never turned into a guess.</td></tr>
+              <tr><td>A currency the file does not state</td><td>A per-broker rule: Fidelity rows are always USD; NBDB and RBC blank cells take the account's currency; every other profile requires the cell to be a real three-letter code.</td></tr>
+              <tr><td>The same file imported twice</td><td>The second run stages the rows as duplicates and imports nothing new. Duplicates stay in the batch for you to review and can be included one by one.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Brokerage imports.</span></div></footer>
+</body>
+</html>

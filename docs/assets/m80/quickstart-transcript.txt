@@ -1,0 +1,52 @@
+# M80 executed quickstart — 2026-10-01T05:08:11Z
+# origin: http://localhost:18080
+# account: m80-quickstart-6f21a82d@example.com (created for this run, removed at the end)
+
+$ POST /api/v1/auth/register  {"email": "m80-quickstart-6f21a82d@example.com", "password": "<redacted>"}
+< 201  {"access_token": "<redacted>", "token_type": "bearer", "user": {"currency_tracker_enabled": true, "email": "m80-quickstart-6f21a82d@example.com", "encryption_required": false, "id": 108, "llm_base_url": null, "llm_model": null, "llm_provider": "ollama", "name": null, "privacy_mode": false}}
+
+$ POST /api/v1/auth/mcp-tokens  {"name": "quickstart-readonly", "policy": "read_only"}
+< 201  {"created_at": "2026-10-01T05:08:11.907182Z", "expires_at": "2026-12-30T05:08:11.908831Z", "id": 5, "last_used_at": null, "name": "quickstart-readonly", "policy": "read_only", "token": "<redacted>"}
+# token shown once above -> <redacted>
+
+--- MCP client → http://localhost:18080/mcp/mcp (streamable-http, Bearer <redacted>) ---
+initialize -> OK (protocol negotiated, session id issued)
+
+$ tools/list -> 52 tools
+  every tool carries a title marker: 52/52
+  sample annotations: {"name": "health_check", "read_only_hint": true, "title": "health_check \u00b7 read-only token"}
+  mutating tools in the list: none
+
+$ tools/call health_check  (the read side: this one is allowed)
+< isError=False  {
+  "status": "healthy",
+  "timestamp": "2026-10-01T05:08:12.219573+00:00",
+  "checks": {
+    "database": {
+      "status": "healthy",
+      "latency_ms": 0
+    }
+  }
+}
+
+$ tools/call accounts_create  (a read-only token trying to write)
+< isError=True  {"error": 403, "detail": {"detail": "This MCP token is read-only; accounts_create would modify data. Mint a full token (POST /auth/mcp-tokens with policy=\"full\") to write.", "code": "mcp_read_only"}}
+
+--- receipts ---
+$ GET /api/v1/mcp-audit?limit=50
+< 200  {"items": [{"args_hash": "246203ce613933d0ced0d97e7092ff984f54ae46deb5695ffe8b5294df81a126", "created_at": "2026-10-01T05:08:12.277893Z", "duration_ms": 0, "id": 5, "mcp_token_id": 5, "response_code": 403, "tool": "accounts_create"}, {"args_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a", "created_at": "2026-10-01T05:08:12.229610Z", "duration_ms": 73, "id": 4, "mcp_token_id": 5, "response_code": 200, "tool": "health_check"}], "total": 2}
+# 2 rows, newest first
+#   2026-10-01T05:08:12.277893Z  accounts_create      403  0ms  token=5
+#   2026-10-01T05:08:12.229610Z  health_check         200  73ms  token=5
+
+$ DELETE /api/v1/auth/mcp-tokens/5
+< 204  "(empty)"
+$ POST /mcp/mcp  {"jsonrpc": "2.0", "id": 1, "method": "ping"}
+< 401  {"error": "Invalid MCP token"}
+# revoked token -> /mcp/mcp 401, the door stays shut
+
+$ DELETE /api/v1/users/me  {"current_password": "<redacted>"}
+< 204  "(empty)"
+# account removed: 204 (receipts cascade with it)
+
+# done — 2026-10-01T05:08:12Z

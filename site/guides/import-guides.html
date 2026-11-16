@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import guides by bank — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Import guides by bank</h1>
+      <p class="sub">Where each Canadian institution keeps its export, which file to pick, and the date quirks that bite.</p>
+      <ol class="steps">
+        <li class="card"><h2>Pick the format before you pick the file</h2><p>Three formats reach the Imports page. OFX and QFX are the same thing — QFX is just Quicken's name on OFX — and both are detected automatically with no column mapping, so grab whichever your bank offers. QIF is the older line-based format and is also detected on its own. CSV always needs its columns mapped once per institution; the wizard remembers the mapping, so it costs you one pass per bank and never again. Nothing is sent anywhere: the file is read by the server you host, which does not call out to a third party.</p></li>
+        <li class="card"><h2>Preview first, Confirm second</h2><p>Press Preview import and the whole file is parsed without writing a row. You get the column roles it used, every row's verdict — new, exact duplicate or near-duplicate — and the CAD amount produced from the cached exchange rate for that date. Confirm stores the batch for review; Cancel leaves nothing behind, so it is safe to preview a file you are not sure about.</p></li>
+        <li class="card"><h2>How duplicates are decided</h2><p>An exact duplicate matches something you already have on account, date, amount and description. A near-duplicate carries the same amount within three days with a payee close enough to be the same merchant — the preview names the matching row, how many days apart it is, and whether that row is already imported or still waiting in another import. Near-duplicates are imported and stay flagged in the batch: nothing is ever dropped for you. If you decide one is a repeat, discard the batch, or fix the row after you commit.</p></li>
+        <li class="card"><h2>Sample files, no real money in them</h2><p>Four synthetic statements, one per format, with invented merchants and amounts. Run one through Preview first if you want to see the verdicts before pointing the importer at a real export.</p>
+          <p class="meta"><a href="samples/sample.csv">Sample CSV</a> · <a href="samples/sample.ofx">Sample OFX</a> · <a href="samples/sample.qfx">Sample QFX</a> · <a href="samples/sample.qif">Sample QIF</a></p></li>
+        <li class="card"><h2>Date formats are where imports go wrong</h2><p>QIF files carry no locale, so a date like 05/06/2026 is read month-first — March-style order, the same convention Quicken used — unless one of the numbers is over 12, in which case the data settles it. In CSV the date order is yours to set: the wizard's Date format dropdown does the work, and the preview shows the parsed date on every row before you commit, so a swapped day and month is visible as a weird-looking date rather than a silently wrong one. Watch the first row of any preview; if it looks like last month instead of this month, change the format and preview again.</p></li>
+        <li class="card"><h2>RBC Royal Bank</h2><p>Where: sign in, open the account, and look for a Download account history control on the account activity page — credit cards use the same control from the card's activity view. Format: RBC offers CSV as well as QFX; take the QFX when it is there. Quirk: RBC's CSV can split money into separate withdrawal and deposit columns, so choose Debit &amp; Credit in the mapping wizard instead of a single amount — the sign then takes care of itself.</p></li>
+        <li class="card"><h2>TD Canada Trust (EasyWeb)</h2><p>Where: Accounts, open the account, then Download or Export from the account activity list. Format: QFX for chequing, savings and most cards, CSV everywhere. Quirk: card exports sometimes list every charge as a positive number; the Credits positive switch in the mapping wizard flips the whole file to the right sign in one click.</p></li>
+        <li class="card"><h2>BMO (Bank of Montreal)</h2><p>Where: Accounts, open the account, then Download from the account activity page. Format: CSV and QFX. Quirk: BMO CSVs tend to leave the description column carrying reference text alongside the payee; the preview shows it verbatim, and you can clean any row up after you commit rather than editing the export.</p></li>
+        <li class="card"><h2>Scotiabank</h2><p>Where: Accounts, then Account history, then Download. Format: CSV and QFX. Quirk: Scotiabank's site shows dates one way while some exports write them another — set Date format in the wizard to match the file itself, not the page you downloaded it from, and confirm on the preview's first row.</p></li>
+        <li class="card"><h2>Tangerine</h2><p>Where: Accounts, open the account, then look for Download under Recent activity. Format: CSV and QFX. Quirk: Tangerine's Chequing and Savings exports are straightforward; credit-card activity exports separately, so download the card statement rather than mixing the two into one file.</p></li>
+        <li class="card"><h2>Wealthsimple</h2><p>Where: the web app (the phone app does not export), open the account, then use the download control on its Transactions list. Format: CSV. Quirk: investment activity is a different file from Cash activity. Investment trades belong on the Import mode switch set to Investment trades, where the activity columns, symbol and quantity are read; bank-style CSVs go through the normal path.</p></li>
+        <li class="card"><h2>EQ Bank</h2><p>Where: open the account in online banking and look for a Download or Export control. Format: CSV when offered. Known gap: EQ Bank has been one of the few Canadian banks whose portal only publishes PDF statements, which this importer does not read — if your account shows no CSV or QFX option, there is no file to import yet and the statement cannot be converted. Everything else in these guides applies the moment an export appears.</p></li>
+        <li class="card"><h2>Rogers Bank</h2><p>Where: sign in to the card account and look for Download under account activity or statements. Format: CSV for card activity. Quirk: Rogers Bank is credit-card only, so there is never a chequing file to worry about; charges and refunds share one signed amount column, and refunds come through positive.</p></li>
+        <li class="card"><h2>MBNA</h2><p>Where: sign in, open the card account, then Download from the account history or statements area. Format: CSV and QFX. Quirk: MBNA runs on TD's platform, so the layout follows EasyWeb — the same Credits positive switch applies if charges arrive unsigned.</p></li>
+        <li class="card"><h2>Credit unions (Desjardins, Vancity, Coast Capital, Meridian, and the rest)</h2><p>Where: every credit union runs one of a handful of online-banking platforms, and they all expose a download on the account activity page — the label is usually Download, Export or Save as. Format: CSV is universal; OFX or QFX is offered on most platforms but not all. Quirk: because the platform is shared across unions, the mapping you set up for one institution usually carries over to another on the same system, so a second credit union often needs no setup at all.</p></li>
+        <li class="card"><h2>When a file will not import</h2><p>The error names the exact reason rather than failing silently: an unrecognized file means the export is not one of the three formats; a parse error names the record that could not be read (a missing date or amount stops the file instead of dropping the row); a missing mapping means the CSV has no saved column map yet, and the wizard opens so you can set one. Nothing partially imports — a rejected file leaves the database exactly as it was.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Import guides by bank.</span></div></footer>
+</body>
+</html>

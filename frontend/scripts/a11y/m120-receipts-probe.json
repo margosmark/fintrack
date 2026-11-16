@@ -1,0 +1,187 @@
+{
+  "checks": [
+    {
+      "check": "seed tenant (register + login)",
+      "ok": true,
+      "detail": "register={\"status\": \"accepted\", \"detail\": \"Registration accepted: if this address was free, an account now exists with the passwo token=True"
+    },
+    {
+      "check": "probe user id",
+      "ok": true,
+      "detail": "{\"id\": 369, \"email\": \"m120-1791489610505@example.com\", \"name\": \"M120 Probe\", \"privacy_mode\": false, \"currency_tracker_enabled\": true, \"llm_provider\": \"ollama\", "
+    },
+    {
+      "check": "probe account",
+      "ok": true,
+      "detail": "{\"id\": 281, \"institution_id\": null, \"name\": \"M120 Probe Chequing\", \"type\": \"chequing\", \"currency\": \"CAD\", \"taxable\": false, \"llm_autopilot\": false, \"cash_balanc"
+    },
+    {
+      "check": "seeded `groceries` category",
+      "ok": true,
+      "detail": "{\"id\": 3868, \"user_id\": 369, \"name\": \"groceries\", \"parent_id\": null, \"is_system\": true}"
+    },
+    {
+      "check": "probe tag",
+      "ok": true,
+      "detail": "{\"id\": 88, \"user_id\": 369, \"name\": \"m120probe\"}"
+    },
+    {
+      "check": "nine manual rows",
+      "ok": true,
+      "detail": "[('coffee1', 7429), ('coffee2', 7430), ('coffee3', 7431), ('fresh1', 7433), ('fresh2', 7434), ('netflix1', 7435), ('netflix2', 7436), ('netflix3', 7437), ('shell', 7432)]"
+    },
+    {
+      "check": "coffee rule (with a tag)",
+      "ok": true,
+      "detail": "{\"id\": 26, \"user_id\": 369, \"match_type\": \"contains\", \"pattern\": \"COFFEE\", \"priority\": 10, \"category_id\": 3868, \"enabled\": true, \"tag_action\": \"set\", \"stop_on_match\": true, \"tags\": [{\"user_id\": 369, \"i"
+    },
+    {
+      "check": "rule backfill updated exactly the three coffee rows",
+      "ok": true,
+      "detail": "{\"rule_id\": 26, \"mode\": \"all\", \"matched_count\": 3, \"applied_count\": 3, \"note\": null}"
+    },
+    {
+      "check": "rules-apply -> categorized via=rule_backfill, actor = the caller",
+      "ok": true,
+      "detail": "{\"id\": 4103, \"tx_id\": 7429, \"event_kind\": \"categorized\", \"actor\": 369, \"actor_label\": \"you\", \"at\": \"2026-10-08T20:00:40.007804Z\", \"payload_hash\": \"a38ea3bb7357f33d59cccbb512dc5af728754eae18e6bd19624f55f0a6a78620\", \"summary\": \"you set category groceries (rule backfill)\", \"payload\": {\"category_id\": 3868, \"category_name\": \"groceries\", \"via\": \"rule_backfill\"}}"
+    },
+    {
+      "check": "the tagged rider mirrors PUT /tags (names AND ids)",
+      "ok": true,
+      "detail": "{\"id\": 4104, \"tx_id\": 7429, \"event_kind\": \"tagged\", \"actor\": 369, \"actor_label\": \"you\", \"at\": \"2026-10-08T20:00:40.007804Z\", \"payload_hash\": \"712aaeccf10af5e36688bb443b1ed32bf8362ff2d41061095bf6e028247a4f52\", \"summary\": \"you added tag m120probe\", \"payload\": {\"added\": [\"m120probe\"], \"removed\": [], \"added_ids\": [88], \"removed_ids\": []}}"
+    },
+    {
+      "check": "the hash re-derives from the payload the drawer rendered",
+      "ok": true,
+      "detail": "a38ea3bb7357f33d59cccbb512dc5af728754eae18e6bd19624f55f0a6a78620"
+    },
+    {
+      "check": "overwrite=false over already-categorized rows writes NOTHING",
+      "ok": true,
+      "detail": "applied=0 events 3 -> 3"
+    },
+    {
+      "check": "mode=forward writes nothing",
+      "ok": true,
+      "detail": "{\"rule_id\": 26, \"mode\": \"forward\", \"matched_count\": 0, \"applied_count\": 0, \"note\": \"Rule stays enabled; future imports are categorized by the pipeline.\"}"
+    },
+    {
+      "check": "shell rule",
+      "ok": true,
+      "detail": "{\"id\": 27, \"user_id\": 369, \"match_type\": \"contains\", \"pattern\": \"SHELL\", \"priority\": 20, \"category_id\": 3868, \"enabled\": true, \"tag_action\": \"set\", \"stop_on_mat"
+    },
+    {
+      "check": "pipeline layer 1 -> categorized via=rule, actor NULL, system wording",
+      "ok": true,
+      "detail": "{\"id\": 4105, \"tx_id\": 7432, \"event_kind\": \"categorized\", \"actor\": null, \"actor_label\": \"the system\", \"at\": \"2026-10-08T20:00:40.777197Z\", \"payload_hash\": \"2020c65760d1df463b30a08f957e217ab9372f51d45c27a7e7aa9a2e733a1ee8\", \"summary\": \"the system set category groceries (rule)\", \"payload\": {\"category_id\": 3868, \"category_name\": \"groceries\", \"via\": \"rule\"}}"
+    },
+    {
+      "check": "operator seed of one `suggested` row",
+      "ok": true,
+      "detail": " id  \n-----\n 493\n(1 row)\n\nINSERT 0 1\n"
+    },
+    {
+      "check": "the seeded suggestion is in the queue",
+      "ok": true,
+      "detail": "{\"items\": [{\"id\": 493, \"transaction_id\": 7433, \"payee\": \"PROBE FRESHMART\", \"proposed_category_id\": 3868, \"category_name\": \"groceries\", \"confidence\": 0.93, \"status\": \"suggested\", \"model_used\": \"m120-probe\"}], \"total\": 1, \"limit\": 50, \"offset\": 0}"
+    },
+    {
+      "check": "suggestion accept -> categorized via=suggestion_accept, actor = clicker",
+      "ok": true,
+      "detail": "{\"id\": 4106, \"tx_id\": 7433, \"event_kind\": \"categorized\", \"actor\": 369, \"actor_label\": \"you\", \"at\": \"2026-10-08T20:00:41.314141Z\", \"payload_hash\": \"b9e9bebcd1c45d926e31572ee4695bb052174231f1f34b150258f10c314db891\", \"summary\": \"you set category groceries (accepted suggestion)\", \"payload\": {\"category_id\": 3868, \"category_name\": \"groceries\", \"via\": \"suggestion_accept\", \"suggestion_id\": 493}}"
+    },
+    {
+      "check": "a second accept is a 409 that writes nothing",
+      "ok": true,
+      "detail": "{\"_error\": 409, \"_body\": \"{\\\"detail\\\":\\\"Suggestion is not pending\\\",\\\"code\\\":\\\"suggestion_not_pending\\\"}\"}"
+    },
+    {
+      "check": "pipeline layer 2 -> categorized via=learned, actor NULL",
+      "ok": true,
+      "detail": "{\"id\": 4107, \"tx_id\": 7434, \"event_kind\": \"categorized\", \"actor\": null, \"actor_label\": \"the system\", \"at\": \"2026-10-08T20:00:41.736033Z\", \"payload_hash\": \"57cc6a857c634b6ea34be55d5a4ba195db10945fb7821af8121389344ddc5c29\", \"summary\": \"the system set category groceries (learned from your edits)\", \"payload\": {\"category_id\": 3868, \"category_name\": \"groceries\", \"via\": \"learned\"}}"
+    },
+    {
+      "check": "the M96 prompt offers the NETFLIX group",
+      "ok": true,
+      "detail": "{\"groups\": [{\"group_key\": \"PROBE NETFLIX|monthly\", \"payee\": \"PROBE NETFLIX\", \"cadence\": \"monthly\", \"occurrence_count\": 3, \"transaction_ids\": [7435, 7436, 7437], \"monthly_total\": \"-16.66\", \"first_date\": \"2026-07-05\", \"last_date\": \"2026-09-05\", \"next_expected_date\": \"2026-10-05\"}], \"combined_monthly_t"
+    },
+    {
+      "check": "recurring accept -> one plain `edited` per row, NO via key",
+      "ok": true,
+      "detail": "{\"id\": 4108, \"tx_id\": 7435, \"event_kind\": \"edited\", \"actor\": 369, \"actor_label\": \"you\", \"at\": \"2026-10-08T20:00:42.042711Z\", \"payload_hash\": \"201b67777fc4999f6b40da413a82c7bf9abe1e08f0109954d400846f2430298e\", \"summary\": \"you edited this transaction\", \"payload\": {\"fields\": [\"is_recurring\", \"recurring_cadence\", \"recurring_next_date\"], \"changes\": {\"is_recurring\": true, \"recurring_cadence\": \"monthly\","
+    },
+    {
+      "check": "/export/zip ships transaction_events.csv carrying the new receipts",
+      "ok": true,
+      "detail": "HTTP 200 rows=22"
+    },
+    {
+      "check": "landed on /transactions",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "drawer renders '(rule backfill)' for PROBE COFFEE 1 (tx 7429)",
+      "ok": true,
+      "detail": "[\"Oct 8\\nyou added tag m120probe\\ntagged · 712aaeccf10a…\", \"Oct 8\\nyou set category groceries (rule backfill)\\ncategorized · a38ea3bb7357…\", \"Oct 8\\nyou created this transaction\\ncreated · da17572bad69…\"]"
+    },
+    {
+      "check": "drawer renders '(rule)' for PROBE SHELL (tx 7432)",
+      "ok": true,
+      "detail": "[\"Oct 8\\nthe system set category groceries (rule)\\ncategorized · 2020c65760d1…\", \"Oct 8\\nyou created this transaction\\ncreated · da17572bad69…\"]"
+    },
+    {
+      "check": "drawer renders '(accepted suggestion)' for PROBE FRESHMART (tx 7433)",
+      "ok": true,
+      "detail": "[\"Oct 8\\nyou set category groceries (accepted suggestion)\\ncategorized · b9e9bebcd1c4…\", \"Oct 8\\nyou created this transaction\\ncreated · da17572bad69…\"]"
+    },
+    {
+      "check": "drawer renders '(learned from your edits)' for PROBE FRESHMART (tx 7434)",
+      "ok": true,
+      "detail": "[\"Oct 8\\nthe system set category groceries (learned from your edits)\\ncategorized · 57cc6a857c63…\", \"Oct 8\\nyou created this transaction\\ncreated · da17572bad69…\"]"
+    },
+    {
+      "check": "drawer renders 'you edited this transaction' for PROBE NETFLIX (tx 7435)",
+      "ok": true,
+      "detail": "[\"Oct 8\\nyou edited this transaction\\nedited · 201b67777fc4…\", \"Oct 8\\nyou created this transaction\\ncreated · da17572bad69…\"]"
+    },
+    {
+      "check": "axe 0 critical/serious — History drawer open on /transactions",
+      "ok": true,
+      "detail": "{} []"
+    }
+  ],
+  "evidence": {
+    "base": "https://fintrac.princessandmark.com",
+    "rows": {
+      "coffee1": 7429,
+      "coffee2": 7430,
+      "coffee3": 7431,
+      "shell": 7432,
+      "fresh1": 7433,
+      "fresh2": 7434,
+      "netflix1": 7435,
+      "netflix2": 7436,
+      "netflix3": 7437
+    },
+    "coffee_kinds": [
+      "tagged",
+      "categorized",
+      "created"
+    ],
+    "shell_summary": "the system set category groceries (rule)",
+    "learned_summary": "the system set category groceries (learned from your edits)",
+    "recurring_summary": "you edited this transaction",
+    "history_buttons": [
+      "History — PROBE FRESHMART (transaction 7434)",
+      "History — PROBE FRESHMART (transaction 7433)",
+      "History — PROBE SHELL (transaction 7432)",
+      "History — PROBE COFFEE 3 (transaction 7431)",
+      "History — PROBE COFFEE 2 (transaction 7430)",
+      "History — PROBE COFFEE 1 (transaction 7429)",
+      "History — PROBE NETFLIX (transaction 7437)",
+      "History — PROBE NETFLIX (transaction 7436)",
+      "History — PROBE NETFLIX (transaction 7435)"
+    ]
+  }
+}

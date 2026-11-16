@@ -1,0 +1,77 @@
+M84 / F-1 — reviewer's repro (jar_leak_probe.py) re-run against the DEPLOYED stack
+=================================================================================
+commit : 87d48b9 fix(M84): close the MCP cross-tenant credential leak (F-1)
+base   : https://fintrac.princessandmark.com   (mcp container rebuilt from that commit)
+date   : 2026-10-01 (EDT)
+script : docs/assets/m84/jar_leak_probe.py (the reviewer's own probe, plus a
+         verdict branch that recognises the new refusal envelope)
+
+Pre-fix verdict (M83 reviewer, t_cab1d21f, same script, same endpoint):
+    RESULT: CROSS-TENANT TOKEN LEAK CONFIRMED (B received A's access token)
+    auth_refresh under MCP token B returned sub = 124   <- tenant A's id
+
+Post-fix verdict (this run):
+    RESULT: REFUSED - auth_refresh is unavailable on the MCP HTTP path
+
+Full transcript
+---------------------------------------------------------------------------------
+== creating throwaway tenants ==
+  register secreview-a-c1d85a@example.com: 201
+  register secreview-b-c1d85a@example.com: 201
+== minting MCP tokens ==
+  mint secreview-a-c1d85a: 201
+  mint secreview-b-c1d85a: 201
+  A user id = 128, B user id = 129
+== proof ==
+  B users_me isError=False -> {
+  "id": 129,
+  "email": "secreview-b-c1d85a@example.com",
+  "name": null,
+  "privacy_mode": false,
+  "currency_tracker_enabled": true,
+  "llm_provider": "ollama",
+  "llm_base_url": null,
+  "llm_model": null,
+  "encryption_required": false
+}
+  A users_me isError=False -> {
+  "id": 128,
+  "email": "secreview-a-c1d85a@example.com",
+  "name": null,
+  "privacy_mode": false,
+  "currency_tracker_enabled": true,
+  "llm_provider": "ollama",
+  "llm_base_url": null,
+  "llm_model": null,
+  "encryption_required": false
+}
+  A auth_login isError=True sub=<decode error: list index out of range>
+  A auth_login body -> {"error": 403, "detail": {"detail": "Auth tools are not available over the MCP HTTP transport: the session identity is already fixed by your MCP token, so a login/refresh/logout here could only act on another tenant's session. Use the web app for session management.", "code": "auth_tools_unavailable_on_mcp"}}
+  A auth_login envelope code = 'auth_tools_unavailable_on_mcp'
+  B auth_refresh isError=True -> {"error": 403, "detail": {"detail": "Auth tools are not available over the MCP HTTP transport: the session identity is already fixed by your MCP token, so a login/refresh/logout here could only act on another tenant's session. Use the web app for session management.", "code": "auth_tools_unavailable_on_mcp"}}
+
+  tenant A id = 128
+  tenant B id = 129
+  A auth_login refused = True
+  auth_refresh under MCP token B returned sub = <decode error: list index out of range>
+  auth_refresh envelope code = 'auth_tools_unavailable_on_mcp'
+  RESULT: REFUSED - auth_refresh is unavailable on the MCP HTTP path
+          (M84 / docs/40 s2). No token was returned at all, so no
+          cross-tenant credential could be disclosed; the jar is
+          empty by construction. Pre-fix verdict was CROSS-TENANT
+          TOKEN LEAK (B received A's access token, sub=124).
+PROBE_EXIT=3
+---------------------------------------------------------------------------------
+
+Reading
+  * `auth_login` and `auth_refresh` both answer isError + 403
+    `auth_tools_unavailable_on_mcp` BEFORE any proxy call, so the MCP server
+    never reaches /api/v1/auth/refresh and there is no session to exchange.
+  * No `access_token` appears anywhere in the response — `sub` is
+    "decode error" because the payload is the refusal envelope, not a JWT.
+    There is nothing for tenant B to receive, let alone tenant A's.
+  * `users_me` under both MCP tokens still returns each tenant's OWN record
+    (128 -> 128, 129 -> 129): the normal tool path and its per-user identity
+    are untouched.
+  * Both probe accounts (128, 129) were deleted through DELETE
+    /api/v1/users/me afterwards, like the reviewer's five.

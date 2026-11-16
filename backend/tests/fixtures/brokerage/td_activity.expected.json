@@ -1,0 +1,15 @@
+{
+  "profile": "td-di",
+  "rows": 4,
+  "imported": 4,
+  "duplicates_skipped": 0,
+  "unmapped": 0,
+  "notices": 1,
+  "positions": {
+    "SHOP": "6"
+  },
+  "cash_effect": {
+    "CAD": "4132.52"
+  },
+  "account_currency": "CAD"
+}

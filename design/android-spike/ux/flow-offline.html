@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FinTracker spike · Flow C — offline / stale snapshot</title>
+<link rel="stylesheet" href="spike.css"></head>
+<body>
+<main class="wrap">
+<header class="head">
+  <div>
+    <h1>Flow C · Offline-safe read-only snapshot &amp; stale states</h1>
+    <p>Capability 3 (offline read) + 5 (controlled local storage) + 4 (back). Server-truthful snapshot: a stored
+      verbatim server response, never client math. Fresh → stale → offline → expired → cleared, plus the opt-out and
+      storage-facts frames. If private invalidation can't be proven, docs/49 says omit the snapshot entirely —
+      frame o5 is that fallback.</p>
+  </div>
+  <div class="links">
+    <a class="back" href="index.html">← Spike hub</a>
+    <button class="mode" id="modeToggle" type="button">◐ Toggle dark</button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ============ phone ============ -->
+  <section>
+  <div class="phone"><div class="screen">
+
+    <!-- o1 · fresh online -->
+    <div class="scr" id="o1" data-rail="Home · fresh (online)" data-back=""
+      data-title="Baseline: server answered this session"
+      data-note="The reference frame. Chip carries the <b>server's</b> response time; demo marker is orthogonal. Everything downstream is a deviation from this frame, and the deviation must be visible in the chip/banner — never in the font weight or color alone."
+      data-probe="Baseline DOM audit: count currency strings (expect 4: total + 3 accounts) and confirm every one sits under a fresh chip. This count is the control for o2–o5.">
+      <div class="status"><span>10:45</span><span>● 5G　▰</span></div>
+      <div class="appbar">
+        <div class="brand" style="padding-left:8px">FinTracker</div>
+        <button class="iconbtn" type="button" data-go="o2" aria-label="Refresh">⟳</button>
+      </div>
+      <div class="content">
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Explore sample data. Changes are disabled.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 10:42 AM</span></div>
+        <div class="balance">
+          <div><h3>Total net worth</h3><div class="amount">$128,430.52</div><div class="asof">Server response · 10:42 AM · CAD</div></div>
+        </div>
+        <div class="section"><h3>Accounts</h3></div>
+        <div class="panel">
+          <div class="row"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash</small></span><span class="money">$8,240.18</span></div>
+          <div class="row"><span class="avatar">I</span><span class="rowmain"><b>TFSA portfolio</b><small>Wealthsimple · Invest</small></span><span class="money">$42,190.34</span></div>
+          <div class="row"><span class="avatar">S</span><span class="rowmain"><b>High-interest savings</b><small>EQ Bank · Cash</small></span><span class="money">$18,000.00</span></div>
+        </div>
+        <div class="callout">Pull to refresh — a success state appears only when the server answers. Pull-to-refresh never optimistically repaints a number.</div>
+        <p style="text-align:center"><button class="textbtn" type="button" data-go="o2">▸ Simulate: refresh fails</button></p>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem active" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem" type="button"><span class="glyph">⋮</span>More</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- o2 · stale (refresh failed) -->
+    <div class="scr" id="o2" data-rail="Refresh failed → stale" data-back="o1"
+      data-title="Stale: last attempt failed, values still shown"
+      data-note="Connectivity may be flaky but the app isn't claiming offline-only yet: values remain visible, labeled <b>stale</b> with the last successful server time and the age. The banner names the failure and offers Retry — copy is exact, not “offline-ish”. Styling must never read as current (docs/48 §stale)."
+      data-probe="Assert the stale chip string contains the same timestamp as the banner (10:42 AM), that age ≥ the elapsed delta, and that Retry does <b>not</b> repaint any value — only the timestamp/chip may move, and only if the server answers.">
+      <div class="status"><span>1:09</span><span>△ 5G　▰</span></div>
+      <div class="appbar">
+        <div class="brand" style="padding-left:8px">FinTracker</div>
+        <button class="iconbtn" type="button" data-go="o1" aria-label="Refresh">⟳</button>
+      </div>
+      <div class="content">
+        <div class="banner err" data-state="stale"><span class="glyph">!</span><span><b>Couldn't update. Showing data from 10:42 AM.</b>Check your connection and retry.</span>
+          <span class="bact"><button class="btn" type="button" data-toast="Still no server response — values untouched.">Try again</button></span></div>
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Explore sample data. Changes are disabled.</span></div>
+        <div class="chiprow"><span class="chip stale" data-state="stale">Stale · last server update 10:42 AM · 2h 27m ago</span></div>
+        <div class="balance">
+          <div><h3>Total net worth</h3><div class="amount">$128,430.52</div><div class="asof">Last successful server response · 10:42 AM</div></div>
+        </div>
+        <div class="section"><h3>Accounts</h3></div>
+        <div class="panel">
+          <div class="row"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash · as of 10:42 AM</small></span><span class="money">$8,240.18</span></div>
+          <div class="row"><span class="avatar">I</span><span class="rowmain"><b>TFSA portfolio</b><small>Wealthsimple · Invest · as of 10:42 AM</small></span><span class="money">$42,190.34</span></div>
+          <div class="row"><span class="avatar">S</span><span class="rowmain"><b>High-interest savings</b><small>EQ Bank · Cash · as of 10:42 AM</small></span><span class="money">$18,000.00</span></div>
+        </div>
+        <p style="text-align:center"><button class="textbtn" type="button" data-go="o3">▸ Connection drops — use saved snapshot</button></p>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem active" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem" type="button"><span class="glyph">⋮</span>More</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- o3 · offline snapshot -->
+    <div class="scr" id="o3" data-rail="Offline · saved snapshot" data-back=""
+      data-title="Offline: opt-in snapshot, permanently labeled"
+      data-note="Two independent markers on every frame: the <b>sticky banner</b> (app-level: you are offline) and the <b>per-card chip</b> (data-level: this value came from a stored server response saved at a named time). The values are the server's own numbers from 9:40 PM — stored verbatim, never recomputed. Refresh is present but explains why it can't run; no write control exists at all."
+      data-probe="Kill the network, load the app cold: banner must render <b>before</b> any value does. Then grep the frame: every currency string must be within an element that also carries the snapshot chip. No client-side sums, no recomputed totals.">
+      <div class="status"><span>1:12</span><span>✕ 5G　▰</span></div>
+      <div class="appbar">
+        <div class="brand" style="padding-left:8px">FinTracker</div>
+        <button class="iconbtn" type="button" aria-label="Refresh unavailable offline" disabled style="opacity:.5">⟳</button>
+      </div>
+      <div class="content">
+        <div class="banner offline sticky-banner" data-state="offline"><span class="glyph">⛌</span><span><b>Offline · snapshot saved Oct 26, 9:40 PM · read-only</b>Showing stored server data. No refresh, quotes or actions until you're back online.</span></div>
+        <div class="chiprow"><span class="chip offline" data-state="offline">Offline snapshot · saved Oct 26, 9:40 PM (15h ago)</span></div>
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Explore sample data. Changes are disabled.</span></div>
+        <div class="balance">
+          <div><h3>Total net worth</h3><div class="amount">$128,430.52</div><div class="asof">As stored Oct 26, 9:40 PM · CAD · not re-verified</div></div>
+        </div>
+        <div class="section"><h3>Accounts</h3>
+          <button class="textbtn" type="button" data-go="o8">Detail ↑</button>
+        </div>
+        <div class="panel">
+          <button class="row tappable" type="button" data-go="o8"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash · snapshot</small></span><span class="money">$8,240.18</span></button>
+          <div class="row"><span class="avatar">I</span><span class="rowmain"><b>TFSA portfolio</b><small>Wealthsimple · Invest · snapshot</small></span><span class="money">$42,190.34</span></div>
+          <div class="row"><span class="avatar">S</span><span class="rowmain"><b>High-interest savings</b><small>EQ Bank · Cash · snapshot</small></span><span class="money">$18,000.00</span></div>
+        </div>
+        <div class="callout">Snapshot = the server's last response for these rows, stored read-only. No quotes, no sums, no pending actions are computed on device.</div>
+        <button class="btn primary block" type="button" data-go="o6">Reconnect &amp; refresh</button>
+        <p style="text-align:center;margin-top:4px">
+          <button class="textbtn" type="button" data-go="o9">▸ Snapshot storage facts</button>
+          <button class="textbtn" type="button" data-go="o4">▸ Stayed offline past 24 h</button>
+        </p>
+        <p style="text-align:center"><button class="textbtn" type="button" data-go="o7">▸ Sign out while offline</button></p>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem active" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem" type="button"><span class="glyph">⋮</span>More</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- o4 · snapshot expired -->
+    <div class="scr" id="o4" data-rail="Past 24 h TTL → expired" data-branch data-back=""
+      data-title="Expired: values withheld, structure kept"
+      data-note="Past the snapshot time-to-live the app <b>refuses to render numbers</b> — labels and layout remain so nothing collapses, but every amount is explicitly withheld. This is the frame that separates “honest offline” from “plausible-looking old money”: zero currency strings exist here."
+      data-probe="Hard assertion: currency-string count on this frame = <b>0</b> (control: o1 = 4). Also assert no element renders a digit sequence shaped like an amount. The copy must offer reconnect, not a dismiss-to-stale option.">
+      <div class="status"><span>11:06</span><span>✕ 5G　▰</span></div>
+      <div class="appbar">
+        <div class="brand" style="padding-left:8px">FinTracker</div>
+        <button class="iconbtn" type="button" aria-label="Refresh unavailable offline" disabled style="opacity:.5">⟳</button>
+      </div>
+      <div class="content">
+        <div class="banner offline sticky-banner" data-state="offline"><span class="glyph">⛌</span><span><b>Offline</b>No current connection.</span></div>
+        <div class="banner err" data-state="expired"><span class="glyph">!</span><span><b>Snapshot expired</b>Saved Oct 26, 9:40 PM · 25 h old — past the 24-hour limit. Values are hidden until you reconnect.</span>
+          <span class="bact"><button class="btn primary" type="button" data-go="o6">Reconnect to view values</button></span></div>
+        <div class="chiprow"><span class="chip expired" data-state="expired">Snapshot expired · values withheld</span></div>
+        <div class="balance">
+          <div><h3>Total net worth</h3><div class="amount" style="color:var(--muted);font-size:20px">Value withheld</div><div class="asof">Would have shown the Oct 26, 9:40 PM server value — now past TTL</div></div>
+        </div>
+        <div class="section"><h3>Accounts</h3></div>
+        <div class="panel">
+          <div class="row"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash</small></span><span class="money" style="color:var(--muted)">Withheld</span></div>
+          <div class="row"><span class="avatar">I</span><span class="rowmain"><b>TFSA portfolio</b><small>Wealthsimple · Invest</small></span><span class="money" style="color:var(--muted)">Withheld</span></div>
+          <div class="row"><span class="avatar">S</span><span class="rowmain"><b>High-interest savings</b><small>EQ Bank · Cash</small></span><span class="money" style="color:var(--muted)">Withheld</span></div>
+        </div>
+        <div class="callout">Expired ≠ zero: no amount is rendered as a zero value here. The account names stay because they're non-sensitive structure; the money goes.</div>
+        <p style="text-align:center"><button class="textbtn" type="button" data-go="o3">▸ Back to the live snapshot frame (15 h)</button>
+        <button class="textbtn" type="button" data-go="o5">▸ Never opted in?</button></p>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem active" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem" type="button"><span class="glyph">⋮</span>More</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- o5 · offline, no snapshot -->
+    <div class="scr" id="o5" data-rail="Offline, no snapshot (opt-out)" data-branch data-back=""
+      data-title="Offline without a snapshot — the docs/49 default fallback"
+      data-note="Opt-out (or storage omitted entirely because private invalidation couldn't be proven): the app shows a helpful offline state and <b>no cached finance data at all</b>. This is also exactly what a second identity sees — a fresh sign-in must never surface the previous tenant's snapshot."
+      data-probe="Sign in as a different user while offline → must render this frame, never the prior user's names or amounts. Then assert: currency-string count = 0.">
+      <div class="status"><span>1:12</span><span>✕ 5G　▰</span></div>
+      <div class="appbar"><div class="brand" style="padding-left:8px">FinTracker</div></div>
+      <div class="content">
+        <div class="banner offline sticky-banner" data-state="offline"><span class="glyph">⛌</span><span><b>Offline</b>No connection · no saved snapshot.</span></div>
+        <div class="chiprow"><span class="chip offline" data-state="no-snapshot">Offline · nothing stored on this device</span></div>
+        <div class="panel" style="text-align:center;padding:26px 16px">
+          <div style="font-size:34px" aria-hidden="true">⛌</div>
+          <b style="font-size:16px">You're offline</b>
+          <p style="color:var(--muted);font-size:13.5px">FinTracker keeps no financial data on this device — there's nothing safe to show until you reconnect. No saved snapshot exists for this account.</p>
+          <button class="btn primary block" type="button" data-toast="Still no connection — nothing stored, nothing shown.">Try again</button>
+          <button class="btn block" type="button" data-go="o9">How offline storage works</button>
+        </div>
+        <div class="callout">Zero account names, zero amounts, zero totals — an honest empty state beats a plausible-looking stale one (docs/48 §P2).</div>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- o6 · reconnect -->
+    <div class="scr" id="o6" data-rail="Reconnect → fresh again" data-back=""
+      data-title="Reconnected: server time replaces snapshot time"
+      data-note="Recovery frame. The offline banner and every snapshot chip disappear <b>only</b> when a new server response lands — not when the radio comes back. The new chip carries a new server timestamp, so a user can see both times change together."
+      data-probe="Assert the chip timestamp differs from the snapshot time (1:14 PM vs Oct 26, 9:40 PM), zero offline/stale chips remain, and no value changed <i>before</i> the new server time appeared.">
+      <div class="status"><span>1:14</span><span>● 5G　▰</span></div>
+      <div class="appbar">
+        <div class="brand" style="padding-left:8px">FinTracker</div>
+        <button class="iconbtn" type="button" data-go="o1" aria-label="Refresh">⟳</button>
+      </div>
+      <div class="content">
+        <div class="banner info" data-state="fresh"><span class="glyph">✓</span><span><b>Back online · refreshed 1:14 PM</b>Snapshot replaced with the latest server response.</span></div>
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Explore sample data. Changes are disabled.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 1:14 PM</span></div>
+        <div class="balance">
+          <div><h3>Total net worth</h3><div class="amount">$128,430.52</div><div class="asof">Server response · 1:14 PM · CAD</div></div>
+        </div>
+        <div class="section"><h3>Accounts</h3></div>
+        <div class="panel">
+          <div class="row"><span class="avatar">C</span><span class="rowmain"><b>Everyday chequing</b><small>TD · Cash</small></span><span class="money">$8,240.18</span></div>
+          <div class="row"><span class="avatar">I</span><span class="rowmain"><b>TFSA portfolio</b><small>Wealthsimple · Invest</small></span><span class="money">$42,190.34</span></div>
+          <div class="row"><span class="avatar">S</span><span class="rowmain"><b>High-interest savings</b><small>EQ Bank · Cash</small></span><span class="money">$18,000.00</span></div>
+        </div>
+        <p style="text-align:center"><button class="textbtn" type="button" data-go="o9">▸ Snapshot storage facts</button></p>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem active" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem" type="button"><span class="glyph">⋮</span>More</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- o7 · sign out while offline -->
+    <div class="scr" id="o7" data-rail="Sign out while offline" data-branch data-back="o3"
+      data-title="Logout with no connectivity — local snapshot still cleared"
+      data-note="The critical revocation case: the server can't confirm anything, yet signing out must delete the snapshot <b>on device, immediately</b> before any other identity can render. The sign-in screen confirms the wipe in copy so the user can verify it, and the second identity's first frame is o5 (no snapshot), never this tenant's data."
+      data-probe="With airplane mode on: sign out, then sign in as user B → assert zero of user A's account names or amounts anywhere (grep-level), and that the wipe happened without any network round-trip (packet capture shows none).">
+      <div class="status"><span>1:12</span><span>✕ 5G　▰</span></div>
+      <div class="appbar"><div class="brand" style="padding-left:8px">FinTracker</div></div>
+      <div class="content">
+        <div class="banner info" data-state="cleared"><span class="glyph">✓</span><span><b>Signed out · snapshot cleared</b>Your saved offline snapshot was deleted from this device — no connection required.</span></div>
+        <div class="chiprow"><span class="chip offline" data-state="auth">Not signed in · previous snapshot deleted</span></div>
+        <h3 style="font-size:22px;margin-top:10px">Sign in</h3>
+        <p style="color:var(--muted);font-size:13.5px">Still offline? You can sign in; you'll see the offline empty state until the server responds.</p>
+        <input class="input" value="mark@example.com" readonly aria-label="Email">
+        <input class="input" type="password" value="············" readonly aria-label="Password">
+        <button class="btn primary block" type="button" data-go="o1">Sign in (same account)</button>
+        <button class="btn block" type="button" data-go="o5">Sign in as another user → see o5</button>
+        <div class="callout">Cross-identity rule: the previous tenant's snapshot must be gone before the new identity's first frame renders — offline or not.</div>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- o8 · account detail offline -->
+    <div class="scr" id="o8" data-rail="Drill-in offline (back preserved)" data-back="o3"
+      data-title="Detail view inside the snapshot — context preserved, writes absent"
+      data-note="Back-stack behavior under offline: detail → home returns to the same list. Every field repeats the snapshot provenance; 'as stored' replaces 'as of server'. No edit/categorize/refresh affordances exist — a read-only cache that offers a write it can't perform would be the worst possible frame (docs/48: never queue writes offline)."
+      data-probe="Press system back: must return to o3 with list scroll intact, not restart the app. Then assert the frame contains zero enabled write controls (button count with editable handlers = 0 beyond navigation).">
+      <div class="status"><span>1:12</span><span>✕ 5G　▰</span></div>
+      <div class="appbar"><button class="iconbtn" type="button" data-go="o3" aria-label="Back">‹</button><div class="brand">Account</div><span style="width:44px"></span></div>
+      <div class="content">
+        <div class="banner offline sticky-banner" data-state="offline"><span class="glyph">⛌</span><span><b>Offline · snapshot saved Oct 26, 9:40 PM · read-only</b></span></div>
+        <div class="chiprow"><span class="chip offline" data-state="offline">Offline snapshot · saved Oct 26, 9:40 PM</span></div>
+        <div class="balance" style="display:block">
+          <h3>Everyday chequing · TD</h3>
+          <div class="amount sm">$8,240.18 CAD</div>
+          <div class="asof">Balance as stored Oct 26, 9:40 PM · not re-verified</div>
+        </div>
+        <div class="facts">
+          <div class="fact"><small>Type</small><b>Cash · non-registered</b></div>
+          <div class="fact"><small>Last server contact</small><b>Oct 26, 9:40 PM</b></div>
+          <div class="fact"><small>Snapshot age</small><b>15 h of 24 h</b></div>
+          <div class="fact"><small>Write controls</small><b>None — read-only</b></div>
+        </div>
+        <div class="callout">Staged/pending rows and any import state are not expanded offline — the snapshot stores exactly what the server returned, nothing inferred.</div>
+        <button class="btn block" type="button" data-toast="Web handoff needs a connection — unavailable offline.">Open full details on web</button>
+        <p class="backhint" style="margin-top:12px">System back ↑ returns to Home with the list as you left it</p>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- o9 · storage facts -->
+    <div class="scr" id="o9" data-rail="Storage facts (capability 5)" data-branch data-back="o3"
+      data-title="What the snapshot stores — enumerated, bounded, revocable"
+      data-note="Capability 5 lives or dies here: an auditable field list, a documented key/ownership model (owed by the threat model, marked pending — this mockup does not claim encryption it hasn't designed), a TTL, identity-scoped clearing, and a user-facing revocation control that actually wipes the data."
+      data-probe="Tap “Delete saved snapshot now” → next offline load must render o5 (not o3). Count: after deletion, zero stored value strings remain on disk — verify with a storage dump, not the UI.">
+      <div class="status"><span>1:14</span><span>● 5G　▰</span></div>
+      <div class="appbar"><button class="iconbtn" type="button" data-go="o3" aria-label="Back">‹</button><div class="brand">Offline storage</div><span style="width:44px"></span></div>
+      <div class="content">
+        <div class="chiprow"><span class="chip offline" data-state="offline">Storage settings · read-only snapshot</span><span class="chip demo" data-state="demo">Demo · read only</span></div>
+        <div class="section"><h3>Stored on this device</h3></div>
+        <div class="panel">
+          <div class="row"><span class="rowmain"><b>What</b><small>Verbatim server responses for the glance set: net worth total, account list, one recent row — with their server timestamps</small></span></div>
+          <div class="row"><span class="rowmain"><b>Not stored</b><small>Tokens, credentials, other identities, unglanced screens, any computed value</small></span></div>
+          <div class="row"><span class="rowmain"><b>Key / encryption</b><small>PENDING threat model (docs/49 Q4) — Android Keystore-backed key is the proposal, not a decision</small></span></div>
+          <div class="row"><span class="rowmain"><b>Time to live</b><small>24 h, then values are withheld (o4)</small></span></div>
+          <div class="row"><span class="rowmain"><b>Cleared on</b><small>Logout, identity change, TTL, remote invalidation signal, user revocation</small></span></div>
+          <div class="row"><span class="rowmain"><b>Scope</b><small>Single identity — a second account never reads it (o5)</small></span></div>
+        </div>
+        <button class="btn block" type="button" data-toast="Snapshot deleted — next offline load shows the empty state.">Delete saved snapshot now</button>
+        <button class="btn primary block" type="button" data-go="o5">See post-deletion offline state</button>
+        <div class="callout">If any line above can't be made true and testable, docs/49 says drop the snapshot — the honest o5 frame is the shipped behavior instead.</div>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+  </div></div>
+  </section>
+
+  <!-- ============ rail ============ -->
+  <aside class="rail">
+    <div class="card">
+      <h2>Steps</h2>
+      <ol class="steps" id="steps"></ol>
+      <p style="font-size:12.5px;color:var(--muted);margin:10px 0 0">↳ = branch / variant. The pill at the bottom of
+        each frame is Android system back — press it to test back behavior, including from offline detail (o8 → o3).</p>
+    </div>
+    <div class="card">
+      <h2>Current step</h2>
+      <div class="note-title" id="noteTitle"></div>
+      <div class="note-body" id="noteBody"></div>
+      <div class="probe" id="probe"></div>
+    </div>
+    <div class="card verdict">
+      <h2>Capabilities 3 + 5 earn themselves only if…</h2>
+      <ul>
+        <li>The snapshot is a stored <b>verbatim server response</b> — a storage dump shows server fields, no derived values (no client math, ever).</li>
+        <li>Every value-bearing frame carries banner + chip with the snapshot's save time; the expired frame (o4) contains <b>zero</b> currency strings.</li>
+        <li>Logout / identity change / TTL each provably wipe the data — including offline logout, with no network round-trip.</li>
+        <li>Revocation is a user control (o9), not just a policy sentence; deleting it lands the user in o5, not a stale render.</li>
+        <li>If the threat model can't back the key/ownership line, the capability is <b>dropped</b> and o5 ships — dropping it is a pass, not a failure.</li>
+      </ul>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px">The PWA comparison to beat: a service-worker cache
+        can store the same bytes, but scope, TTL and identity-scoped wipe are far easier to audit natively — that
+        auditability gap is what this flow measures (docs/49 platform matrix).</p>
+    </div>
+  </aside>
+</div>
+
+<script src="spike.js"></script>
+</main>
+</body></html>

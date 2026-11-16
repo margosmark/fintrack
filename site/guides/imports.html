@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imports — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Imports</h1>
+      <p class="sub">Upload bank statements safely: staged, reviewed, then committed.</p>
+      <ol class="steps">
+        <li class="card"><h2>Upload a statement</h2><p>Head to Imports → Upload a statement and drop in your bank or brokerage CSV. Map the columns once (date, description, amount); the mapping is remembered per institution next time.</p>
+          <figure class="shot"><img src="../assets/imports.png" alt="Imports page with upload flow and staged batches" loading="lazy"></figure></li>
+        <li class="card"><h2>Review the staging batch</h2><p>Imports land in a staging batch first — nothing counts toward balances, budgets, or reports until you commit. Review the parsed rows, fix anything odd, then commit the batch to make it official.</p></li>
+        <li class="card"><h2>Duplicates are blocked</h2><p>Re-importing the same file will not create duplicates: dedup spans pending and committed batches. If a file is rejected, the error names the exact row and reason (bad date, bad amount, unknown column) so you can fix and retry.</p></li>
+        <li class="card"><h2>Move over a YNAB budget</h2><p>Coming from YNAB? The Migrate from YNAB guide walks through both exports (a full-budget JSON straight from YNAB's API, or one account's register CSV) and lists exactly what carries over and what does not. Short version: the preview maps every account, category, group tag, and target, and lists each row it cannot import with its row number and reason — nothing is dropped silently. Accounts, categories, and tags are matched by name, so running the import a second time adds nothing, and every transaction lands in a review batch you commit yourself.</p></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Imports.</span></div></footer>
+</body>
+</html>

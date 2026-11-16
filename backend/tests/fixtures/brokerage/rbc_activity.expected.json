@@ -1,0 +1,15 @@
+{
+  "profile": "rbc-di",
+  "rows": 4,
+  "imported": 4,
+  "duplicates_skipped": 0,
+  "unmapped": 0,
+  "notices": 1,
+  "positions": {
+    "SHOP": "6"
+  },
+  "cash_effect": {
+    "CAD": "9152.50"
+  },
+  "account_currency": "CAD"
+}

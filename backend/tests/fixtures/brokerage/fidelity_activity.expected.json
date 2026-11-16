@@ -1,0 +1,15 @@
+{
+  "profile": "fidelity",
+  "rows": 3,
+  "imported": 3,
+  "duplicates_skipped": 0,
+  "unmapped": 1,
+  "notices": 1,
+  "positions": {
+    "AAPL": "6"
+  },
+  "cash_effect": {
+    "USD": "-845.10"
+  },
+  "account_currency": "CAD"
+}

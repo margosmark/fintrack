@@ -1,0 +1,147 @@
+[
+ {
+  "path": "/investments",
+  "label": "Trades log table",
+  "viewport": [
+   390,
+   915
+  ],
+  "focus": {
+   "found": true,
+   "focused": true,
+   "tabindex": 0,
+   "scrollWidth": 728,
+   "clientWidth": 316,
+   "scrollLeft": 0,
+   "overflow": 412
+  },
+  "after_5_arrowright": 200,
+  "before": 0,
+  "tab_reach": {
+   "tab_presses": 154,
+   "activeRole": "region"
+  },
+  "regions_on_page": [
+   {
+    "label": "Positions table",
+    "tabindex": 0,
+    "overflow": 543
+   },
+   {
+    "label": "Holdings by listing currency table",
+    "tabindex": 0,
+    "overflow": 0
+   },
+   {
+    "label": "Dividend suggestions table",
+    "tabindex": 0,
+    "overflow": 289
+   },
+   {
+    "label": "Trades log table",
+    "tabindex": 0,
+    "overflow": 412
+   },
+   {
+    "label": "Notifications",
+    "tabindex": -1,
+    "overflow": 0
+   },
+   {
+    "label": "Definitions",
+    "tabindex": -1,
+    "overflow": 0
+   }
+  ]
+ },
+ {
+  "path": "/taxes",
+  "label": "Capital gains 2026 table",
+  "viewport": [
+   390,
+   915
+  ],
+  "focus": {
+   "found": true,
+   "focused": true,
+   "tabindex": 0,
+   "scrollWidth": 569,
+   "clientWidth": 316,
+   "scrollLeft": 0,
+   "overflow": 253
+  },
+  "after_5_arrowright": 200,
+  "before": 0,
+  "tab_reach": {
+   "tab_presses": 31,
+   "activeRole": "region"
+  },
+  "regions_on_page": [
+   {
+    "label": "Capital gains 2026 table",
+    "tabindex": 0,
+    "overflow": 253
+   },
+   {
+    "label": "ACB per holding (non-registered) table",
+    "tabindex": 0,
+    "overflow": 122
+   },
+   {
+    "label": "Notifications",
+    "tabindex": -1,
+    "overflow": 0
+   },
+   {
+    "label": "Definitions",
+    "tabindex": -1,
+    "overflow": 0
+   }
+  ]
+ },
+ {
+  "path": "/taxes",
+  "label": "ACB per holding (non-registered) table",
+  "viewport": [
+   390,
+   915
+  ],
+  "focus": {
+   "found": true,
+   "focused": true,
+   "tabindex": 0,
+   "scrollWidth": 438,
+   "clientWidth": 316,
+   "scrollLeft": 0,
+   "overflow": 122
+  },
+  "after_5_arrowright": 122,
+  "before": 0,
+  "tab_reach": {
+   "tab_presses": 31,
+   "activeRole": "region"
+  },
+  "regions_on_page": [
+   {
+    "label": "Capital gains 2026 table",
+    "tabindex": 0,
+    "overflow": 253
+   },
+   {
+    "label": "ACB per holding (non-registered) table",
+    "tabindex": 0,
+    "overflow": 122
+   },
+   {
+    "label": "Notifications",
+    "tabindex": -1,
+    "overflow": 0
+   },
+   {
+    "label": "Definitions",
+    "tabindex": -1,
+    "overflow": 0
+   }
+  ]
+ }
+]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configuration (MCP) — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Configuration (MCP)</h1>
+      <p class="sub">The endpoints, payload shapes, and policies behind agent access — the reference page for humans and their agents.</p>
+      <ol class="steps">
+        <li class="card"><h2>Three endpoints, one secret</h2><p>You mint and revoke tokens against /api/v1/auth/mcp-tokens with your normal login. The MCP server itself validates the bearer token at /api/v1/auth/validate-mcp-token, and it posts each receipt to /api/v1/auth/internal-mcp-audit — those two are internal, denied at the reverse proxy, and reachable only from the compose network. You read receipts at /api/v1/mcp-audit. Nothing about this needs configuration beyond the three variables the MCP container runs on.</p></li>
+        <li class="card"><h2>Full or read-only</h2><p>The policy is set when the token is created and cannot be changed afterwards — mint a new one instead. A full token sees all 105 tools. The demo tenant never gets one: its mints are forced to read_only (an omitted policy resolves to read_only, an explicit full is refused with 422 demo_mcp_read_only), so a demo session always lists the 52. A read-only token sees the 52 that only read, and any attempt to call a mutating tool is answered with 403 and code mcp_read_only at the MCP layer, before a request is made. Existing tokens keep the policy they were created with, so nothing changes for a deployment that never asked for read-only.</p></li>
+        <li class="card"><h2>The three environment variables</h2><p>FIN_TRACKER_URL is where the MCP server finds the API (http://&lt;host&gt;:8000 — the API's address as the MCP container reaches it, never a public URL), MCP_INTERNAL_SECRET is the shared secret it uses to ask for a per-user session and to post receipts, and MCP_UPLOAD_DIR is the directory file imports are allowed to read — paths outside it are refused. The container holds no database credentials and no login secret on purpose: it only ever speaks HTTP to the API.</p></li>
+        <li class="card"><h2>What a receipt code means</h2><p>Codes are derived, never guessed: a refusal decided at the MCP layer is 403, a status the API itself returned is passed through as-is, a tool error that came back as the app&#x27;s structured error is 400, and an unexpected failure is 500. Everything else is 200. Receipts are best effort by design — if the API is unreachable when a call finishes, the tool result is still returned and the gap is logged rather than blocking your work.</p></li>
+        <li class="card"><h2>Counts worth knowing</h2><p>105 tools in total: 52 read and 53 write, where the read set is every GET plus seven POSTs that only compute or manage a session (logging in, refreshing, logging out, the demo switch, running a projection, testing the model connection, and suggesting an import profile). The split is derived from the tool code itself, so a tool added later is classified when it lands rather than when someone remembers to update a list.</p></li>
+      </ol>
+      <div class="card table-card">
+        <h2>Endpoints</h2>
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <thead><tr><th scope="col">Call</th><th scope="col">Needs</th><th scope="col">Returns</th></tr></thead>
+            <tbody>
+              <tr><td>POST /api/v1/auth/mcp-tokens — {&quot;name&quot;:&quot;agent&quot;,&quot;policy&quot;:&quot;read_only&quot;}</td><td>Your normal login</td><td>201 with the token, shown once, plus id, policy, created_at, expires_at. On the demo tenant the policy is forced to read_only (omitted policy → read_only; &quot;full&quot; → 422 demo_mcp_read_only)</td></tr>
+              <tr><td>GET /api/v1/auth/mcp-tokens</td><td>Your normal login</td><td>200 with every token you own: id, name, policy, created_at, expires_at, last_used_at — never the token itself</td></tr>
+              <tr><td>DELETE /api/v1/auth/mcp-tokens/{id}</td><td>Your normal login</td><td>204; the token stops working on its next request</td></tr>
+              <tr><td>GET /api/v1/mcp-audit?limit=50&amp;offset=0</td><td>Your normal login</td><td>200 with your newest receipts plus the total</td></tr>
+              <tr><td>POST /api/v1/auth/validate-mcp-token</td><td>A minted MCP token</td><td>user_id, email, policy, token_id, is_demo — the identity the server acts as</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card table-card">
+        <h2>Policies</h2>
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <thead><tr><th scope="col">Policy</th><th scope="col">Tools listed</th><th scope="col">A mutating call</th></tr></thead>
+            <tbody>
+              <tr><td>full</td><td>All 105</td><td>Proxied to the app under your own account</td></tr>
+              <tr><td>read_only</td><td>The 52 read tools only</td><td>Refused at the MCP layer: 403, code mcp_read_only, no request made</td></tr>
+              <tr><td>demo tenant (its tokens are always read_only)</td><td>The 52 read tools only</td><td>Refused with code demo_account_restricted — the same code the app itself returns</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Configuration (MCP).</span></div></footer>
+</body>
+</html>

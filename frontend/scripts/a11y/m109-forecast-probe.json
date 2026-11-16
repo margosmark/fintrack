@@ -1,0 +1,92 @@
+{
+  "ok": true,
+  "base": "https://fintrac.princessandmark.com",
+  "width": 1440,
+  "checks": [
+    {
+      "check": "seed",
+      "ok": true,
+      "detail": "{\"register\": 200, \"login\": 200, \"scenario\": 201, \"count\": 1}"
+    },
+    {
+      "check": "determinism",
+      "ok": true,
+      "detail": "two GET /forecast/run bodies compared byte-for-byte"
+    },
+    {
+      "check": "series anchored on as_of",
+      "ok": true,
+      "detail": "buckets[0]=2026-10-07 as_of=2026-10-07 (732 buckets, last 2028-10-07)"
+    },
+    {
+      "check": "disclaimer",
+      "ok": true,
+      "detail": "'Projection, not a prediction.'"
+    },
+    {
+      "check": "scenario in run",
+      "ok": true,
+      "detail": "{\"n\": 1, \"name\": \"House in 2027\"}"
+    },
+    {
+      "check": "no move on purchase day",
+      "ok": true,
+      "detail": "gap 2027-06-01 = 0 (cash became equity), day before = 0"
+    },
+    {
+      "check": "interest is spent the month after",
+      "ok": true,
+      "detail": "gap 2027-07-01 = -1945.67 (400k x 4.49% / 12 = 1496.67 first period)"
+    },
+    {
+      "check": "flow identity",
+      "ok": true,
+      "detail": "income 0.00 == recurring 0.00 + residual 0.00"
+    },
+    {
+      "check": "honesty strings on /forecast",
+      "ok": true,
+      "detail": "all 4 present"
+    },
+    {
+      "check": "scenario listed",
+      "ok": true,
+      "detail": "saved scenario appears on the page"
+    },
+    {
+      "check": "assumptions affordance",
+      "ok": true,
+      "detail": "collapsed Assumptions control present"
+    },
+    {
+      "check": "assumptions panel opens",
+      "ok": true,
+      "detail": "tax disclaimer visible after expanding"
+    },
+    {
+      "check": "toggle needs no refetch",
+      "ok": true,
+      "detail": "/forecast/run calls during the toggle = 0 (expect 0); series summary now \"SeriesEnd value (today's dollars)\u0394 vs baseline (future dollars)Baseline0.000.00\""
+    },
+    {
+      "check": "copy",
+      "ok": true,
+      "detail": "{\"copy\": 201, \"after\": 2}"
+    },
+    {
+      "check": "delete both",
+      "ok": true,
+      "detail": "{\"del1\": 204, \"del2\": 204, \"final\": 0}"
+    },
+    {
+      "check": "foreign id is the same 404",
+      "ok": true,
+      "detail": "{\"detail\":\"Forecast scenario not found\",\"code\":\"scenario_not_found\"}"
+    },
+    {
+      "check": "probe tenant deleted",
+      "ok": true,
+      "detail": "DELETE /users/me \u2192 204"
+    }
+  ]
+}

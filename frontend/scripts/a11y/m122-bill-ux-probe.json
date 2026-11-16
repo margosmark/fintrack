@@ -1,0 +1,435 @@
+{
+  "checks": [
+    {
+      "check": "fixture: the probe year matches the ABSOLUTE 2026 dates",
+      "ok": true,
+      "detail": "run year 2026 vs fixture 2026"
+    },
+    {
+      "check": "seed: statement uploaded through /imports/upload and committed",
+      "ok": true,
+      "detail": "upload=201 commit=200 batch=198"
+    },
+    {
+      "check": "seed: both bills created (Rogers + Netflix)",
+      "ok": true,
+      "detail": "rogers=201 netflix=201"
+    },
+    {
+      "check": "suggest: the two spellings are ONE group, labelled by its newest row",
+      "ok": true,
+      "detail": "[{\"normalized_payee\": \"rogers #77\", \"count\": 5, \"total\": \"255.00\", \"last_date\": \"2026-07-05\"}, {\"normalized_payee\": \"NETFLIX\", \"count\": 2, \"total\": \"31.98\", \"last_date\": \"2026-05-05\"}, {\"normalized_payee\": \"COFFEE BEAN\", \"count\": 1, \"total\": \"4.50\", \"last_date\": \"2026-06-05\"}]"
+    },
+    {
+      "check": "suggest: ranked by frequency (ROGERS 5 > NETFLIX 2 > the 1-count payees)",
+      "ok": true,
+      "detail": "[\"rogers #77\", \"NETFLIX\", \"COFFEE BEAN\", \"FIDO\"]"
+    },
+    {
+      "check": "suggest: q=rog narrows to the ROGERS group only",
+      "ok": true,
+      "detail": "[{\"normalized_payee\": \"rogers #77\", \"count\": 5, \"total\": \"255.00\", \"last_date\": \"2026-07-05\"}]"
+    },
+    {
+      "check": "suggest: a digits-only draft answers [] (never a silent match-all)",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "suggest: with bill_id the SAVED rule's own payees are excluded",
+      "ok": true,
+      "detail": "[\"NETFLIX\", \"COFFEE BEAN\", \"FIDO\"]"
+    },
+    {
+      "check": "stats: all-time hand-recomputed (255.00 / 5 / 51.00 / yearly 255.00)",
+      "ok": true,
+      "detail": "{\"total\": \"255.00\", \"payments\": 5, \"average\": \"51.00\", \"years\": 1, \"yearly_average\": \"255.00\"}"
+    },
+    {
+      "check": "stats: YTD is the CALENDAR year over the same set",
+      "ok": true,
+      "detail": "{\"year\": 2026, \"total\": \"255.00\", \"payments\": 5}"
+    },
+    {
+      "check": "stats: the LIST rows carry ytd_total per bill",
+      "ok": true,
+      "detail": "{\"Rogers\": \"255.00\", \"Netflix\": \"31.98\"}"
+    },
+    {
+      "check": "line: trailing means hand-recomputed through the missed April",
+      "ok": true,
+      "detail": "line=['50.00', '50.00', '33.33', '37.50', '40.00', '42.50'] missed=[False, False, True, False, False, False]"
+    },
+    {
+      "check": "line: the LAST point IS the card's rolling.six.mean (42.50)",
+      "ok": true,
+      "detail": "line[-1]=42.50 six.mean={'periods': 6, 'window_periods': 6, 'payments': 5, 'total': '255.00', 'mean': '42.50', 'median': '50.00'}"
+    },
+    {
+      "check": "preview: an UNSAVED draft rule answers its own summary (T2)",
+      "ok": true,
+      "detail": "{\"first_date\": \"2026-04-05\", \"last_date\": \"2026-05-05\", \"last_12_total\": \"31.98\", \"account_counts\": [{\"account_id\": 293, \"account_name\": \"M122 probe\", \"count\": 2}]}"
+    },
+    {
+      "check": "UI: Edit rule opened",
+      "ok": true,
+      "detail": "{'opened': True}"
+    },
+    {
+      "check": "UI: quick-add chips come from the ledger, WITHOUT the bill's own payee",
+      "ok": true,
+      "detail": "[\"Add suggested term \\u2014 NETFLIX \\u00d72\", \"Add suggested term \\u2014 COFFEE BEAN \\u00d71\", \"Add suggested term \\u2014 FIDO \\u00d71\"]"
+    },
+    {
+      "check": "UI: the Spending stats card shows all-time / this-year / yearly",
+      "ok": true,
+      "detail": "{\"spending_stats_card\": true, \"has_all_time\": true, \"has_this_year\": true, \"has_yearly_average\": true}"
+    },
+    {
+      "check": "UI: the chart fallback table carries the 6-period avg column",
+      "ok": true,
+      "detail": "[\"Period\", \"Payments\", \"Total\", \"6-period avg\", \"Feb 2026\", \"Mar 2026\", \"Apr 2026missed\", \"May 2026\", \"Jun 2026\", \"Jul 2026\"]"
+    },
+    {
+      "check": "UI: a Test action sits in the editor",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "UI: the term input is a combobox that EXPANDS into the listbox",
+      "ok": true,
+      "detail": "{\"input_role\": \"combobox\", \"expanded\": true, \"options\": [{\"id\": \":r3:-listbox-opt-0\", \"text\": \"COFFEE BEAN\\u00d71\", \"selected\": \"false\"}]}"
+    },
+    {
+      "check": "UI: ArrowDown sets aria-activedescendant to a real option",
+      "ok": true,
+      "detail": "before=None after=:r3:-listbox-opt-0"
+    },
+    {
+      "check": "UI: Enter adds the SUGGESTION as a chip and clears the draft",
+      "ok": true,
+      "detail": "{\"chips_before\": [\"ROGERS\"], \"chips_after\": [\"ROGERS\", \"COFFEE BEAN\"], \"draft_cleared\": true}"
+    },
+    {
+      "check": "UI: Test renders the 'Draft preview \u2014 not saved' panel with its count",
+      "ok": true,
+      "detail": "{\"test_clicked\": true, \"panel_visible\": true, \"matching_line\": \"6 matching transactions\"}"
+    },
+    {
+      "check": "axe bill-rule-editor:390:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:412:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:1440:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:390:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:412:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:1440:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    }
+  ],
+  "axe": {
+    "bill-rule-editor:390:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:412:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:1440:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:390:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:412:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:1440:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ],
+      "editor_open": true
+    }
+  },
+  "suggest_bare": [
+    {
+      "normalized_payee": "rogers #77",
+      "count": 5,
+      "total": "255.00",
+      "last_date": "2026-07-05"
+    },
+    {
+      "normalized_payee": "NETFLIX",
+      "count": 2,
+      "total": "31.98",
+      "last_date": "2026-05-05"
+    },
+    {
+      "normalized_payee": "COFFEE BEAN",
+      "count": 1,
+      "total": "4.50",
+      "last_date": "2026-06-05"
+    },
+    {
+      "normalized_payee": "FIDO",
+      "count": 1,
+      "total": "75.00",
+      "last_date": "2026-06-05"
+    }
+  ],
+  "detail_stats": {
+    "all_time": {
+      "total": "255.00",
+      "payments": 5,
+      "average": "51.00",
+      "years": 1,
+      "yearly_average": "255.00"
+    },
+    "ytd": {
+      "year": 2026,
+      "total": "255.00",
+      "payments": 5
+    }
+  },
+  "rolling_line": [
+    "50.00",
+    "50.00",
+    "33.33",
+    "37.50",
+    "40.00",
+    "42.50"
+  ],
+  "draft_preview": {
+    "match_mode": "contains",
+    "match_term": "NETFLIX",
+    "match_terms": [
+      "NETFLIX"
+    ],
+    "match_logic": "any",
+    "frequency": "monthly",
+    "total_count": 2,
+    "truncated": false,
+    "groups": [
+      {
+        "period": "2026-05-01",
+        "label": "May 2026",
+        "count": 1,
+        "total": "15.99",
+        "items": [
+          {
+            "id": 8384,
+            "date": "2026-05-05",
+            "amount_native": "-15.99",
+            "currency": "CAD",
+            "cad_amount": "-15.99",
+            "normalized_payee": "NETFLIX",
+            "account_id": 293,
+            "account_name": "M122 probe"
+          }
+        ]
+      },
+      {
+        "period": "2026-04-01",
+        "label": "Apr 2026",
+        "count": 1,
+        "total": "15.99",
+        "items": [
+          {
+            "id": 8383,
+            "date": "2026-04-05",
+            "amount_native": "-15.99",
+            "currency": "CAD",
+            "cad_amount": "-15.99",
+            "normalized_payee": "NETFLIX",
+            "account_id": 293,
+            "account_name": "M122 probe"
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "first_date": "2026-04-05",
+      "last_date": "2026-05-05",
+      "last_12_total": "31.98",
+      "account_counts": [
+        {
+          "account_id": 293,
+          "account_name": "M122 probe",
+          "count": 2
+        }
+      ]
+    }
+  },
+  "ui": {
+    "quick_add": [
+      "Add suggested term \u2014 NETFLIX \u00d72",
+      "Add suggested term \u2014 COFFEE BEAN \u00d71",
+      "Add suggested term \u2014 FIDO \u00d71"
+    ],
+    "spending_stats_card": true,
+    "has_all_time": true,
+    "has_this_year": true,
+    "has_yearly_average": true,
+    "fallback_headers": [
+      "Period",
+      "Payments",
+      "Total",
+      "6-period avg",
+      "Feb 2026",
+      "Mar 2026",
+      "Apr 2026missed",
+      "May 2026",
+      "Jun 2026",
+      "Jul 2026"
+    ],
+    "test_button": true,
+    "page_text": "Skip to main content\n2\nfin_tracker\nBills\nEdit rule\nRogers\n\nMonthly \u00b7 Due 2026-09-05\n\nMatches transactions whose payee contains \u201cROGERS\u201d.\n\n5 payments\nMatch\ncontains\nstarts with\nis exactly\nAmount tolerance (\u00b1, blank = exact)\nMatch terms\nANY\nALL\nIn your ledger:\nNETFLIX \u00d72\nCOFFEE BEAN \u00d71\nFIDO \u00d71\nROGERS\n\nEnter to add \u00b7 Backspace on an empty field removes the last term \u00b7 up to 10 terms \u00b7 suggestions come from your own transactions\n\nSaving re-matches every committed transaction against this rule right away \u2014 the bill always holds exactly what its current rule finds, so nothing can go stale.\n\nSave rule\nTest\nCancel\nSpending stats\nLast 6 periods\n$42.50\nmedian $50.00 \u00b7 5 payments\nLast 12 periods\n$42.50\nmedian $50.00 \u00b7 5 payments\nAll-time total\n$255.00\n5 payments\nPer payment (all-time)\n$51.00\nmean of every payment this rule found\nThis year (2026)\n$255.00\n5 payments so far\nYearly average\n$255.00\nall-time \u00f7 1 year with payments\n\nA period with no payment counts as $0.00 in the rolling averages above \u2014 the average is what the bill really cost you, missed months included. All-time and this-year totals count only payments that actually happened.\n\nFound payments\n5\ncommitted payments match this rule\nPayments by period\nFeb 2026\nMar 2026\nApr 2026\nMay 2026\nJun 2026\nJul 2026\n$0\n$15\n$30\n$45\n$60\nShow the numbers behind this chart\nTransactions\n1\u20135 of 5\nDate\tPayee\tAccount\tAmount\n2026-07-05\trogers #77\tM122 probe\t-$55.00\n2026-06-05\tROGERS\tM122 probe\t-$50.00\n2026-05-05\tROGERS\tM122 probe\t-$50.00\n2026-03-05\tROGERS\tM122 probe\t-$50.00\n2026-02-05\tROGERS\tM122 probe\t-$50.00\nHome\nTxns\nImport\nInvest\nReports\nSettings\n$0"
+  },
+  "ui_lap": {
+    "input_role": "combobox",
+    "expanded": true,
+    "options": [
+      {
+        "id": ":r3:-listbox-opt-0",
+        "text": "COFFEE BEAN\u00d71",
+        "selected": "false"
+      }
+    ],
+    "active_before": null,
+    "active_after": ":r3:-listbox-opt-0",
+    "selected_on_enter": [
+      "COFFEE BEAN\u00d71"
+    ],
+    "chips_before": [
+      "ROGERS"
+    ],
+    "chips_after": [
+      "ROGERS",
+      "COFFEE BEAN"
+    ],
+    "draft_cleared": true,
+    "test_clicked": true,
+    "panel_visible": true,
+    "matching_line": "6 matching transactions",
+    "first_last": "First \u2192 last payment",
+    "page_text": "Skip to main content\n2\nfin_tracker\nBills\nEdit rule\nRogers\n\nMonthly \u00b7 Due 2026-09-05\n\nMatches transactions whose payee contains \u201cROGERS\u201d.\n\n5 payments\nMatch\ncontains\nstarts with\nis exactly\nAmount tolerance (\u00b1, blank = exact)\nMatch terms\nANY\nALL\nIn your ledger:\nNETFLIX \u00d72\nFIDO \u00d71\nROGERS\nCOFFEE BEAN\n\nEnter to add \u00b7 Backspace on an empty field removes the last term \u00b7 up to 10 terms \u00b7 suggestions come from your own transactions\n\nSaving re-matches every committed transaction against this rule right away \u2014 the bill always holds exactly what its current rule finds, so nothing can go stale.\n\nSave rule\nTest\nCancel\nDraft preview \u2014 not saved\n6 matching transactions\nFirst \u2192 last payment\n2026-02-05 \u2192 2026-07-05\nLast 12 periods\n$259.50\nBy account\nM122 probe \u00d76\nFirst 6 transactions the draft rule would match\nDate\tPayee\tAccount\tAmount\n2026-07-05\trogers #77\tM122 probe\t-$55.00 CAD\n2026-06-05\tCOFFEE BEAN\tM122 probe\t-$4.50 CAD\n2026-06-05\tROGERS\tM122 probe\t-$50.00 CAD\n2026-05-05\tROGERS\tM122 probe\t-$50.00 CAD\n2026-03-05\tROGERS\tM122 probe\t-$50.00 CAD\n2026-02-05\tROGERS\tM122 probe\t-$50.00 CAD\nPast payments matching the draft rule, grouped by period\nPeriod\tPayments\tTotal\nJul 2026\t1\t$55.00\nJun 2026\t2\t$54.50\nMay 2026\t1\t$50.00\nMar 2026\t1\t$50.00\nFeb 2026\t1\t$50.00\nSpending stats\nLast 6 periods\n$42.50\nmedian $50.00 \u00b7 5 payments\nLast 12 periods\n$42.50\nmedian $50.00 \u00b7 5 payments\nAll-time total\n$255.00\n5 payments\nPer payment (all-time)\n$51.00\nmean of every payment this rule found\nThis year (2026)\n$255.00\n5 payments so far\nYearly average\n$255.00\nall-time \u00f7 1 year with payments\n\nA period with no payment counts as $0.00 in the rolling averages above \u2014 the average is what the bill really cost you, missed months included. All-time and this-year totals count only payments that actually happened.\n\nFound payments\n5\ncommitted payments match this rule\nPayments by period\nFeb 2026\nMar 2026\nApr 2026\nMay 2026\nJun 2026\nJul 2026\n$0\n$15\n$30\n$45\n$60\nShow the numbers behind this chart\nTransactions\n1\u20135 of 5\nDate\tPayee\tAccount\tAmount\n2026-07-05\trogers #77\tM122 probe\t-$55.00\n2026-06-05\tROGERS\tM122 probe\t-$50.00\n2026-05-05\tROGERS\tM122 probe\t-$50.00\n2026-03-05\tROGERS\tM122 probe\t-$50.00\n2026-02-05\tROGERS\tM122 probe\t-$50.00\nHome\nTxns\nImport\nInvest\nReports\nSettings\n$0"
+  },
+  "final": {
+    "rogers_bill_id": 71,
+    "suggest_bare_top": [
+      {
+        "normalized_payee": "rogers #77",
+        "count": 5,
+        "total": "255.00",
+        "last_date": "2026-07-05"
+      },
+      {
+        "normalized_payee": "NETFLIX",
+        "count": 2,
+        "total": "31.98",
+        "last_date": "2026-05-05"
+      },
+      {
+        "normalized_payee": "COFFEE BEAN",
+        "count": 1,
+        "total": "4.50",
+        "last_date": "2026-06-05"
+      }
+    ],
+    "stats": {
+      "all_time": {
+        "total": "255.00",
+        "payments": 5,
+        "average": "51.00",
+        "years": 1,
+        "yearly_average": "255.00"
+      },
+      "ytd": {
+        "year": 2026,
+        "total": "255.00",
+        "payments": 5
+      }
+    }
+  }
+}

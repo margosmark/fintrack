@@ -1,0 +1,117 @@
+{
+  "card": "t_23b8d18e",
+  "base": "http://localhost:4191",
+  "served_build_commit": "unknown",
+  "finished_at": "2026-10-16T15:36:23+00:00",
+  "duration_s": 45.6,
+  "passed": 21,
+  "failed": 0,
+  "console_errors": [],
+  "checks": [
+    {
+      "name": "order.skip-link-first",
+      "ok": true,
+      "detail": "{'tag': 'A', 'id': '', 'testid': 'skip-link', 'label': 'Skip to main content', 'href': '#main-content', 'inTopbar': False, 'inTabs': False, 'inMore': False, 'inAccount': False, 'inMain': False, 'isBody': False, 'visible': True, 'outline': 'solid 2px rgba(0, 0, 0, 0)', 'shadow': 'rgb(255, 255, 255) 0px 0px 0px 0px, rgb(11, 79, 184) 0px 0px 0px 2px, '}"
+    },
+    {
+      "name": "order.brand-then-5-tabs-then-More",
+      "ok": true,
+      "detail": "['skip-link', '/dashboard', '/dashboard', '/transactions', '/imports', '/investments', '/reports', 'more-toggle']"
+    },
+    {
+      "name": "order.right-cluster-follows-More",
+      "ok": true,
+      "detail": "['INPUT', 'command-palette-trigger', 'mask-chip', 'notifications-toggle', 'account-menu-toggle']"
+    },
+    {
+      "name": "visible.every-topbar-stop-paints-an-indicator",
+      "ok": true,
+      "detail": "12 chrome stops, invisible=[]"
+    },
+    {
+      "name": "more.toggle-focusable",
+      "ok": true,
+      "detail": "{'tag': 'BUTTON', 'id': '', 'testid': 'more-toggle', 'label': 'More', 'href': '', 'inTopbar': True, 'inTabs': True, 'inMore': False, 'inAccount': False, 'inMain': False, 'isBody': False, 'visible': True, 'outline': 'solid 2px rgba(0, 0, 0, 0)', 'shadow': 'rgb(255, 255, 255) 0px 0px 0px 0px, rgb(11, 79, 184) 0px 0px 0px 2px, '}"
+    },
+    {
+      "name": "more.focus-moves-into-the-panel-on-open",
+      "ok": true,
+      "detail": "{'testid': 'more-panel', 'id': 'more-panel', 'tag': 'DIV', 'inMore': True}"
+    },
+    {
+      "name": "more.tab-enters-the-panel-links",
+      "ok": true,
+      "detail": "{'tag': 'A', 'href': '/forecast', 'label': 'Forecast'}"
+    },
+    {
+      "name": "more.panel-link-paints-an-indicator",
+      "ok": true,
+      "detail": "outline=solid 2px rgba(0, 0, 0, 0) shadow=rgb(255, 255, 255) 0px 0px 0px 0px, rgb(11, 79, 184) 0px 0px 0px 2px, "
+    },
+    {
+      "name": "more.escape-closes-and-returns-focus-to-the-toggle",
+      "ok": true,
+      "detail": "{'testid': 'more-toggle', 'label': 'More'}"
+    },
+    {
+      "name": "account.avatar-is-focusable",
+      "ok": true,
+      "detail": "{'testid': 'account-menu-toggle', 'tag': 'BUTTON', 'label': 'Account menu: demo@fintracker.local'}"
+    },
+    {
+      "name": "account.focus-moves-into-the-panel-on-open",
+      "ok": true,
+      "detail": "{'id': 'account-menu-panel', 'testid': 'account-menu-panel', 'tag': 'DIV'}"
+    },
+    {
+      "name": "account.tab-enters-the-panel",
+      "ok": true,
+      "detail": "{'tag': 'BUTTON', 'label': 'Switch to dark theme'}"
+    },
+    {
+      "name": "account.escape-returns-focus-to-the-avatar",
+      "ok": true,
+      "detail": "{'testid': 'account-menu-toggle', 'label': 'Account menu: demo@fintracker.local'}"
+    },
+    {
+      "name": "handoff.primary-tab-receives-focus",
+      "ok": true,
+      "detail": "{'href': '/transactions', 'label': 'Transactions', 'inTabs': True}"
+    },
+    {
+      "name": "handoff.from-primary-tab.leaves-chrome",
+      "ok": true,
+      "detail": "{'testid': '', 'id': 'main-content', 'tag': 'MAIN', 'inMain': True}"
+    },
+    {
+      "name": "handoff.calendar-link-receives-focus",
+      "ok": true,
+      "detail": "{'href': '/calendar', 'label': 'Calendar', 'inMore': True}"
+    },
+    {
+      "name": "handoff.from-More-panel-not-back-to-the-toggle",
+      "ok": true,
+      "detail": "{'id': 'main-content', 'testid': '', 'tag': 'MAIN', 'label': 'Calendar October 2026 Today Bills Dividends Subscriptions Signed amoun'}"
+    },
+    {
+      "name": "mobile.chrome-swaps-to-the-tab-bar",
+      "ok": true,
+      "detail": "{'bar': True, 'topbar': False}"
+    },
+    {
+      "name": "mobile.tab-bar-comes-after-the-routed-page",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "mobile.activity-tab-receives-focus",
+      "ok": true,
+      "detail": "{'href': '/transactions', 'label': 'Activity'}"
+    },
+    {
+      "name": "handoff.from-the-bottom-tab-bar",
+      "ok": true,
+      "detail": "{'id': 'main-content', 'testid': '', 'tag': 'MAIN', 'label': 'The demo account is read-only \u2014 row changes are not saved. Transaction'}"
+    }
+  ]
+}

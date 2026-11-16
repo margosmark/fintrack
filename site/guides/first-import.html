@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your first import — fin_tracker guides</title>
+  <meta name="description" content="The import journey end to end: where to click, what the dry-run preview means, and how to handle the duplicate rows the first time.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+
+    <section class="block">
+      <h1>Your first import, start to finish</h1>
+      <p class="sub">Where to click, what each colour means, and how to handle duplicate rows the first time. Every screenshot below is the real product.</p>
+
+      <ol class="steps">
+        <li class="card">
+          <h2>Start at Imports</h2>
+          <p>Imports is a row in the left-hand navigation. Everything you bring in runs through the three steps printed on the card &mdash; Upload, Review, Done &mdash; so you always know which one you are in. Nothing has been uploaded on this account yet, which is why the Batches list below the card is empty; that list is the memory of everything you have ever imported, with the status of each one.</p>
+          <p class="meta"><a href="samples/sample.ofx">Download the sample OFX</a></p>
+          <figure class="shot"><img src="../assets/imports-empty.png" alt="Imports page with an empty Batches list before anything has been uploaded" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>Choose the file and the account it belongs to</h2>
+          <p>Pick the statement your bank exported (CSV, OFX, QFX or QIF) and the account it belongs to. The Import as toggle decides whether the rows are read as bank activity or as brokerage trades. The Preview import button stays disabled until both are chosen &mdash; an import without a destination is one you could not undo.</p>
+          <figure class="shot"><img src="../assets/imports-file-chosen.png" alt="Upload form with sample.ofx selected, an account chosen, and the Preview import button enabled" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>Read the preview before anything exists</h2>
+          <p>Preview writes nothing: the header says &ldquo;Preview &mdash; nothing is saved yet&rdquo; and it means it. Above the rows you can see the column roles the file was read with, so &ldquo;date came from DTPOSTED, amount from TRNAMT&rdquo; is something you can check instead of take on trust. This first pass is the happy path &mdash; four rows, every verdict green, nothing to decide yet.</p>
+          <figure class="shot"><img src="../assets/imports-preview-first.png" alt="Preview of four new rows with every verdict green and the column roles listed above the table" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>The three colours, and what each one means</h2>
+          <p>Every row carries a verdict, and the colour is the whole message. <strong>Green means new:</strong> nothing like it exists and it will import. <strong>Amber means near-duplicate:</strong> the same amount within three days of something you already have. <strong>Red means exact duplicate:</strong> that transaction is already in your data, so it is skipped and never written twice. The chips under the header add up to the same story &mdash; in this example, 1 new, 1 exact duplicate, 1 near-duplicate &mdash; and nothing is hidden, because a row that will not import says so in its own column.</p>
+          <figure class="shot"><img src="../assets/imports-preview-duplicate.png" alt="Preview with one red exact duplicate, one amber near-duplicate and one green new row" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>Make the review decision</h2>
+          <p>Nothing is written until you press Confirm. Confirm stages the rows into a batch that is still marked Review, and <em>Cancel &mdash; import nothing</em> throws the parse away and leaves your data exactly as it was. The note under the buttons is the contract: near-duplicates are never dropped for you, so if the amber row really is a second purchase, it is already in the batch waiting to be committed, and if it is not, you can uncheck it before you commit.</p>
+          <figure class="shot"><img src="../assets/imports-review-decision.png" alt="Bottom of the preview with the Confirm import and Cancel buttons and the no-silent-drops note" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>Commit when you are sure</h2>
+          <p>A staged batch needs one more click: &ldquo;Commit N new transactions&rdquo; makes the rows live, and balances, budgets and reports all see them from that moment. The toast confirms it and the batch badge turns green in the Batches list. Got it wrong? A committed batch keeps a Revert button that takes its rows back out in one click.</p>
+          <figure class="shot"><img src="../assets/imports-committed.png" alt="Batch committed toast, a green Committed badge on the batch, and the Revert button" loading="lazy"></figure>
+        </li>
+        <li class="card">
+          <h2>See it in your feed</h2>
+          <p>Open Transactions: the rows you just committed are there with their own dates, next to anything already in the account &mdash; each with an account and a category slot ready to be filled in, or for the suggestion queue to propose one. The Import guides by bank guide lists which export to pull from each institution and which date format that bank likes to use.</p>
+          <figure class="shot"><img src="../assets/imports-in-transactions.png" alt="Transactions feed showing the imported rows with dates, payees and amounts" loading="lazy"></figure>
+        </li>
+      </ol>
+
+      <p class="meta"><a class="back" href="../index.html#guides">&larr; All guides</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>fin_tracker &mdash; self-hosted personal finance.</span>
+      <span>Guides mirror the in-app Help center.</span>
+    </div>
+  </footer>
+</body>
+</html>

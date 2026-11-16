@@ -1,0 +1,568 @@
+{
+  "_readme": [
+    "Visual-regression baseline for shell_visual_matrix_probe.py.",
+    "Pinned FIELDS per element live in that probe's PIN_SPEC (heights",
+    "that follow page content are deliberately not pinned).",
+    "Refresh ONLY at the tree under test — run --update-baseline there",
+    "and record the SHA below; a baseline from an older tree is not a",
+    "defect report about a newer one (PM rule).",
+    "Compare with ±tolerance_px; a missing/extra element fails too."
+  ],
+  "schema": 1,
+  "tolerance_px": 2.0,
+  "captured": {
+    "at": "2026-10-16T14:36:18+00:00",
+    "base": "http://localhost:4183",
+    "served_build_commit": "f85871979ae69a5c987de2eebfe6c5aee3ea3c17",
+    "repo_head": "f85871979ae69a5c987de2eebfe6c5aee3ea3c17",
+    "note": "captured from the tree under test; the matrix change itself adds no app code, so app bytes == repo_head at capture time"
+  },
+  "cells": {
+    "1440x900|demo|masked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        }
+      },
+      "png": {
+        "w": 1440,
+        "h": 900
+      }
+    },
+    "1440x900|demo|unmasked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        }
+      },
+      "png": {
+        "w": 1440,
+        "h": 900
+      }
+    },
+    "1440x900|empty|masked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        },
+        "empty-state": {
+          "x": 34,
+          "y": 1262.9,
+          "w": 1028
+        }
+      },
+      "png": {
+        "w": 1440,
+        "h": 900
+      }
+    },
+    "1440x900|empty|unmasked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        },
+        "empty-state": {
+          "x": 34,
+          "y": 1262.9,
+          "w": 1028
+        }
+      },
+      "png": {
+        "w": 1440,
+        "h": 900
+      }
+    },
+    "1440x900|more|masked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        },
+        "more-panel": {
+          "x": 220.2,
+          "y": 92,
+          "w": 304
+        }
+      },
+      "png": {
+        "w": 1440,
+        "h": 900
+      }
+    },
+    "1440x900|more|unmasked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        },
+        "more-panel": {
+          "x": 220.2,
+          "y": 92,
+          "w": 304
+        }
+      },
+      "png": {
+        "w": 1440,
+        "h": 900
+      }
+    },
+    "390x844|demo|masked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "png": {
+        "w": 390,
+        "h": 844
+      }
+    },
+    "390x844|demo|unmasked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "png": {
+        "w": 390,
+        "h": 844
+      }
+    },
+    "390x844|empty|masked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        },
+        "empty-state": {
+          "x": 22,
+          "y": 2341.5,
+          "w": 683
+        }
+      },
+      "png": {
+        "w": 390,
+        "h": 844
+      }
+    },
+    "390x844|empty|unmasked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        },
+        "empty-state": {
+          "x": 22,
+          "y": 2341.5,
+          "w": 683
+        }
+      },
+      "png": {
+        "w": 390,
+        "h": 844
+      }
+    },
+    "390x844|more|masked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": 0,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "png": {
+        "w": 390,
+        "h": 844
+      }
+    },
+    "390x844|more|unmasked": {
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": 0,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "png": {
+        "w": 390,
+        "h": 844
+      }
+    }
+  }
+}

@@ -1,0 +1,442 @@
+{
+ "base": "http://127.0.0.1:18080",
+ "viewports": [
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 31,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "dashboard",
+   "path": "/dashboard",
+   "theme": "dark",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 292,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [
+    {
+     "clientW": 348,
+     "scrollW": 1173,
+     "maxScroll": 825,
+     "hint": true,
+     "label": "Transactions table"
+    }
+   ],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "transactions",
+   "path": "/transactions",
+   "theme": "dark",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 15,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "budgets",
+   "path": "/budgets",
+   "theme": "dark",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 23,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "bills",
+   "path": "/bills",
+   "theme": "dark",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 40,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "calendar",
+   "path": "/calendar",
+   "theme": "dark",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 27,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "reports",
+   "path": "/reports",
+   "theme": "dark",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 31,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "dashboard",
+   "path": "/dashboard",
+   "theme": "light",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 292,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [
+    {
+     "clientW": 348,
+     "scrollW": 1173,
+     "maxScroll": 825,
+     "hint": true,
+     "label": "Transactions table"
+    }
+   ],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "transactions",
+   "path": "/transactions",
+   "theme": "light",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 15,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "budgets",
+   "path": "/budgets",
+   "theme": "light",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 23,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "bills",
+   "path": "/bills",
+   "theme": "light",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 40,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "calendar",
+   "path": "/calendar",
+   "theme": "light",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  },
+  {
+   "innerWidth": 390,
+   "docScrollW": 390,
+   "docClientW": 390,
+   "pageHScroll": false,
+   "bodyScrollW": 390,
+   "overflow": [],
+   "overflowCount": 0,
+   "touchTargetsTotal": 27,
+   "touchTargetsSmall": 0,
+   "smallSample": [],
+   "tableScrollers": [],
+   "navRail": {
+    "w": 76,
+    "x": -248,
+    "visible": true
+   },
+   "bottomNav": {
+    "h": 57,
+    "visible": true
+   },
+   "hamburger": true,
+   "drawer": {
+    "open": true,
+    "total": 28,
+    "smallCount": 0,
+    "minHeight": 44,
+    "small": []
+   },
+   "page": "reports",
+   "path": "/reports",
+   "theme": "light",
+   "viewport": "390x844",
+   "drawerEscapeClosed": true
+  }
+ ],
+ "consoleErrors": []
+}

@@ -1,0 +1,50 @@
+{
+ "tool": "lighthouse@11.7.0",
+ "reason": "v12+ removed the PWA category; 11.x is the last release that still scores it",
+ "url": "http://127.0.0.1:18080/login",
+ "capturedAgainst": "deployed stack (example.internal nginx over the LAN tunnel), not the local preview",
+ "capturedAt": "2026-09-30",
+ "categories": {
+  "accessibility": 100,
+  "pwa": 100
+ },
+ "pwaAudits": {
+  "installable-manifest": {
+   "score": 1,
+   "title": "Web app manifest and service worker meet the installability requirements"
+  },
+  "splash-screen": {
+   "score": 1,
+   "title": "Configured for a custom splash screen"
+  },
+  "themed-omnibox": {
+   "score": 1,
+   "title": "Sets a theme color for the address bar."
+  },
+  "content-width": {
+   "score": 1,
+   "title": "Content is sized correctly for the viewport"
+  },
+  "viewport": {
+   "score": 1,
+   "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`"
+  },
+  "maskable-icon": {
+   "score": 1,
+   "title": "Manifest has a maskable icon"
+  },
+  "pwa-cross-browser": {
+   "score": null,
+   "title": "Site works cross-browser"
+  },
+  "pwa-page-transitions": {
+   "score": null,
+   "title": "Page transitions don't feel like they block on the network"
+  },
+  "pwa-each-page-has-url": {
+   "score": null,
+   "title": "Each page has a URL"
+  }
+ },
+ "a11yFailingAudits": []
+}

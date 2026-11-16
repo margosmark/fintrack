@@ -1,0 +1,398 @@
+{
+ "fund_sector_mix": {
+  "VB": {
+   "Basic Materials": "4.80",
+   "Communication Services": "1.30",
+   "Consumer Cyclical": "12.60",
+   "Consumer Defensive": "3.50",
+   "Energy": "4.90",
+   "Financial Services": "12.70",
+   "Healthcare": "13.60",
+   "Industrials": "20.40",
+   "Real Estate": "7.30",
+   "Technology": "15.40",
+   "Utilities": "3.40"
+  },
+  "VFVA": {
+   "Basic Materials": "3.90",
+   "Communication Services": "3.70",
+   "Consumer Cyclical": "17.50",
+   "Consumer Defensive": "6.90",
+   "Energy": "9.70",
+   "Financial Services": "22.90",
+   "Healthcare": "12.90",
+   "Industrials": "10.90",
+   "Real Estate": "0.20",
+   "Technology": "11.30"
+  },
+  "VIG": {
+   "Basic Materials": "3.30",
+   "Consumer Cyclical": "4.00",
+   "Consumer Defensive": "9.10",
+   "Energy": "3.40",
+   "Financial Services": "22.10",
+   "Healthcare": "18.20",
+   "Industrials": "11.40",
+   "Technology": "25.60",
+   "Utilities": "2.80"
+  },
+  "VIOV": {
+   "Basic Materials": "5.80",
+   "Communication Services": "4.00",
+   "Consumer Cyclical": "15.50",
+   "Consumer Defensive": "4.60",
+   "Energy": "7.30",
+   "Financial Services": "21.70",
+   "Healthcare": "6.80",
+   "Industrials": "14.50",
+   "Real Estate": "6.90",
+   "Technology": "10.80",
+   "Utilities": "2.20"
+  },
+  "VO": {
+   "Basic Materials": "2.50",
+   "Communication Services": "2.10",
+   "Consumer Cyclical": "12.80",
+   "Consumer Defensive": "5.00",
+   "Energy": "9.00",
+   "Financial Services": "13.40",
+   "Healthcare": "7.20",
+   "Industrials": "19.90",
+   "Real Estate": "5.00",
+   "Technology": "14.90",
+   "Utilities": "8.30"
+  },
+  "VOE": {
+   "Basic Materials": "3.40",
+   "Communication Services": "0.10",
+   "Consumer Cyclical": "10.70",
+   "Consumer Defensive": "8.20",
+   "Energy": "14.00",
+   "Financial Services": "18.00",
+   "Healthcare": "5.80",
+   "Industrials": "16.60",
+   "Real Estate": "5.60",
+   "Technology": "6.40",
+   "Utilities": "11.10"
+  },
+  "VONV": {
+   "Basic Materials": "2.70",
+   "Communication Services": "2.90",
+   "Consumer Cyclical": "14.40",
+   "Consumer Defensive": "5.60",
+   "Energy": "6.30",
+   "Financial Services": "18.00",
+   "Healthcare": "12.50",
+   "Industrials": "12.30",
+   "Real Estate": "3.50",
+   "Technology": "18.00",
+   "Utilities": "3.80"
+  },
+  "VOO": {
+   "Basic Materials": "1.80",
+   "Communication Services": "9.50",
+   "Consumer Cyclical": "9.10",
+   "Consumer Defensive": "4.50",
+   "Energy": "3.50",
+   "Financial Services": "12.30",
+   "Healthcare": "9.30",
+   "Industrials": "8.30",
+   "Real Estate": "1.80",
+   "Technology": "37.90",
+   "Utilities": "2.00"
+  },
+  "VOOG": {
+   "Basic Materials": "0.40",
+   "Communication Services": "14.80",
+   "Consumer Cyclical": "8.40",
+   "Consumer Defensive": "1.10",
+   "Financial Services": "9.10",
+   "Healthcare": "6.20",
+   "Industrials": "6.00",
+   "Real Estate": "0.60",
+   "Technology": "53.00",
+   "Utilities": "0.30"
+  },
+  "VOOV": {
+   "Basic Materials": "3.60",
+   "Communication Services": "3.10",
+   "Consumer Cyclical": "10.00",
+   "Consumer Defensive": "8.60",
+   "Energy": "7.60",
+   "Financial Services": "16.10",
+   "Healthcare": "12.90",
+   "Industrials": "11.10",
+   "Real Estate": "3.20",
+   "Technology": "19.80",
+   "Utilities": "4.00"
+  },
+  "VTI": {
+   "Basic Materials": "1.60",
+   "Communication Services": "2.10",
+   "Consumer Cyclical": "12.00",
+   "Consumer Defensive": "3.40",
+   "Energy": "3.70",
+   "Financial Services": "10.40",
+   "Healthcare": "9.50",
+   "Industrials": "11.80",
+   "Real Estate": "2.20",
+   "Technology": "40.90",
+   "Utilities": "2.30"
+  }
+ },
+ "ishares_us": {
+  "IVV": "https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf"
+ },
+ "static_sector": {
+  "0700.HK": "Communication Services",
+  "2308": "Technology",
+  "2308.TW": "Technology",
+  "2330": "Technology",
+  "2330.TW": "Technology",
+  "2454": "Technology",
+  "2454.TW": "Technology",
+  "700": "Communication Services",
+  "9988": "Consumer Cyclical",
+  "9988.HK": "Consumer Cyclical",
+  "BRK-B": "Financial Services",
+  "BRK.B": "Financial Services",
+  "BRK/B": "Financial Services",
+  "HDFCB": "Financial Services",
+  "HDFCBANK": "Financial Services",
+  "ICICIBC": "Financial Services",
+  "MC": "Consumer Cyclical",
+  "MC.PA": "Consumer Cyclical",
+  "NOVO-B.CO": "Healthcare",
+  "NVO": "Healthcare",
+  "OR": "Consumer Defensive",
+  "OR.PA": "Consumer Defensive",
+  "RELIANCE": "Energy",
+  "RELIANCE.NS": "Energy",
+  "SAP": "Technology",
+  "SAP.DE": "Technology",
+  "STX": "Technology",
+  "WDC": "Technology"
+ },
+ "vanguard_ca": {
+  "VA": {
+   "port_id": "9550",
+   "venue_suffix": ".TO"
+  },
+  "VAB": {
+   "port_id": "9552",
+   "venue_suffix": ".TO"
+  },
+  "VBAL": {
+   "port_id": "9578",
+   "venue_suffix": ".TO"
+  },
+  "VBG": {
+   "port_id": "9568",
+   "venue_suffix": ".NE"
+  },
+  "VBU": {
+   "port_id": "9567",
+   "venue_suffix": ".NE"
+  },
+  "VCB": {
+   "port_id": "1936",
+   "venue_suffix": ".TO"
+  },
+  "VCE": {
+   "port_id": "9554",
+   "venue_suffix": ".TO"
+  },
+  "VCIP": {
+   "port_id": "9691",
+   "venue_suffix": ".TO"
+  },
+  "VCN": {
+   "port_id": "9561",
+   "venue_suffix": ".TO"
+  },
+  "VCNS": {
+   "port_id": "9577",
+   "venue_suffix": ".TO"
+  },
+  "VCOR": {
+   "port_id": "D021",
+   "venue_suffix": ".TO"
+  },
+  "VDU": {
+   "port_id": "9558",
+   "venue_suffix": ".TO"
+  },
+  "VDY": {
+   "port_id": "9560",
+   "venue_suffix": ".TO"
+  },
+  "VE": {
+   "port_id": "9549",
+   "venue_suffix": ".TO"
+  },
+  "VEE": {
+   "port_id": "9556",
+   "venue_suffix": ".TO"
+  },
+  "VEF": {
+   "port_id": "9555",
+   "venue_suffix": ".TO"
+  },
+  "VEQT": {
+   "port_id": "9692",
+   "venue_suffix": ".TO"
+  },
+  "VFV": {
+   "port_id": "9563",
+   "venue_suffix": ".TO"
+  },
+  "VGAB": {
+   "port_id": "9841",
+   "venue_suffix": ".NE"
+  },
+  "VGG": {
+   "port_id": "9566",
+   "venue_suffix": ".TO"
+  },
+  "VGH": {
+   "port_id": "9564",
+   "venue_suffix": ".TO"
+  },
+  "VGRO": {
+   "port_id": "9579",
+   "venue_suffix": ".TO"
+  },
+  "VGV": {
+   "port_id": "1817",
+   "venue_suffix": ".TO"
+  },
+  "VI": {
+   "port_id": "9570",
+   "venue_suffix": ".TO"
+  },
+  "VIDY": {
+   "port_id": "9742",
+   "venue_suffix": ".TO"
+  },
+  "VIGG": {
+   "port_id": "D020",
+   "venue_suffix": ".TO"
+  },
+  "VIU": {
+   "port_id": "9569",
+   "venue_suffix": ".TO"
+  },
+  "VLB": {
+   "port_id": "1811",
+   "venue_suffix": ".TO"
+  },
+  "VMO": {
+   "port_id": "9835",
+   "venue_suffix": ".TO"
+  },
+  "VRE": {
+   "port_id": "9559",
+   "venue_suffix": ".TO"
+  },
+  "VRIF": {
+   "port_id": "9870",
+   "venue_suffix": ".TO"
+  },
+  "VSB": {
+   "port_id": "9553",
+   "venue_suffix": ".TO"
+  },
+  "VSC": {
+   "port_id": "9565",
+   "venue_suffix": ".TO"
+  },
+  "VSP": {
+   "port_id": "9562",
+   "venue_suffix": ".TO"
+  },
+  "VUDH": {
+   "port_id": "D019",
+   "venue_suffix": ".TO"
+  },
+  "VUDV": {
+   "port_id": "D018",
+   "venue_suffix": ".TO"
+  },
+  "VUN": {
+   "port_id": "9557",
+   "venue_suffix": ".TO"
+  },
+  "VUS": {
+   "port_id": "9551",
+   "venue_suffix": ".TO"
+  },
+  "VVL": {
+   "port_id": "9795",
+   "venue_suffix": ".TO"
+  },
+  "VVO": {
+   "port_id": "9828",
+   "venue_suffix": ".TO"
+  },
+  "VVSG": {
+   "port_id": "D003",
+   "venue_suffix": ".TO"
+  },
+  "VXC": {
+   "port_id": "9548",
+   "venue_suffix": ".TO"
+  }
+ },
+ "vanguard_us": [
+  "BND",
+  "BNDX",
+  "VAW",
+  "VB",
+  "VCIT",
+  "VCLT",
+  "VCR",
+  "VCSH",
+  "VDC",
+  "VDE",
+  "VEA",
+  "VEU",
+  "VFVA",
+  "VGIT",
+  "VGK",
+  "VGLT",
+  "VGSH",
+  "VGT",
+  "VHT",
+  "VIG",
+  "VIGI",
+  "VIOV",
+  "VIS",
+  "VMBS",
+  "VNQ",
+  "VNQI",
+  "VO",
+  "VOE",
+  "VONV",
+  "VOO",
+  "VOOG",
+  "VOOV",
+  "VPL",
+  "VPU",
+  "VSGX",
+  "VSS",
+  "VT",
+  "VTC",
+  "VTEB",
+  "VTEI",
+  "VTES",
+  "VTI",
+  "VTV",
+  "VUG",
+  "VUSB",
+  "VWO",
+  "VXF",
+  "VXUS",
+  "VYM",
+  "VYMI"
+ ]
+}

@@ -1,0 +1,252 @@
+{
+  "base": "http://192.0.2.109:8080",
+  "widths": {
+    "1440": {
+      "width": 1440,
+      "height": 900,
+      "boot": {
+        "chip": {
+          "pressed": "true",
+          "text": "Masked",
+          "tag": "BUTTON",
+          "hasSvg": true,
+          "rowPressed": "true"
+        },
+        "bootMasked": true,
+        "sessionStorageKey": "1"
+      },
+      "chipIsButton": true,
+      "rowInSync": true,
+      "maskedContent": {
+        "moneySample": [],
+        "moneyCount": 0,
+        "pctSample": [
+          "groceries: -100%",
+          "dining: -100%",
+          "housing: -100%",
+          "utilities: -100%",
+          "entertainment: -100%",
+          "This month's spending so far against ALL of last month — a part-month measured against a full month, so the two converge as the month runs. 0% when last month spent nothing.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%."
+        ],
+        "pctCount": 9,
+        "wordSample": [
+          "Amounts masked. Dollar figures are hidden; names, dates and percentages still show.",
+          "Skip to main content",
+          "fin_tracker",
+          "Masked",
+          "Search",
+          "Command palette",
+          "Ctrl+K",
+          "Dashboard",
+          "Transactions",
+          "Imports"
+        ],
+        "liveRegion": {
+          "text": "Amounts masked. Dollar figures are hidden; names, dates and percentages still show.",
+          "live": "polite"
+        }
+      },
+      "clickFlip": {
+        "before": {
+          "pressed": "true",
+          "text": "Masked",
+          "tag": "BUTTON",
+          "hasSvg": true,
+          "rowPressed": "true"
+        },
+        "after": {
+          "pressed": "false",
+          "text": "Unmasked",
+          "tag": "BUTTON",
+          "hasSvg": true,
+          "rowPressed": "false"
+        },
+        "changed": true,
+        "settled": true
+      },
+      "revealedContent": {
+        "moneySample": [
+          "$877.41",
+          "$50.00",
+          "-$419.14",
+          "$125,273.90",
+          "$34,575.00",
+          "$508.27",
+          "$508.27"
+        ],
+        "moneyCount": 7,
+        "pctSample": [
+          "groceries: -100%",
+          "dining: -100%",
+          "housing: -100%",
+          "utilities: -100%",
+          "entertainment: -100%",
+          "This month's spending so far against ALL of last month — a part-month measured against a full month, so the two converge as the month runs. 0% when last month spent nothing.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%."
+        ],
+        "pctCount": 9
+      },
+      "contentVerdict": {
+        "noDollarFiguresWhileMasked": true,
+        "percentagesVisibleWhileMasked": true,
+        "percentagesNotMasked": true,
+        "datesAndNamesSurvive": true,
+        "dollarsRevealedOnUnmask": true,
+        "noBulletsWhenRevealed": true
+      },
+      "chordFlip": {
+        "stateBefore": "false",
+        "stateAfter": "true",
+        "changed": true,
+        "moneyCountAfter": 0,
+        "liveRegionAfter": {
+          "text": "Amounts masked. Dollar figures are hidden; names, dates and percentages still show.",
+          "live": "polite"
+        }
+      },
+      "chordDiscrimination": {
+        "plainMetaHBefore": "true",
+        "plainMetaHAfter": "true",
+        "plainMetaHHarmless": true,
+        "metaKDidNotMask": true,
+        "metaKOpenedPalette": true
+      },
+      "persistence": {
+        "keyValue": "1",
+        "localStorageClean": true,
+        "survivesSpaNavigation": true,
+        "pathAfterNav": "/investments"
+      }
+    },
+    "390": {
+      "width": 390,
+      "height": 844,
+      "boot": {
+        "chip": {
+          "pressed": "true",
+          "text": "",
+          "tag": "BUTTON",
+          "hasSvg": true,
+          "rowPressed": "true"
+        },
+        "bootMasked": true,
+        "sessionStorageKey": "1"
+      },
+      "chipIsButton": true,
+      "rowInSync": true,
+      "maskedContent": {
+        "moneySample": [],
+        "moneyCount": 0,
+        "pctSample": [
+          "groceries: -100%",
+          "dining: -100%",
+          "housing: -100%",
+          "utilities: -100%",
+          "entertainment: -100%",
+          "This month's spending so far against ALL of last month — a part-month measured against a full month, so the two converge as the month runs. 0% when last month spent nothing.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%."
+        ],
+        "pctCount": 9,
+        "wordSample": [
+          "Amounts masked. Dollar figures are hidden; names, dates and percentages still show.",
+          "Skip to main content",
+          "fin_tracker",
+          "Dashboard",
+          "Overview",
+          "Import first",
+          "Budget first",
+          "From",
+          "•••••",
+          "•••••"
+        ],
+        "liveRegion": {
+          "text": "Amounts masked. Dollar figures are hidden; names, dates and percentages still show.",
+          "live": "polite"
+        }
+      },
+      "clickFlip": {
+        "before": {
+          "pressed": "true",
+          "text": "",
+          "tag": "BUTTON",
+          "hasSvg": true,
+          "rowPressed": "true"
+        },
+        "after": {
+          "pressed": "false",
+          "text": "",
+          "tag": "BUTTON",
+          "hasSvg": true,
+          "rowPressed": "false"
+        },
+        "changed": true,
+        "settled": true
+      },
+      "revealedContent": {
+        "moneySample": [
+          "$508.27",
+          "$508.27"
+        ],
+        "moneyCount": 2,
+        "pctSample": [
+          "groceries: -100%",
+          "dining: -100%",
+          "housing: -100%",
+          "utilities: -100%",
+          "entertainment: -100%",
+          "This month's spending so far against ALL of last month — a part-month measured against a full month, so the two converge as the month runs. 0% when last month spent nothing.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%.",
+          "spent ÷ limit — the true ratio, never clamped: over budget shows the real number (201.94% prints as 202%). Only the bar fill stops at 100%."
+        ],
+        "pctCount": 9
+      },
+      "contentVerdict": {
+        "noDollarFiguresWhileMasked": true,
+        "percentagesVisibleWhileMasked": true,
+        "percentagesNotMasked": true,
+        "datesAndNamesSurvive": true,
+        "dollarsRevealedOnUnmask": true,
+        "noBulletsWhenRevealed": true
+      },
+      "chordFlip": {
+        "stateBefore": "false",
+        "stateAfter": "true",
+        "changed": true,
+        "moneyCountAfter": 0,
+        "liveRegionAfter": {
+          "text": "Amounts masked. Dollar figures are hidden; names, dates and percentages still show.",
+          "live": "polite"
+        }
+      },
+      "chordDiscrimination": {
+        "plainMetaHBefore": "true",
+        "plainMetaHAfter": "true",
+        "plainMetaHHarmless": true,
+        "metaKDidNotMask": true,
+        "metaKOpenedPalette": true
+      },
+      "persistence": {
+        "keyValue": "1",
+        "localStorageClean": true,
+        "survivesSpaNavigation": true,
+        "pathAfterNav": "/investments"
+      }
+    }
+  },
+  "freshTab": {
+    "firstTabLeft": "false",
+    "firstTabKey": null,
+    "freshTabChip": {
+      "pressed": "true",
+      "text": "Masked",
+      "tag": "BUTTON",
+      "hasSvg": true,
+      "rowPressed": "true"
+    },
+    "freshTabKey": "1"
+  }
+}

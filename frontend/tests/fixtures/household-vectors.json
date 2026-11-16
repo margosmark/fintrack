@@ -1,0 +1,1640 @@
+{
+ "meta": {
+  "slice": "household",
+  "base_url": "https://fintrac.princessandmark.com/api/v1",
+  "tenant": "throwaway (owner + partner, one shared account)",
+  "base_commit": "3928406645e741b05f2023084e267b589a19854b",
+  "captured_at_utc": "2026-10-11T19:29:11.321Z",
+  "captured_at_et": "2026-10-11",
+  "reporting_currency": "CAD",
+  "capture_command": "node frontend/scripts/parity/capture.ts --slice household",
+  "diff_command": "node frontend/scripts/parity/capture.ts --slice household && node frontend/scripts/parity/parity.ts --slice household",
+  "notes": [
+   "M159 (docs/12 §Owner dimension, docs/08 §Report routes): the goldens the Owner lens must reproduce before `scope=household` stops being computed in the browser (M135 §4.3 'capture first, then swap'). Both seats of a real partnership are registered, seeded and linked during this capture, then deleted.",
+   "datasets.partner is the PARTNER seat — the only seat the Owner lens runs for. ownTransactions/ownCategories are the partner's own ledger (GET /transactions, GET /categories); projectionTransactions/ownerCategories are the M93 projection itself (GET /partner/transactions, GET /partner/categories), i.e. the exact row set the pre-M159 browser engine was handed. datasets.owner is the OWNER seat's own ledger, for the degenerate owner-seat case.",
+   "The adapter merges the two category trees the way the server contract does (docs/08, docs/43 §6): a projected row carries the OWNER's ids, so the owner's tree is layered over the partner's and wins a bare-id conflict. The seeded categories deliberately COLLIDE numerically (both tenants create m159-*-root/child/solo), so a wrong merge order cannot pass by luck.",
+   "The tag dimension is NOT captured here: the Owner lens groups by category only, and the M93 projection does not serve the owner's tags to the partner — a tag-mode household golden would compare a population the client engine cannot even be handed. Tag-mode household is pinned by backend/tests/test_reports_household.py instead.",
+   "privacy.spending.month.household pins the D4 mask at population level: with the owner's privacy_mode on, the partner's household answer is their OWN rows (an aggregate has no field to null, docs/43 §9).",
+   "No fx dataset: every row is CAD, so the money columns are the server's own conversion-free figures and the adapter never re-derives money."
+  ]
+ },
+ "datasets": {
+  "partner": {
+   "ownTransactions": [
+    {
+     "id": 10645,
+     "account_id": 483,
+     "date": "2026-05-22",
+     "posting_date": null,
+     "raw_description": "M159-PARTNER-UNCAT",
+     "normalized_payee": "M159-PARTNER-UNCAT",
+     "amount_native": "-7.77",
+     "currency": "CAD",
+     "cad_amount": "-7.77",
+     "category_id": null,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10644,
+     "account_id": 483,
+     "date": "2026-05-11",
+     "posting_date": null,
+     "raw_description": "M159-PARTNER-ROOT",
+     "normalized_payee": "M159-PARTNER-ROOT",
+     "amount_native": "-33.33",
+     "currency": "CAD",
+     "cad_amount": "-33.33",
+     "category_id": 6030,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10643,
+     "account_id": 483,
+     "date": "2026-05-05",
+     "posting_date": null,
+     "raw_description": "M159-PARTNER-SOLO",
+     "normalized_payee": "M159-PARTNER-SOLO",
+     "amount_native": "-60.00",
+     "currency": "CAD",
+     "cad_amount": "-60.00",
+     "category_id": 6032,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    }
+   ],
+   "ownCategories": [
+    {
+     "id": 6020,
+     "user_id": 581,
+     "name": "groceries",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6021,
+     "user_id": 581,
+     "name": "dining",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6022,
+     "user_id": 581,
+     "name": "housing",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6023,
+     "user_id": 581,
+     "name": "transport",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6024,
+     "user_id": 581,
+     "name": "utilities",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6025,
+     "user_id": 581,
+     "name": "health",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6026,
+     "user_id": 581,
+     "name": "entertainment",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6027,
+     "user_id": 581,
+     "name": "income",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6028,
+     "user_id": 581,
+     "name": "transfers",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6029,
+     "user_id": 581,
+     "name": "uncategorized",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6030,
+     "user_id": 581,
+     "name": "m159-partner-root",
+     "parent_id": null,
+     "is_system": false
+    },
+    {
+     "id": 6031,
+     "user_id": 581,
+     "name": "m159-partner-child",
+     "parent_id": 6030,
+     "is_system": false
+    },
+    {
+     "id": 6032,
+     "user_id": 581,
+     "name": "m159-partner-solo",
+     "parent_id": null,
+     "is_system": false
+    }
+   ],
+   "projectionTransactions": [
+    {
+     "id": 10640,
+     "account_id": 481,
+     "date": "2026-05-14",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-UNCAT",
+     "normalized_payee": "M159-OWNER-UNCAT",
+     "amount_native": "-12.25",
+     "currency": "CAD",
+     "cad_amount": "-12.25",
+     "category_id": null,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10639,
+     "account_id": 481,
+     "date": "2026-05-09",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-CHILD",
+     "normalized_payee": "M159-OWNER-CHILD",
+     "amount_native": "-45.50",
+     "currency": "CAD",
+     "cad_amount": "-45.50",
+     "category_id": 6018,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10638,
+     "account_id": 481,
+     "date": "2026-05-03",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-ROOT",
+     "normalized_payee": "M159-OWNER-ROOT",
+     "amount_native": "-120.00",
+     "currency": "CAD",
+     "cad_amount": "-120.00",
+     "category_id": 6017,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    }
+   ],
+   "ownerCategories": [
+    {
+     "id": 6007,
+     "user_id": 580,
+     "name": "groceries",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6008,
+     "user_id": 580,
+     "name": "dining",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6009,
+     "user_id": 580,
+     "name": "housing",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6010,
+     "user_id": 580,
+     "name": "transport",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6011,
+     "user_id": 580,
+     "name": "utilities",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6012,
+     "user_id": 580,
+     "name": "health",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6013,
+     "user_id": 580,
+     "name": "entertainment",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6014,
+     "user_id": 580,
+     "name": "income",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6015,
+     "user_id": 580,
+     "name": "transfers",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6016,
+     "user_id": 580,
+     "name": "uncategorized",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6017,
+     "user_id": 580,
+     "name": "m159-owner-root",
+     "parent_id": null,
+     "is_system": false
+    },
+    {
+     "id": 6018,
+     "user_id": 580,
+     "name": "m159-owner-child",
+     "parent_id": 6017,
+     "is_system": false
+    },
+    {
+     "id": 6019,
+     "user_id": 580,
+     "name": "m159-owner-solo",
+     "parent_id": null,
+     "is_system": false
+    }
+   ]
+  },
+  "partner-privacy": {
+   "ownTransactions": [
+    {
+     "id": 10645,
+     "account_id": 483,
+     "date": "2026-05-22",
+     "posting_date": null,
+     "raw_description": "M159-PARTNER-UNCAT",
+     "normalized_payee": "M159-PARTNER-UNCAT",
+     "amount_native": "-7.77",
+     "currency": "CAD",
+     "cad_amount": "-7.77",
+     "category_id": null,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10644,
+     "account_id": 483,
+     "date": "2026-05-11",
+     "posting_date": null,
+     "raw_description": "M159-PARTNER-ROOT",
+     "normalized_payee": "M159-PARTNER-ROOT",
+     "amount_native": "-33.33",
+     "currency": "CAD",
+     "cad_amount": "-33.33",
+     "category_id": 6030,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10643,
+     "account_id": 483,
+     "date": "2026-05-05",
+     "posting_date": null,
+     "raw_description": "M159-PARTNER-SOLO",
+     "normalized_payee": "M159-PARTNER-SOLO",
+     "amount_native": "-60.00",
+     "currency": "CAD",
+     "cad_amount": "-60.00",
+     "category_id": 6032,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    }
+   ],
+   "ownCategories": [
+    {
+     "id": 6020,
+     "user_id": 581,
+     "name": "groceries",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6021,
+     "user_id": 581,
+     "name": "dining",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6022,
+     "user_id": 581,
+     "name": "housing",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6023,
+     "user_id": 581,
+     "name": "transport",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6024,
+     "user_id": 581,
+     "name": "utilities",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6025,
+     "user_id": 581,
+     "name": "health",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6026,
+     "user_id": 581,
+     "name": "entertainment",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6027,
+     "user_id": 581,
+     "name": "income",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6028,
+     "user_id": 581,
+     "name": "transfers",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6029,
+     "user_id": 581,
+     "name": "uncategorized",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6030,
+     "user_id": 581,
+     "name": "m159-partner-root",
+     "parent_id": null,
+     "is_system": false
+    },
+    {
+     "id": 6031,
+     "user_id": 581,
+     "name": "m159-partner-child",
+     "parent_id": 6030,
+     "is_system": false
+    },
+    {
+     "id": 6032,
+     "user_id": 581,
+     "name": "m159-partner-solo",
+     "parent_id": null,
+     "is_system": false
+    }
+   ],
+   "projectionTransactions": [
+    {
+     "id": 10640,
+     "account_id": 481,
+     "date": "2026-05-14",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-UNCAT",
+     "normalized_payee": "M159-OWNER-UNCAT",
+     "amount_native": null,
+     "currency": "CAD",
+     "cad_amount": null,
+     "category_id": null,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10639,
+     "account_id": 481,
+     "date": "2026-05-09",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-CHILD",
+     "normalized_payee": "M159-OWNER-CHILD",
+     "amount_native": null,
+     "currency": "CAD",
+     "cad_amount": null,
+     "category_id": 6018,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10638,
+     "account_id": 481,
+     "date": "2026-05-03",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-ROOT",
+     "normalized_payee": "M159-OWNER-ROOT",
+     "amount_native": null,
+     "currency": "CAD",
+     "cad_amount": null,
+     "category_id": 6017,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    }
+   ],
+   "ownerCategories": [
+    {
+     "id": 6007,
+     "user_id": 580,
+     "name": "groceries",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6008,
+     "user_id": 580,
+     "name": "dining",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6009,
+     "user_id": 580,
+     "name": "housing",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6010,
+     "user_id": 580,
+     "name": "transport",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6011,
+     "user_id": 580,
+     "name": "utilities",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6012,
+     "user_id": 580,
+     "name": "health",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6013,
+     "user_id": 580,
+     "name": "entertainment",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6014,
+     "user_id": 580,
+     "name": "income",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6015,
+     "user_id": 580,
+     "name": "transfers",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6016,
+     "user_id": 580,
+     "name": "uncategorized",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6017,
+     "user_id": 580,
+     "name": "m159-owner-root",
+     "parent_id": null,
+     "is_system": false
+    },
+    {
+     "id": 6018,
+     "user_id": 580,
+     "name": "m159-owner-child",
+     "parent_id": 6017,
+     "is_system": false
+    },
+    {
+     "id": 6019,
+     "user_id": 580,
+     "name": "m159-owner-solo",
+     "parent_id": null,
+     "is_system": false
+    }
+   ]
+  },
+  "owner": {
+   "ownTransactions": [
+    {
+     "id": 10642,
+     "account_id": 482,
+     "date": "2026-05-20",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-HIDDEN-2",
+     "normalized_payee": "M159-OWNER-HIDDEN-2",
+     "amount_native": "-9.99",
+     "currency": "CAD",
+     "cad_amount": "-9.99",
+     "category_id": null,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10640,
+     "account_id": 481,
+     "date": "2026-05-14",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-UNCAT",
+     "normalized_payee": "M159-OWNER-UNCAT",
+     "amount_native": "-12.25",
+     "currency": "CAD",
+     "cad_amount": "-12.25",
+     "category_id": null,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10639,
+     "account_id": 481,
+     "date": "2026-05-09",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-CHILD",
+     "normalized_payee": "M159-OWNER-CHILD",
+     "amount_native": "-45.50",
+     "currency": "CAD",
+     "cad_amount": "-45.50",
+     "category_id": 6018,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10641,
+     "account_id": 482,
+     "date": "2026-05-06",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-HIDDEN",
+     "normalized_payee": "M159-OWNER-HIDDEN",
+     "amount_native": "-88.00",
+     "currency": "CAD",
+     "cad_amount": "-88.00",
+     "category_id": 6019,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    },
+    {
+     "id": 10638,
+     "account_id": 481,
+     "date": "2026-05-03",
+     "posting_date": null,
+     "raw_description": "M159-OWNER-ROOT",
+     "normalized_payee": "M159-OWNER-ROOT",
+     "amount_native": "-120.00",
+     "currency": "CAD",
+     "cad_amount": "-120.00",
+     "category_id": 6017,
+     "is_recurring": false,
+     "recurring_cadence": null,
+     "recurring_next_date": null,
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "transfer_pair_id": null,
+     "pair_account_name": null,
+     "has_receipt": false,
+     "parent_split_id": null,
+     "is_split": false,
+     "note": null,
+     "tags": [],
+     "payee_cipher": null,
+     "raw_desc_cipher": null,
+     "amount_cipher": null,
+     "cad_amount_cipher": null,
+     "payee_token": null
+    }
+   ],
+   "ownCategories": [
+    {
+     "id": 6007,
+     "user_id": 580,
+     "name": "groceries",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6008,
+     "user_id": 580,
+     "name": "dining",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6009,
+     "user_id": 580,
+     "name": "housing",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6010,
+     "user_id": 580,
+     "name": "transport",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6011,
+     "user_id": 580,
+     "name": "utilities",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6012,
+     "user_id": 580,
+     "name": "health",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6013,
+     "user_id": 580,
+     "name": "entertainment",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6014,
+     "user_id": 580,
+     "name": "income",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6015,
+     "user_id": 580,
+     "name": "transfers",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6016,
+     "user_id": 580,
+     "name": "uncategorized",
+     "parent_id": null,
+     "is_system": true
+    },
+    {
+     "id": 6017,
+     "user_id": 580,
+     "name": "m159-owner-root",
+     "parent_id": null,
+     "is_system": false
+    },
+    {
+     "id": 6018,
+     "user_id": 580,
+     "name": "m159-owner-child",
+     "parent_id": 6017,
+     "is_system": false
+    },
+    {
+     "id": 6019,
+     "user_id": 580,
+     "name": "m159-owner-solo",
+     "parent_id": null,
+     "is_system": false
+    }
+   ]
+  }
+ },
+ "cases": [
+  {
+   "id": "household.spending.month.full",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=month"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6018,
+       "category_name": "m159-owner-child",
+       "total_cad": "45.50"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6017,
+       "category_name": "m159-owner-root",
+       "total_cad": "120.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6030,
+       "category_name": "m159-partner-root",
+       "total_cad": "33.33"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6032,
+       "category_name": "m159-partner-solo",
+       "total_cad": "60.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "20.02"
+      }
+     ],
+     "total_cad": "278.85",
+     "spend_total_cad": "278.85"
+    }
+   }
+  },
+  {
+   "id": "household.spending.week.full",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=week"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "week",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-04-27",
+       "category_id": 6017,
+       "category_name": "m159-owner-root",
+       "total_cad": "120.00"
+      },
+      {
+       "bucket": "2026-05-04",
+       "category_id": 6018,
+       "category_name": "m159-owner-child",
+       "total_cad": "45.50"
+      },
+      {
+       "bucket": "2026-05-04",
+       "category_id": 6032,
+       "category_name": "m159-partner-solo",
+       "total_cad": "60.00"
+      },
+      {
+       "bucket": "2026-05-11",
+       "category_id": 6030,
+       "category_name": "m159-partner-root",
+       "total_cad": "33.33"
+      },
+      {
+       "bucket": "2026-05-11",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "12.25"
+      },
+      {
+       "bucket": "2026-05-18",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "7.77"
+      },
+      {
+       "bucket": "2026-05-25",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      }
+     ],
+     "total_cad": "278.85",
+     "spend_total_cad": "278.85"
+    }
+   }
+  },
+  {
+   "id": "household.spending.day.full",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=day"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "day",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-02",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-03",
+       "category_id": 6017,
+       "category_name": "m159-owner-root",
+       "total_cad": "120.00"
+      },
+      {
+       "bucket": "2026-05-04",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-05",
+       "category_id": 6032,
+       "category_name": "m159-partner-solo",
+       "total_cad": "60.00"
+      },
+      {
+       "bucket": "2026-05-06",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-07",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-08",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-09",
+       "category_id": 6018,
+       "category_name": "m159-owner-child",
+       "total_cad": "45.50"
+      },
+      {
+       "bucket": "2026-05-10",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-11",
+       "category_id": 6030,
+       "category_name": "m159-partner-root",
+       "total_cad": "33.33"
+      },
+      {
+       "bucket": "2026-05-12",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-13",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-14",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "12.25"
+      },
+      {
+       "bucket": "2026-05-15",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-16",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-17",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-18",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-19",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-20",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-21",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-22",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "7.77"
+      },
+      {
+       "bucket": "2026-05-23",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-24",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-25",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-26",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-27",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-28",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-29",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-30",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      },
+      {
+       "bucket": "2026-05-31",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "0.00"
+      }
+     ],
+     "total_cad": "278.85",
+     "spend_total_cad": "278.85"
+    }
+   }
+  },
+  {
+   "id": "household.spending.drill.owner-child",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=month&category_id=6018"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6018,
+       "category_name": "m159-owner-child",
+       "total_cad": "45.50"
+      }
+     ],
+     "total_cad": "45.50",
+     "spend_total_cad": "45.50"
+    }
+   }
+  },
+  {
+   "id": "household.spending.drill.partner-solo",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=month&category_id=6032"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6032,
+       "category_name": "m159-partner-solo",
+       "total_cad": "60.00"
+      }
+     ],
+     "total_cad": "60.00",
+     "spend_total_cad": "60.00"
+    }
+   }
+  },
+  {
+   "id": "household.spending.uncategorized-drill",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=month&category_id=uncategorized"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "20.02"
+      }
+     ],
+     "total_cad": "20.02",
+     "spend_total_cad": "20.02"
+    }
+   }
+  },
+  {
+   "id": "household.breakdown.month.full",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending/categories?from=2026-05-01&to=2026-05-31&scope=household"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "group_by": "category",
+     "items": [
+      {
+       "category_id": 6017,
+       "name": "m159-owner-root",
+       "cad_total": "165.50"
+      },
+      {
+       "category_id": 6032,
+       "name": "m159-partner-solo",
+       "cad_total": "60.00"
+      },
+      {
+       "category_id": 6030,
+       "name": "m159-partner-root",
+       "cad_total": "33.33"
+      },
+      {
+       "category_id": null,
+       "name": "Uncategorized",
+       "cad_total": "20.02"
+      }
+     ],
+     "total_cad": "278.85",
+     "spend_total_cad": "278.85"
+    }
+   }
+  },
+  {
+   "id": "own.spending.month.full",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&granularity=month"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6030,
+       "category_name": "m159-partner-root",
+       "total_cad": "33.33"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6032,
+       "category_name": "m159-partner-solo",
+       "total_cad": "60.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "7.77"
+      }
+     ],
+     "total_cad": "101.10",
+     "spend_total_cad": "101.10"
+    }
+   }
+  },
+  {
+   "id": "own.breakdown.month.full",
+   "dataset": "partner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending/categories?from=2026-05-01&to=2026-05-31"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "group_by": "category",
+     "items": [
+      {
+       "category_id": 6032,
+       "name": "m159-partner-solo",
+       "cad_total": "60.00"
+      },
+      {
+       "category_id": 6030,
+       "name": "m159-partner-root",
+       "cad_total": "33.33"
+      },
+      {
+       "category_id": null,
+       "name": "Uncategorized",
+       "cad_total": "7.77"
+      }
+     ],
+     "total_cad": "101.10",
+     "spend_total_cad": "101.10"
+    }
+   }
+  },
+  {
+   "id": "owner-seat.spending.month.household",
+   "dataset": "owner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=month"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6018,
+       "category_name": "m159-owner-child",
+       "total_cad": "45.50"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6017,
+       "category_name": "m159-owner-root",
+       "total_cad": "120.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6019,
+       "category_name": "m159-owner-solo",
+       "total_cad": "88.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "22.24"
+      }
+     ],
+     "total_cad": "275.74",
+     "spend_total_cad": "275.74"
+    }
+   }
+  },
+  {
+   "id": "owner-seat.spending.month.own",
+   "dataset": "owner",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&granularity=month"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6018,
+       "category_name": "m159-owner-child",
+       "total_cad": "45.50"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6017,
+       "category_name": "m159-owner-root",
+       "total_cad": "120.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6019,
+       "category_name": "m159-owner-solo",
+       "total_cad": "88.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "22.24"
+      }
+     ],
+     "total_cad": "275.74",
+     "spend_total_cad": "275.74"
+    }
+   }
+  },
+  {
+   "id": "privacy.spending.month.household",
+   "dataset": "partner-privacy",
+   "request": {
+    "method": "GET",
+    "path": "/reports/spending?from=2026-05-01&to=2026-05-31&scope=household&granularity=month"
+   },
+   "expected": {
+    "status": 200,
+    "body": {
+     "from": "2026-05-01",
+     "to": "2026-05-31",
+     "granularity": "month",
+     "group_by": "category",
+     "items": [
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6030,
+       "category_name": "m159-partner-root",
+       "total_cad": "33.33"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": 6032,
+       "category_name": "m159-partner-solo",
+       "total_cad": "60.00"
+      },
+      {
+       "bucket": "2026-05-01",
+       "category_id": null,
+       "category_name": "Uncategorized",
+       "total_cad": "7.77"
+      }
+     ],
+     "total_cad": "101.10",
+     "spend_total_cad": "101.10"
+    }
+   }
+  }
+ ]
+}

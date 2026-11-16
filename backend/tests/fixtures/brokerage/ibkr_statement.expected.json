@@ -1,0 +1,15 @@
+{
+  "profile": "ibkr",
+  "rows": 5,
+  "imported": 5,
+  "duplicates_skipped": 0,
+  "unmapped": 0,
+  "notices": 2,
+  "positions": {
+    "SHOP": "6"
+  },
+  "cash_effect": {
+    "CAD": "9136.10"
+  },
+  "account_currency": "CAD"
+}

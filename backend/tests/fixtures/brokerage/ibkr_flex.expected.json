@@ -1,0 +1,17 @@
+{
+  "profile": "ibkr",
+  "rows": 3,
+  "imported": 3,
+  "duplicates_skipped": 0,
+  "unmapped": 0,
+  "notices": 1,
+  "positions": {
+    "SHOP": "6",
+    "AAPL": "5"
+  },
+  "cash_effect": {
+    "CAD": "-869.90",
+    "USD": "-1001.00"
+  },
+  "account_currency": "CAD"
+}

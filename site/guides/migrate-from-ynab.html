@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Migrate from YNAB — fin_tracker guides</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070b12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='19' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../index.html">fin<span>_tracker</span>.</a>
+    <nav class="links" aria-label="Page sections">
+      <a href="../index.html#why">Why fin_tracker</a>
+      <a href="../index.html#honest">What we are not</a>
+      <a href="../changelog.html">What&rsquo;s new</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#selfhost">Self-host</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html#guides">&larr; All guides</a>
+    <section class="block">
+      <h1>Migrate from YNAB</h1>
+      <p class="sub">Export your budget, review the whole mapping before anything is written, then import — refused rows are listed, never dropped.</p>
+      <ol class="steps">
+        <li class="card"><h2>Export from YNAB</h2><p>Whole budget (recommended): in YNAB open Settings → Developer and create a personal access token, then save the response of GET https://api.ynab.com/v1/plans/last-used (Authorization: Bearer your-token) to a file ending in .json — that one call is YNAB's own full-plan export, carrying accounts, category groups, categories, payees, and every transaction. One account at a time: use the account's Export option to download its register as CSV — no token needed, but the file has no category tree and no targets.</p></li>
+        <li class="card"><h2>Preview the whole plan first</h2><p>Imports → Import a YNAB budget → choose the file → Preview. Nothing is written: you see every account that will be created or matched by name, each category group becoming a top-level category with the group name attached as a tag, each target as a budget or goal, and every transaction with its date, amount, memo, and cleared state — plus each row the import refuses, carrying its row number and the reason.</p></li>
+        <li class="card"><h2>Import, then commit batch by batch</h2><p>Press Import and each account's transactions land in their own review batch, exactly like a bank statement upload: balances, budgets, and reports do not move until you commit a batch. Transfers arrive as linked pairs, and YNAB's cleared / reconciled flags stay on every row.</p></li>
+        <li class="card"><h2>Safe to run twice</h2><p>Accounts, categories, and tags match existing ones by name, and transactions dedup against staged and committed rows alike — importing the same file again stages nothing new, and the preview tells you so before you try.</p></li>
+        <li class="card"><h2>Check the two tables below</h2><p>What maps cleanly, and what does not come across — read them before you cancel anything on the other side.</p></li>
+      </ol>
+      <div class="card table-card">
+        <h2>What maps cleanly</h2>
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <thead><tr><th scope="col">In YNAB</th><th scope="col">Here</th></tr></thead>
+            <tbody>
+              <tr><td>Accounts — chequing, savings, credit cards, loans</td><td>Matched by name when you already have one, otherwise created with the closest account type. Taxability is derived the same way as a hand-made account.</td></tr>
+              <tr><td>Category groups</td><td>Become top-level categories, and the group name is attached as a tag on that group's transactions.</td></tr>
+              <tr><td>Categories</td><td>Become child categories under their group, so the two-level tree survives.</td></tr>
+              <tr><td>Targets — monthly funding</td><td>Become a monthly budget on that category. An existing budget amount is never overwritten.</td></tr>
+              <tr><td>Targets — target balance, with or without a date</td><td>Become a goal with the amount and date.</td></tr>
+              <tr><td>Transactions</td><td>Every row with its date, amount (YNAB's milliunits converted to dollars and cents), payee, and memo folded into the description.</td></tr>
+              <tr><td>Cleared and reconciled flags</td><td>Kept on each row (uncleared / cleared / reconciled).</td></tr>
+              <tr><td>Transfers between your accounts</td><td>Both sides imported and linked as one transfer pair.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card table-card">
+        <h2>What does not come across</h2>
+        <div class="table-wrap" tabindex="0">
+          <table class="gaps">
+            <thead><tr><th scope="col">In YNAB</th><th scope="col">What happens here</th></tr></thead>
+            <tbody>
+              <tr><td>Split detail</td><td>The parent total imports as one row; the split lines are reported as a warning instead of being imported.</td></tr>
+              <tr><td>Scheduled transactions</td><td>Skipped — reported once as a note on the preview.</td></tr>
+              <tr><td>Targets other than monthly funding or target balance (needed-for-spending, debt)</td><td>Refused with a reason in the preview, never silently skipped.</td></tr>
+              <tr><td>Reconciliation progress and account running balances</td><td>Not imported. The cleared / reconciled flag on each individual row still comes across.</td></tr>
+              <tr><td>Group funding and underfunded amounts</td><td>Not imported — budgets and goals are yardsticks here, and nothing is moved or auto-spent.</td></tr>
+              <tr><td>Payee-to-category memories (YNAB's learned rules)</td><td>Not imported; payee learning starts fresh from the suggestions you confirm.</td></tr>
+              <tr><td>Closed accounts</td><td>Imported as open accounts — the preview notes it.</td></tr>
+              <tr><td>Deleted accounts, categories, and transactions</td><td>Skipped and reported in the preview notes.</td></tr>
+              <tr><td>Account opening balances or a partial export</td><td>Balances rebuild from the transactions in the file, so a trimmed export shows different balances than YNAB did.</td></tr>
+              <tr><td>A budget on a tenant with encryption required</td><td>The import stops with a clear error before writing anything — the server cannot create your encrypted rows. Manual entry with client-side encryption still works.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>fin_tracker — self-hosted personal finance.</span><span>Also in-app: Help → Migrate from YNAB.</span></div></footer>
+</body>
+</html>

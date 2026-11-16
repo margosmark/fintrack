@@ -1,0 +1,49 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "checks": [
+    {
+      "ok": true,
+      "detail": "seed tenant + account + row + unicode category receipt \u2014 {\"register\": 200, \"login\": 200, \"account_id\": 228, \"tx_id\": 3842, \"events\": {\"items\": [{\"id\": 139, \"tx_id\": 3842, \"event_kind\": \"categorized\", \"actor\": 310, \"actor_label\": \"you\", \"at\": \"2026-10-07T05:02:10.339507Z\", \"payload_hash\": \"8fa0538932809c4adaab5cdc7440cae5a667cf709bc259756d68214dc2285e3c\", \"summary\": \"you set category Caf\\u00e9 \\u2615 \\u98df\\u54c1 \\ud83d\\ude00\", \"payload\": {\"fields\": [\"category_id\"], \"changes\": {\"category_id\": 3280}, \"category_id\": 3280, \"category_name\": \"Caf\\u00e9 \\u2615 \\u98df\\u54c1 \\ud83d\\ude00\"}}, {\"id\": 138, \"tx_id\": 3842, \"event_kind\": \"created\", \"actor\": 310, \"actor_label\": \"you\", \"at\": \"2026-10-07T05:02:10.255558Z\", \"payload_hash\": \"da17572bad6935cc6ee080013fb4a7f83c932efa8daac417aa1da123cf6453fc\", \"summary\": \"you created this transaction\", \"payload\": {\"source\": \"manual\"}}], \"total\": 2}}"
+    },
+    {
+      "ok": true,
+      "detail": "the row already has categorized over created (newest first) \u2014 ['categorized', 'created']"
+    },
+    {
+      "ok": true,
+      "detail": "unicode summary served over the wire \u2014 [\"you set category Caf\u00e9 \u2615 \u98df\u54c1 \ud83d\ude00\", \"you created this transaction\"]"
+    },
+    {
+      "ok": true,
+      "detail": "on the account activity page \u2014 /accounts/228"
+    },
+    {
+      "ok": true,
+      "detail": "row Actions cell carries the History control \u2014 History \u2014 Loblaws (transaction 3842)"
+    },
+    {
+      "ok": true,
+      "detail": "drawer fetched this row's receipts \u2014 sentence rendered"
+    },
+    {
+      "ok": true,
+      "detail": "row History opens the drawer \u2014 ['History', '']"
+    },
+    {
+      "ok": true,
+      "detail": "drawer lists THIS row's receipts, newest first \u2014 [\"Oct 7 you set category Caf\u00e9 \u2615 \u98df\u54c1 \ud83d\ude00 categorized \u00b7 8fa053893280\u2026\", \"Oct 7 you created this transaction created \u00b7 da17572bad69\u2026\"]"
+    },
+    {
+      "ok": true,
+      "detail": "\u2026and it arrives with this row's receipts, not an empty shell \u2014 ['Oct 7 you set category Caf\u00e9 \u2615 \u98df\u54c1 \ud83d\ude00 categorized \u00b7 8fa053893280\u2026', 'Oct 7 you created this transaction created \u00b7 da17572bad69\u2026']"
+    },
+    {
+      "ok": true,
+      "detail": "editor hands the row over \u2014 exactly one dialog, and it is the drawer \u2014 {\"n\": 1, \"titled\": 1}"
+    },
+    {
+      "ok": true,
+      "detail": "axe 0 critical/serious \u2014 account activity with the drawer open \u2014 {} []"
+    }
+  ]
+}

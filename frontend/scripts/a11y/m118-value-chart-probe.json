@@ -1,0 +1,238 @@
+{
+ "base": "http://localhost:5173",
+ "account": 1,
+ "url": "http://localhost:5173/accounts/1",
+ "granularity": "day",
+ "requested_granularity": "day",
+ "app_wire_capture": false,
+ "bucket_count": 307,
+ "event_count": 2,
+ "events": [
+  {
+   "date": "2026-01-12",
+   "kind": "contribution",
+   "amount_cad": "12500.00",
+   "source": "trade",
+   "trade_id": 1,
+   "transaction_id": null
+  },
+  {
+   "date": "2026-02-16",
+   "kind": "withdrawal",
+   "amount_cad": "-4320.75",
+   "source": "trade",
+   "trade_id": 2,
+   "transaction_id": null
+  }
+ ],
+ "axe": [
+  {
+   "width": 390,
+   "theme": "dark",
+   "innerWidth": 390,
+   "counts": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 0,
+    "minor": 0
+   },
+   "violations": []
+  },
+  {
+   "width": 390,
+   "theme": "light",
+   "innerWidth": 390,
+   "counts": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 0,
+    "minor": 0
+   },
+   "violations": []
+  },
+  {
+   "width": 412,
+   "theme": "dark",
+   "innerWidth": 412,
+   "counts": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 0,
+    "minor": 0
+   },
+   "violations": []
+  },
+  {
+   "width": 412,
+   "theme": "light",
+   "innerWidth": 412,
+   "counts": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 0,
+    "minor": 0
+   },
+   "violations": []
+  },
+  {
+   "width": 1440,
+   "theme": "dark",
+   "innerWidth": 1440,
+   "counts": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 1,
+    "minor": 0
+   },
+   "violations": [
+    {
+     "id": "region",
+     "impact": "moderate",
+     "help": "All page content should be contained by landmarks",
+     "nodes": 1,
+     "targets": [
+      [
+       ".h-full > .truncate"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "width": 1440,
+   "theme": "light",
+   "innerWidth": 1440,
+   "counts": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 1,
+    "minor": 0
+   },
+   "violations": [
+    {
+     "id": "region",
+     "impact": "moderate",
+     "help": "All page content should be contained by landmarks",
+     "nodes": 1,
+     "targets": [
+      [
+       ".h-full > .truncate"
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "check": "session",
+   "ok": true,
+   "detail": "landed on /accounts/1"
+  },
+  {
+   "check": "app asked",
+   "ok": true,
+   "detail": "1 value-history request(s) from the page, chart frame rendered=True"
+  },
+  {
+   "check": "live-route",
+   "ok": true,
+   "detail": "status=200 url=http://localhost:5173/api/v1/accounts/1/value-history"
+  },
+  {
+   "check": "cache-header",
+   "ok": true,
+   "detail": "private, max-age=60"
+  },
+  {
+   "check": "series",
+   "ok": true,
+   "detail": "has_data=True buckets=307 granularity=day/day from=2026-01-12 to=2026-11-14"
+  },
+  {
+   "check": "cash+positions==value",
+   "ok": true,
+   "detail": "307/307 buckets satisfy the identity"
+  },
+  {
+   "check": "marker deposit",
+   "ok": true,
+   "detail": "2026-01-12 \u2192 contribution 12500.00"
+  },
+  {
+   "check": "marker withdrawal",
+   "ok": true,
+   "detail": "2026-02-16 \u2192 withdrawal -4320.75"
+  },
+  {
+   "check": "chart aria",
+   "ok": true,
+   "detail": "Account value over time \u2014 daily buckets, 2026-01-12 \u2013 2026-11-14, 307 points. from $12,500.00 to $8,179.25; 2 markers for contributions, withdrawals and transfe"
+  },
+  {
+   "check": "scroll region",
+   "ok": true,
+   "detail": "labelled + focusable overflow box (M102)"
+  },
+  {
+   "check": "pins == events",
+   "ok": true,
+   "detail": "2 svg pins for 2 wire events"
+  },
+  {
+   "check": "deposit pin",
+   "ok": true,
+   "detail": "+ $12,500.00 contribution"
+  },
+  {
+   "check": "pin tooltip",
+   "ok": true,
+   "detail": "Jan 12 /  / Value / $12,500.00 / Cash / $12,500.00 / Holdings / $0.00 /  / + $12,500.00 contribution /  / (recorded on the trades ledger)"
+  },
+  {
+   "check": "marker jump",
+   "ok": true,
+   "detail": "{\"row\": \"1\", \"text\": \"2026-01-12 Synthetic Probe Account SYNTH contribution 0 12,500.00 CAD 0.00 CAD\", \"action\": \"contribution\", \"security\": \"1\", \"rows\": 1, \"current\": 1}"
+  },
+  {
+   "check": "data table",
+   "ok": true,
+   "detail": "{\"open\": true, \"tables\": 2, \"hasButton\": true, \"buttonLabel\": \"Show the contribution of 2026-01-12 in the table\", \"mentionsDeposit\": true}"
+  },
+  {
+   "check": "axe 390 dark",
+   "ok": true,
+   "detail": "innerWidth=390 {\"critical\": 0, \"serious\": 0, \"moderate\": 0, \"minor\": 0}"
+  },
+  {
+   "check": "axe 390 light",
+   "ok": true,
+   "detail": "innerWidth=390 {\"critical\": 0, \"serious\": 0, \"moderate\": 0, \"minor\": 0}"
+  },
+  {
+   "check": "axe 412 dark",
+   "ok": true,
+   "detail": "innerWidth=412 {\"critical\": 0, \"serious\": 0, \"moderate\": 0, \"minor\": 0}"
+  },
+  {
+   "check": "axe 412 light",
+   "ok": true,
+   "detail": "innerWidth=412 {\"critical\": 0, \"serious\": 0, \"moderate\": 0, \"minor\": 0}"
+  },
+  {
+   "check": "axe 1440 dark",
+   "ok": true,
+   "detail": "innerWidth=1440 {\"critical\": 0, \"serious\": 0, \"moderate\": 1, \"minor\": 0} [{\"id\": \"region\", \"impact\": \"moderate\", \"help\": \"All page content should be contained by landmarks\", \"nodes\": 1, \"targets\": [[\".h-full > .truncate\"]]}]"
+  },
+  {
+   "check": "axe 1440 light",
+   "ok": true,
+   "detail": "innerWidth=1440 {\"critical\": 0, \"serious\": 0, \"moderate\": 1, \"minor\": 0} [{\"id\": \"region\", \"impact\": \"moderate\", \"help\": \"All page content should be contained by landmarks\", \"nodes\": 1, \"targets\": [[\".h-full > .truncate\"]]}]"
+  },
+  {
+   "check": "console errors",
+   "ok": true,
+   "detail": "0"
+  }
+ ]
+}

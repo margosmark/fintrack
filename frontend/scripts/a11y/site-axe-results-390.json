@@ -1,0 +1,283 @@
+{
+  "base": "http://127.0.0.1:8877",
+  "width": 390,
+  "generated_at": "2026-11-06T03:49-0500",
+  "pages": {
+    "/changelog.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/changelog.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/agent-integration.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/agent-integration.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/agent-tour.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/agent-tour.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/brokerage-imports.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/brokerage-imports.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/configuration.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/configuration.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/first-budget.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/first-budget.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/first-import.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/first-import.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/getting-started.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/getting-started.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/import-guides.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/import-guides.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/imports.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/imports.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/migrate-from-ynab.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/migrate-from-ynab.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/portability.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/portability.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/reports.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/reports.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/rules.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/rules.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/taxes.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/taxes.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/transactions.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/guides/transactions.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/index.html:dark": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    },
+    "/index.html:light": {
+      "violations": [],
+      "console": [],
+      "viewport": [
+        390,
+        900
+      ]
+    }
+  },
+  "viewport": [
+    390,
+    900
+  ]
+}

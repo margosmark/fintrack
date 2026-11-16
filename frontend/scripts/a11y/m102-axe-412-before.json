@@ -1,0 +1,224 @@
+{
+  "base": "http://127.0.0.1:4198",
+  "width": 412,
+  "generated_at": "2026-10-05T02:52:05-0400",
+  "pages": {
+    "dashboard:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "transactions:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "investments:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "help": "Scrollable region must have keyboard access",
+          "nodes": 1,
+          "targets": [
+            [
+              ".glass-hover.shadow-card.p-4:nth-child(8) > .overflow-x-auto"
+            ]
+          ]
+        }
+      ],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "taxes:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "help": "Scrollable region must have keyboard access",
+          "nodes": 2,
+          "targets": [
+            [
+              ".glass-hover.shadow-card.p-4:nth-child(3) > .overflow-x-auto"
+            ],
+            [
+              ".glass-hover.shadow-card.p-4:nth-child(4) > .overflow-x-auto"
+            ]
+          ]
+        }
+      ],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "budgets:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "bills:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "dashboard:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "transactions:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "investments:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "help": "Scrollable region must have keyboard access",
+          "nodes": 1,
+          "targets": [
+            [
+              ".glass-hover.shadow-card.p-4:nth-child(8) > .overflow-x-auto"
+            ]
+          ]
+        }
+      ],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "taxes:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 1,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [
+        {
+          "id": "scrollable-region-focusable",
+          "impact": "serious",
+          "help": "Scrollable region must have keyboard access",
+          "nodes": 2,
+          "targets": [
+            [
+              ".glass-hover.shadow-card.p-4:nth-child(3) > .overflow-x-auto"
+            ],
+            [
+              ".glass-hover.shadow-card.p-4:nth-child(4) > .overflow-x-auto"
+            ]
+          ]
+        }
+      ],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "budgets:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "bills:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    }
+  },
+  "viewport": [
+    412,
+    915
+  ],
+  "raf_frames_in_500ms": 8,
+  "logged_in_path": "/dashboard",
+  "console": []
+}

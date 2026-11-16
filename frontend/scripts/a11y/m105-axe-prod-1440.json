@@ -1,0 +1,170 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "width": 1440,
+  "generated_at": "2026-10-05T13:37:11-0400",
+  "pages": {
+    "dashboard:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "transactions:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "investments:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "taxes:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "budgets:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "bills:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "dashboard:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "transactions:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "investments:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "taxes:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "budgets:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "bills:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    }
+  },
+  "viewport": [
+    1440,
+    900
+  ],
+  "raf_frames_in_500ms": 9,
+  "logged_in_path": "/dashboard",
+  "console": []
+}

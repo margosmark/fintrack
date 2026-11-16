@@ -1,0 +1,291 @@
+{
+ "base": "http://localhost:18080",
+ "summary": {
+  "elapsed_s": 62.1,
+  "refresh_total": 23,
+  "statuses": {
+   "200": 22
+  },
+  "refresh_401": 0,
+  "refresh_429": 0,
+  "max_in_flight": 1,
+  "overlapping": [],
+  "login_landings": []
+ },
+ "traces": {
+  "tab0": [
+   {
+    "k": "req",
+    "id": "jx2yctisyos",
+    "w": 1790616363198.8,
+    "path": "/dashboard"
+   },
+   {
+    "k": "res",
+    "id": "jx2yctisyos",
+    "w": 1790616363219.3,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "i6uv4rprped",
+    "w": 1790616369220.5,
+    "path": "/transactions"
+   },
+   {
+    "k": "res",
+    "id": "i6uv4rprped",
+    "w": 1790616369239.9001,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "ef1449um9sr",
+    "w": 1790616375154.5999,
+    "path": "/investments"
+   },
+   {
+    "k": "res",
+    "id": "ef1449um9sr",
+    "w": 1790616375171.3,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "oh0bqjb6ki",
+    "w": 1790616381187.4,
+    "path": "/taxes"
+   },
+   {
+    "k": "res",
+    "id": "oh0bqjb6ki",
+    "w": 1790616381231.5999,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "fxbnjmdp3cb",
+    "w": 1790616387254,
+    "path": "/budgets"
+   },
+   {
+    "k": "res",
+    "id": "fxbnjmdp3cb",
+    "w": 1790616387277.7,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "drcmphrc5ip",
+    "w": 1790616393223.4001,
+    "path": "/bills"
+   },
+   {
+    "k": "res",
+    "id": "drcmphrc5ip",
+    "w": 1790616393243.4001,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "o6z2lkgc5w",
+    "w": 1790616399207.5,
+    "path": "/dashboard"
+   },
+   {
+    "k": "res",
+    "id": "o6z2lkgc5w",
+    "w": 1790616399224.5,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "5bb5zlckzxq",
+    "w": 1790616405448,
+    "path": "/transactions"
+   },
+   {
+    "k": "res",
+    "id": "5bb5zlckzxq",
+    "w": 1790616405465.5999,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "ydtgzdopsck",
+    "w": 1790616411261.4001,
+    "path": "/investments"
+   },
+   {
+    "k": "res",
+    "id": "ydtgzdopsck",
+    "w": 1790616411283,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "pm1upled5ga",
+    "w": 1790616417316.6,
+    "path": "/taxes"
+   },
+   {
+    "k": "res",
+    "id": "pm1upled5ga",
+    "w": 1790616417335.4,
+    "status": 200
+   }
+  ],
+  "tab1": [
+   {
+    "k": "req",
+    "id": "r9mflr1ppi",
+    "w": 1790616363034,
+    "path": "/dashboard"
+   },
+   {
+    "k": "req",
+    "id": "hnpkkn8q08u",
+    "w": 1790616363222.7,
+    "path": "/transactions"
+   },
+   {
+    "k": "res",
+    "id": "hnpkkn8q08u",
+    "w": 1790616363240,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "s8somidafdj",
+    "w": 1790616369240.8,
+    "path": "/investments"
+   },
+   {
+    "k": "res",
+    "id": "s8somidafdj",
+    "w": 1790616369257.2,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "3ywiffg6c59",
+    "w": 1790616375176.5,
+    "path": "/taxes"
+   },
+   {
+    "k": "res",
+    "id": "3ywiffg6c59",
+    "w": 1790616375196.1,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "gk6cx72vq6",
+    "w": 1790616381361.8,
+    "path": "/budgets"
+   },
+   {
+    "k": "res",
+    "id": "gk6cx72vq6",
+    "w": 1790616381385.3,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "zzvulnnfvzl",
+    "w": 1790616387229.7,
+    "path": "/bills"
+   },
+   {
+    "k": "res",
+    "id": "zzvulnnfvzl",
+    "w": 1790616387250,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "oaewg7aa3i",
+    "w": 1790616393277.9,
+    "path": "/dashboard"
+   },
+   {
+    "k": "res",
+    "id": "oaewg7aa3i",
+    "w": 1790616393307.2998,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "2z0kykcvz3c",
+    "w": 1790616399226.8,
+    "path": "/transactions"
+   },
+   {
+    "k": "res",
+    "id": "2z0kykcvz3c",
+    "w": 1790616399242.7,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "33hchp3ttd7",
+    "w": 1790616405904.7,
+    "path": "/investments"
+   },
+   {
+    "k": "res",
+    "id": "33hchp3ttd7",
+    "w": 1790616405941.2,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "qy05hwcz7o",
+    "w": 1790616406605,
+    "path": "/investments"
+   },
+   {
+    "k": "res",
+    "id": "qy05hwcz7o",
+    "w": 1790616406624.2,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "u0zk1c25js",
+    "w": 1790616409670.8,
+    "path": "/investments"
+   },
+   {
+    "k": "res",
+    "id": "u0zk1c25js",
+    "w": 1790616409685.7,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "p3gs183fi0o",
+    "w": 1790616411287.2998,
+    "path": "/taxes"
+   },
+   {
+    "k": "res",
+    "id": "p3gs183fi0o",
+    "w": 1790616411301.2,
+    "status": 200
+   },
+   {
+    "k": "req",
+    "id": "xpif6pp3j0j",
+    "w": 1790616417340.2,
+    "path": "/budgets"
+   },
+   {
+    "k": "res",
+    "id": "xpif6pp3j0j",
+    "w": 1790616417358.8,
+    "status": 200
+   }
+  ]
+ }
+}

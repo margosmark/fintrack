@@ -1,0 +1,191 @@
+{
+  "phases": {
+    "cmdk": {
+      "/api/v1/search?": [
+        "https://fintrac.princessandmark.com/api/v1/search?q=grocer&hide_encrypted=true&limit=10"
+      ],
+      "/api/v1/transactions?": [],
+      "/transactions/similar?": [],
+      "/api/v1/budgets": []
+    },
+    "q_view": {
+      "/api/v1/search?": [],
+      "/api/v1/transactions?": [
+        "https://fintrac.princessandmark.com/api/v1/transactions?limit=50&offset=0",
+        "https://fintrac.princessandmark.com/api/v1/transactions?q=grocer&limit=50&offset=0&hide_encrypted=true"
+      ],
+      "/transactions/similar?": [],
+      "/api/v1/budgets": []
+    },
+    "similar_popover": {
+      "/api/v1/search?": [],
+      "/api/v1/transactions?": [],
+      "/transactions/similar?": [
+        "https://fintrac.princessandmark.com/api/v1/transactions/similar?q=GROCERY+MART+%2312&exclude_id=3354&categorized_first=true&hide_encrypted=true&limit=10"
+      ],
+      "/api/v1/budgets": []
+    },
+    "budgets": {
+      "/api/v1/search?": [],
+      "/api/v1/transactions?": [],
+      "/transactions/similar?": [],
+      "/api/v1/budgets": [
+        "https://fintrac.princessandmark.com/api/v1/budgets",
+        "https://fintrac.princessandmark.com/api/v1/budgets/recurring-summary"
+      ]
+    }
+  },
+  "orphan_routes": [
+    [
+      "/reports/dividends",
+      200
+    ],
+    [
+      "/reports/cashflow-sankey?from=2026-01-01&to=2026-12-31",
+      200
+    ],
+    [
+      "/reports/total-return?from=2026-01-01&to=2026-12-31",
+      200
+    ],
+    [
+      "/reports/networth-snapshot?target_date=2026-06-30",
+      200
+    ]
+  ],
+  "remounted_routes": [
+    [
+      "/reports/spending?from=2026-01-01&to=2026-12-31",
+      200
+    ],
+    [
+      "/reports/cashflow?from=2026-01-01&to=2026-12-31&granularity=month",
+      200
+    ],
+    [
+      "/transactions/similar?q=grocer&limit=5",
+      200
+    ],
+    [
+      "/subscriptions",
+      200
+    ]
+  ],
+  "console_errors": [],
+  "checks": [
+    {
+      "name": "\u2318K answers from /search and ranks the demo payee (grocer \u2192 GROCERY MART #12)",
+      "ok": true,
+      "detail": {
+        "search_requests": 1,
+        "panel": "TransactionsGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesGROCERY MART #12groceriesCategoriesgroceriesSearch market data for \u201cgrocer\u201d"
+      }
+    },
+    {
+      "name": "\u2318K issues ZERO /transactions requests (the ledger download is gone)",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "/transactions?q=grocer renders ranked rows from the server-ranked list request",
+      "ok": true,
+      "detail": {
+        "rows": 50,
+        "requests": [
+          "https://fintrac.princessandmark.com/api/v1/transactions?limit=50&offset=0",
+          "https://fintrac.princessandmark.com/api/v1/transactions?q=grocer&limit=50&offset=0&hide_encrypted=true"
+        ]
+      }
+    },
+    {
+      "name": "no limit=200 substrate walk in search mode",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "the 'Similar to' chip is up",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "the popover answers from ONE GET /transactions/similar with exclude_id",
+      "ok": true,
+      "detail": [
+        "https://fintrac.princessandmark.com/api/v1/transactions/similar?q=GROCERY+MART+%2312&exclude_id=3354&categorized_first=true&hide_encrypted=true&limit=10"
+      ]
+    },
+    {
+      "name": "the popover lists sibling rows (M119 starvation stays fixed)",
+      "ok": true,
+      "detail": {
+        "items": 10
+      }
+    },
+    {
+      "name": "/budgets is ONE small GET /budgets (+ the M96 label's own tiny read)",
+      "ok": true,
+      "detail": [
+        "https://fintrac.princessandmark.com/api/v1/budgets",
+        "https://fintrac.princessandmark.com/api/v1/budgets/recurring-summary"
+      ]
+    },
+    {
+      "name": "/budgets issues ZERO /transactions requests (no ledger download)",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "the four ORPHAN report routes still resolve with the flag at its default (off)",
+      "ok": true,
+      "detail": [
+        [
+          "/reports/dividends",
+          200
+        ],
+        [
+          "/reports/cashflow-sankey?from=2026-01-01&to=2026-12-31",
+          200
+        ],
+        [
+          "/reports/total-return?from=2026-01-01&to=2026-12-31",
+          200
+        ],
+        [
+          "/reports/networth-snapshot?target_date=2026-06-30",
+          200
+        ]
+      ]
+    },
+    {
+      "name": "the re-pointed/re-mounted routes answer 200 on the deployed API",
+      "ok": true,
+      "detail": [
+        [
+          "/reports/spending?from=2026-01-01&to=2026-12-31",
+          200
+        ],
+        [
+          "/reports/cashflow?from=2026-01-01&to=2026-12-31&granularity=month",
+          200
+        ],
+        [
+          "/transactions/similar?q=grocer&limit=5",
+          200
+        ],
+        [
+          "/subscriptions",
+          200
+        ]
+      ]
+    },
+    {
+      "name": "no console errors across the run",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "summary": {
+    "passed": 12,
+    "total": 12
+  }
+}

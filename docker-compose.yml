@@ -1,0 +1,173 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: fintrack
+      # No :-default fallback (M6): a missing POSTGRES_PASSWORD in .env must
+      # fail `docker compose` loudly instead of silently running on a known
+      # password — .env.example carries the dev value; the orchestrator sets
+      # the deployed value.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: fintrack
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fintrack"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    # Router DNS (192.0.2.53) null-routes fc.yahoo.com, breaking the
+    # yfinance cookie handshake — use public resolvers for market data.
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    # .env carries JWT_SECRET / CORS_ORIGINS / LLM_* / SEED_DEMO_ACCOUNT.
+    # DATABASE_URL stays pinned to the db service (compose `environment`
+    # wins over env_file) — the .env copy is for host-side tooling/tests.
+    env_file:
+      - .env
+    environment:
+      # Same var as the db service above, so one override moves both.
+      DATABASE_URL: postgresql+psycopg://fintrack:${POSTGRES_PASSWORD}@db:5432/fintrack
+    volumes:
+      # RS256 signing-key PEMs (t_adfb7881, docs/38 §Key provisioning): the
+      # host's ./secrets dir (gitignored; written by backend/scripts/
+      # generate_jwt_keys.py) mounted READ-ONLY at /run/secrets/jwt. The .env
+      # then points the four JWT_{ACCESS,SESSION}_{PRIVATE,PUBLIC}_KEY_PATH
+      # values at the CONTAINER-visible files under that mount — with empty
+      # paths the api keeps its ephemeral dev keypair, so dev needs no dir.
+      # Keys stay out of git (gitignored) and out of the image (no COPY; the
+      # build context is ./backend and cannot even see the repo-root dir).
+      # api only — mcp must never hold key material (H6, same rule as its
+      # missing env_file). Ordering: run the generator BEFORE the next `up`,
+      # or `mkdir secrets` first — compose auto-creates a missing bind source
+      # root-owned, which the generator (running as your user) cannot write.
+      - ./secrets:/run/secrets/jwt:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8000:8000"
+    # M148: `unless-stopped` restarts a CRASH, never a live container that
+    # answers nothing — which is what the 2026-10-11 pool exhaustion was
+    # (docs/01 § "Sessions and the event loop"). The healthcheck below is the
+    # signal; `scripts/autoheal.sh` on the host (cron, every minute) is the
+    # actuator: three consecutive unhealthy rounds -> `docker restart`.
+    # Wiring is documented, not embedded — a sidecar would need the docker
+    # socket mounted into a container, and that is a bigger risk than the
+    # one it mitigates.
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  web:
+    # Deploy identity (QA finding 2026-10-10): the commit is a BUILD ARG, read
+    # from the deploy host's checkout at up-time — never a committed value:
+    #   GIT_SHA=$(git rev-parse HEAD) docker compose up -d --build web
+    # Deliberately `${GIT_SHA:-}` (empty default, NOT a fallback sha): an unset
+    # var then reaches the Dockerfile's guard, which fails the build in ~1s
+    # naming the fix — so a shell that forgot the assignment cannot ship an
+    # unidentifiable image, which is the whole point of the stamp.
+    build:
+      context: ./frontend
+      args:
+        GIT_SHA: ${GIT_SHA:-}
+    depends_on:
+      api:
+        condition: service_healthy
+      # M80: nginx now proxies `/mcp/` here too, and the proxy resolves the
+      # service name through Docker DNS — start mcp before web so the config
+      # is never parsed while the name is unknown.
+      mcp:
+        condition: service_started
+    ports:
+      # Deliberately NOT loopback-bound: the TLS terminator on a separate LAN host
+      # (192.0.2.100) connects over the LAN — it is the only intended entry point,
+      # but nothing enforces that: the host carries no source-restricting DOCKER-USER
+      # rule (compose cannot express source filtering), so port 8080 is published
+      # to the whole 192.0.2.0/24 LAN in cleartext — an accepted residual risk,
+      # recorded in the deployment-plane notes ("Front proxy"): skills/software-development/fin-tracker/SKILL.md
+      - "8080:8080"
+    restart: unless-stopped
+    healthcheck:
+      # nginx-unprivileged:alpine ships busybox wget. Probe from inside the
+      # container against the unprivileged listen port (8080), NOT the host
+      # mapping — host-side probes would break under a different mapping.
+      # 127.0.0.1, not `localhost`: busybox resolves localhost to ::1 first,
+      # and nginx binds only IPv4 here → connection refused on ::1.
+      test: ["CMD-SHELL", "wget -qO /dev/null http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  mcp:
+    build: ./backend
+    # No env_file (H6): this container must never hold JWT_SECRET / LLM_* /
+    # COOKIE_*. The only env it reads: FIN_TRACKER_URL, MCP_INTERNAL_SECRET,
+    # MCP_UPLOAD_DIR (plus the mode-1/2 vars, deliberately unset here — this
+    # service runs mode 3 only); mcp_server/ never imports app.core.config,
+    # so no JWT_SECRET is needed.
+    environment:
+      FIN_TRACKER_URL: http://api:8000
+      MCP_INTERNAL_SECRET: ${MCP_INTERNAL_SECRET:-}
+      MCP_UPLOAD_DIR: /home/appuser/mcp_uploads
+    volumes:
+      # Upload jail for the trades_import / imports_* file_path tools (H6):
+      # drop a .csv/.ofx/.qfx here on the host; paths outside this directory
+      # are rejected with a structured tool error. mkdir it before `up` so the
+      # bind dir is user-owned (compose would create it root-owned).
+      - ./mcp_uploads:/home/appuser/mcp_uploads
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8001:8001"
+    # M80: bind 0.0.0.0 INSIDE the container so the web proxy can reach it
+    # across the compose network (https://<host>/mcp/mcp -> nginx -> mcp:8001).
+    # The published host port below stays loopback-bound, so this does not add
+    # an external listener; McpAuthMiddleware remains default-deny on top.
+    command: >-
+      python -m mcp_server --transport streamable-http --host 0.0.0.0 --port 8001
+    restart: unless-stopped
+    healthcheck:
+      # The MCP streamable-http transport has no plain-HTTP health endpoint
+      # (health_check is an MCP tool, not a route), so this is a TCP-bind
+      # probe: the port accepts connections.
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1', 8001), timeout=3)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Standalone marketing + guides site (docs/32). No backend, no DB —
+  # safe to move to its own host later with `docker build ./site`.
+  site:
+    build: ./site
+    ports:
+      # site/Dockerfile is nginx-unprivileged listening on 8080 in-container
+      # (L22: runs non-root), so the mapping targets 8080, not 80.
+      - "127.0.0.1:8090:8080"
+    restart: unless-stopped
+    healthcheck:
+      # Probe the unprivileged listen port (8080) from inside the container.
+      # 127.0.0.1, not `localhost`: busybox resolves localhost to ::1 first
+      # and nginx binds only IPv4 here → connection refused on ::1.
+      test: ["CMD-SHELL", "wget -qO /dev/null http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  pgdata:

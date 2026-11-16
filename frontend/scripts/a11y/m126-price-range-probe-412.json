@@ -1,0 +1,278 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "width": 412,
+  "generated_at": "2026-10-09T03:37:35-0400",
+  "checks": [
+    {
+      "check": "instrument: fetch counter armed before the SPA boots",
+      "ok": true,
+      "detail": "new-document"
+    },
+    {
+      "check": "seed: held security created",
+      "ok": true,
+      "detail": "status=201 id=195"
+    },
+    {
+      "check": "seed: 251 cached closes via backfill (sparkline + chart need >= 30)",
+      "ok": true,
+      "detail": "total=251 source=backfill"
+    },
+    {
+      "check": "seed: the bogus-ticker row has NO history (the honest-empty case)",
+      "ok": true,
+      "detail": "prices=0"
+    },
+    {
+      "check": "stream: the SSE stream is live on /investments (a message arrived)",
+      "ok": true,
+      "detail": "{\"found\": true, \"label\": \"prices stale\", \"title\": \"Last stream message: 3:38:11 AM\"}"
+    },
+    {
+      "check": "history: ZERO /prices/history requests on render (sparkline is free)",
+      "ok": true,
+      "detail": "0 requests since the last document"
+    },
+    {
+      "check": "row: the held position rendered",
+      "ok": true,
+      "detail": "{\"cells\": [\"M126 probe\", \"MSFT\", \"1\", \"$142.26\", \"522.61 USD\", \"\", \"yfinance \\u00b7 1d\", \"522.61 USD\", \"$743.46\"], \"price\": \"522.61 USD\", \"market_value_cad\": \"$743.46\", \"live\": false, \"spark_points\": 30}"
+    },
+    {
+      "check": "row: sparkline plots ~30 closes straight from the positions payload",
+      "ok": true,
+      "detail": "points=30"
+    },
+    {
+      "check": "tick: manual upsert accepted (manual wins over the backfill)",
+      "ok": true,
+      "detail": "{\"status\":201,\"body\":\"{\\\"id\\\":11923,\\\"security_id\\\":195,\\\"date\\\":\\\"2026-10-09\\\",\\\"price\\\":\\\"123.45000000\\\",\\\"source\\\":\\\"manual\\\"}\"}"
+    },
+    {
+      "check": "tick: the price cell shows the new figure AND carries data-live-tick",
+      "ok": true,
+      "detail": "price=123.45 USD live=True after=4.8s"
+    },
+    {
+      "check": "note: 'totals update on next refresh' is on screen while the server payload is still in flight",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "check": "stream: the SSE chip still reports CONNECTION state after the tick (never the patched price, never Offline)",
+      "ok": true,
+      "detail": "{\"found\": true, \"label\": \"Stream connected\", \"title\": \"Last stream message: 3:38:16 AM\"}"
+    },
+    {
+      "check": "totals: the footnote disappears when the server's own payload lands (the marker rides the cached object \u2014 no timer)",
+      "ok": true,
+      "detail": "cleared after 7.0s"
+    },
+    {
+      "check": "expand: the chevron exposes Show <symbol> price history",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "expand: the row opens an inline panel (no navigation)",
+      "ok": true,
+      "detail": "{\"present\": true, \"error\": false, \"chart_label\": \"MSFT price history \\u2014 daily closes, 2026-09-09 \\u2013 2026-10-09, 23 points. from US$491.65 to US$123.45; latest US$123.45.\", \"group_label\": \"MSFT price history range"
+    },
+    {
+      "check": "expand: EXACTLY ONE /prices/history request",
+      "ok": true,
+      "detail": "1 ['/api/v1/prices/history?security_id=195&from=2026-09-09&to=2026-10-09&granularity=day']"
+    },
+    {
+      "check": "expand: the request carries security_id + a 1M `from` + granularity=day",
+      "ok": true,
+      "detail": "{\"security_id\": \"195\", \"from\": \"2026-09-09\", \"to\": \"2026-10-09\", \"granularity\": \"day\"}"
+    },
+    {
+      "check": "expand: the real price-history chart renders inline",
+      "ok": true,
+      "detail": "MSFT price history \u2014 daily closes, 2026-09-09 \u2013 2026-10-09, 23 points. from US$491.65 to US$123.45; latest US$123.45."
+    },
+    {
+      "check": "ranges: seven options, exactly one pressed, 1M is the default",
+      "ok": true,
+      "detail": "['1M', '3M', '6M', 'YTD', '1Y', '5Y', 'All'] ['true', 'false', 'false', 'false', 'false', 'false', 'false']"
+    },
+    {
+      "check": "ranges: the group is labelled for assistive tech",
+      "ok": true,
+      "detail": "MSFT price history range"
+    },
+    {
+      "check": "ranges: the control fits \u2014 it wraps, does not scroll sideways, and sits inside the scroll region's visible box",
+      "ok": true,
+      "detail": "{\"scrollW\": 316, \"clientW\": 316, \"groupRight\": 365, \"regionRight\": 375, \"width\": 316, \"inside\": true}"
+    },
+    {
+      "check": "ranges: Tab walks 1M \u2192 3M \u2192 \u2026 \u2192 All (keyboard-reachable, focus never lost)",
+      "ok": true,
+      "detail": "[\"3M\", \"6M\", \"YTD\", \"1Y\", \"5Y\", \"All\"]"
+    },
+    {
+      "check": "cache: collapsing closes the panel",
+      "ok": true,
+      "detail": "{\"present\": false}"
+    },
+    {
+      "check": "cache: collapse \u2192 re-expand adds NO request",
+      "ok": true,
+      "detail": "1 requests"
+    },
+    {
+      "check": "range5Y: choosing 5Y fetches again with granularity=month",
+      "ok": true,
+      "detail": "[\"/api/v1/prices/history?security_id=195&from=2021-10-09&to=2026-10-09&granularity=month\"]"
+    },
+    {
+      "check": "empty: a security with no history says 'No price history yet' and draws no chart",
+      "ok": true,
+      "detail": "{\"present\": true, \"empty\": true, \"chart_label\": null}"
+    },
+    {
+      "check": "m118: the account value timeline has its own range control, default All",
+      "ok": true,
+      "detail": "{\"label\": \"Account value over time range\", \"options\": [\"1M\", \"3M\", \"6M\", \"YTD\", \"1Y\", \"5Y\", \"All\"], \"pressed\": [\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"true\"]} page={\"path\": \"/accounts/315\", \"groups\": [\"Account value over time range\"], \"charts\": [\"Account value over time \\u2014 daily buckets, 2026-10-09, 1 point\"], \"h1\": \"M126 probe\"}"
+    },
+    {
+      "check": "axe setup: the row is expanded (panel settled) for the scan and the screenshots",
+      "ok": true,
+      "detail": "{\"present\": true, \"chart_label\": \"MSFT price history \\u2014 daily closes, 2026-09-09 \\u2013 2026-10-09, 23 points. from US$491.65 to US$123.45; latest US$123.45.\", \"empty\": false}"
+    },
+    {
+      "check": "shots: the expanded panel was open (and centred) for every screenshot",
+      "ok": true,
+      "detail": "[true, true]"
+    },
+    {
+      "check": "axe: 0 critical + 0 serious on /investments (row expanded), both themes",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "check": "console: no errors on /investments",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "demo: the Explore-the-demo door is on the login page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "demo: the SPA landed on a signed-in page",
+      "ok": true,
+      "detail": "/dashboard"
+    },
+    {
+      "check": "dashboard: the net-worth chart renders",
+      "ok": true,
+      "detail": "Net worth trend \u2014 weekly buckets, 2026-01-04 \u2013 2026-10-11, 41 points. from $69,647.95 to $227,476.56; latest $227,476.56."
+    },
+    {
+      "check": "dashboard: the page's 1W range is pickable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "dashboard: a 1W range renders >= 2 daily buckets (the pre-M126 hard-coded `month` gave exactly one)",
+      "ok": true,
+      "detail": "points=8 label=Net worth trend \u2014 daily buckets, 2026-10-02 \u2013 2026-10-09, 8 points. from $231,673.86 to $227,476.56; latest $227,476.56."
+    },
+    {
+      "check": "demo: EVERY positions row on the live portfolio carries a sparkline built from its own closes",
+      "ok": true,
+      "detail": "{\"rows\": 7, \"withSpark\": 7, \"minPoints\": 30, \"symbols\": [\"RY.TO\", \"BMO.TO\", \"ENB.TO\", \"VTI\", \"VXUS\", \"NVDA\", \"BMO.TO\"]}"
+    },
+    {
+      "check": "demo: accounts to open",
+      "ok": true,
+      "detail": "[\"/accounts/74\", \"/accounts/76\", \"/accounts/75\", \"/accounts/77\", \"/accounts/79\", \"/accounts/78\"]"
+    },
+    {
+      "check": "demo: an investment account's value timeline offers the seven ranges",
+      "ok": true,
+      "detail": "{\"label\": \"Account value over time range\", \"options\": [\"1M\", \"3M\", \"6M\", \"YTD\", \"1Y\", \"5Y\", \"All\"], \"pressed\": [\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"true\"]}"
+    },
+    {
+      "check": "demo: a bill to open",
+      "ok": true,
+      "detail": "[\"/bills/55\", \"/bills/56\", \"/bills/58\", \"/bills/59\", \"/bills/57\"]"
+    },
+    {
+      "check": "demo: the bill period chart carries the range control, All first",
+      "ok": true,
+      "detail": "{\"label\": \"Payments-by-period range\", \"options\": [\"1M\", \"3M\", \"6M\", \"YTD\", \"1Y\", \"5Y\", \"All\"], \"pressed\": [\"false\", \"false\", \"false\", \"false\", \"false\", \"false\", \"true\"]}"
+    },
+    {
+      "check": "console: no errors on the demo surfaces",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "axe": {
+    "investments-dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "investments-light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    }
+  },
+  "shots": [
+    "/home/hermes/.hermes/kanban/boards/electricity/workspaces/t_3bbc8cad/frontend/scripts/a11y/m126-investments-412-dark.png",
+    "/home/hermes/.hermes/kanban/boards/electricity/workspaces/t_3bbc8cad/frontend/scripts/a11y/m126-investments-412-light.png",
+    "/home/hermes/.hermes/kanban/boards/electricity/workspaces/t_3bbc8cad/frontend/scripts/a11y/m126-portfolio-412-dark.png",
+    "/home/hermes/.hermes/kanban/boards/electricity/workspaces/t_3bbc8cad/frontend/scripts/a11y/m126-account-412-dark.png",
+    "/home/hermes/.hermes/kanban/boards/electricity/workspaces/t_3bbc8cad/frontend/scripts/a11y/m126-bill-412-dark.png"
+  ],
+  "history_requests": {
+    "first": "/api/v1/prices/history?security_id=195&from=2026-09-09&to=2026-10-09&granularity=day"
+  },
+  "m118_page": {
+    "path": "/accounts/315",
+    "groups": [
+      "Account value over time range"
+    ],
+    "charts": [
+      "Account value over time \u2014 daily buckets, 2026-10-09, 1 point"
+    ],
+    "h1": "M126 probe"
+  },
+  "shot_panel_open": [
+    true,
+    true
+  ],
+  "console_a": [],
+  "demo_positions": {
+    "rows": 7,
+    "withSpark": 7,
+    "minPoints": 30,
+    "symbols": [
+      "RY.TO",
+      "BMO.TO",
+      "ENB.TO",
+      "VTI",
+      "VXUS",
+      "NVDA",
+      "BMO.TO"
+    ]
+  },
+  "m118_account": "/accounts/77",
+  "console_b": []
+}

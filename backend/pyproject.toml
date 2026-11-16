@@ -1,0 +1,137 @@
+[project]
+name = "fin-tracker"
+version = "0.1.0"
+description = "fin_tracker backend — FastAPI + SQLModel + PostgreSQL 16"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "sqlmodel",
+    "alembic",
+    "psycopg[binary]",
+    "pydantic-settings",
+    "pyjwt",
+    "httpx",
+    "bcrypt",
+    "uvicorn",
+    "ofxparse>=0.21",
+    "yfinance>=1.6.0",
+    "python-multipart>=0.0.32",
+    "slowapi>=0.1.9",
+    "regex>=2024.4.16",
+    "cryptography>=42",
+    "email-validator>=2",
+    "mcp[cli]>=1.0",
+    "webauthn>=2.8",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "httpx",
+    "ruff",
+    "pytest-cov",
+    "pytest-xdist",
+    "hypothesis",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# The operator CLI (M168): `uv run fintrackerctl provider-funds …` — the
+# maintenance surface for provider_fund_registry, docs/07 §Provider registry.
+[project.scripts]
+fintrackerctl = "app.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+# S = bandit rules (hardcoded credentials, assert in non-test code, bare
+# except-pass, insecure hashes, shell=True subprocess); RUF = ruff's own
+# correctness rules. Adopted from Lumina's gate (t_84ce5704).
+select = ["E", "F", "I", "UP", "B", "S", "RUF"]
+ignore = ["B008"]  # FastAPI Query() in function defaults is idiomatic
+
+[tool.ruff.lint.per-file-ignores]
+# Tests may assert and carry sample credentials (mirrors Lumina's test ignores).
+"tests/**" = ["S101", "S105", "S106"]
+# bearer token type is response metadata, not a hardcoded password (mirrors Lumina).
+"app/schemas/auth.py" = ["S105"]
+# The isolation suite's purpose is spawning fixed-argv pytest/psql children.
+"tests/test_suite_db_isolation.py" = ["S603", "S607"]
+# Ditto: the tenant-scoping probe re-runs pytest under a child env.
+"tests/test_tenant_scoping_contract.py" = ["S603"]
+# The smoke.sh trap pin executes an extracted bash function with curl/rm
+# stubbed: a fixed-argv `bash <harness>` child, no shell string, no input (t_aac25d95).
+"tests/test_smoke_script_auth.py" = ["S603", "S607"]
+# The role-absent replay boots a private postgres cluster: fixed-argv
+# initdb/pg_ctl whose binaries this module locates by absolute path.
+"tests/test_rls_role_absent.py" = ["S603"]
+# The probe-tenant sweep builds its DELETE plan from pg_catalog identifiers
+# (table/column names read out of pg_constraint) and the module-constant
+# predicate — no user-controlled string ever reaches the f-strings (t_498845bf).
+"scripts/purge_probe_tenants.py" = ["S608"]
+# The test asserts against the very SQL that script emits.
+"tests/test_purge_probe_tenants.py" = ["S608"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+# The local gate (AGENTS.md §4 `uv run pytest -q`) runs parallel with coverage
+# via these addopts — no Actions involved (billing not funded). Workers are
+# grouped per test FILE (`loadfile`) so module-scoped fixtures, env swaps and
+# shared state inside a file never straddle workers; every xdist worker is its
+# own pid, so conftest's per-pid suite-DB naming isolates them for free. A
+# pinned TEST_DB_ID is suffixed per worker by conftest (qa29 -> qa29_gw0), and
+# child runs that pin one go further and pass `-n0 --no-cov` with the worker
+# env dropped, so they own the bare pin outright (see the isolation tests).
+addopts = [
+    "-n",
+    "auto",
+    "--dist",
+    "loadfile",
+    "--cov=app",
+    "--cov=mcp_server",
+    "--cov-report=term:skip-covered",
+]
+
+# Resolution floors at the versions this tree was gated against (2026-10-30,
+# from uv.lock). The committed uv.lock is what `uv sync` installs — identical on
+# every machine — and these constraints defend the NEXT `uv lock`: a re-resolution
+# can never land below a tested version, so two machines regenerating the lock
+# agree instead of drifting to whatever released since. Bump the floor (and the
+# lock) in the same change when upgrading a dependency.
+[tool.uv]
+constraint-dependencies = [
+    "fastapi>=0.141.1",
+    "sqlmodel>=0.0.39",
+    "alembic>=1.19.1",
+    "psycopg>=3.3.4",
+    "pydantic-settings>=2.15.0",
+    "pyjwt>=2.15.1",
+    "httpx>=0.28.1",
+    "bcrypt>=5.0.0",
+    "uvicorn>=0.54.0",
+    "ofxparse>=0.21",
+    "yfinance>=1.7.0",
+    "python-multipart>=0.0.32",
+    "slowapi>=0.1.10",
+    "regex>=2026.7.19",
+    "cryptography>=50.0.0",
+    "email-validator>=2.3.0",
+    "mcp>=2.3.0",
+    "webauthn>=3.0.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+    "pytest-cov>=7.1.0",
+    "pytest-xdist>=3.8.0",
+    "hypothesis>=6.170.14",
+]

@@ -1,0 +1,161 @@
+{
+  "checks": [
+    {
+      "check": "demo_button",
+      "ok": true,
+      "detail": "Explore the demo present on /login"
+    },
+    {
+      "check": "anchor_row",
+      "ok": true,
+      "detail": "{\"cells\": [\"\", \"\", \"2026-09-27\", \"GROCERY MART #12\", \"-$119.73\", \"\", \"GROCERY MART #12\", \"RBC Main Chequing\", \"\", \"Split\\nEdit\\nHistory\\nDelete\"], \"x\": 808.9375, \"y\": 1074.830810546875, \"payee\": \"GROC"
+    },
+    {
+      "check": "substrate_fetch",
+      "ok": true,
+      "detail": "7 request(s), statuses [200], items 470 / total None"
+    },
+    {
+      "check": "console_clean",
+      "ok": true,
+      "detail": "no errors/warnings/CSP refusals"
+    },
+    {
+      "check": "offline_matcher",
+      "ok": true,
+      "detail": "10 categorized sibling(s) at/above 0.3 for 'GROCERY MART #12': [{'id': 3354, 'score': 1.0, 'category_id': 691}, {'id': 3335, 'score': 1.0, 'category_id': 691}, {'id': 3330, 'score': 1.0, 'category_id': 691}]"
+    },
+    {
+      "check": "popover_shows_results",
+      "ok": true,
+      "detail": "dialog text: 'SIMILAR PAST ENTRIES | GROCERY MART #12 | 2026-09-19 | -$19.78 | groceries | GROCERY MART #12 | 2026-07-20 | -$72.57 | groceries | GROCERY MART #12 | 2026-07-07 | -$81.23 | groceries | GROCERY MART #1'"
+    }
+  ],
+  "evidence": {
+    "popover_states": [
+      "SIMILAR PAST ENTRIES | Searching\u2026",
+      "SIMILAR PAST ENTRIES | GROCERY MART #12 | 2026-09-19 | -$19.78 | groceries | GROCERY MART #12 | 2026-07-20 | -$72.57 | groceries | GROCERY MART #12 | 2026-07-07 | -$81.23 | groceries | GROCERY MART #12 | 2026-07-03 | -$71.81 | groceries | GROCERY MART #12 | 2026-06-27 | -$13.02 | groceries | GROCERY MART #12 | 2026-06-25 | -$34.30 | groceries | GROCERY MART #12 | 2026-06-21 | -$88.59 | groceries | GROCERY MART #12 | 2026-05-11 | -$68.23 | groceries | GROCERY MART #12 | 2026-04-02 | -$89.96 | groceries | GROCERY MART #12 | 2026-04-01 | -$54.10 | groceries | See all similar \u2192"
+    ],
+    "popover_final": {
+      "text": "SIMILAR PAST ENTRIES | GROCERY MART #12 | 2026-09-19 | -$19.78 | groceries | GROCERY MART #12 | 2026-07-20 | -$72.57 | groceries | GROCERY MART #12 | 2026-07-07 | -$81.23 | groceries | GROCERY MART #12 | 2026-07-03 | -$71.81 | groceries | GROCERY MART #12 | 2026-06-27 | -$13.02 | groceries | GROCERY MART #12 | 2026-06-25 | -$34.30 | groceries | GROCERY MART #12 | 2026-06-21 | -$88.59 | groceries | GROCERY MART #12 | 2026-05-11 | -$68.23 | groceries | GROCERY MART #12 | 2026-04-02 | -$89.96 | groceries | GROCERY MART #12 | 2026-04-01 | -$54.10 | groceries | See all similar \u2192",
+      "items": 10
+    },
+    "screenshot": "/home/hermes/fin_tracker/wt/t_03e3bdd2/frontend/scripts/a11y/m119-similar-probe.png",
+    "transactions_requests": [
+      {
+        "path": "/api/v1/transactions/recurring/candidates?",
+        "status": 200,
+        "items": 0,
+        "total": null
+      },
+      {
+        "path": "/api/v1/transactions/unreviewed-count?",
+        "status": 200,
+        "items": 0,
+        "total": null
+      },
+      {
+        "path": "/api/v1/transactions?limit=50&offset=0",
+        "status": 200,
+        "items": 50,
+        "total": 370
+      },
+      {
+        "path": "/api/v1/transactions/unreviewed-count?payee=GROCERY",
+        "status": 200,
+        "items": 0,
+        "total": null
+      },
+      {
+        "path": "/api/v1/transactions?payee=GROCERY&limit=50&offset=0",
+        "status": 200,
+        "items": 50,
+        "total": 58
+      },
+      {
+        "path": "/api/v1/transactions?limit=200&offset=0",
+        "status": 200,
+        "items": 200,
+        "total": 370
+      },
+      {
+        "path": "/api/v1/transactions?limit=200&offset=200",
+        "status": 200,
+        "items": 170,
+        "total": 370
+      }
+    ],
+    "anchor_row": {
+      "cells": [
+        "",
+        "",
+        "2026-09-27",
+        "GROCERY MART #12",
+        "-$119.73",
+        "",
+        "GROCERY MART #12",
+        "RBC Main Chequing",
+        "",
+        "Split\nEdit\nHistory\nDelete"
+      ],
+      "x": 808.9375,
+      "y": 1074.830810546875,
+      "payee": "GROCERY MART #12"
+    },
+    "console": [],
+    "substrate_rows": 370,
+    "offline_hits": [
+      {
+        "id": 3354,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3335,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3330,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3329,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3327,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3326,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3324,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3310,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3297,
+        "score": 1.0,
+        "category_id": 691
+      },
+      {
+        "id": 3294,
+        "score": 1.0,
+        "category_id": 691
+      }
+    ],
+    "anchor_payee": "GROCERY MART #12"
+  }
+}

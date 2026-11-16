@@ -1,0 +1,163 @@
+{
+  "checks": [
+    {
+      "check": "seed tenant (register + login)",
+      "ok": true,
+      "detail": "{\"email\": \"m106-1791483536441@example.com\", \"password\": \"<redacted-password>\", \"register\": 200, \"login\": 200}"
+    },
+    {
+      "check": "bearer token for the HTTP half",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "probe account",
+      "ok": true,
+      "detail": "{\"id\": 278, \"institution_id\": null, \"name\": \"Probe Chequing\", \"type\": \"chequing\", \"currency\": \"CAD\", \"taxable\": false, \"llm_autopilot\": false, \"cash_balance\": \"0.00\", \"investment_value\": \"0.00\", \"total_value\": \"0.00\", \"starting_balance\": \"0.00\", \"name_cipher\": null, \"last_sync_at\": null, \"provider_status\": null, \"pending_import_count\": 0}"
+    },
+    {
+      "check": "three manual rows",
+      "ok": true,
+      "detail": "[7403, 7404, 7405]"
+    },
+    {
+      "check": "import upload staged",
+      "ok": true,
+      "detail": "HTTP 201 {\"id\": 193, \"account_id\": 278, \"institution\": \"\", \"file_name\": \"sample.qfx\", \"status\": \"pending_review\", \"imported\": 5, \"duplicates_skipped\": 0, \"unresolved\": 0, \"preview\": [{\"id\": 7406, \"date\": \"2026"
+    },
+    {
+      "check": "staged rows are NOT counted (committed filter)",
+      "ok": true,
+      "detail": "count=3, expected 3 (3 manual rows)"
+    },
+    {
+      "check": "batch committed",
+      "ok": true,
+      "detail": "HTTP 200 imported=5"
+    },
+    {
+      "check": "import seeded a queue",
+      "ok": true,
+      "detail": "imported=5, count=8, expected 8"
+    },
+    {
+      "check": "?reviewed=false total == unreviewed-count",
+      "ok": true,
+      "detail": "8 vs 8"
+    },
+    {
+      "check": "?reviewed=true total == 0 before any flip",
+      "ok": true,
+      "detail": "total=0"
+    },
+    {
+      "check": "manual row has exactly one `created` receipt, source=manual",
+      "ok": true,
+      "detail": "[{\"id\": 4027, \"tx_id\": 7403, \"event_kind\": \"created\", \"actor\": 366, \"actor_label\": \"you\", \"at\": \"2026-10-08T18:18:57.735137Z\", \"payload_hash\": \"da17572bad6935cc6ee080013fb4a7f83c932efa8daac417aa1da123cf6453fc\", \"summary\": \"you created this "
+    },
+    {
+      "check": "the import actually committed at least one row",
+      "ok": true,
+      "detail": "[{\"id\": 7405, \"account_id\": 278, \"date\": \"2026-09-10\", \"posting_date\": null, \"raw_description\": \"PROBE RENT\", \"normalized_payee\": \"PROBE RENT\", \"amount_native\": \"-1800.00\", \"currency\": \"CAD\", \"cad_amo"
+    },
+    {
+      "check": "imported row's receipt carries source=import + batch id",
+      "ok": true,
+      "detail": "[{\"id\": 4034, \"tx_id\": 7410, \"event_kind\": \"created\", \"actor\": 366, \"actor_label\": \"you\", \"at\": \"2026-10-08T18:18:58.150574Z\", \"payload_hash\": \"9e9dfa0c9647cc9c4d447b83b1b3e70f7bcf817444100e50954f77952a8a6442\", \"summary\": \"you created this from import Batch #193\", \"payload\": {\"source\": \"import\", \"ba"
+    },
+    {
+      "check": "POST /{id}/review marks it",
+      "ok": true,
+      "detail": "{\"id\": 7403, \"account_id\": 278, \"date\": \"2026-09-10\", \"posting_date\": null, \"raw_description\": \"PROBE GROCERIES\", \"normalized_payee\": \"PROBE GROCERIES\", \"amount_native\": \"-42.10\", \"currency\": \"CAD\", \""
+    },
+    {
+      "check": "count drops by exactly one",
+      "ok": true,
+      "detail": "7 vs 8"
+    },
+    {
+      "check": "the flip appended a `reviewed` receipt (2 total)",
+      "ok": true,
+      "detail": "[\"reviewed\", \"created\"]"
+    },
+    {
+      "check": "un-flagging writes a receipt too (3 total)",
+      "ok": true,
+      "detail": "[\"reviewed\", \"reviewed\", \"created\"]"
+    },
+    {
+      "check": "/export/zip ships transaction_events.csv",
+      "ok": true,
+      "detail": "HTTP 200 ['manifest.json', 'acb_pools.csv', 'accounts.csv', 'bill_reminders.csv', 'budget_carryovers.csv', 'budgets.csv', 'categories.csv', 'debts.csv', 'etf_holdings.csv', 'fundamentals.csv', 'fx_rates.csv', 'goals.csv', 'import_batches.csv', 'institutions.csv', 'learned_payees.csv', 'llm_suggestions.csv', 'mcp_audit.csv', 'notification_channels.csv', 'notification_deliveries.csv', 'notification_delivery_attempts.csv', 'notification_inbox_reads.csv', 'notification_settings.csv', 'prices.csv', 'reconciliation_items.csv', 'recurring_suppressions.csv', 'rule_tags.csv', 'rules.csv', 'securities.csv', 'sharing_audit.csv', 'sharing_links.csv', 'spending_alerts.csv', 'sync_agreements.csv', 'tags.csv', 'tax_projections.csv', 'trades.csv', 'transaction_events.csv', 'transaction_receipts.csv', 'transaction_tags.csv', 'transactions.csv', 'users.csv', 'vault_envelopes.csv', 'watchlist.csv']"
+    },
+    {
+      "check": "landed on /transactions",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "header hint shows “8 unreviewed”",
+      "ok": true,
+      "detail": "['8 unreviewed']"
+    },
+    {
+      "check": "“Needs review” chip carries the count",
+      "ok": true,
+      "detail": "['Needs review']"
+    },
+    {
+      "check": "row toggle hit area >= 44px at this width",
+      "ok": true,
+      "detail": "rect={'x': 303, 'y': 450, 'h': 28}"
+    },
+    {
+      "check": "count decrements live after the toggle flip",
+      "ok": true,
+      "detail": "['7 unreviewed']"
+    },
+    {
+      "check": "toggle is aria-pressed and its title flipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "keyboard-only flip (focus + Enter, no mouse)",
+      "ok": true,
+      "detail": "focused=True on 'Needs review — click to mark it reviewed', aria-pressed=true rows=2"
+    },
+    {
+      "check": "bulk Mark reviewed empties the queue on BOTH surfaces",
+      "ok": true,
+      "detail": "['Needs review', 'REVIEWED', 'Marked reviewed', 'Marked reviewed']"
+    },
+    {
+      "check": "History drawer lists the receipt sequence",
+      "ok": true,
+      "detail": "[\"Oct 8\\nyou marked this reviewed\\nreviewed \\u00b7 ee7d43e0ebe6\\u2026\", \"Oct 8\\nyou marked this unreviewed\\nreviewed \\u00b7 6a78c7dba719\\u2026\", \"Oct 8\\nyou marked this reviewed\\nreviewed \\u00b7 ee7d43e0ebe6\\u2026\", \"Oct 8\\nyou created this transaction\\ncreated \\u00b7 da17572bad69\\u2026\"]"
+    },
+    {
+      "check": "drawer's newest receipt is the review flip",
+      "ok": true,
+      "detail": "Oct 8\nyou marked this reviewed\nreviewed · ee7d43e0ebe6…"
+    },
+    {
+      "check": "axe 0 critical/serious — History drawer open on /transactions",
+      "ok": true,
+      "detail": "{} []"
+    }
+  ],
+  "evidence": {
+    "base": "https://fintrac.princessandmark.com",
+    "manual_ids": [
+      7403,
+      7404,
+      7405
+    ],
+    "imported": 5,
+    "events_after_2_flips": [
+      "reviewed",
+      "reviewed",
+      "created"
+    ]
+  }
+}

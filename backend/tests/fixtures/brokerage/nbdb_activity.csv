@@ -1,0 +1,5 @@
+Date,Type,Symbol,Quantity,Price,Commission,Total,Currency
+2026-01-05,Deposit,,,,0,10000.00,
+2026-01-12,Buy,SHOP,10,150.00,6.99,-1506.99,CAD
+2026-01-31,Dividend,SHOP,,,0,12.50,CAD
+2026-02-10,Sell,SHOP,4,160.00,6.99,633.01,CAD

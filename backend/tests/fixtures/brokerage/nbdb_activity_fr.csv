@@ -1,0 +1,5 @@
+Date;Type;Symbole;Quantité;Prix;Commission;Total;Devise
+2026-01-05;Dépôt;;;0;0;10000,00;CAD
+2026-01-12;Achat;SHOP;10;150,00;6,99;-1506,99;CAD
+2026-01-31;Dividende;SHOP;;;0;12,50;CAD
+2026-02-10;Vente;SHOP;4;160,00;6,99;633,01;CAD

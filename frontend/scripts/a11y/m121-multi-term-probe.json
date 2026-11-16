@@ -1,0 +1,303 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "bill_id": 68,
+  "generated_at": "2026-10-08T18:33:21-0400",
+  "checks": [
+    {
+      "check": "seed: statement uploaded through /imports/upload",
+      "ok": true,
+      "detail": "status=201 batch=196 {\"id\":196,\"account_id\":291,\"institution\":\"\",\"file_name\":\"m121.csv\",\"status\":\"pending_review\",\"imported\":5,\"duplicates_skipped\":0,\"unresolved\":0,\"preview\":[{\"id\":8364,\"date\":\"2026-05-05\",\"amount_native"
+    },
+    {
+      "check": "seed: batch committed (the rows are real ledger rows now)",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "check": "seed: bill created from a ONE-term `match_terms` body",
+      "ok": true,
+      "detail": "status=201 id=68"
+    },
+    {
+      "check": "wire: create echoes match_terms / match_logic / match_term=terms[0]",
+      "ok": true,
+      "detail": "terms=['ROGERS'] logic=any term=ROGERS"
+    },
+    {
+      "check": "single term: matched_count == 3 (decoy excluded)",
+      "ok": true,
+      "detail": "3"
+    },
+    {
+      "check": "list row agrees with the detail page",
+      "ok": true,
+      "detail": "payment_count=3 terms=['ROGERS']"
+    },
+    {
+      "check": "ANY: PUT /rule accepted",
+      "ok": true,
+      "detail": "None"
+    },
+    {
+      "check": "ANY: matched_count widens 3 -> 4 (RCOM joins)",
+      "ok": true,
+      "detail": "4"
+    },
+    {
+      "check": "ANY: lifetime payment_count widened with it",
+      "ok": true,
+      "detail": "4"
+    },
+    {
+      "check": "ANY: chart total sums to 200.00",
+      "ok": true,
+      "detail": "200.00 over 4 periods"
+    },
+    {
+      "check": "ANY: 12-period mean hand-computed 50.00 (4 periods x $50 / 4)",
+      "ok": true,
+      "detail": "mean=50.00 payments=4"
+    },
+    {
+      "check": "ANY: pagination reports the TRUE set, not the page size (limit=2 \u2192 total 4)",
+      "ok": true,
+      "detail": "matched=4 total=4 items=2"
+    },
+    {
+      "check": "ANY: the list row moved too",
+      "ok": true,
+      "detail": "count=4 terms=['ROGERS', 'RCOM']"
+    },
+    {
+      "check": "ANY: the decoy never joins the set",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "ALL: matched_count narrows 4 -> 0",
+      "ok": true,
+      "detail": "0"
+    },
+    {
+      "check": "ALL: every other number says zero honestly",
+      "ok": true,
+      "detail": "payment_count=0 list=0 page_total=0"
+    },
+    {
+      "check": "ALL: an intersecting pair narrows to exactly 1 row",
+      "ok": true,
+      "detail": "count=1 payees=['ROGERS WIRELESS']"
+    },
+    {
+      "check": "wire: match_term is still terms[0] on the list row",
+      "ok": true,
+      "detail": "term=ROGERS terms=['ROGERS', 'WIRELESS'] logic=all"
+    },
+    {
+      "check": "wire: an 11th term is 422 validation_error",
+      "ok": true,
+      "detail": "[422, '{\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\"],\"msg\":\"Value error, match_terms: at most 10 terms are allowed\",\"input\":{\"match_terms\":\"[\\'TERM0\\', \\'TERM1\\', \\'TERM2\\', \\'TERM3\\', \\'TERM4\\', \\'TERM5\\', \\'TERM6\\', \\'TERM7\\', \\'TERM8\\', \\'TERM9\\', \\'TERM10\\']\"},\"ctx\":{\"error\":\"match_terms: at most 10 terms are allowed\"}}],\"code\":\"validation_error\"}']"
+    },
+    {
+      "check": "wire: a self-disagreeing match_term is 422 validation_error",
+      "ok": true,
+      "detail": "[422, '{\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\"],\"msg\":\"Value error, match_terms[0] must equal match_term when both are sent\",\"input\":{\"match_term\":\"ROGERS\",\"match_terms\":\"[\\'FIDO\\']\"},\"ctx\":{\"error\":\"match_terms[0] must equal match_term when both are sent\"}}],\"code\":\"validation_error\"}']"
+    },
+    {
+      "check": "wire: a digits-only term is 422 validation_error",
+      "ok": true,
+      "detail": "[422, '{\"detail\":[{\"type\":\"value_error\",\"loc\":[\"body\"],\"msg\":\"Value error, match_terms: terms must contain letters \u2014 digits and # prefixes alone cannot identify a payee\",\"input\":{\"match_terms\":\"[\\'123\\']\"},\"ctx\":{\"error\":\"match_terms: terms must contain letters \u2014 digits and # prefixes alone cannot identify a payee\"}}],\"code\":\"validation_error\"}']"
+    },
+    {
+      "check": "wire: an unknown match_logic is 422",
+      "ok": true,
+      "detail": "[422, '{\"detail\":[{\"type\":\"literal_error\",\"loc\":[\"body\",\"match_logic\"],\"msg\":\"Input should be \\'any\\' or \\'all\\'\",\"input\":\"maybe\",\"ctx\":{\"expected\":\"\\'any\\' or \\'all\\'\"}}],\"code\":\"validation_error\"}']"
+    },
+    {
+      "check": "UI: Edit rule opened",
+      "ok": true,
+      "detail": "{'opened': True}"
+    },
+    {
+      "check": "UI: one chip per term, in order",
+      "ok": true,
+      "detail": "['ROGERS', 'WIRELESS']"
+    },
+    {
+      "check": "UI: every chip has a labelled remove button",
+      "ok": true,
+      "detail": "['Remove term \u2014 ROGERS', 'Remove term \u2014 WIRELESS']"
+    },
+    {
+      "check": "UI: ANY/ALL are WORDS beside the field, ALL selected (current rule)",
+      "ok": true,
+      "detail": "[{\"label\": \"ANY\", \"selected\": \"false\"}, {\"label\": \"ALL\", \"selected\": \"true\"}]"
+    },
+    {
+      "check": "UI: the input is named 'Match terms' and the hint states the contract",
+      "ok": true,
+      "detail": "name=Match terms hint=Enter to add \u00b7 Backspace on an empty field removes the last term \u00b7 up to 10 terms"
+    },
+    {
+      "check": "UI: the header joins the terms with `and` (ALL)",
+      "ok": true,
+      "detail": "Matches transactions whose payee contains \u201cROGERS\u201d and \u201cWIRELESS\u201d."
+    },
+    {
+      "check": "keyboard: the field is named 'Match terms'",
+      "ok": true,
+      "detail": "Match terms"
+    },
+    {
+      "check": "keyboard: Enter commits the typed term as a chip and clears the field",
+      "ok": true,
+      "detail": "{\"input_name\": \"Match terms\", \"typed\": \"RCOM\", \"cleared\": \"\", \"before\": [\"ROGERS\", \"WIRELESS\"], \"after_enter\": [\"ROGERS\", \"WIRELESS\", \"RCOM\"], \"after_backspace\": [\"ROGERS\", \"WIRELESS\"], \"after_second\": [\"ROGERS\"]}"
+    },
+    {
+      "check": "keyboard: Backspace on the EMPTY field removes the last chip",
+      "ok": true,
+      "detail": "['ROGERS', 'WIRELESS']"
+    },
+    {
+      "check": "keyboard: a second Backspace removes the next chip",
+      "ok": true,
+      "detail": "['ROGERS']"
+    },
+    {
+      "check": "axe bill-rule-editor:390:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:1440:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:390:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-rule-editor:1440:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "final: the widened rule is what the evidence points at",
+      "ok": true,
+      "detail": "{\"matched_count\": 4, \"terms\": [\"ROGERS\", \"RCOM\"], \"logic\": \"any\"}"
+    }
+  ],
+  "axe": {
+    "bill-rule-editor:390:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:1440:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:390:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ],
+      "editor_open": true
+    },
+    "bill-rule-editor:1440:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ],
+      "editor_open": true
+    }
+  },
+  "ui": {
+    "chips": [
+      "ROGERS",
+      "WIRELESS"
+    ],
+    "chip_remove_labels": [
+      "Remove term \u2014 ROGERS",
+      "Remove term \u2014 WIRELESS"
+    ],
+    "tabs": [
+      {
+        "label": "ANY",
+        "selected": "false"
+      },
+      {
+        "label": "ALL",
+        "selected": "true"
+      }
+    ],
+    "input_name": "Match terms",
+    "hint": "Enter to add \u00b7 Backspace on an empty field removes the last term \u00b7 up to 10 terms",
+    "rule_line": "Matches transactions whose payee contains \u201cROGERS\u201d and \u201cWIRELESS\u201d.",
+    "page_text": "Skip to main content\n1\nfin_tracker\nBills\nEdit rule\nRogers\n\nMonthly \u00b7 Due 2026-09-05\n\nMatches transactions whose payee contains \u201cROGERS\u201d and \u201cWIRELESS\u201d.\n\n1 payment\nMatch\ncontains\nstarts with\nis exactly\nAmount tolerance (\u00b1, blank = exact)\nMatch terms\nANY\nALL\nROGERS\nWIRELESS\n\nEnter to add \u00b7 Backspace on an empty field removes the last term \u00b7 up to 10 terms\n\nSaving re-matches every committed transaction against this rule right away \u2014 the bill always holds exactly what its current rule finds, so nothing can go stale.\n\nSave rule\nCancel\nRolling average\nLast 6 periods\n$50.00\nmedian $50.00 \u00b7 1 payment\nLast 12 periods\n$50.00\nmedian $50.00 \u00b7 1 payment\n\nA period with no payment counts as $0.00 \u2014 the average is what the bill really cost you, missed months included.\n\nFound payments\n1\ncommitted payments match this rule\nPayments by period\nAug 2026\n$0\n$15\n$30\n$45\n$60\nShow the numbers behind this chart\nTransactions\n1\u20131 of 1\nDate\tPayee\tAccount\tAmount\n2026-08-05\tROGERS WIRELESS\tM121 probe\t-$50.00\nHome\nTxns\nImport\nInvest\nReports\nSettings\n$0"
+  },
+  "keyboard": {
+    "input_name": "Match terms",
+    "typed": "RCOM",
+    "cleared": "",
+    "before": [
+      "ROGERS",
+      "WIRELESS"
+    ],
+    "after_enter": [
+      "ROGERS",
+      "WIRELESS",
+      "RCOM"
+    ],
+    "after_backspace": [
+      "ROGERS",
+      "WIRELESS"
+    ],
+    "after_second": [
+      "ROGERS"
+    ]
+  },
+  "final_rule": {
+    "matched_count": 4,
+    "terms": [
+      "ROGERS",
+      "RCOM"
+    ],
+    "logic": "any"
+  }
+}

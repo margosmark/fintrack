@@ -1,0 +1,26 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "generated_at": "2026-10-11T02:05:44-0400",
+  "tenant": "m143-probe-1791698743@example.com",
+  "checks": [],
+  "chooser_text": "SEVERAL LISTINGS MATCH \u201cVGRO\u201d \u2014 PICK ONE\n\n\u2715\nVGRO\nVirtus Silvant Growth Opportuni (NYSEArca, USD)\nVGRO.TO\nVANGUARD GROWTH ETF PORTFOLIO (Toronto, CAD)",
+  "axe_1440": {
+    "counts": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "minor": 0
+    },
+    "violations": []
+  },
+  "axe_390": {
+    "counts": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "minor": 0
+    },
+    "violations": []
+  },
+  "failures": []
+}

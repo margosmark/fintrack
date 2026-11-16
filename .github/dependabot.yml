@@ -1,0 +1,21 @@
+# M85 item 4 — this file did not exist: neither lockfile was ever checked for
+# updates, so dependency PRs were a manual chore. Weekly, capped at 5 open PRs
+# per ecosystem, scoped to the two directories that actually own a lockfile:
+#   /frontend -> package-lock.json (npm)
+#   /backend  -> uv.lock           (`uv` is Dependabot's own ecosystem for
+#                                   uv.lock, per docs.astral.sh/uv)
+# The cap is explicit because this repo has no required status checks (free
+# plan), so human review bandwidth — not CI — is the constraint.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "uv"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5

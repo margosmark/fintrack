@@ -1,0 +1,170 @@
+{
+  "base": "http://127.0.0.1:18080",
+  "width": 390,
+  "generated_at": "2026-10-05T10:25:30-0400",
+  "pages": {
+    "dashboard:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "transactions:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "investments:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "taxes:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "budgets:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "bills:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "dashboard:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "transactions:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "investments:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "taxes:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "budgets:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "bills:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  },
+  "viewport": [
+    390,
+    844
+  ],
+  "raf_frames_in_500ms": 7,
+  "logged_in_path": "/dashboard",
+  "console": []
+}

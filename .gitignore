@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+
+# Env / secrets
+.env
+.env.*
+# ...but the template stays tracked and scannable (negation must come after).
+!.env.example
+# JWT signing keys + Fernet key (t_d3176af6) — provisioned by
+# backend/scripts/generate_jwt_keys.py; NEVER commit a private key.
+secrets/
+*_private.pem
+*_public.pem
+
+# Coverage
+.coverage
+.hypothesis/
+.coverage.*
+htmlcov/
+coverage.xml
+lcov.info
+
+# OS
+.DS_Store
+
+# NOTE: uv.lock is COMMITTED and must never be ignored.
+.hermes/
+
+# Kanban per-task worktrees (isolated checkouts; never tracked)
+.worktrees/
+
+# a11y harness run logs (JSON output IS committed as evidence).
+# Evidence JSON must never carry a session token or a probe password.
+# redact.py (JWT) is wired into exactly two probes' evidence writes —
+# m108_probe.py and m125_select_all_matched_probe.py (pentest M1 /
+# card t_35764994); the other probes do not use it. Every probe instead
+# keeps credentials out of evidence itself: per-run random_password(),
+# strip_passwords() at the dump sites (card t_32cd7b8e).
+frontend/scripts/a11y/*.log
+
+# M84 probe runtime state: LIVE throwaway credentials (MCP tokens + password).
+# The scripts are committed as evidence; this file never is.
+docs/assets/m84/jar_leak_state.json
+docs/assets/m84/jar_leak_evidence.json

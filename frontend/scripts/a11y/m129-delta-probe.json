@@ -1,0 +1,211 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "width": 390,
+  "generated_at": "2026-10-10T02:07:48-0400",
+  "checks": [
+    {
+      "check": "instrument: the tick gate is queued for every document this tab loads (a wrapper bound before a navigate dies with its document)",
+      "ok": true,
+      "detail": "armed"
+    },
+    {
+      "check": "seed: held security + buy + two closes",
+      "ok": true,
+      "detail": "{\"previous_close_native\": \"100.00000000\", \"day_change_native\": \"2.00000000\", \"day_change_pct\": 2, \"day_change_cad\": \"20.00\", \"unrealized_gain_cad\": \"120.00\", \"unrealized_gain_pct\": 13.33, \"total_unrealized_cad\": \"120.00\"}"
+    },
+    {
+      "check": "wire: previous_close_native=100, day_change=2.00 (+2.00%), day_change_cad=20.00, unrealized=120.00 (+13.33%), total=120.00",
+      "ok": true,
+      "detail": "{\"previous_close_native\": \"100.00000000\", \"day_change_native\": \"2.00000000\", \"day_change_pct\": 2, \"day_change_cad\": \"20.00\", \"unrealized_gain_cad\": \"120.00\", \"unrealized_gain_pct\": 13.33, \"total_unrealized_cad\": \"120.00\"}"
+    },
+    {
+      "check": "instrument: overview gate installed on the security page (the tick's own document \u2014 a wrapper on any earlier document dies at navigate)",
+      "ok": true,
+      "detail": "already"
+    },
+    {
+      "check": "delta: \u25b2 +2.00 (+2.00%) vs previous close, no 'live' claim at rest",
+      "ok": true,
+      "detail": "\u25b2 +2.00 (+2.00%)vs previous close"
+    },
+    {
+      "check": "impact: You hold 10 \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) \u00b7 Today +$20.00",
+      "ok": true,
+      "detail": "headline=You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD today=Today: +$20.00 \u2014 10 \u00d7 +2.00 CAD per share"
+    },
+    {
+      "check": "tick: the price stream is open and delivering before the upsert (the page itself prints 'stream message \u2026')",
+      "ok": true,
+      "detail": "after 0.0s"
+    },
+    {
+      "check": "tick: with the server payload parked the impact card re-evaluated LIVE (market $1,300.00, gain +$400.00 (+44.44%)) with the live badge",
+      "ok": true,
+      "detail": "badges=2 parked=1 overview_fetches=2 POST=200 headline=You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+    },
+    {
+      "check": "tick: book cost did NOT move on the tick (history, not a quote)",
+      "ok": true,
+      "detail": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy"
+    },
+    {
+      "check": "tick: the delta line re-evaluated to +30.00 (+30.00%) and says live",
+      "ok": true,
+      "detail": "\u25b2 +30.00 (+30.00%)vs previous closelive"
+    },
+    {
+      "check": "settle: the server's own payload landed \u2014 badges gone, numbers server-owned again ($1,300.00 / +$400.00)",
+      "ok": true,
+      "detail": "badges=0 parked_released=1 headline=You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,300.00 \u00b7 +$400.00 (+44.44%) since first buy \u00b7 +400.00 CAD"
+    },
+    {
+      "check": "first-day: one cached close renders NO delta line (never 0.00%)",
+      "ok": true,
+      "detail": "None"
+    },
+    {
+      "check": "unheld: the delta line renders (+1.00 (+4.76%)) and the impact card is suppressed entirely",
+      "ok": true,
+      "detail": "delta=\u25b2 +1.00 (+5.00%)vs previous close impact=False"
+    },
+    {
+      "check": "table: Day \u0394 +30.00%, +$400.00, +44.44% render from the server fields",
+      "ok": true,
+      "detail": "[\"M129 probe\", \"M129CAD\", \"10\", \"$900.00\", \"130.00 CAD\", \"\", \"+30.00%\", \"manual \\u00b7 1d\", \"1,300.00 CAD\", \"$1,300.00\", \"+$400.00+44.44%\", \"+44.44%\"]"
+    },
+    {
+      "check": "table: the \u03a3 row carries the server's total unrealized (+$400.00)",
+      "ok": true,
+      "detail": "TotalTotal day change: +30.00%Total market value (CAD): $1,300.00Total unrealized (CAD): +$400.00\u2014"
+    },
+    {
+      "check": "swap @390: Source \u00b7 age and Your gain % are display:none (headers AND cells), Day \u0394 + Your gain (CAD) stay visible, and the gain cell stacks the percent under the amount",
+      "ok": true,
+      "detail": "{\"heads\": {\"Account\": \"table-cell\", \"Symbol\": \"table-cell\", \"Quantity\": \"table-cell\", \"Book cost (CAD)\": \"table-cell\", \"Price\": \"table-cell\", \"Trend\": \"table-cell\", \"Day \\u0394\": \"table-cell\", \"Source \\u00b7 age\": \"none\", \"Market value\": \"table-cell\", \"Market value (CAD)\": \"table-cell\", \"Your gain (CAD)\": \"table-cell\", \"Your gain %\": \"none\"}, \"cells\": [[\"table-cell\", \"M129 probe\"], [\"table-cell\", "
+    },
+    {
+      "check": "console: no errors on the throwaway tenant",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "axe: 0 critical + 0 serious on /investments and the security page, both themes",
+      "ok": true,
+      "detail": "{'investments-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'investments-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'security-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'security-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}}"
+    },
+    {
+      "check": "demo: the Explore-the-demo door is on the login page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "demo: every positions row renders a Day \u0394 or an honest '\u2014' (7 rows)",
+      "ok": true,
+      "detail": "[{\"symbol\": \"RY.TO\", \"day\": \"+0.84%\", \"gain\": \"+$49,517.90+100.32%\"}, {\"symbol\": \"BMO.TO\", \"day\": \"+0.91%\", \"gain\": \"+$7,638.40+70.72%\"}, {\"symbol\": \"ENB.TO\", \"day\": \"+0.21%\", \"gain\": \"+$938.80+13.38%\"}, {\"symbol\": \"VTI\", \"day\": \"+0.56%\", \"gain\": \"+$18,044.80+"
+    },
+    {
+      "check": "demo: the \u03a3 row equals the hand-sum of the rendered row gains (\u00b10.01)",
+      "ok": true,
+      "detail": "sum=97185.35 footer=97185.35"
+    },
+    {
+      "check": "demo: the holding's security page shows a REAL impact card (delta line + 'You hold')",
+      "ok": true,
+      "detail": "delta=\u25b2 +2.28 (+0.84%)vs previous close headline=You hold 362 RY.TO \u00b7 book $49,362.40 \u00b7 market $98,880.30 \u00b7 +$49,517.90 (+100.32%) since first buy \u00b7 +49,517.90"
+    },
+    {
+      "check": "axe: 0 critical + 0 serious on the demo security page, both themes",
+      "ok": true,
+      "detail": "{'investments-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'investments-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'security-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'security-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'demo-security-dark': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}, 'demo-security-light': {'counts': {'critical': 0, 'serious': 0, 'moderate': 0, 'minor': 0}, 'violations': []}}"
+    },
+    {
+      "check": "console: no errors on the demo tenant",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "axe": {
+    "investments-dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "investments-light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "security-dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "security-light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "demo-security-dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    },
+    "demo-security-light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": []
+    }
+  },
+  "shots": [
+    "/home/hermes/fin_tracker/frontend/scripts/a11y/m129-security-390.png",
+    "/home/hermes/fin_tracker/frontend/scripts/a11y/m129-demo-security-390.png",
+    "/home/hermes/fin_tracker/frontend/scripts/a11y/m129-investments-390.png"
+  ],
+  "gate_arm": "armed",
+  "tick_gate": {
+    "posted": 200,
+    "stream_waited_s": 0.0006909370422363281,
+    "at_read": {
+      "hold": true,
+      "held": [
+        null
+      ],
+      "overview_starts": 2,
+      "parked_released": 0
+    },
+    "released": {
+      "hold": false,
+      "held": [],
+      "overview_starts": 2,
+      "parked_released": 1
+    }
+  },
+  "console_a": [],
+  "console_b": [],
+  "passed": 24,
+  "failed": 0
+}

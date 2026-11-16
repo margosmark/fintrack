@@ -1,0 +1,112 @@
+{
+ "manifest": {
+  "link": "http://127.0.0.1:18080/manifest.json",
+  "status": 200,
+  "type": "application/json",
+  "name": "fin_tracker \u2014 personal finance",
+  "display": "standalone",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "theme_color": "#090c12",
+  "icons": [
+   {
+    "src": "/icons/icon-192.png",
+    "status": 200,
+    "type": "image/png"
+   },
+   {
+    "src": "/icons/icon-512.png",
+    "status": 200,
+    "type": "image/png"
+   },
+   {
+    "src": "/icons/icon-maskable-512.png",
+    "status": 200,
+    "type": "image/png"
+   },
+   {
+    "src": "/icons/apple-touch-icon.png",
+    "status": 200,
+    "type": "image/png"
+   }
+  ],
+  "appleIcon": "http://127.0.0.1:18080/icons/apple-touch-icon.png",
+  "themeColor": "#f3f5f8",
+  "viewport": "width=device-width, initial-scale=1.0, viewport-fit=cover"
+ },
+ "serviceWorker": {
+  "registered": true,
+  "scope": "http://127.0.0.1:18080/",
+  "scriptURL": "http://127.0.0.1:18080/sw.js",
+  "controller": true,
+  "secureContext": true,
+  "controlledAfterReload": true
+ },
+ "offline": {
+  "pathname": "/login",
+  "title": "fin_tracker",
+  "rootChildren": 2,
+  "appRendered": true,
+  "chromeErrorPage": false,
+  "controller": true,
+  "routeFallback": false
+ },
+ "drawer": {
+  "togglePresent": true,
+  "before": {
+   "inert": true,
+   "x": -248,
+   "width": 76
+  },
+  "open": {
+   "inert": false,
+   "x": 0,
+   "width": 224,
+   "ariaExpanded": "true",
+   "scrim": true,
+   "navLinkVisible": true
+  },
+  "afterEscape": {
+   "inert": true,
+   "x": -248,
+   "ariaExpanded": "false",
+   "scrim": false
+  }
+ },
+ "pullToRefresh": {
+  "phases": [
+   {
+    "phase": "pulling",
+    "text": "\u21bb\nPull to refresh"
+   },
+   {
+    "phase": "pulling",
+    "text": "\u21bb\nPull to refresh"
+   },
+   {
+    "phase": "pulling",
+    "text": "\u21bb\nPull to refresh"
+   },
+   {
+    "phase": "ready",
+    "text": "\u21bb\nRelease to refresh"
+   },
+   {
+    "phase": "ready",
+    "text": "\u21bb\nRelease to refresh"
+   }
+  ],
+  "afterRelease": {
+   "phase": "refreshing",
+   "text": "\u21bb\nRefreshing\u2026"
+  },
+  "settled": {
+   "present": false,
+   "phase": null
+  },
+  "apiCallsBefore": 19,
+  "apiCallsAfter": 35,
+  "refetched": true
+ },
+ "consoleErrors": []
+}

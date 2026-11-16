@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launch-window colors: keep the visual-system tokens (paper #F6F4EF / night #111318). -->
+<resources>
+    <color name="window_background_light">#F6F4EF</color>
+    <color name="window_background_dark">#111318</color>
+</resources>

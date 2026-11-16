@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FinTracker spike · Flow B — notification handoff</title>
+<link rel="stylesheet" href="spike.css"></head>
+<body>
+<main class="wrap">
+<header class="head">
+  <div>
+    <h1>Flow B · Notification handoff → truthful read-only review</h1>
+    <p>Capability 2 (notifications) + 4 (system back). Generic OS-surface copy → auth → revalidated deep link →
+      server-backed review, with stale-link, expired-session and permission-denied fallbacks. Alert types are
+      illustrative until the alert-source audit (docs/49 Q2) names real server events.</p>
+  </div>
+  <div class="links">
+    <a class="back" href="index.html">← Spike hub</a>
+    <button class="mode" id="modeToggle" type="button">◐ Toggle dark</button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ============ phone ============ -->
+  <section>
+  <div class="phone"><div class="screen">
+
+    <!-- n1 · lock screen notification -->
+    <div class="scr" id="n1" data-rail="Lock screen · notification" data-back=""
+      data-title="Lock screen — generic copy, zero financial payload"
+      data-note="The OS surface carries no amount, merchant, security symbol or account name — even for a user whose app is unmasked. The tap is a <b>handoff</b>, not an action: opening the notification never marks anything resolved."
+      data-probe="Expand and collapse the notification: assert the rendered text matches “FinTrack has an alert to review” with zero currency/merchant/ticker strings. Repeat with the in-app mask OFF — output must be identical.">
+      <div class="lockscreen">
+        <div class="lstatus"><span>9:41</span><span>● 5G　▰</span></div>
+        <div class="locktime">9:41</div>
+        <div class="lockdate">Tuesday, October 27</div>
+        <button class="notif" type="button" data-go="n2">
+          <span class="appicon">F</span>
+          <span style="flex:1 1 auto">
+            <span class="nbody">FinTrack has an alert to review</span>
+            <span class="nmeta">FinTrack · now · Tap to open</span>
+          </span>
+        </button>
+        <div style="margin:12px 14px 0;text-align:center">
+          <span class="chip offline" data-state="os-surface" style="background:#252932;color:#c2c7d1">OS surface · no financial values — by design</span>
+        </div>
+        <div class="lockhint">Swipe up or authenticate to unlock device</div>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- n2 · auth gate -->
+    <div class="scr" id="n2" data-rail="Tap → auth gate" data-back="n1"
+      data-title="Deep link held behind authentication"
+      data-note="The destination (specific alert) is retained as an internal route but <b>not shown</b> until auth passes. Per policy this is device unlock over a valid session; if the session is dead it falls through to n7. Nothing renders behind the gate except a blurred shell."
+      data-probe="Start with an expired session: unlock must route to sign-in (n7), never to a half-rendered alert. Start valid: unlock lands on the exact alert, not a generic home.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="content" style="opacity:.4;pointer-events:none" aria-hidden="true">
+        <div class="banner demo">Demo · read only</div>
+        <div class="panel"><div class="row"><span class="avatar">↑</span><span class="rowmain"><b>Price alert · VEQT</b><small>…</small></span></div></div>
+      </div>
+      <div class="dim"></div>
+      <div class="scrim">
+        <div class="prompt" role="dialog" aria-label="Unlock to open your alert">
+          <svg class="fp" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M24 5C14.6 5 7 12.6 7 22c0 4.4 1.5 8.4 4 12.4"/>
+            <path d="M24 11c-6.6 0-12 5.4-12 12 0 5.2 1.7 9.6 4.6 13.4"/>
+            <path d="M24 17a6 6 0 0 0-6 6c0 4.6 1.4 8.6 4 12"/>
+            <path d="M24 23a1.8 1.8 0 0 0-1.8 1.8c0 3.4 1 6.4 3 9"/>
+            <path d="M31 34.4c1.9-3.6 3-7.6 3-11.4"/>
+          </svg>
+          <h3>Unlock to open your alert</h3>
+          <p>FinTrack · your session is checked before the alert opens.</p>
+          <div class="chiprow" style="justify-content:center"><span class="chip masked" data-state="auth">Alert held · nothing shown before auth</span></div>
+          <button class="btn primary block" type="button" data-go="n3">Unlock ✓</button>
+          <button class="btn block" type="button" data-go="n7">Sign in instead</button>
+        </div>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- n3 · alert detail -->
+    <div class="scr" id="n3" data-rail="Alert detail (deep link target)" data-back="n5"
+      data-title="The intended record — server truth, full context"
+      data-note="Landing frame. Trigger, amount + currency, account scope and the server's own as-of time are all present, so the user can judge what the alert means. Freshness chip is the response time of <b>this</b> fetch after revalidation. Dismiss/read controls appear only if the existing server contract supports them — otherwise the alert is informational (docs/48)."
+      data-probe="Assert: exactly one currency symbol on the amount line; as-of time present; no client-computed deltas. Then kill the network mid-flow and re-enter — must become n6-style unavailable or stale, never a silent old copy.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><button class="iconbtn" type="button" data-go="n5" aria-label="Back to alerts">‹</button><div class="brand">Alert</div><span style="width:44px"></span></div>
+      <div class="content">
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Alerts are informational in demo; nothing persists.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 10:44 AM</span></div>
+        <div class="balance" style="display:block">
+          <h3>Price alert · Vanguard All-Equity ETF (VEQT)</h3>
+          <div class="amount sm">$152.89 CAD</div>
+          <div class="asof">Manual price · user-entered · as of Oct 24</div>
+          <div class="asof">Scope: TFSA portfolio · triggered 10:43 AM</div>
+        </div>
+        <div class="section"><h3>What happened</h3></div>
+        <div class="panel">
+          <div class="row"><span class="rowmain"><small>Trigger</small><b>Manual price updated</b></span></div>
+          <div class="row"><span class="rowmain"><small>Previous displayed price</small><b>$151.20 CAD · Oct 21</b></span></div>
+          <div class="row"><span class="rowmain"><small>Source</small><b>Manual override (takes precedence over fetched)</b></span></div>
+        </div>
+        <div class="callout">Manual prices are never replaced or blended with yfinance backfill (docs/07). This is the server's stated provenance, not an inference.</div>
+        <button class="btn primary block" type="button" data-go="n4">Review holding</button>
+        <p class="backhint" style="margin-top:12px">System back ↑ returns to Alerts — never exits to another screen</p>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- n4 · holding review -->
+    <div class="scr" id="n4" data-rail="Holding review (provenance)" data-back="n3"
+      data-title="Drill-in: market value with honest price staleness"
+      data-note="Two provenance axes on one screen: the <b>manual price</b> (source, as-of date, precedence) and the <b>server-computed market value</b> derived from that price (stale by 2 days, labeled as such). Quantity and book cost are server fields. No return figure is client-computed."
+      data-probe="Mask ON: every value including the chart label must be bullets. Mask OFF: assert the stale chip still says Oct 24 — freshness of the <i>response</i> must not repaint the price as current.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><button class="iconbtn" type="button" data-go="n3" aria-label="Back">‹</button><div class="brand">Position</div><span style="width:44px"></span></div>
+      <div class="content">
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Position details are view-only.</span></div>
+        <div class="chiprow">
+          <span class="chip fresh" data-state="fresh">Fresh response · server 10:44 AM</span>
+          <span class="chip stale" data-state="price-stale">Stale price · as of Oct 24 · 2d old</span>
+        </div>
+        <div class="balance" style="display:block">
+          <h3>Vanguard All-Equity ETF · VEQT</h3>
+          <div class="amount">$12,842.60</div>
+          <div class="asof">Market value CAD · server-computed from last price</div>
+        </div>
+        <div class="facts">
+          <div class="fact"><small>Quantity</small><b>84.000000</b></div>
+          <div class="fact"><small>Book cost (CAD)</small><b>$10,912.40</b></div>
+          <div class="fact"><small>Displayed price</small><b>$152.89 CAD</b></div>
+          <div class="fact"><small>Price source</small><b>Manual · Oct 24</b></div>
+        </div>
+        <div class="banner stale" data-state="price-stale"><span class="glyph">⏳</span><span><b>Price is 2 days old</b>manual price · as of Oct 24. Not a live quote. Server-computed valuation, no client math.</span></div>
+        <div class="section"><h3>Recent activity</h3></div>
+        <div class="panel">
+          <div class="row"><span class="avatar">＋</span><span class="rowmain"><b>Buy · 10 shares</b><small>Oct 03 · $149.20 CAD · TFSA</small></span></div>
+        </div>
+        <button class="btn block" type="button" data-go="n5">Open full details on web</button>
+        <p class="backhint" style="margin-top:12px">System back ↑ returns to the alert (n3)</p>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- n5 · alerts list -->
+    <div class="scr" id="n5" data-rail="Alerts list (parent)" data-back=""
+      data-title="Alerts destination — the deep link's in-app parent"
+      data-note="Every deep link resolves through this destination, so Back from a notification-opened item has a sensible, tenant-correct parent instead of exiting the app. Footer states the OS-surface promise in-product. Only server-backed alert types may render here — if the audit finds none, the honest frame is an empty state, not invented alerts."
+      data-probe="Back at this root should offer to leave the app (toast), not silently do nothing. Row tap → detail → back → same scroll position.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><div class="brand" style="padding-left:8px">Alerts</div><button class="iconbtn" type="button" data-go="n8" aria-label="Notification settings">⚙</button></div>
+      <div class="content">
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Alerts are informational; no actions persist.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 10:44 AM</span></div>
+        <div class="panel">
+          <button class="row tappable" type="button" data-go="n3"><span class="avatar">↑</span><span class="rowmain"><b>Price alert · VEQT</b><small>Manual price · Oct 24 · TFSA</small></span><span class="money">→</span></button>
+          <button class="row tappable" type="button" data-go="n6"><span class="avatar">↓</span><span class="rowmain"><b>Low-balance alert · chequing</b><small>Triggered 9:58 AM · <b>target already deleted</b></small></span><span class="money">→</span></button>
+        </div>
+        <div class="callout">Notification previews show no financial values. Opening a notification never marks an alert resolved.</div>
+        <button class="btn block" type="button" data-go="n8">Notification settings</button>
+        <div class="bottom-pad"></div>
+      </div>
+      <nav class="bottom" aria-label="Destinations">
+        <button class="navitem" type="button"><span class="glyph">⌂</span>Home</button>
+        <button class="navitem" type="button"><span class="glyph">⇄</span>Activity</button>
+        <button class="navitem" type="button"><span class="glyph">▥</span>Portfolio</button>
+        <button class="navitem active" type="button"><span class="glyph">◔</span>Alerts</button>
+      </nav>
+      <button class="gesturebar" type="button" aria-label="Android system back — no in-app destination, would leave the app"><span></span></button>
+    </div>
+
+    <!-- n6 · stale / deleted link -->
+    <div class="scr" id="n6" data-rail="Stale/deleted link" data-branch data-back="n5"
+      data-title="Deep link target gone — generic unavailable"
+      data-note="The alert was deleted (or is outside the tenant) between delivery and open. The frame must say only “no longer available”: it neither shows another record nor confirms that a foreign ID exists. Back lands on Alerts (n5), the tenant-correct parent."
+      data-probe="Cross-tenant probe: replay the same deep link with a different signed-in identity — output must be byte-identical to the deleted-record case (no existence oracle).">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><button class="iconbtn" type="button" data-go="n5" aria-label="Back to alerts">‹</button><div class="brand">Alert</div><span style="width:44px"></span></div>
+      <div class="content">
+        <div class="banner err" data-state="unavailable"><span class="glyph">!</span><span><b>This item is no longer available</b>The alert you opened no longer exists or can't be shown for this account.</span></div>
+        <div class="chiprow"><span class="chip expired" data-state="unavailable">Unavailable · nothing to display</span></div>
+        <div class="callout">No amounts, no record, no confirmation that any ID exists — the same state renders for deleted and for foreign-tenant targets.</div>
+        <button class="btn primary block" type="button" data-go="n5">Back to Alerts</button>
+        <p class="backhint" style="margin-top:12px">System back ↑ also returns to Alerts — never to a different record</p>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- n7 · session expired -->
+    <div class="scr" id="n7" data-rail="Expired session" data-branch data-back="n1"
+      data-title="Session expired at tap-time — destination preserved internally"
+      data-note="The notification's target survives as an internal route: sign in, then the app revalidates authorization + existence before showing anything. The user is never dropped on a generic home with the alert lost, and never shown the alert pre-auth."
+      data-probe="Sign in and assert you land on n3 (the alert), not on Home. Then delete the target while signed out and repeat — must land on n6 instead of a crash or a stale render.">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><div class="brand" style="padding-left:8px">FinTracker</div></div>
+      <div class="content">
+        <div class="banner err" data-state="expired"><span class="glyph">!</span><span><b>Session expired</b>Sign in to continue to your alert. The destination is kept — the session is not.</span></div>
+        <div class="chiprow"><span class="chip offline" data-state="auth">Not signed in · no financial values on this screen</span></div>
+        <h3 style="font-size:22px;margin-top:10px">Sign in</h3>
+        <input class="input" value="mark@example.com" readonly aria-label="Email">
+        <input class="input" type="password" value="············" readonly aria-label="Password">
+        <button class="btn primary block" type="button" data-go="n3">Sign in · open the alert</button>
+        <button class="btn block" type="button" data-go="n1">Not now</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:12px">The alert is shown only after sign-in <b>and</b> a server re-check that it still exists and belongs to you.</p>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+    <!-- n8 · notifications disabled -->
+    <div class="scr" id="n8" data-rail="Notifications disabled" data-branch data-back="n5"
+      data-title="Permission denied — the fallback lives in the app"
+      data-note="If notifications are off (or the user denied permission), the app does not dead-end: alerts remain reachable in-app and the settings route is offered. This is a required fallback for the capability — a notification feature whose failure mode is silence has failed the spike."
+      data-probe="Deny permission at install → open app → assert the banner is visible on first login without any prior alert tap, and that the settings deep link resolves to the app's own notification settings page (not the app's home).">
+      <div class="status"><span>9:41</span><span>● 5G　▰</span></div>
+      <div class="appbar"><div class="brand" style="padding-left:8px">Alerts</div></div>
+      <div class="content">
+        <div class="banner info" data-state="permission"><span class="glyph">◔</span><span><b>Notifications are off for FinTrack</b>You won't get alert notifications. Alerts still appear here.</span>
+          <span class="bact"><button class="btn" type="button">Open Android settings</button></span>
+        </div>
+        <div class="banner demo" data-state="demo"><span class="glyph">ⓘ</span><span><b>Demo · read only</b>Alerts are informational; no actions persist.</span></div>
+        <div class="chiprow"><span class="chip fresh" data-state="fresh">Fresh · server 10:44 AM</span></div>
+        <div class="panel">
+          <button class="row tappable" type="button" data-go="n3"><span class="avatar">↑</span><span class="rowmain"><b>Price alert · VEQT</b><small>Manual price · Oct 24 · TFSA</small></span><span class="money">→</span></button>
+        </div>
+        <div class="callout">Same alerts, same provenance — only the delivery channel is missing. In-app state is the source of truth; the notification is a nudge.</div>
+      </div>
+      <button class="gesturebar" type="button" aria-label="Android system back"><span></span></button>
+    </div>
+
+  </div></div>
+  </section>
+
+  <!-- ============ rail ============ -->
+  <aside class="rail">
+    <div class="card">
+      <h2>Steps</h2>
+      <ol class="steps" id="steps"></ol>
+      <p style="font-size:12.5px;color:var(--muted);margin:10px 0 0">↳ = branch / variant. The pill at the bottom of
+        each frame is Android system back — press it to test back behavior from every depth.</p>
+    </div>
+    <div class="card">
+      <h2>Current step</h2>
+      <div class="note-title" id="noteTitle"></div>
+      <div class="note-body" id="noteBody"></div>
+      <div class="probe" id="probe"></div>
+    </div>
+    <div class="card verdict">
+      <h2>Capability 2 earns itself only if…</h2>
+      <ul>
+        <li>An <b>existing</b> server alert event can drive the notification — no new alert system invented for the mockup (docs/49 Q2, audit owed).</li>
+        <li>OS-surface copy stays generic in every run: zero amounts, merchants, tickers or account names, masked or not.</li>
+        <li>Tap → auth → revalidated deep link reaches the intended record ≥95% of test deliveries on the supported device set (docs/49 threshold).</li>
+        <li>Every fallback (stale link, expired session, permission denied) has an in-app frame here — none is a silent failure.</li>
+        <li>Opening a notification never mutates alert state; no faux “Resolve” action exists.</li>
+      </ul>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px">If the alert-source audit finds no server event
+        that safely supports this journey, capability 2 fails the gate <b>before</b> any platform question — the
+        mockup cannot manufacture the backend.</p>
+    </div>
+  </aside>
+</div>
+
+<script src="spike.js"></script>
+</main>
+</body></html>

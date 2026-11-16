@@ -1,0 +1,1021 @@
+{
+ "accounts": [
+  {
+   "cash_balance": "2682.25",
+   "currency": "CAD",
+   "id": 1,
+   "institution_id": null,
+   "investment_value": "0.00",
+   "last_sync_at": null,
+   "llm_autopilot": false,
+   "name": "Chequing",
+   "name_cipher": null,
+   "pending_import_count": 0,
+   "provider_status": null,
+   "starting_balance": "0.00",
+   "taxable": false,
+   "total_value": "2682.25",
+   "type": "chequing"
+  },
+  {
+   "cash_balance": "-60.00",
+   "currency": "CAD",
+   "id": 2,
+   "institution_id": null,
+   "investment_value": "0.00",
+   "last_sync_at": null,
+   "llm_autopilot": false,
+   "name": "Cash",
+   "name_cipher": null,
+   "pending_import_count": 0,
+   "provider_status": null,
+   "starting_balance": "250.00",
+   "taxable": false,
+   "total_value": "-60.00",
+   "type": "savings"
+  },
+  {
+   "cash_balance": "500.00",
+   "currency": "CAD",
+   "id": 3,
+   "institution_id": null,
+   "investment_value": "1007.68",
+   "last_sync_at": null,
+   "llm_autopilot": false,
+   "name": "CAD Brokerage",
+   "name_cipher": null,
+   "pending_import_count": 0,
+   "provider_status": null,
+   "starting_balance": "500.00",
+   "taxable": true,
+   "total_value": "1507.68",
+   "type": "brokerage_non_registered"
+  },
+  {
+   "cash_balance": "40.00",
+   "currency": "USD",
+   "id": 4,
+   "institution_id": null,
+   "investment_value": "2277.36",
+   "last_sync_at": null,
+   "llm_autopilot": false,
+   "name": "USD Brokerage",
+   "name_cipher": null,
+   "pending_import_count": 0,
+   "provider_status": null,
+   "starting_balance": "0.00",
+   "taxable": false,
+   "total_value": "2317.36",
+   "type": "rrsp"
+  },
+  {
+   "cash_balance": "0.00",
+   "currency": "CAD",
+   "id": 5,
+   "institution_id": null,
+   "investment_value": "0.00",
+   "last_sync_at": null,
+   "llm_autopilot": false,
+   "name": "RRSP",
+   "name_cipher": null,
+   "pending_import_count": 0,
+   "provider_status": null,
+   "starting_balance": "0.00",
+   "taxable": false,
+   "total_value": "0.00",
+   "type": "rrsp"
+  }
+ ],
+ "base_commit": "d188501cd9fbd51e29c2ab193abd3bd69358198b",
+ "captured_at": "2026-10-10T01:05:01+00:00",
+ "categories": [
+  {
+   "id": 1,
+   "is_system": false,
+   "name": "Salary",
+   "parent_id": null,
+   "user_id": 1
+  },
+  {
+   "id": 2,
+   "is_system": false,
+   "name": "Food",
+   "parent_id": null,
+   "user_id": 1
+  },
+  {
+   "id": 3,
+   "is_system": false,
+   "name": "Groceries",
+   "parent_id": 2,
+   "user_id": 1
+  },
+  {
+   "id": 4,
+   "is_system": false,
+   "name": "Dining",
+   "parent_id": 2,
+   "user_id": 1
+  },
+  {
+   "id": 5,
+   "is_system": false,
+   "name": "Transport",
+   "parent_id": null,
+   "user_id": 1
+  }
+ ],
+ "fx": [
+  {
+   "base": "USD",
+   "date": "2025-01-01",
+   "quote": "CAD",
+   "rate": "1.44000000",
+   "source": "manual"
+  },
+  {
+   "base": "USD",
+   "date": "2025-02-07",
+   "quote": "CAD",
+   "rate": "1.44500000",
+   "source": "manual"
+  },
+  {
+   "base": "USD",
+   "date": "2025-04-01",
+   "quote": "CAD",
+   "rate": "1.43000000",
+   "source": "manual"
+  },
+  {
+   "base": "USD",
+   "date": "2025-05-09",
+   "quote": "CAD",
+   "rate": "1.39000000",
+   "source": "manual"
+  },
+  {
+   "base": "USD",
+   "date": "2025-07-01",
+   "quote": "CAD",
+   "rate": "1.36000000",
+   "source": "manual"
+  },
+  {
+   "base": "USD",
+   "date": "2025-07-04",
+   "quote": "CAD",
+   "rate": "1.36500000",
+   "source": "manual"
+  },
+  {
+   "base": "USD",
+   "date": "2025-09-05",
+   "quote": "CAD",
+   "rate": "1.38000000",
+   "source": "manual"
+  }
+ ],
+ "prices": [
+  {
+   "date": "2026-10-08",
+   "id": 8,
+   "price": "190.55999756",
+   "security_id": 1,
+   "source": "yfinance"
+  },
+  {
+   "date": "2026-10-08",
+   "id": 9,
+   "price": "379.55999756",
+   "security_id": 2,
+   "source": "yfinance"
+  },
+  {
+   "date": "2025-09-12",
+   "id": 4,
+   "price": "155.75000000",
+   "security_id": 1,
+   "source": "manual"
+  },
+  {
+   "date": "2025-08-08",
+   "id": 7,
+   "price": "268.50000000",
+   "security_id": 2,
+   "source": "manual"
+  },
+  {
+   "date": "2025-06-13",
+   "id": 3,
+   "price": "151.00000000",
+   "security_id": 1,
+   "source": "manual"
+  },
+  {
+   "date": "2025-05-09",
+   "id": 6,
+   "price": "271.00000000",
+   "security_id": 2,
+   "source": "manual"
+  },
+  {
+   "date": "2025-03-14",
+   "id": 2,
+   "price": "146.50000000",
+   "security_id": 1,
+   "source": "manual"
+  },
+  {
+   "date": "2025-02-07",
+   "id": 5,
+   "price": "260.00000000",
+   "security_id": 2,
+   "source": "manual"
+  },
+  {
+   "date": "2025-01-10",
+   "id": 1,
+   "price": "140.00000000",
+   "security_id": 1,
+   "source": "manual"
+  }
+ ],
+ "ranges": {
+  "empty": {
+   "from": "2024-01-01",
+   "to": "2024-12-31"
+  },
+  "full": {
+   "from": "2025-01-01",
+   "to": "2025-12-31"
+  },
+  "q2": {
+   "from": "2025-04-01",
+   "to": "2025-06-30"
+  }
+ },
+ "reporting_currency": "CAD",
+ "sankey": {
+  "empty": {
+   "columns": [
+    "source",
+    "total",
+    "destination"
+   ],
+   "from": "2024-01-01",
+   "links": [],
+   "nodes": [],
+   "to": "2024-12-31",
+   "totals": {
+    "drawn_cad": "0.00",
+    "expenses_cad": "0.00",
+    "income_cad": "0.00",
+    "invested_cad": "0.00",
+    "money_in_cad": "0.00",
+    "saved_cad": "0.00"
+   }
+  },
+  "full": {
+   "columns": [
+    "source",
+    "total",
+    "destination"
+   ],
+   "from": "2025-01-01",
+   "links": [
+    {
+     "amount_cad": "3890.00",
+     "source": "src:trade:contribution",
+     "target": "total:in"
+    },
+    {
+     "amount_cad": "3000.00",
+     "source": "src:cat:1",
+     "target": "total:in"
+    },
+    {
+     "amount_cad": "70.02",
+     "source": "src:trade:dividend",
+     "target": "total:in"
+    },
+    {
+     "amount_cad": "3313.56",
+     "source": "total:in",
+     "target": "dst:saved"
+    },
+    {
+     "amount_cad": "2785.36",
+     "source": "total:in",
+     "target": "dst:invested"
+    },
+    {
+     "amount_cad": "350.00",
+     "source": "total:in",
+     "target": "dst:cat:5"
+    },
+    {
+     "amount_cad": "265.25",
+     "source": "total:in",
+     "target": "dst:cat:2"
+    },
+    {
+     "amount_cad": "200.00",
+     "source": "total:in",
+     "target": "dst:trade:withdrawal"
+    },
+    {
+     "amount_cad": "20.85",
+     "source": "total:in",
+     "target": "dst:trade:commission"
+    },
+    {
+     "amount_cad": "12.50",
+     "source": "total:in",
+     "target": "dst:trade:fee"
+    },
+    {
+     "amount_cad": "12.50",
+     "source": "total:in",
+     "target": "dst:cat:null"
+    }
+   ],
+   "nodes": [
+    {
+     "amount_cad": "3890.00",
+     "column": "source",
+     "group": "income",
+     "id": "src:trade:contribution",
+     "label": "Contributions"
+    },
+    {
+     "amount_cad": "3000.00",
+     "column": "source",
+     "group": "income",
+     "id": "src:cat:1",
+     "label": "Salary"
+    },
+    {
+     "amount_cad": "70.02",
+     "column": "source",
+     "group": "income",
+     "id": "src:trade:dividend",
+     "label": "Dividends"
+    },
+    {
+     "amount_cad": "6960.02",
+     "column": "total",
+     "group": null,
+     "id": "total:in",
+     "label": "Money in"
+    },
+    {
+     "amount_cad": "3313.56",
+     "column": "destination",
+     "group": "saved",
+     "id": "dst:saved",
+     "label": "Savings"
+    },
+    {
+     "amount_cad": "2785.36",
+     "column": "destination",
+     "group": "invested",
+     "id": "dst:invested",
+     "label": "Investments"
+    },
+    {
+     "amount_cad": "350.00",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:cat:5",
+     "label": "Transport"
+    },
+    {
+     "amount_cad": "265.25",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:cat:2",
+     "label": "Food"
+    },
+    {
+     "amount_cad": "200.00",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:trade:withdrawal",
+     "label": "Withdrawals"
+    },
+    {
+     "amount_cad": "20.85",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:trade:commission",
+     "label": "Trading commissions"
+    },
+    {
+     "amount_cad": "12.50",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:trade:fee",
+     "label": "Fees"
+    },
+    {
+     "amount_cad": "12.50",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:cat:null",
+     "label": "Uncategorized"
+    }
+   ],
+   "to": "2025-12-31",
+   "totals": {
+    "drawn_cad": "0.00",
+    "expenses_cad": "861.10",
+    "income_cad": "6960.02",
+    "invested_cad": "2785.36",
+    "money_in_cad": "6960.02",
+    "saved_cad": "3313.56"
+   }
+  },
+  "q2": {
+   "columns": [
+    "source",
+    "total",
+    "destination"
+   ],
+   "from": "2025-04-01",
+   "links": [
+    {
+     "amount_cad": "691.68",
+     "source": "src:drawn",
+     "target": "total:in"
+    },
+    {
+     "amount_cad": "25.02",
+     "source": "src:trade:dividend",
+     "target": "total:in"
+    },
+    {
+     "amount_cad": "310.00",
+     "source": "total:in",
+     "target": "dst:cat:5"
+    },
+    {
+     "amount_cad": "302.00",
+     "source": "total:in",
+     "target": "dst:invested"
+    },
+    {
+     "amount_cad": "85.25",
+     "source": "total:in",
+     "target": "dst:cat:2"
+    },
+    {
+     "amount_cad": "12.50",
+     "source": "total:in",
+     "target": "dst:trade:fee"
+    },
+    {
+     "amount_cad": "6.95",
+     "source": "total:in",
+     "target": "dst:trade:commission"
+    }
+   ],
+   "nodes": [
+    {
+     "amount_cad": "691.68",
+     "column": "source",
+     "group": "drawn",
+     "id": "src:drawn",
+     "label": "Transfers & savings in"
+    },
+    {
+     "amount_cad": "25.02",
+     "column": "source",
+     "group": "income",
+     "id": "src:trade:dividend",
+     "label": "Dividends"
+    },
+    {
+     "amount_cad": "716.70",
+     "column": "total",
+     "group": null,
+     "id": "total:in",
+     "label": "Money in"
+    },
+    {
+     "amount_cad": "310.00",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:cat:5",
+     "label": "Transport"
+    },
+    {
+     "amount_cad": "302.00",
+     "column": "destination",
+     "group": "invested",
+     "id": "dst:invested",
+     "label": "Investments"
+    },
+    {
+     "amount_cad": "85.25",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:cat:2",
+     "label": "Food"
+    },
+    {
+     "amount_cad": "12.50",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:trade:fee",
+     "label": "Fees"
+    },
+    {
+     "amount_cad": "6.95",
+     "column": "destination",
+     "group": "spent",
+     "id": "dst:trade:commission",
+     "label": "Trading commissions"
+    }
+   ],
+   "to": "2025-06-30",
+   "totals": {
+    "drawn_cad": "691.68",
+    "expenses_cad": "414.70",
+    "income_cad": "25.02",
+    "invested_cad": "302.00",
+    "money_in_cad": "716.70",
+    "saved_cad": "0.00"
+   }
+  }
+ },
+ "securities": [
+  {
+   "exchange": "TSX",
+   "id": 1,
+   "kind": "stock",
+   "listing_currency": "CAD",
+   "name": "RY long name",
+   "symbol": "RY"
+  },
+  {
+   "exchange": "ARCA",
+   "id": 2,
+   "kind": "stock",
+   "listing_currency": "USD",
+   "name": "VTI long name",
+   "symbol": "VTI"
+  }
+ ],
+ "total_return": {
+  "empty": {
+   "account_count": 3,
+   "active_days": 366,
+   "end_value_cad": "500.00",
+   "flow_days": 0,
+   "from": "2024-01-01",
+   "income_cad": "0.00",
+   "mwr_pct": "0.00000000",
+   "net_flow_cad": "0.00",
+   "start_value_cad": "500.00",
+   "status": "ok",
+   "to": "2024-12-31",
+   "twr_pct": "0.00000000",
+   "valuation_days": 366
+  },
+  "full": {
+   "account_count": 3,
+   "active_days": 365,
+   "end_value_cad": "4881.92",
+   "flow_days": 6,
+   "from": "2025-01-01",
+   "income_cad": "70.02",
+   "mwr_pct": "0.60472840",
+   "net_flow_cad": "4355.78",
+   "start_value_cad": "500.00",
+   "status": "ok",
+   "to": "2025-12-31",
+   "twr_pct": "-0.58191776",
+   "valuation_days": 365
+  },
+  "q2": {
+   "account_count": 3,
+   "active_days": 91,
+   "end_value_cad": "4932.62",
+   "flow_days": 1,
+   "from": "2025-04-01",
+   "income_cad": "25.02",
+   "mwr_pct": "-0.30974072",
+   "net_flow_cad": "500.00",
+   "start_value_cad": "4447.10",
+   "status": "ok",
+   "to": "2025-06-30",
+   "twr_pct": "-0.34055520",
+   "valuation_days": 91
+  }
+ },
+ "trades": [
+  {
+   "account_id": 3,
+   "action": "contribution",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-01-10",
+   "fx_rate_used": null,
+   "id": 1,
+   "price_native": "1000.00000000",
+   "quantity": "0.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 3,
+   "action": "buy",
+   "commission": "6.95",
+   "currency": null,
+   "date": "2025-01-10",
+   "fx_rate_used": null,
+   "id": 2,
+   "price_native": "140.00000000",
+   "quantity": "4.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 4,
+   "action": "contribution",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-02-07",
+   "fx_rate_used": null,
+   "id": 9,
+   "price_native": "2000.00000000",
+   "quantity": "0.000000",
+   "security_id": 2
+  },
+  {
+   "account_id": 4,
+   "action": "buy",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-02-07",
+   "fx_rate_used": null,
+   "id": 10,
+   "price_native": "260.00000000",
+   "quantity": "5.000000",
+   "security_id": 2
+  },
+  {
+   "account_id": 3,
+   "action": "dividend",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-03-14",
+   "fx_rate_used": null,
+   "id": 3,
+   "price_native": "45.00000000",
+   "quantity": "0.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 3,
+   "action": "sell",
+   "commission": "6.95",
+   "currency": null,
+   "date": "2025-03-14",
+   "fx_rate_used": null,
+   "id": 4,
+   "price_native": "146.50000000",
+   "quantity": "-1.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 3,
+   "action": "fee",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-04-02",
+   "fx_rate_used": null,
+   "id": 5,
+   "price_native": "12.50000000",
+   "quantity": "0.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 4,
+   "action": "dividend",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-05-09",
+   "fx_rate_used": null,
+   "id": 11,
+   "price_native": "18.00000000",
+   "quantity": "0.000000",
+   "security_id": 2
+  },
+  {
+   "account_id": 5,
+   "action": "transfer_in",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-05-20",
+   "fx_rate_used": null,
+   "id": 14,
+   "price_native": "500.00000000",
+   "quantity": "0.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 3,
+   "action": "buy",
+   "commission": "6.95",
+   "currency": null,
+   "date": "2025-06-13",
+   "fx_rate_used": null,
+   "id": 6,
+   "price_native": "151.00000000",
+   "quantity": "2.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 4,
+   "action": "transfer_out",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-07-04",
+   "fx_rate_used": null,
+   "id": 12,
+   "price_native": "150.00000000",
+   "quantity": "0.000000",
+   "security_id": 2
+  },
+  {
+   "account_id": 3,
+   "action": "withdrawal",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-08-15",
+   "fx_rate_used": null,
+   "id": 8,
+   "price_native": "200.00000000",
+   "quantity": "0.000000",
+   "security_id": 1
+  },
+  {
+   "account_id": 4,
+   "action": "transfer_in",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-09-05",
+   "fx_rate_used": null,
+   "id": 13,
+   "price_native": "268.50000000",
+   "quantity": "1.000000",
+   "security_id": 2
+  },
+  {
+   "account_id": 3,
+   "action": "drip",
+   "commission": "0.00",
+   "currency": null,
+   "date": "2025-09-12",
+   "fx_rate_used": null,
+   "id": 7,
+   "price_native": "155.75000000",
+   "quantity": "0.288000",
+   "security_id": 1
+  }
+ ],
+ "transactions": [
+  {
+   "account_id": 4,
+   "amount_cipher": null,
+   "amount_native": "40.00",
+   "cad_amount": null,
+   "cad_amount_cipher": null,
+   "category_id": null,
+   "currency": "USD",
+   "date": "2025-06-01",
+   "has_receipt": false,
+   "id": 8,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-06-01",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  },
+  {
+   "account_id": 1,
+   "amount_cipher": null,
+   "amount_native": "-85.25",
+   "cad_amount": "-85.25",
+   "cad_amount_cipher": null,
+   "category_id": 3,
+   "currency": "CAD",
+   "date": "2025-05-11",
+   "has_receipt": false,
+   "id": 6,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-05-11",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  },
+  {
+   "account_id": 2,
+   "amount_cipher": null,
+   "amount_native": "-310.00",
+   "cad_amount": "-310.00",
+   "cad_amount_cipher": null,
+   "category_id": 5,
+   "currency": "CAD",
+   "date": "2025-04-19",
+   "has_receipt": false,
+   "id": 7,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-04-19",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  },
+  {
+   "account_id": 1,
+   "amount_cipher": null,
+   "amount_native": "-12.50",
+   "cad_amount": "-12.50",
+   "cad_amount_cipher": null,
+   "category_id": null,
+   "currency": "CAD",
+   "date": "2025-03-02",
+   "has_receipt": false,
+   "id": 5,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-03-02",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  },
+  {
+   "account_id": 1,
+   "amount_cipher": null,
+   "amount_native": "-40.00",
+   "cad_amount": "-40.00",
+   "cad_amount_cipher": null,
+   "category_id": 5,
+   "currency": "CAD",
+   "date": "2025-02-14",
+   "has_receipt": false,
+   "id": 4,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-02-14",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  },
+  {
+   "account_id": 1,
+   "amount_cipher": null,
+   "amount_native": "-60.00",
+   "cad_amount": "-60.00",
+   "cad_amount_cipher": null,
+   "category_id": 4,
+   "currency": "CAD",
+   "date": "2025-02-03",
+   "has_receipt": false,
+   "id": 3,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-02-03",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  },
+  {
+   "account_id": 1,
+   "amount_cipher": null,
+   "amount_native": "-120.00",
+   "cad_amount": "-120.00",
+   "cad_amount_cipher": null,
+   "category_id": 3,
+   "currency": "CAD",
+   "date": "2025-01-08",
+   "has_receipt": false,
+   "id": 2,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-01-08",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  },
+  {
+   "account_id": 1,
+   "amount_cipher": null,
+   "amount_native": "3000.00",
+   "cad_amount": "3000.00",
+   "cad_amount_cipher": null,
+   "category_id": 1,
+   "currency": "CAD",
+   "date": "2025-01-05",
+   "has_receipt": false,
+   "id": 1,
+   "is_recurring": false,
+   "is_split": false,
+   "normalized_payee": "Payee",
+   "note": null,
+   "pair_account_name": null,
+   "parent_split_id": null,
+   "payee_cipher": null,
+   "payee_token": null,
+   "posting_date": null,
+   "raw_desc_cipher": null,
+   "raw_description": "raw 2025-01-05",
+   "recurring_cadence": null,
+   "recurring_next_date": null,
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "tags": [],
+   "transfer_pair_id": null
+  }
+ ]
+}

@@ -1,0 +1,219 @@
+{
+  "base": "http://192.0.2.109:8080",
+  "surfaces": {
+    "1440/investments": {
+      "path": "/investments",
+      "bootMasked": true,
+      "before": {
+        "moneyCount": 41,
+        "moneySample": [
+          "$227,739.75",
+          "-$861.93",
+          "$0.00",
+          "-$7,054.80",
+          "$7,054.80",
+          "-$206.40",
+          "-$17,856.40",
+          "$17,650.00"
+        ],
+        "path": "/investments"
+      },
+      "afterFlip": {
+        "moneyCount": 0,
+        "bulletCount": 0,
+        "moneySample": [],
+        "path": "/investments"
+      },
+      "flip": {
+        "changed": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": [],
+        "dollarsGone": true
+      },
+      "roundTrip": {
+        "moneyCount": 41,
+        "restored": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": []
+      },
+      "consoleErrors": []
+    },
+    "1440/dashboard": {
+      "path": "/dashboard",
+      "bootMasked": true,
+      "before": {
+        "moneyCount": 7,
+        "moneySample": [
+          "$508.27",
+          "$0",
+          "$0",
+          "$0",
+          "$0",
+          "$0",
+          "$2,400.00"
+        ],
+        "path": "/dashboard"
+      },
+      "afterFlip": {
+        "moneyCount": 0,
+        "bulletCount": 0,
+        "moneySample": [],
+        "path": "/dashboard"
+      },
+      "flip": {
+        "changed": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": [],
+        "dollarsGone": true
+      },
+      "roundTrip": {
+        "moneyCount": 7,
+        "restored": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": []
+      },
+      "consoleErrors": []
+    },
+    "1440/accounts": {
+      "path": "/accounts",
+      "bootMasked": true,
+      "before": {
+        "moneyCount": 5,
+        "moneySample": [
+          "$877.41",
+          "$50.00",
+          "-$419.14",
+          "$125,273.90",
+          "$34,575.00"
+        ],
+        "path": "/accounts"
+      },
+      "afterFlip": {
+        "moneyCount": 0,
+        "bulletCount": 0,
+        "moneySample": [],
+        "path": "/accounts"
+      },
+      "flip": {
+        "changed": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": [],
+        "dollarsGone": true
+      },
+      "roundTrip": {
+        "moneyCount": 5,
+        "restored": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": []
+      },
+      "consoleErrors": []
+    },
+    "390/investments": {
+      "path": "/investments",
+      "bootMasked": true,
+      "before": {
+        "moneyCount": 2,
+        "moneySample": [
+          "$227,739.75",
+          "-$861.93"
+        ],
+        "path": "/investments"
+      },
+      "afterFlip": {
+        "moneyCount": 0,
+        "bulletCount": 0,
+        "moneySample": [],
+        "path": "/investments"
+      },
+      "flip": {
+        "changed": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": [],
+        "dollarsGone": true
+      },
+      "roundTrip": {
+        "moneyCount": 2,
+        "restored": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": []
+      },
+      "consoleErrors": []
+    },
+    "390/dashboard": {
+      "path": "/dashboard",
+      "bootMasked": true,
+      "before": {
+        "moneyCount": 1,
+        "moneySample": [
+          "$508.27"
+        ],
+        "path": "/dashboard"
+      },
+      "afterFlip": {
+        "moneyCount": 0,
+        "bulletCount": 0,
+        "moneySample": [],
+        "path": "/dashboard"
+      },
+      "flip": {
+        "changed": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": [],
+        "dollarsGone": true
+      },
+      "roundTrip": {
+        "moneyCount": 1,
+        "restored": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": []
+      },
+      "consoleErrors": []
+    },
+    "390/accounts": {
+      "path": "/accounts",
+      "bootMasked": true,
+      "before": {
+        "moneyCount": 5,
+        "moneySample": [
+          "$877.41",
+          "$50.00",
+          "-$419.14",
+          "$125,273.90",
+          "$34,575.00"
+        ],
+        "path": "/accounts"
+      },
+      "afterFlip": {
+        "moneyCount": 0,
+        "bulletCount": 0,
+        "moneySample": [],
+        "path": "/accounts"
+      },
+      "flip": {
+        "changed": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": [],
+        "dollarsGone": true
+      },
+      "roundTrip": {
+        "moneyCount": 5,
+        "restored": true,
+        "noNavigation": true,
+        "noRequests": true,
+        "requestUrls": []
+      },
+      "consoleErrors": []
+    }
+  }
+}

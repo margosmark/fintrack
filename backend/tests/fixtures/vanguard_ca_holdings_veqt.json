@@ -1,0 +1,159 @@
+{
+  "data": {
+    "funds": [
+      {
+        "profile": {
+          "fundFullName": "Vanguard All-Equity ETF Portfolio",
+          "fundCurrency": "CAD",
+          "primarySectorEquityClassification": "ICB Sectors"
+        }
+      }
+    ],
+    "borHoldings": [
+      {
+        "holdings": {
+          "items": [
+            {
+              "issuerName": "Vanguard Morningstar US Total Market Index ETF",
+              "securityLongDescription": "Vanguard Morningstar US Total Market Index ETF",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": "Open End & Miscellaneous Investment Vehicles",
+              "icbIndustryDescription": "Financials",
+              "marketValuePercentage": 44.77273,
+              "sedol1": "BBX47V5",
+              "quantity": 53515475,
+              "ticker": "VUN",
+              "securityType": "EQ.ETF",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 7627025497,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": "Vanguard FTSE Canada All Cap Index ETF",
+              "securityLongDescription": "Vanguard FTSE Canada All Cap Index ETF",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": "Open End & Miscellaneous Investment Vehicles",
+              "icbIndustryDescription": "Financials",
+              "marketValuePercentage": 30.58251,
+              "sedol1": "BBX4834",
+              "quantity": 70554225,
+              "ticker": "VCN",
+              "securityType": "EQ.ETF",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 5209723974,
+              "bloombergIsoCountry": "CA",
+              "couponRate": 0
+            },
+            {
+              "issuerName": "Vanguard FTSE Developed All Cap ex-North America Index ETF",
+              "securityLongDescription": "Vanguard FTSE Developed All Cap ex-North America Index ETF",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": "Open End & Miscellaneous Investment Vehicles",
+              "icbIndustryDescription": "Financials",
+              "marketValuePercentage": 17.62873,
+              "sedol1": "BYSQ5L3",
+              "quantity": 59537095,
+              "ticker": "VIU",
+              "securityType": "EQ.ETF",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 3003051071.8,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": "Vanguard FTSE Emerging Markets All Cap Index ETF",
+              "securityLongDescription": "Vanguard FTSE Emerging Markets All Cap Index ETF",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": "Open End & Miscellaneous Investment Vehicles",
+              "icbIndustryDescription": "Financials",
+              "marketValuePercentage": 6.99723,
+              "sedol1": "BYZTVL7",
+              "quantity": 23631561,
+              "ticker": "VEE",
+              "securityType": "EQ.ETF",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 1191975936.84,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": null,
+              "securityLongDescription": "Canadian Dollar",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": null,
+              "icbIndustryDescription": null,
+              "marketValuePercentage": 0.01683,
+              "sedol1": null,
+              "quantity": 2866877.49,
+              "ticker": "CAD",
+              "securityType": "CRNY",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 2866877.49,
+              "bloombergIsoCountry": "CA",
+              "couponRate": null
+            },
+            {
+              "issuerName": null,
+              "securityLongDescription": "US Dollar",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": null,
+              "icbIndustryDescription": null,
+              "marketValuePercentage": 0.00197,
+              "sedol1": null,
+              "quantity": 241477.69,
+              "ticker": "USD",
+              "securityType": "CRNY",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 334760.52,
+              "bloombergIsoCountry": "US",
+              "couponRate": null
+            },
+            {
+              "issuerName": null,
+              "securityLongDescription": "USD/CAD FWD 20260916",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": null,
+              "icbIndustryDescription": null,
+              "marketValuePercentage": 0.00102,
+              "sedol1": null,
+              "quantity": 125767.91,
+              "ticker": "USD",
+              "securityType": "CT.FOREX",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": 174237.14,
+              "bloombergIsoCountry": null,
+              "couponRate": null
+            },
+            {
+              "issuerName": null,
+              "securityLongDescription": "CAD/USD FWD 20260916",
+              "gicsSectorDescription": null,
+              "icbSectorDescription": null,
+              "icbIndustryDescription": null,
+              "marketValuePercentage": -0.00102,
+              "sedol1": null,
+              "quantity": -174353.5,
+              "ticker": "CAD",
+              "securityType": "CT.FOREX",
+              "finalMaturity": null,
+              "effectiveDate": "2026-08-31",
+              "marketValueBaseCurrency": -174353.5,
+              "bloombergIsoCountry": null,
+              "couponRate": null
+            }
+          ],
+          "totalHoldings": 8,
+          "lastItemKey": null
+        }
+      }
+    ]
+  }
+}

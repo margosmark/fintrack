@@ -1,0 +1,137 @@
+{
+  "page": "file://\u2026/page.html (generated per run)",
+  "recipes": [
+    {
+      "recipe": "rawKeyDown+keyUp (OLD press)",
+      "target": "button",
+      "activations": 0
+    },
+    {
+      "recipe": "rawKeyDown+keyUp (OLD press)",
+      "target": "form",
+      "activations": 0
+    },
+    {
+      "recipe": "keyDown, no text",
+      "target": "button",
+      "activations": 0
+    },
+    {
+      "recipe": "keyDown, no text",
+      "target": "form",
+      "activations": 0
+    },
+    {
+      "recipe": "keyDown+text+explicit char (m106 helper)",
+      "target": "button",
+      "activations": 2
+    },
+    {
+      "recipe": "keyDown+text+explicit char (m106 helper)",
+      "target": "form",
+      "activations": 2
+    },
+    {
+      "recipe": "press('Enter') (driver now)",
+      "target": "button",
+      "activations": 1
+    },
+    {
+      "recipe": "press('Enter') (driver now)",
+      "target": "form",
+      "activations": 1
+    },
+    {
+      "recipe": "element.click()",
+      "target": "button",
+      "activations": 1
+    },
+    {
+      "recipe": "element.click()",
+      "target": "form",
+      "activations": 0
+    }
+  ],
+  "checks": [
+    {
+      "check": "OLD rawKeyDown runs no default action (Enter/button)",
+      "ok": true,
+      "detail": "activations=0"
+    },
+    {
+      "check": "OLD rawKeyDown runs no default action (Enter/form)",
+      "ok": true,
+      "detail": "activations=0"
+    },
+    {
+      "check": "keyDown without text is equally inert",
+      "ok": true,
+      "detail": "button=0 form=0"
+    },
+    {
+      "check": "the element itself was never broken (click works)",
+      "ok": true,
+      "detail": "activations=1"
+    },
+    {
+      "check": "keyDown+text+explicit char DOUBLE-fires (why m106 helper was wrong)",
+      "ok": true,
+      "detail": "button=2 form=2"
+    },
+    {
+      "check": "press('Enter') activates a focused button exactly once",
+      "ok": true,
+      "detail": "activations=1"
+    },
+    {
+      "check": "press('Enter') submits an implicit form exactly once",
+      "ok": true,
+      "detail": "activations=1"
+    },
+    {
+      "check": "press('Space') activates a focused button exactly once",
+      "ok": true,
+      "detail": "activations=1"
+    },
+    {
+      "check": "key='Space' (the wrong value) stays inert \u2014 the trap this fixes",
+      "ok": true,
+      "detail": "activations=0"
+    },
+    {
+      "check": "press('Space') types a space into a focused input",
+      "ok": true,
+      "detail": "value=' '"
+    },
+    {
+      "check": "press('Tab') moves focus (bug report claimed it did not)",
+      "ok": true,
+      "detail": "4/4 presses moved focus: ['BODY#->BUTTON#btn', 'BODY#->BUTTON#btn', 'BODY#->BUTTON#btn', 'BODY#->BUTTON#btn']"
+    },
+    {
+      "check": "press('Tab') from <body> leaves the body",
+      "ok": true,
+      "detail": "activeElement=BUTTON#btn"
+    },
+    {
+      "check": "press('Escape') reaches a keydown listener",
+      "ok": true,
+      "detail": "keys=['Escape']"
+    },
+    {
+      "check": "press('ArrowRight') x5 scrolls a focused region (m102's contract)",
+      "ok": true,
+      "detail": "scrollLeft=200 keys=['ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight']"
+    },
+    {
+      "check": "type_text() inserts each glyph exactly once",
+      "ok": true,
+      "detail": "value='probe-extra'"
+    },
+    {
+      "check": "driver sends text for Enter/Space and none for Tab",
+      "ok": true,
+      "detail": "Enter='\\r' Space=' ' Tab=''"
+    }
+  ]
+}

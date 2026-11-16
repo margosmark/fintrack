@@ -1,0 +1,3 @@
+# Run artifacts — one JSON report per execution (`results.json`, and
+# `results-<suite>.json` when a single suite is re-run), never committed.
+results*.json

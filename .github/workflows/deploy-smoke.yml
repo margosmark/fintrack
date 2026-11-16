@@ -1,0 +1,42 @@
+name: Deploy smoke (manual)
+
+# M85 item 3 — CI never exercised the DEPLOYED origin. The live battery ran
+# from this box only (AGENTS §4 step 5), so there was no re-runnable check that
+# the public URL (TLS terminator → LAN → nginx) actually serves the stack, and
+# M83 F-3 recorded no edge/PIN-gate validation on the deployed origin.
+#
+# A human fires this after a deploy. NO SECRETS in this file: scripts/smoke.sh
+# mints its own throwaway account, gets its own token from POST /auth/demo and
+# carries it in-process, so the PIN/credentials never enter CI. The script's
+# own BASE default is the public origin; steps 8-9 (which ssh to the deploy host
+# via SMOKE_SSH_HOST — unset here, so the placeholder default applies) self-skip
+# on a runner and print "skipped".
+
+# DELIBERATELY NOT GATED by ci.yml's CI KILL SWITCH (`vars.CI_ENABLED`): this
+# workflow only fires on an explicit human dispatch, never on a push, and a
+# human who fires it while Actions billing is dead NEEDS the red "job was not
+# started ... recent account payments have failed" annotation, not an all-green
+# run whose smoke battery never executed. A false green here is worse than a red.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-smoke
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    # The battery is ~40 HTTP calls; item 11 (login burst) waits on a 429.
+    # 10 min is 6x the local runtime — a hang should surface, not occupy a runner.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - name: Smoke the public origin
+        env:
+          BASE: https://fintrac.princessandmark.com
+        run: bash scripts/smoke.sh

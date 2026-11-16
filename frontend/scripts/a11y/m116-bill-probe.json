@@ -1,0 +1,265 @@
+{
+  "base": "https://fintrac.princessandmark.com",
+  "bill_id": 65,
+  "generated_at": "2026-10-08T11:30:27-0400",
+  "checks": [
+    {
+      "check": "import: statement uploaded through /imports/upload",
+      "ok": true,
+      "detail": "status=201 batch=190 {\"id\":190,\"account_id\":276,\"institution\":\"\",\"file_name\":\"m116.csv\",\"status\":\"pending_review\",\"imported\":7,\"duplicates_skipped\":0,\"unresolved\":0,\"preview\":[{\"id\":7396,\"date\":\"2026-01-05\",\"amount_native"
+    },
+    {
+      "check": "import: batch committed (the rows are real ledger rows now)",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "check": "seed: bill created with a rule",
+      "ok": true,
+      "detail": "status=201 id=65"
+    },
+    {
+      "check": "list: GET /bills reports the count and the rolling average",
+      "ok": true,
+      "detail": "payment_count=6 rolling_average=34.29"
+    },
+    {
+      "check": "server: matched_count == 6 (the decoy is excluded)",
+      "ok": true,
+      "detail": "6"
+    },
+    {
+      "check": "server: lifetime payment_count == 6",
+      "ok": true,
+      "detail": "6"
+    },
+    {
+      "check": "server: twelve-period mean hand-computed 34.29",
+      "ok": true,
+      "detail": "34.29"
+    },
+    {
+      "check": "server: twelve-period median hand-computed 30.00",
+      "ok": true,
+      "detail": "30.00"
+    },
+    {
+      "check": "server: six-period mean hand-computed 38.33",
+      "ok": true,
+      "detail": "38.33"
+    },
+    {
+      "check": "server: six-period median hand-computed 40.00",
+      "ok": true,
+      "detail": "40.00"
+    },
+    {
+      "check": "server: 7 periods with exactly month 4 missed",
+      "ok": true,
+      "detail": "[{\"p\": \"2026-01-01\", \"t\": \"10.00\", \"m\": false}, {\"p\": \"2026-02-01\", \"t\": \"20.00\", \"m\": false}, {\"p\": \"2026-03-01\", \"t\": \"30.00\", \"m\": false}, {\"p\": \"2026-04-01\", \"t\": \"0.00\", \"m\": true}, {\"p\": \"2026-05-01\", \"t\": \"50.00\", \"m\": false}, {\"p\": \"2026-06-01\", \"t\": \"60.00\", \"m\": false}, {\"p\": \"2026-07-01\", \"t\": \"70.00\", \"m\": false}]"
+    },
+    {
+      "check": "server: chart total sums to 240.00",
+      "ok": true,
+      "detail": "240.00"
+    },
+    {
+      "check": "find-past: six rows, six period groups, no truncation",
+      "ok": true,
+      "detail": "total=6 groups=6"
+    },
+    {
+      "check": "find-past: account name resolved on every group",
+      "ok": true,
+      "detail": "M116 probe | M116 probe | M116 probe | M116 probe | M116 probe | M116 probe"
+    },
+    {
+      "check": "UI: header states the current rule",
+      "ok": true,
+      "detail": "Matches transactions whose payee starts with \u201cHYDRO ONE\u201d at $40.00 \u00b1 $70.00."
+    },
+    {
+      "check": "UI: chart frame is ONE leaf node and says 7 points",
+      "ok": true,
+      "detail": "Payments by period \u2014 monthly buckets, 2026-01-01 \u2013 2026-07-01, 7 points. total $240.00; highest Jul 2026 $70.00; 1 missed period."
+    },
+    {
+      "check": "UI: the missed period is in the accessible summary",
+      "ok": true,
+      "detail": "Payments by period \u2014 monthly buckets, 2026-01-01 \u2013 2026-07-01, 7 points. total $240.00; highest Jul 2026 $70.00; 1 missed period."
+    },
+    {
+      "check": "UI: data-table disclosure present",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "UI: both rolling windows printed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "UI: payment count printed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "keyboard: the data-table summary is reachable by Tab and opens",
+      "ok": true,
+      "detail": "{\"stops\": 7, \"focus\": {\"outline\": \"solid 2px\", \"boxShadow\": \"rgb(255, 255, 255) 0px 0px 0px 0px, rgb(79, 70, 229) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px\"}, \"open\": true, \"rows\": 7, \"has_missed\": true}"
+    },
+    {
+      "check": "keyboard: the opened table carries its 7 period rows",
+      "ok": true,
+      "detail": "7"
+    },
+    {
+      "check": "keyboard: the opened table spells out `missed`",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "keyboard: the focused summary shows a focus indicator",
+      "ok": true,
+      "detail": "{\"outline\": \"solid 2px\", \"boxShadow\": \"rgb(255, 255, 255) 0px 0px 0px 0px, rgb(79, 70, 229) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px\"}"
+    },
+    {
+      "check": "axe bill-detail:390:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-detail:412:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-detail:1440:dark = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-detail:390:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-detail:412:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "axe bill-detail:1440:light = 0 violations",
+      "ok": true,
+      "detail": "critical=0 serious=0 moderate=0 minor=0"
+    },
+    {
+      "check": "derived: widening the rule changed the match with no write",
+      "ok": true,
+      "detail": "6 -> 7 (PUT 200)"
+    }
+  ],
+  "axe": {
+    "bill-detail:390:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "bill-detail:412:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "bill-detail:1440:dark": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    "bill-detail:390:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    "bill-detail:412:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        412,
+        915
+      ]
+    },
+    "bill-detail:1440:light": {
+      "counts": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0
+      },
+      "violations": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    }
+  },
+  "ui": {
+    "heading": "Hydro",
+    "page_text": "Skip to main content\n1\nfin_tracker\nBills\nEdit rule\nHydro\n\nMonthly \u00b7 Due 2026-08-05 \u00b7 expected $40.00\n\nMatches transactions whose payee starts with \u201cHYDRO ONE\u201d at $40.00 \u00b1 $70.00.\n\n6 payments\nRolling average\nLast 6 periods\n$38.33\nmedian $40.00 \u00b7 5 payments\nLast 12 periods\n$34.29\nmedian $30.00 \u00b7 6 payments\n\nA period with no payment counts as $0.00 \u2014 the average is what the bill really cost you, missed months included.\n\nFound payments\n6\ncommitted payments match this rule\nPayments by period\nJan 2026\nMar 2026\nMay 2026\nJul 2026\n$0\n$20\n$40\n$60\n$80\nShow the numbers behind this chart\nTransactions\n1\u20136 of 6\nDate\tPayee\tAccount\tAmount\n2026-07-05\tHYDRO ONE\tM116 probe\t-$70.00\n2026-06-05\tHYDRO ONE\tM116 probe\t-$60.00\n2026-05-05\tHYDRO ONE\tM116 probe\t-$50.00\n2026-03-05\tHYDRO ONE\tM116 probe\t-$30.00\n2026-02-05\tHYDRO ONE\tM116 probe\t-$20.00\n2026-01-05\tHYDRO ONE\tM116 probe\t-$10.00\nHome\nTxns\nImport\nInvest\nReports\nSettings\n$0",
+    "frame_label": "Payments by period \u2014 monthly buckets, 2026-01-01 \u2013 2026-07-01, 7 points. total $240.00; highest Jul 2026 $70.00; 1 missed period.",
+    "frame_count": 1,
+    "has_summary": true,
+    "tables": 2
+  },
+  "keyboard": {
+    "stops": 7,
+    "focus": {
+      "outline": "solid 2px",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px, rgb(79, 70, 229) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+    },
+    "open": true,
+    "rows": 7,
+    "has_missed": true
+  },
+  "derived": {
+    "put_status": 200,
+    "after_count": 7,
+    "txn_total": 7
+  }
+}

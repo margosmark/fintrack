@@ -1,0 +1,7 @@
+# Machine-local / build outputs — never committed.
+local.properties
+.gradle/
+build/
+captures/
+*.apk
+*.aab

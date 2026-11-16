@@ -1,0 +1,5 @@
+Run Date,Action,Symbol,Security Description,Quantity,Price ($),Commission ($),Fees ($),Amount ($),Account
+01/12/2026,BUY,AAPL,Apple Inc,10,150.00,0.00,0.05,-1500.05,123-456789
+02/10/2026,SELL,AAPL,Apple Inc,4,160.00,0.00,0.05,639.95,123-456789
+02/01/2026,DIVIDEND,AAPL,Apple Inc dividend,,1.50,0.00,0.00,15.00,123-456789
+02/05/2026,REINVESTMENT,AAPL,Apple Inc reinvest,,150.00,0.00,0.00,0.00,123-456789

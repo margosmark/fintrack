@@ -1,0 +1,16 @@
+{
+  "profile": "wealthsimple",
+  "rows": 4,
+  "imported": 4,
+  "duplicates_skipped": 0,
+  "unmapped": 1,
+  "notices": 2,
+  "positions": {
+    "VEQT": "10.25",
+    "SHOP": "2"
+  },
+  "cash_effect": {
+    "CAD": "-610.00"
+  },
+  "account_currency": "CAD"
+}

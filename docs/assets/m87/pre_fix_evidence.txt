@@ -1,0 +1,60 @@
+=== M87 evidence: pre_fix @ https://fintrac.princessandmark.com 2026-10-02T05:36:57Z
+
+--- 1. POST /auth/register (fresh address)
+HTTP 201
+{"user":{"id":133,"email":"m87-pre_fix-19417@example.com","name":null,"privacy_mode":false,"currency_tracker_enabled":true,"llm_provider":"ollama","llm_base_url":null,"llm_model":null,"encryption_required":false},"access_token":"<redacted-jwt>","token_type":"bearer"}
+--- 2. POST /auth/register (SAME address again = the oracle)
+HTTP 409
+{"detail":"Email already registered","code":"duplicate_email"}
+--- 3. POST /auth/passkeys/login/options (address with NO account)
+HTTP 404
+{"detail":"No passkey is registered for this email","code":"no_passkeys"}
+--- 4. POST /auth/passkeys/login/options (address WITH an account)
+HTTP 404
+{"detail":"No passkey is registered for this email","code":"no_passkeys"}
+--- 5. GET /docs (anonymous)
+HTTP 200 content-type=text/html
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+    
+--- 6. GET /openapi.json (anonymous)
+HTTP 200 content-type=text/html
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+    
+--- 7. GET /openapi.json with a session access token
+HTTP 200
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <
+--- 8. response headers on /
+content-security-policy: default-src 'self'; script-src 'self' 'sha256-+ZALdw0iadt/tBIxsuaCO41RtzhTbzMDens3eBB3Ntc=' 'sha256-qf3l4/KPFG0mZjBijINyOtWln+1RnQ+Cz7atNIcdFpk='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'
+strict-transport-security: max-age=31536000
+--- 9. CORS preflight from the REAL origin
+HTTP 400 allow-origin=
+--- 10. CORS preflight from http://localhost:5173
+HTTP 200 allow-origin=http://localhost:5173
+--- 11. cleanup: delete the probe account
+DELETE /users/me HTTP 204
+=== end pre_fix
+=== M87 evidence: pre_fix API port (example.internal, uvicorn :8000) @ 2026-10-02T05:37:20Z
+http://127.0.0.1:8000/docs -> HTTP 200 type=text/html; charset=utf-8 
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="v
+http://127.0.0.1:8000/redoc -> HTTP 200 type=text/html; charset=utf-8 
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>fin_tr
+http://127.0.0.1:8000/openapi.json -> HTTP 200 type=application/json {"openapi":"3.1.0","info":{"title":"fin_tracker API","versio

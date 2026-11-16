@@ -1,0 +1,22 @@
+{
+  "stream_message_waited_s": null,
+  "post_status": 200,
+  "samples_taken": 80,
+  "badge_seen": false,
+  "tick_verdict_would_be": "FAIL",
+  "final": {
+    "badges": 0,
+    "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD",
+    "delta": "\u25b2 +2.00 (+2.00%)vs previous close"
+  },
+  "after_release": {
+    "badges": 0,
+    "headline": "You hold 10 M129CAD \u00b7 book $900.00 \u00b7 market $1,020.00 \u00b7 +$120.00 (+13.33%) since first buy \u00b7 +120.00 CAD"
+  },
+  "released": {
+    "hold": false,
+    "held": [],
+    "overview_starts": 1,
+    "parked_released": 0
+  }
+}

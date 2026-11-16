@@ -1,0 +1,2172 @@
+{
+  "probe": "shell_visual_matrix",
+  "status": "ok",
+  "base": "http://localhost:4183",
+  "served_build_commit": "f85871979ae69a5c987de2eebfe6c5aee3ea3c17",
+  "repo_head": "f85871979ae69a5c987de2eebfe6c5aee3ea3c17",
+  "tolerance_px": 2.0,
+  "baseline": "frontend/scripts/a11y/shell-visual-matrix-baseline.json",
+  "cells": [
+    {
+      "id": "1440x900|demo|masked",
+      "width": 1440,
+      "height": 900,
+      "state": "demo",
+      "mask": "masked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440,
+          "h": 2232
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        }
+      },
+      "money_count": 0,
+      "money_sample": [],
+      "png": "matrix/shell-1440-demo-masked.png",
+      "png_dims": [
+        1440,
+        900
+      ],
+      "measured": {
+        "scrollWidth": 1440,
+        "demoLockCount": 1,
+        "appNavX": null,
+        "chip": {
+          "pressed": "true",
+          "tag": "BUTTON",
+          "text": "Masked"
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='true' want=true"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=1440 innerWidth=1440"
+        },
+        {
+          "name": "desktop-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'main-content', 'mask-chip', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'true', 'tag': 'BUTTON', 'text': 'Masked'}"
+        },
+        {
+          "name": "masked-no-dollar-figures",
+          "ok": true,
+          "detail": "0 figure(s): []"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "more-panel-closed",
+          "ok": true,
+          "detail": "more-panel rendered while closed"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(1440, 900) viewport=(1440, 900) path=shell-1440-demo-masked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "5 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "1440x900|demo|unmasked",
+      "width": 1440,
+      "height": 900,
+      "state": "demo",
+      "mask": "unmasked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440,
+          "h": 2232
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        }
+      },
+      "money_count": 24,
+      "money_sample": [
+        "$227",
+        "$407.17",
+        "$407.17",
+        "$2,452",
+        "$4,750",
+        "$419",
+        "$113",
+        "$333"
+      ],
+      "png": "matrix/shell-1440-demo-unmasked.png",
+      "png_dims": [
+        1440,
+        900
+      ],
+      "measured": {
+        "scrollWidth": 1440,
+        "demoLockCount": 1,
+        "appNavX": null,
+        "chip": {
+          "pressed": "false",
+          "tag": "BUTTON",
+          "text": "Unmasked"
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='false' want=false"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=1440 innerWidth=1440"
+        },
+        {
+          "name": "desktop-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'main-content', 'mask-chip', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'false', 'tag': 'BUTTON', 'text': 'Unmasked'}"
+        },
+        {
+          "name": "unmasked-detector-finds-dollars",
+          "ok": true,
+          "detail": "24 figure(s)"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "more-panel-closed",
+          "ok": true,
+          "detail": "more-panel rendered while closed"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(1440, 900) viewport=(1440, 900) path=shell-1440-demo-unmasked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "5 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "1440x900|empty|masked",
+      "width": 1440,
+      "height": 900,
+      "state": "empty",
+      "mask": "masked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440,
+          "h": 1692.6
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        },
+        "empty-state": {
+          "x": 34,
+          "y": 1262.9,
+          "w": 1028,
+          "h": 484.8
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        },
+        "empty-state": {
+          "x": 34,
+          "y": 1262.9,
+          "w": 1028
+        }
+      },
+      "money_count": 0,
+      "money_sample": [],
+      "png": "matrix/shell-1440-empty-masked.png",
+      "png_dims": [
+        1440,
+        900
+      ],
+      "measured": {
+        "scrollWidth": 1440,
+        "demoLockCount": 0,
+        "appNavX": null,
+        "chip": {
+          "pressed": "true",
+          "tag": "BUTTON",
+          "text": "Masked"
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='true' want=true"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=1440 innerWidth=1440"
+        },
+        {
+          "name": "desktop-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'empty-state', 'main-content', 'mask-chip', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'true', 'tag': 'BUTTON', 'text': 'Masked'}"
+        },
+        {
+          "name": "masked-no-dollar-figures",
+          "ok": true,
+          "detail": "0 figure(s): []"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "empty-state-on-screen",
+          "ok": true,
+          "detail": "title='No transactions match these filters.'"
+        },
+        {
+          "name": "empty-state-geometry-measured",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'empty-state', 'main-content', 'mask-chip', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "more-panel-closed",
+          "ok": true,
+          "detail": "more-panel rendered while closed"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x0 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(1440, 900) viewport=(1440, 900) path=shell-1440-empty-masked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "6 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "1440x900|empty|unmasked",
+      "width": 1440,
+      "height": 900,
+      "state": "empty",
+      "mask": "unmasked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440,
+          "h": 1692.6
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        },
+        "empty-state": {
+          "x": 34,
+          "y": 1262.9,
+          "w": 1028,
+          "h": 484.8
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        },
+        "empty-state": {
+          "x": 34,
+          "y": 1262.9,
+          "w": 1028
+        }
+      },
+      "money_count": 8,
+      "money_sample": [
+        "$727.57",
+        "$2,400.00",
+        "-$1,400.00",
+        "-$98.46",
+        "-$79.99",
+        "-$65.00",
+        "-$16.99",
+        "-$11.99"
+      ],
+      "png": "matrix/shell-1440-empty-unmasked.png",
+      "png_dims": [
+        1440,
+        900
+      ],
+      "measured": {
+        "scrollWidth": 1440,
+        "demoLockCount": 0,
+        "appNavX": null,
+        "chip": {
+          "pressed": "false",
+          "tag": "BUTTON",
+          "text": "Unmasked"
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='false' want=false"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=1440 innerWidth=1440"
+        },
+        {
+          "name": "desktop-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'empty-state', 'main-content', 'mask-chip', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'false', 'tag': 'BUTTON', 'text': 'Unmasked'}"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "empty-state-on-screen",
+          "ok": true,
+          "detail": "title='No transactions match these filters.'"
+        },
+        {
+          "name": "empty-state-geometry-measured",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'empty-state', 'main-content', 'mask-chip', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "more-panel-closed",
+          "ok": true,
+          "detail": "more-panel rendered while closed"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x0 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(1440, 900) viewport=(1440, 900) path=shell-1440-empty-unmasked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "6 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "1440x900|more|masked",
+      "width": 1440,
+      "height": 900,
+      "state": "more",
+      "mask": "masked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440,
+          "h": 2232
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        },
+        "more-panel": {
+          "x": 220.2,
+          "y": 92,
+          "w": 304,
+          "h": 804
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 1015,
+          "y": 27,
+          "w": 257,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 527.5,
+          "h": 76
+        },
+        "more-panel": {
+          "x": 220.2,
+          "y": 92,
+          "w": 304
+        }
+      },
+      "money_count": 0,
+      "money_sample": [],
+      "png": "matrix/shell-1440-more-masked.png",
+      "png_dims": [
+        1440,
+        900
+      ],
+      "measured": {
+        "scrollWidth": 1440,
+        "demoLockCount": 1,
+        "appNavX": null,
+        "chip": {
+          "pressed": "true",
+          "tag": "BUTTON",
+          "text": "Masked"
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='true' want=true"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "more-chrome-opened",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=1440 innerWidth=1440"
+        },
+        {
+          "name": "desktop-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'main-content', 'mask-chip', 'more-panel', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'true', 'tag': 'BUTTON', 'text': 'Masked'}"
+        },
+        {
+          "name": "masked-no-dollar-figures",
+          "ok": true,
+          "detail": "0 figure(s): []"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "more-panel-open",
+          "ok": true,
+          "detail": "more-panel={'x': 220.2, 'y': 92, 'w': 304, 'h': 804}"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(1440, 900) viewport=(1440, 900) path=shell-1440-more-masked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "6 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "1440x900|more|unmasked",
+      "width": 1440,
+      "height": 900,
+      "state": "more",
+      "mask": "unmasked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440,
+          "h": 2232
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        },
+        "more-panel": {
+          "x": 220.2,
+          "y": 92,
+          "w": 304,
+          "h": 804
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 129,
+          "w": 1440
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 93,
+          "w": 1440,
+          "h": 36
+        },
+        "mask-chip": {
+          "x": 997.7,
+          "y": 27,
+          "w": 274.3,
+          "h": 38
+        },
+        "app-topbar": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 93
+        },
+        "topbar-tabs": {
+          "x": 220.2,
+          "y": 8,
+          "w": 506.8,
+          "h": 76
+        },
+        "more-panel": {
+          "x": 220.2,
+          "y": 92,
+          "w": 304
+        }
+      },
+      "money_count": 29,
+      "money_sample": [
+        "$1,518.63",
+        "$50.00",
+        "-$1,161.46",
+        "$57,889.56",
+        "$25,240.50",
+        "$227",
+        "$407.17",
+        "$407.17"
+      ],
+      "png": "matrix/shell-1440-more-unmasked.png",
+      "png_dims": [
+        1440,
+        900
+      ],
+      "measured": {
+        "scrollWidth": 1440,
+        "demoLockCount": 1,
+        "appNavX": null,
+        "chip": {
+          "pressed": "false",
+          "tag": "BUTTON",
+          "text": "Unmasked"
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='false' want=false"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "more-chrome-opened",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=1440 innerWidth=1440"
+        },
+        {
+          "name": "desktop-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-topbar', 'main-content', 'mask-chip', 'more-panel', 'topbar-tabs', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'false', 'tag': 'BUTTON', 'text': 'Unmasked'}"
+        },
+        {
+          "name": "unmasked-detector-finds-dollars",
+          "ok": true,
+          "detail": "29 figure(s)"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "more-panel-open",
+          "ok": true,
+          "detail": "more-panel={'x': 220.2, 'y': 92, 'w': 304, 'h': 804}"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(1440, 900) viewport=(1440, 900) path=shell-1440-more-unmasked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "6 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "390x844|demo|masked",
+      "width": 390,
+      "height": 844,
+      "state": "demo",
+      "mask": "masked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 4606
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "money_count": 0,
+      "money_sample": [],
+      "png": "matrix/shell-390-demo-masked.png",
+      "png_dims": [
+        390,
+        844
+      ],
+      "measured": {
+        "scrollWidth": 390,
+        "demoLockCount": 1,
+        "appNavX": -248,
+        "chip": {
+          "pressed": "true",
+          "tag": "BUTTON",
+          "text": ""
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='true' want=true"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=390 innerWidth=390"
+        },
+        {
+          "name": "mobile-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'true', 'tag': 'BUTTON', 'text': ''}"
+        },
+        {
+          "name": "masked-no-dollar-figures",
+          "ok": true,
+          "detail": "0 figure(s): []"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "nav-drawer-closed",
+          "ok": true,
+          "detail": "app-nav x=-248"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(390, 844) viewport=(390, 844) path=shell-390-demo-masked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "7 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "390x844|demo|unmasked",
+      "width": 390,
+      "height": 844,
+      "state": "demo",
+      "mask": "unmasked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 4630
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "money_count": 29,
+      "money_sample": [
+        "$227",
+        "$407.17",
+        "$407.17",
+        "$2,452",
+        "$4,750",
+        "$419",
+        "$113",
+        "$333"
+      ],
+      "png": "matrix/shell-390-demo-unmasked.png",
+      "png_dims": [
+        390,
+        844
+      ],
+      "measured": {
+        "scrollWidth": 390,
+        "demoLockCount": 1,
+        "appNavX": -248,
+        "chip": {
+          "pressed": "false",
+          "tag": "BUTTON",
+          "text": ""
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='false' want=false"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=390 innerWidth=390"
+        },
+        {
+          "name": "mobile-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'false', 'tag': 'BUTTON', 'text': ''}"
+        },
+        {
+          "name": "unmasked-detector-finds-dollars",
+          "ok": true,
+          "detail": "29 figure(s)"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "nav-drawer-closed",
+          "ok": true,
+          "detail": "app-nav x=-248"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(390, 844) viewport=(390, 844) path=shell-390-demo-unmasked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "7 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "390x844|empty|masked",
+      "width": 390,
+      "height": 844,
+      "state": "empty",
+      "mask": "masked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 3247.5
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        },
+        "empty-state": {
+          "x": 22,
+          "y": 2341.5,
+          "w": 683,
+          "h": 254
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        },
+        "empty-state": {
+          "x": 22,
+          "y": 2341.5,
+          "w": 683
+        }
+      },
+      "money_count": 0,
+      "money_sample": [],
+      "png": "matrix/shell-390-empty-masked.png",
+      "png_dims": [
+        390,
+        844
+      ],
+      "measured": {
+        "scrollWidth": 390,
+        "demoLockCount": 0,
+        "appNavX": -248,
+        "chip": {
+          "pressed": "true",
+          "tag": "BUTTON",
+          "text": ""
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='true' want=true"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=390 innerWidth=390"
+        },
+        {
+          "name": "mobile-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'empty-state', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'true', 'tag': 'BUTTON', 'text': ''}"
+        },
+        {
+          "name": "masked-no-dollar-figures",
+          "ok": true,
+          "detail": "0 figure(s): []"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "empty-state-on-screen",
+          "ok": true,
+          "detail": "title='No transactions match these filters.'"
+        },
+        {
+          "name": "empty-state-geometry-measured",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'empty-state', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "nav-drawer-closed",
+          "ok": true,
+          "detail": "app-nav x=-248"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x0 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(390, 844) viewport=(390, 844) path=shell-390-empty-masked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "8 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "390x844|empty|unmasked",
+      "width": 390,
+      "height": 844,
+      "state": "empty",
+      "mask": "unmasked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 3247.5
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        },
+        "empty-state": {
+          "x": 22,
+          "y": 2341.5,
+          "w": 683,
+          "h": 254
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": -248,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        },
+        "empty-state": {
+          "x": 22,
+          "y": 2341.5,
+          "w": 683
+        }
+      },
+      "money_count": 13,
+      "money_sample": [
+        "$727.57",
+        "$2,400.00",
+        "-$1,400.00",
+        "-$98.46",
+        "-$79.99",
+        "-$65.00",
+        "-$16.99",
+        "-$11.99"
+      ],
+      "png": "matrix/shell-390-empty-unmasked.png",
+      "png_dims": [
+        390,
+        844
+      ],
+      "measured": {
+        "scrollWidth": 390,
+        "demoLockCount": 0,
+        "appNavX": -248,
+        "chip": {
+          "pressed": "false",
+          "tag": "BUTTON",
+          "text": ""
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='false' want=false"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=390 innerWidth=390"
+        },
+        {
+          "name": "mobile-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'empty-state', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'false', 'tag': 'BUTTON', 'text': ''}"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "empty-state-on-screen",
+          "ok": true,
+          "detail": "title='No transactions match these filters.'"
+        },
+        {
+          "name": "empty-state-geometry-measured",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'empty-state', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "nav-drawer-closed",
+          "ok": true,
+          "detail": "app-nav x=-248"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x0 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(390, 844) viewport=(390, 844) path=shell-390-empty-unmasked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "8 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "390x844|more|masked",
+      "width": 390,
+      "height": 844,
+      "state": "more",
+      "mask": "masked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 4606
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": 0,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": 0,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "money_count": 0,
+      "money_sample": [],
+      "png": "matrix/shell-390-more-masked.png",
+      "png_dims": [
+        390,
+        844
+      ],
+      "measured": {
+        "scrollWidth": 390,
+        "demoLockCount": 1,
+        "appNavX": 0,
+        "chip": {
+          "pressed": "true",
+          "tag": "BUTTON",
+          "text": ""
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='true' want=true"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "more-chrome-opened",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=390 innerWidth=390"
+        },
+        {
+          "name": "mobile-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'true', 'tag': 'BUTTON', 'text': ''}"
+        },
+        {
+          "name": "masked-no-dollar-figures",
+          "ok": true,
+          "detail": "0 figure(s): []"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "nav-drawer-open",
+          "ok": true,
+          "detail": "app-nav x=0"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(390, 844) viewport=(390, 844) path=shell-390-more-masked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "7 element(s) within ±2.0px"
+        }
+      ]
+    },
+    {
+      "id": "390x844|more|unmasked",
+      "width": 390,
+      "height": 844,
+      "state": "more",
+      "mask": "unmasked",
+      "geometry": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 4630
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": 0,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "pinned": {
+        "main-content": {
+          "x": 0,
+          "y": 0,
+          "w": 390
+        },
+        "truth-bar": {
+          "x": 0,
+          "y": 56,
+          "w": 390,
+          "h": 32
+        },
+        "mask-chip": {
+          "x": 272,
+          "y": 6,
+          "w": 77.2,
+          "h": 44
+        },
+        "appbar": {
+          "x": 0,
+          "y": 0,
+          "w": 390,
+          "h": 89
+        },
+        "nav-drawer-toggle": {
+          "x": 8,
+          "y": 6,
+          "w": 44,
+          "h": 44
+        },
+        "mobile-tab-bar": {
+          "x": 0,
+          "y": 787,
+          "w": 390,
+          "h": 57
+        },
+        "app-nav": {
+          "x": 0,
+          "y": 0,
+          "w": 248,
+          "h": 844
+        }
+      },
+      "money_count": 29,
+      "money_sample": [
+        "$227",
+        "$407.17",
+        "$407.17",
+        "$2,452",
+        "$4,750",
+        "$419",
+        "$113",
+        "$333"
+      ],
+      "png": "matrix/shell-390-more-unmasked.png",
+      "png_dims": [
+        390,
+        844
+      ],
+      "measured": {
+        "scrollWidth": 390,
+        "demoLockCount": 1,
+        "appNavX": 0,
+        "chip": {
+          "pressed": "false",
+          "tag": "BUTTON",
+          "text": ""
+        }
+      },
+      "checks": [
+        {
+          "name": "shell-rendered",
+          "ok": true,
+          "detail": "mask-chip present (both breakpoints' chrome renders it)"
+        },
+        {
+          "name": "mask-chip-driven",
+          "ok": true,
+          "detail": "aria-pressed='false' want=false"
+        },
+        {
+          "name": "data-on-screen",
+          "ok": true,
+          "detail": "money render landed"
+        },
+        {
+          "name": "more-chrome-opened",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "ok": true,
+          "detail": "scrollWidth=390 innerWidth=390"
+        },
+        {
+          "name": "mobile-shell-only",
+          "ok": true,
+          "detail": "geometry keys: ['app-nav', 'appbar', 'main-content', 'mask-chip', 'mobile-tab-bar', 'nav-drawer-toggle', 'truth-bar']"
+        },
+        {
+          "name": "mask-chip-state",
+          "ok": true,
+          "detail": "chip={'pressed': 'false', 'tag': 'BUTTON', 'text': ''}"
+        },
+        {
+          "name": "unmasked-detector-finds-dollars",
+          "ok": true,
+          "detail": "29 figure(s)"
+        },
+        {
+          "name": "demo-read-only-banner",
+          "ok": true,
+          "detail": "banner='Read-only demo — changes are not saved'"
+        },
+        {
+          "name": "no-empty-state",
+          "ok": true,
+          "detail": "empty-state present on a populated page"
+        },
+        {
+          "name": "nav-drawer-open",
+          "ok": true,
+          "detail": "app-nav x=0"
+        },
+        {
+          "name": "no-error-surface",
+          "ok": true,
+          "detail": "error-panel x0, demo-refusal x0, (role=alert x1 — budget alert cards legitimately carry it)"
+        },
+        {
+          "name": "screenshot-dims",
+          "ok": true,
+          "detail": "png=(390, 844) viewport=(390, 844) path=shell-390-more-unmasked.png"
+        }
+      ],
+      "failures": [],
+      "baseline_checks": [
+        {
+          "name": "geometry-vs-baseline",
+          "ok": true,
+          "detail": "7 element(s) within ±2.0px"
+        }
+      ]
+    }
+  ],
+  "notes": [],
+  "passed": 158,
+  "failed": 0
+}

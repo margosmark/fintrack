@@ -1,0 +1,180 @@
+{
+  "holdingDetails": {
+    "asOfDate": "08/31/2026",
+    "equityHoldings": [
+      {
+        "securityId": "6889106",
+        "securityType": "EQ.STOCK",
+        "securityMainType": "EQ",
+        "securityLongDescription": "Taiwan Semiconductor Manufacturing Co Ltd",
+        "securityShortDescription": "TSMC",
+        "marketValuePercentage": "3.94%",
+        "ticker": "2330",
+        "isin": "TW0002330008",
+        "sedol": "6889106",
+        "shareQuantity": "358,559,451",
+        "marketValueBaseCurrency": "$26,946,415,214",
+        "faceAmount": "$358,559,451",
+        "couponRate": "0.000%"
+      },
+      {
+        "securityId": "6771720",
+        "securityType": "EQ.STOCK",
+        "securityMainType": "EQ",
+        "securityLongDescription": "Samsung Electronics Co Ltd",
+        "securityShortDescription": "SAMSUNG ELECTRON",
+        "marketValuePercentage": "1.88%",
+        "ticker": "005930",
+        "isin": "KR7005930003",
+        "cusip": "Y74718100",
+        "sedol": "6771720",
+        "shareQuantity": "68,119,369",
+        "marketValueBaseCurrency": "$12,859,771,481",
+        "faceAmount": "$68,119,369",
+        "couponRate": "0.000%"
+      },
+      {
+        "securityId": "6450267",
+        "securityType": "EQ.STOCK",
+        "securityMainType": "EQ",
+        "securityLongDescription": "SK hynix Inc",
+        "securityShortDescription": "SK HYNIX INC",
+        "marketValuePercentage": "1.45%",
+        "ticker": "000660",
+        "isin": "KR7000660001",
+        "sedol": "6450267",
+        "shareQuantity": "8,180,606",
+        "marketValueBaseCurrency": "$9,900,887,732",
+        "faceAmount": "$8,180,606",
+        "couponRate": "0.000%"
+      },
+      {
+        "securityId": "BMMV2K8",
+        "securityType": "EQ.STOCK",
+        "securityMainType": "EQ",
+        "securityLongDescription": "Tencent Holdings Ltd",
+        "securityShortDescription": "TENCENT",
+        "marketValuePercentage": "0.78%",
+        "ticker": "700",
+        "isin": "KYG875721634",
+        "cusip": "G87572163",
+        "sedol": "BMMV2K8",
+        "shareQuantity": "92,221,440",
+        "marketValueBaseCurrency": "$5,296,755,347",
+        "faceAmount": "$92,221,440",
+        "couponRate": "0.000%"
+      },
+      {
+        "securityId": "922042858",
+        "securityType": "EQ.ETF",
+        "securityMainType": "EQ",
+        "securityLongDescription": "Vanguard FTSE Emerging Markets ETF",
+        "securityShortDescription": "VANGUARD FTSE EM",
+        "marketValuePercentage": "0.11%",
+        "ticker": "VWO",
+        "isin": "US9220428588",
+        "cusip": "922042858",
+        "sedol": "B06HMH5",
+        "shareQuantity": "12,737,296",
+        "marketValueBaseCurrency": "$770,861,154",
+        "faceAmount": "$12,737,296",
+        "couponRate": "0.000%"
+      },
+      {
+        "securityId": "6772853",
+        "securityType": "EQ.STOCK",
+        "securityMainType": "EQ",
+        "securityLongDescription": "San-In Godo Bank Ltd/The",
+        "securityShortDescription": "SAN-IN GODO BANK",
+        "marketValuePercentage": "0.00%",
+        "ticker": "8381",
+        "isin": "JP3324000003",
+        "sedol": "6772853",
+        "shareQuantity": "2,072,543",
+        "marketValueBaseCurrency": "$34,124,873",
+        "faceAmount": "$2,072,543",
+        "couponRate": "0.000%"
+      },
+      {
+        "securityId": "BSZ8MG4",
+        "securityType": "EQ.WRT",
+        "securityMainType": "EQ",
+        "securityLongDescription": "BERJAYA CORP BHD-CW31",
+        "securityShortDescription": "BERJAYA COR-CW31",
+        "ticker": "3395WD",
+        "isin": "MYL3395WD113",
+        "sedol": "BSZ8MG4",
+        "shareQuantity": "4,166,815",
+        "marketValueBaseCurrency": "$31,049",
+        "faceAmount": "$4,166,815"
+      },
+      {
+        "securityId": "A067CCTEUR__06628088",
+        "securityType": "CT.FOREX",
+        "securityMainType": "CT",
+        "securityLongDescription": "EUR/USD FWD 20260916",
+        "securityShortDescription": "EUR/USD FWD 20260916",
+        "marketValuePercentage": "0.14%",
+        "ticker": "EUR",
+        "shareQuantity": "840,881,585",
+        "marketValueBaseCurrency": "$977,262,559",
+        "faceAmount": "$840,881,585",
+        "maturityDate": "09/16/2026"
+      }
+    ],
+    "fixedIncomeHoldings": [
+      {
+        "securityId": "US91282CGH88",
+        "securityType": "FI.US_GOV",
+        "securityMainType": "FI",
+        "securityLongDescription": "United States Treasury Note/Bond",
+        "securityShortDescription": "US TREASURY N/B",
+        "marketValuePercentage": "0.47%",
+        "ticker": "T",
+        "isin": "US91282CGH88",
+        "cusip": "91282CGH8",
+        "sedol": "BL6BW07",
+        "shareQuantity": "1,920,217,700",
+        "marketValueBaseCurrency": "$1,899,290,323",
+        "faceAmount": "$1,920,217,700",
+        "maturityDate": "01/31/2028",
+        "couponRate": "3.500%"
+      }
+    ],
+    "shortTermReservesHoldings": [
+      {
+        "securityId": "SLCMT1142",
+        "securityType": "MM.CASH",
+        "securityMainType": "MM",
+        "securityLongDescription": "SLCMT1142",
+        "securityShortDescription": "SLCMT1142",
+        "marketValuePercentage": "1.82%",
+        "cusip": "SLCMT1142",
+        "shareQuantity": "124,206,608",
+        "marketValueBaseCurrency": "$12,419,418,703",
+        "faceAmount": "$124,206,608",
+        "maturityDate": "12/31/2049",
+        "couponRate": "0.000%"
+      }
+    ],
+    "derivativeHoldings": [
+      {
+        "securityId": "VGU6",
+        "securityType": "DE.IND",
+        "securityMainType": "DE",
+        "securityLongDescription": "EURO STOXX 50     Sep26",
+        "securityShortDescription": "EURO STOXX 50     Sep26",
+        "marketValuePercentage": "0.18%",
+        "ticker": "VGU6",
+        "isin": "DE000C757930",
+        "shareQuantity": "16,372",
+        "marketValueBaseCurrency": "$1,224,117,634",
+        "faceAmount": "$16,372"
+      }
+    ],
+    "portfolioCompositionFile": {
+      "basketId": "00S992560",
+      "usageCode": "CRRD"
+    }
+  }
+}

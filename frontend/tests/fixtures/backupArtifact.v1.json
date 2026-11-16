@@ -1,0 +1,61 @@
+{
+  "passphrase": "interop fixture passphrase",
+  "salt": "p2vOrqcHh55zXqdQOFpgFA==",
+  "wrappedDEK": "fH01iKlg3GPfqMMjZBt2/nTAr2FxA1pCxiwg23/N8l+xb4RlB4Yq/xQ9Xl/NXX6O",
+  "wire": {
+    "period": "2026-09-28",
+    "ciphertext": "v1.lG+3TrPcQnoaSlwz.04evAbCzMjqrsO7t28mlApD7+DnsrC5cto4hctf033oGPoT6P/FED+9eezMMyTnYjgh58zD6U59PlcUJpYNkyxRfGO7dAc97af1C7B0fw4vS2LqSG1CuhTgXuMTR4eMATE5dcx+fA/bnOEMgP1qZvD++kRAIr5JugEpjx3MNZyu/hd8xMl5GrKvKe2hSq2CumJZ/28I1YhDcXEH7Fhz2x6DEIj+0Ee4DdDPq8FrU78Gx3dBhFVktHpZo/be7p8XP+V/oe3Shf3ZMYuLZx4wVOQmkeJBclD3LnWys3oOx1looPWsdWamFSHGIEEnyRl/eUE3uBpH0m4OKo6/UkRP+TO1S6UuvQTvH1g+wk+wKLg8lDlljDuIq+IWfvouOWqoUo1RdMmxTBnSX+uLDrxY4MKAAa9s+8Kho8N+OSj7z02Pz/ygYXA1N2m4cUzVdLbSrbqjIAdnb0lefwDl+KRoPvLL29bzmaPOwUoUv4/QQ4zia/1LVmESbPcvdjvbJe92GfsLJ+dW3aAqymimOP0BiG/r4V0qe15OEf33+oqJzof6+Bbm+9SAssApRd3pFXQ+7V5cgkYqIt/AzaYDOnEIuuFzFFVPaTJsbPgT23WtdQ0S2I//lm4cRLEXBGnCQR7MHWJNDOdzWP4fub+9QmGgoQLcWagaMGjuA01ch7t0c5LbVuo2ZUROjYPIu3AsL/LJK+D7ansWnq4iDBJ+IzX5IJ17zBwarD7m0bq+VIcRXbtbDeRidhTeuUXymjJNscM2e2PfcXAaPJZvBrpXfvRPMf+BB/tRawRWoUmL8utq3dTjU/fT2d0Ypjw3v98pDluF/knVGdGM0ukB9pH0/3zRRhjBIAPqyMOAOtMRKJLBCaNk1/WQkZ0ZAcnEK5nkTXAnB2seM9TpKmRVOTT7rg8DnkGs="
+  },
+  "expected": {
+    "v": 1,
+    "kind": "fintrack-backup",
+    "period": "2026-09-28",
+    "exported_at": "2026-09-28T03:12:44.123Z",
+    "snapshot": {
+      "accounts": [
+        {
+          "id": 1,
+          "name": "Chequing",
+          "type": "checking",
+          "currency": "CAD"
+        }
+      ],
+      "categories": [
+        {
+          "id": 1,
+          "name": "Coffee"
+        }
+      ],
+      "transactions": [
+        {
+          "id": 1,
+          "account_id": 1,
+          "raw_description": "CAFE MOCHA",
+          "amount_native": "-4.25"
+        }
+      ],
+      "transaction_events": [
+        {
+          "id": 7,
+          "tx_id": 1,
+          "user_id": 1,
+          "event_kind": "edited",
+          "payload": {
+            "fields": [
+              "amount_native",
+              "note"
+            ],
+            "changes": {
+              "amount_native": "-12.34",
+              "note": "Café ☕ 食品 😀"
+            }
+          },
+          "payload_hash": "56e780e57aca0d680d2e27ee08ac4402039822b89361cd30c7a960084e0ac8ca",
+          "actor": 1,
+          "created_at": "2026-09-28T03:11:00Z",
+          "updated_at": "2026-09-28T03:11:00Z"
+        }
+      ]
+    }
+  }
+}

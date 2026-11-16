@@ -1,0 +1,427 @@
+{
+  "base": "http://127.0.0.1:5183",
+  "tx": 358,
+  "other_tx": 359,
+  "report_rows": [
+    360,
+    361,
+    362,
+    363
+  ],
+  "group_by_alone": [
+    "Category",
+    "Tag"
+  ],
+  "treemap_titles": [
+    "Probe Groceries \u2014 $138.50 (64.49%)",
+    "Probe Transit \u2014 $68.75 (32.01%)",
+    "Uncategorized \u2014 $7.50 (3.49%)"
+  ],
+  "saved_views_button": "Saved views (1)",
+  "chip_label": "View the image attached to Probe Taxi (transaction 363)",
+  "group_by_alone_before_invite": [
+    "Category",
+    "Tag"
+  ],
+  "partner_state": {
+    "partner_linked": true,
+    "owner_linked": false,
+    "account_ids": [
+      8
+    ]
+  },
+  "group_by_owner_session": [
+    "Category",
+    "Tag"
+  ],
+  "partner_email": "m108partner-1794212647015@example.com",
+  "group_by_linked_session": [
+    "Category",
+    "Tag",
+    "Owner"
+  ],
+  "checks": [
+    {
+      "check": "seed tenant (register + login)",
+      "ok": true,
+      "detail": "{\"register\": 200, \"login\": 200, \"token\": \"<redacted-jwt>\"}"
+    },
+    {
+      "check": "bearer token for the HTTP half",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "probe account",
+      "ok": true,
+      "detail": "{\"id\": 7, \"institution_id\": null, \"name\": \"Probe Chequing\", \"type\": \"chequing\", \"currency\": \"CAD\", \"taxable\": false, \"llm_autopilot\": false, \"cash_balance\": \"0."
+    },
+    {
+      "check": "two manual rows",
+      "ok": true,
+      "detail": "tx=358 other=359"
+    },
+    {
+      "check": "PUT receipt 200 + sniffed image/png + decoded size",
+      "ok": true,
+      "detail": "HTTP 200 {\"transaction_id\": 358, \"content_type\": \"image/png\", \"size_bytes\": 113083}"
+    },
+    {
+      "check": "GET receipt byte-for-byte + Cache-Control private",
+      "ok": true,
+      "detail": "113083 bytes, ct=image/png, cc=private, max-age=300"
+    },
+    {
+      "check": "list has_receipt: true on the image row, false on its sibling",
+      "ok": true,
+      "detail": "tx=True other=False"
+    },
+    {
+      "check": "413 receipt_too_large over 2 MB",
+      "ok": true,
+      "detail": "HTTP 413 receipt_too_large"
+    },
+    {
+      "check": "422 receipt_unsupported_type (header lies, sniff disagrees)",
+      "ok": true,
+      "detail": "HTTP 422 receipt_unsupported_type"
+    },
+    {
+      "check": "422 receipt_empty",
+      "ok": true,
+      "detail": "HTTP 422 receipt_empty"
+    },
+    {
+      "check": "foreign tenant 404 on PUT and GET",
+      "ok": true,
+      "detail": "PUT 404 not_found / GET 404 not_found"
+    },
+    {
+      "check": "DELETE 204 twice (idempotent) then 404 receipt_not_found",
+      "ok": true,
+      "detail": "204 / 204 / 404 receipt_not_found"
+    },
+    {
+      "check": "flag clears after DELETE",
+      "ok": true,
+      "detail": "tx=False"
+    },
+    {
+      "check": "reports seed (account + 2 categories + 4 rows)",
+      "ok": true,
+      "detail": "[360, 361, 362, 363]"
+    },
+    {
+      "check": "alone: Group by shows Category | Tag, no Owner",
+      "ok": true,
+      "detail": "[\"Category\", \"Tag\"]"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /reports 1440",
+      "ok": true,
+      "detail": "{'moderate': 1} ['region(moderatex1)']"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /reports 1440",
+      "ok": true,
+      "detail": "nodes=35 overlaps=0 []"
+    },
+    {
+      "check": "treemap renders blocks",
+      "ok": true,
+      "detail": "{\"label\": \"Spending by category \\u2014 treemap, 2026-01-01 \\u2013 2026-11-01, 3 points. Probe Groceries 64%; total $214.75.\", \"blocks\": 3, \"titles\": [\"Probe Groceries \\u2014 $138.50 (64.49%)\", \"Probe "
+    },
+    {
+      "check": "role=img text equivalent present",
+      "ok": true,
+      "detail": "Spending by category \u2014 treemap, 2026-01-01 \u2013 2026-11-01, 3 points. Probe Groceries 64%; total $214.75."
+    },
+    {
+      "check": "rect <title> shares trimmed to <=2dp",
+      "ok": true,
+      "detail": "bad=[]"
+    },
+    {
+      "check": "hover readout shows amount + trimmed share",
+      "ok": true,
+      "detail": "Probe Groceries$138.50 \u00b7 64.49%"
+    },
+    {
+      "check": "legend aria-labels carry the RAW (untrimmed) share for AT",
+      "ok": true,
+      "detail": "[\"Probe Groceries \\u2014 $138.50, 64.49359721% of the range total (shown as 64.49%). Show these transactions.\", \"Probe Transit \\u2014 $68.75, 32.01396973% of the range total (shown"
+    },
+    {
+      "check": "range picker present before saving",
+      "ok": true,
+      "detail": "[\"2026-01-01\", \"2026-11-09\"]"
+    },
+    {
+      "check": "Save this view opens the panel",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "check": "name the view",
+      "ok": true,
+      "detail": "Probe view 12611"
+    },
+    {
+      "check": "Saved views (1) after a full reload",
+      "ok": true,
+      "detail": "Saved views (1)"
+    },
+    {
+      "check": "range moved off the saved one",
+      "ok": true,
+      "detail": "preset=1W ['2026-01-01', '2026-11-09'] -> ['2026-11-02', '2026-11-09']"
+    },
+    {
+      "check": "the saved view is listed with its range",
+      "ok": true,
+      "detail": "Probe view 126112026-01-01 \u2013 2026-11-09 \u00b7 month \u00b7 bars"
+    },
+    {
+      "check": "restore returns to its tab",
+      "ok": true,
+      "detail": "?tab=spending"
+    },
+    {
+      "check": "restore puts the saved range back exactly",
+      "ok": true,
+      "detail": "['2026-01-01', '2026-11-09'] vs ['2026-01-01', '2026-11-09']"
+    },
+    {
+      "check": "rename persists",
+      "ok": true,
+      "detail": "filled='Probe view 12611 renamed' confirm_clicked=True"
+    },
+    {
+      "check": "delete empties the tab's list",
+      "ok": true,
+      "detail": "clicked=True button='Saved views'"
+    },
+    {
+      "check": "row paperclip exists with a per-row label",
+      "ok": true,
+      "detail": "Attach an image \u2014 Probe Taxi (transaction 363)"
+    },
+    {
+      "check": "shared file input armed + change dispatched",
+      "ok": true,
+      "detail": "dispatched"
+    },
+    {
+      "check": "chip RE-RENDERS in the row after upload",
+      "ok": true,
+      "detail": "View the image attached to Probe Taxi (transaction 363)"
+    },
+    {
+      "check": "editor shows the attached state",
+      "ok": true,
+      "detail": "{\"text\": \"Receipt image | One image attached | View | Remove\", \"buttons\": [{\"t\": \"View\", \"h\": 44}, {\"t\": \"Remove\", \"h\": 44}]}"
+    },
+    {
+      "check": "Remove flips the editor back to Attach image",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "check": "row chip clears after Remove",
+      "ok": true,
+      "detail": "null"
+    },
+    {
+      "check": "editor re-attaches",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "check": "row chip back after the editor attach",
+      "ok": true,
+      "detail": "{\"x\": 861.859375, \"y\": 450, \"w\": 65.15625, \"h\": 26, \"label\": \"View the image attached to Probe Taxi (transaction 363)\"}"
+    },
+    {
+      "check": "paperclip takes keyboard focus",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /transactions 1440",
+      "ok": true,
+      "detail": "{'moderate': 1} ['region(moderatex1)']"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /transactions 1440",
+      "ok": true,
+      "detail": "nodes=107 overlaps=0 []"
+    },
+    {
+      "check": "still alone right before the invite: Category | Tag, no Owner",
+      "ok": true,
+      "detail": "[\"Category\", \"Tag\"]"
+    },
+    {
+      "check": "partner registered",
+      "ok": true,
+      "detail": "m108partner-1794212647015@example.com"
+    },
+    {
+      "check": "invite created (token returned once)",
+      "ok": true,
+      "detail": "email_sent=False keys=['accept_url', 'account_ids', 'created_at', 'email', 'email_sent', 'expires_at']"
+    },
+    {
+      "check": "partner accepted",
+      "ok": true,
+      "detail": "{\"status\": \"active\", \"link_id\": 1, \"email\": \"m108partner-1794212647015@example.com\", \"partner\": {\"user_id\": 4, \"name\": null, \"email\": \"m108partner-1794212647015"
+    },
+    {
+      "check": "partner /partner/state is linked:true",
+      "ok": true,
+      "detail": "{\"linked\": true, \"owner\": {\"user_id\": 2, \"name\": null, \"email\": \"m108-1794212534447@example.com\"}, \"account_ids\": [8], \"privacy_mode\": false, \"link_id\": 1, \"acc"
+    },
+    {
+      "check": "owner session shows Category | Tag, no Owner (the lens is the partner's)",
+      "ok": true,
+      "detail": "tabs=[\"Category\", \"Tag\"], owner /partner/state=False"
+    },
+    {
+      "check": "Group by shows Category | Tag | Owner in the linked household",
+      "ok": true,
+      "detail": "[\"Category\", \"Tag\", \"Owner\"]"
+    },
+    {
+      "check": "Owner grouping renders a chart of the household population",
+      "ok": true,
+      "detail": "{\"frames\": 1, \"hasOwnerWord\": true, \"sample\": \"Spending by category \\u2014 own + shared household \\u2014 monthly buckets, 2026-01-01 \\u2013 2026-11-01, 11 points. total $207.25; peak 2026-10-01 $207.2"
+    },
+    {
+      "check": "owner view kept on the spending tab",
+      "ok": true,
+      "detail": "?tab=spending"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /reports 390px dark",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /reports 390px dark",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /transactions 390px dark",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /transactions 390px dark",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /reports 390px light",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /reports 390px light",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /transactions 390px light",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /transactions 390px light",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /reports 412px dark",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /reports 412px dark",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /transactions 412px dark",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /transactions 412px dark",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /reports 412px light",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /reports 412px light",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /transactions 412px light",
+      "ok": true,
+      "detail": "{} []"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /transactions 412px light",
+      "ok": true,
+      "detail": "nodes=28 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /reports 1440px dark",
+      "ok": true,
+      "detail": "{'moderate': 1} ['region(moderatex1)']"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /reports 1440px dark",
+      "ok": true,
+      "detail": "nodes=34 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /transactions 1440px dark",
+      "ok": true,
+      "detail": "{'moderate': 1} ['region(moderatex1)']"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /transactions 1440px dark",
+      "ok": true,
+      "detail": "nodes=30 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /reports 1440px light",
+      "ok": true,
+      "detail": "{'moderate': 1} ['region(moderatex1)']"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /reports 1440px light",
+      "ok": true,
+      "detail": "nodes=34 overlaps=0 []"
+    },
+    {
+      "check": "axe 0 critical/serious \u2014 /transactions 1440px light",
+      "ok": true,
+      "detail": "{'moderate': 1} ['region(moderatex1)']"
+    },
+    {
+      "check": "text-node sweep 0 overlaps \u2014 /transactions 1440px light",
+      "ok": true,
+      "detail": "nodes=30 overlaps=0 []"
+    }
+  ],
+  "passed": 76,
+  "failed": []
+}

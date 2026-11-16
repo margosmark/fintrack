@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "version": "4.2.0",
+    "exportedAt": "2026-02-03T12:00:00Z",
+    "generator": "synthetic fixture — docs/58 verification (no real data)"
+  },
+  "today": {
+    "savingsAccounts": [
+      {"name": "Emergency Fund", "balance": 12000.5, "initialValue": 10000},
+      {"name": "Everyday Checking", "balance": 2411.27, "initialValue": 0},
+      {"name": "Vacation Fund", "initialValue": 850}
+    ],
+    "investmentAccounts": [
+      {"name": "Taxable Brokerage", "type": "taxable", "balance": 45000.0, "initialValue": 40000},
+      {"name": "Old 401k", "type": "401k", "balance": 88000.1, "initialValue": 80000},
+      {"name": "Roth Account", "type": "roth-ira", "balance": 15000.0, "initialValue": 12000},
+      {"name": "Health Savings", "type": "hsa", "balance": 3200.0, "initialValue": 3000},
+      {"name": "Mystery Fund", "type": "crypto-ira", "balance": 900.0, "initialValue": 900}
+    ],
+    "debts": [
+      {"name": "Student Loan", "amount": 18000.0, "subtype": "student-loan"},
+      {"name": "Master Card", "amount": 1500.0, "subtype": "credit-card"}
+    ],
+    "assets": [
+      {"name": "Family Home", "balance": 450000, "initialValue": 400000},
+      {"name": "Old Sedan", "amount": 8000}
+    ]
+  },
+  "progress": [
+    {"date": "2026-01-01", "netWorth": 500000},
+    {"date": "2026-02-01", "netWorth": 505000}
+  ],
+  "plans": [
+    {
+      "name": "Retirement plan",
+      "income": [{"label": "Salary", "amount": 8000}],
+      "expenses": [{"label": "Rent", "amount": 2200}],
+      "milestones": [{"label": "Pay off mortgage", "date": "2040-01-01"}]
+    }
+  ]
+}

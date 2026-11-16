@@ -1,0 +1,64 @@
+{
+  "status": "adopted",
+  "enforcement": "report-only; release owner records the verdict in the release checklist. Not wired into CI or cron.",
+  "adopted": {
+    "date": "2026-10-16",
+    "by": "Mark",
+    "record": "Ledger performance budget and regression gate (parent review t_e148ff91; artifacts/ledger-performance-gate.md): 'The thresholds below are the adopted release budget. They are not yet wired into CI.'",
+    "policy": "bundle ceilings and 390px zero-overflow are hard blockers; timing thresholds are warning first, release-blocking only at the second threshold with valid repeats; cold-route regressions use paired-run medians (warn >10%, block >20%) against the deployed Ledger baseline."
+  },
+  "source": "docs/09-ui-ux.md, Ledger startup and mobile render-budget baseline",
+  "baseline_report": {
+    "measured": "2026-10-16",
+    "tree": "origin/main at f858719 (local Ledger build)",
+    "deployed_baseline": "docs/09-ui-ux.md 'Deployed Ledger baseline (2026-10-17, release 7fad455f)' — the paired-run regression reference",
+    "runs": 3,
+    "caveats": [
+      "The deployed shell was still pre-Ledger when the baseline was collected.",
+      "Mobile cold measurements were inconclusive because targets ran sequentially against a warming API cache.",
+      "Future measurements must use an idle box, medians of three, and load-average bracketing."
+    ]
+  },
+  "T1_cold_route_timings": {
+    "status": "adopted",
+    "viewport": "1440x900",
+    "cache": "service worker removed and HTTP cache disabled",
+    "aggregation": "median of 3",
+    "regression_policy": "paired-run medians against the deployed Ledger baseline captured 2026-10-17 (docs/09): warn at >10% regression in heading or settle, block at >20% with valid repeats. The absolute 1.5x ceilings below remain the startup-budget reference.",
+    "single_run_investigate_factor": 2.0,
+    "routes_ms": {
+      "dashboard": {"baseline_heading": 801, "max_heading": 1250, "baseline_settle": 1619, "max_settle": 2450},
+      "transactions": {"baseline_heading": 766, "max_heading": 1200, "baseline_settle": 1290, "max_settle": 1950},
+      "imports": {"baseline_heading": 650, "max_heading": 1000, "baseline_settle": 1146, "max_settle": 1750},
+      "investments": {"baseline_heading": 699, "max_heading": 1050, "baseline_settle": 2080, "max_settle": 3150},
+      "reports": {"baseline_heading": 676, "max_heading": 1050, "baseline_settle": 1131, "max_settle": 1750}
+    }
+  },
+  "T2_bundle_bytes": {
+    "status": "adopted",
+    "measurement": "raw bytes from the production dist output",
+    "entry_js_bytes": {"baseline": 543890, "max": 560200},
+    "total_js_bytes": {"baseline": 1811382, "max": 1866000},
+    "total_css_bytes": {"baseline": 50800, "max": 52400},
+    "over_ceiling": "requires an explicit re-baseline; state the delta in the commit message"
+  },
+  "T3_mobile_390": {
+    "status": "adopted",
+    "viewport": "390x844",
+    "cache": "warm app with service worker and HTTP cache enabled",
+    "aggregation": "median of 3 with load-average bracketing",
+    "overflow": {"max_pixels": 0, "hard_gate": true},
+    "scroll": {
+      "p95_frame_ms_median_max": 50,
+      "p95_frame_ms_hard_fail_above": 100,
+      "long_task_ms_max": 250
+    },
+    "tab_switch_ms": {"median_max": 1500, "single_run_investigate_above": 2500},
+    "more_drawer_ms": {"open_max": 700, "close_max": 600},
+    "add_editor_ms": {"first_open_max": 1500, "repeat_open_max": 800}
+  },
+  "T4_cls": {
+    "status": "not_gated",
+    "note": "Baseline exceeds the web-vitals 0.10 line on both trees; remediate before proposing a CLS gate."
+  }
+}
