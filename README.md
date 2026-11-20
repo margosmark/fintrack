@@ -18,8 +18,8 @@ For the Android discovery lane, start with [`docs/49`](docs/49-android-companion
 Requirements: Docker 24+ with the compose plugin. Ports used: **8080** (web), 8000 (api, optional to expose), 5432 (db — only if you want host-side psql).
 
 ```bash
-git clone https://github.com/margosmark/fin_tracker.git
-cd fin_tracker
+git clone https://github.com/margosmark/fintrack.git
+cd fintrack
 
 cp .env.example .env
 # EDIT .env — at minimum set a real JWT_SECRET (any long random string).
